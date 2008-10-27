@@ -1,0 +1,49 @@
+{% extends "base_2col.html" %}
+
+{% load i18n %}
+
+{% block title %}Log in{% endblock %}
+
+{% block content %}
+
+<h1>{% trans "Identifiez-vous" %}</h1>
+
+{% if form.errors %}
+<div class="error">
+{% trans "L'authentification a échouée" %}
+</div>
+{% endif %}
+
+<div id="login">
+<form method="post" action="?next={{ next|default:"/" }}">
+
+<div>
+{% if form.username.errors %} <div class="error">{{ form.username.errors|join:", " }}</div>{% endif %}
+<label for="id_username">{% trans "Identifiant :" %}</label>
+{{ form.username }}
+</div>
+
+<div>
+{% if form.password.errors %} <div class="error">{{ form.password.errors|join:", " }}</div>{% endif %}
+<label for="id_password">{% trans "Mot de passe :" %}</label>
+{{ form.password }}
+</div>
+
+<div>
+<input type="submit" value="{% trans "Se connecter" %}" />
+</div>
+
+<div>
+<p>
+{% trans "Vous n'avez pas encore de compte ? Enregistrez-vous ici :" %} <a href="/account/register/">{% trans "S'enregistrer" %}</a>
+</p>
+<p>
+{% trans "Mot de passe oublié ? Faites-vous envoyer votre mot de passe :" %} <a href="/account/resendpwd/">{% trans "Envoyer le mot de passe" %}</a>
+</p>
+</div>
+
+</form>
+</div>
+
+{% endblock %}
+

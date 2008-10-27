@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-06 21:44+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: account/models.py:13
+msgid "adresse"
+msgstr ""
+
+#: account/models.py:14
+msgid "note"
+msgstr ""
+
+#: account/models.py:15
+msgid "Clé gpg"
+msgstr ""
+
+#: account/models.py:16
+msgid "Clé de remise à zéro du mot de passe"
+msgstr ""
+
+#: account/models.py:19
+msgid "Profil utilisateur"
+msgstr ""
+
+#: account/models.py:20
+msgid "Profils utilisateurs"
+msgstr ""
+
+#: resa/models.py:11 resa/models.py:21 resa/models.py:31
+msgid "nom"
+msgstr ""
+
+#: resa/models.py:14
+msgid "Langue"
+msgstr ""
+
+#: resa/models.py:15
+msgid "Langues"
+msgstr ""
+
+#: resa/models.py:27 resa/models.py:28
+msgid "Pays"
+msgstr ""
+
+#: resa/models.py:32
+msgid "couleur"
+msgstr ""
+
+#: resa/models.py:38
+msgid "Badge"
+msgstr ""
+
+#: resa/models.py:39
+msgid "Badges"
+msgstr ""
+
+#: templates/account/login.html:9
+msgid "Identifiez-vous"
+msgstr ""
+
+#: templates/account/login.html:20
+msgid "Identifiant :"
+msgstr ""
+
+#: templates/account/login.html:26
+msgid "Mot de passe :"
+msgstr ""
+
+#: templates/account/login.html:31
+msgid "Se connecter"
+msgstr ""
+
+#: templates/account/login.html:36
+msgid "Vous n'avez pas encore de compte ? Enregistrez-vous ici :"
+msgstr ""
+
+#: templates/account/login.html:36
+msgid "S'enregistrer"
+msgstr ""
+
+#: templates/account/login.html:39
+msgid "Mot de passe oublié ? Faites-vous envoyer votre mot de passe :"
+msgstr ""
+
+#: templates/account/login.html:39
+msgid "Envoyer le mot de passe"
+msgstr ""
