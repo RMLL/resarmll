@@ -1,9 +1,12 @@
+# -*- coding: utf-8 -*-
 from django.conf.urls.defaults import *
+from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
+from django.views.generic.simple import redirect_to
 urlpatterns = patterns('',
     # Example:
     # (r'^resarmll/', include('resarmll.foo.urls')),
@@ -14,5 +17,12 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
 	(r'^admin/(.*)', admin.site.root),
+	(r'^$', redirect_to, {'url': 'account/'}),
 	(r'^account/', include('account.urls')),
 )
+
+if settings.DEBUG:
+	import os.path
+	urlpatterns += patterns('',
+		(r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': os.path.dirname(__file__)+'/site_media/'}),
+	)

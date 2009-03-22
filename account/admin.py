@@ -1,8 +1,9 @@
+# -*- coding: utf-8 -*-
+
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 from account.models import UserProfile
-
 
 # Define an inline admin descriptor for UserProfile model
 class UserProfileInline(admin.StackedInline):

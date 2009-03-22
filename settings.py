@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-PROJECT_DIR=os.getcwd()
+PROJECT_DIR = os.path.dirname(__file__)
 
 # Django settings for resarmll project.
 
@@ -16,9 +16,9 @@ MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'postgresql_psycopg2' # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 DATABASE_NAME = 'resarmll'             # Or path to database file if using sqlite3.
-DATABASE_USER = 'manu'             # Not used with sqlite3.
-DATABASE_PASSWORD = ''         # Not used with sqlite3.
-DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
+DATABASE_USER = 'resarmll'             # Not used with sqlite3.
+DATABASE_PASSWORD = 'resarmll'         # Not used with sqlite3.
+DATABASE_HOST = 'localhost'             # Set to empty string for localhost. Not used with sqlite3.
 DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
 
 # Local time zone for this installation. Choices can be found here:
@@ -33,9 +33,9 @@ TIME_ZONE = 'Europe/Paris'
 LANGUAGE_CODE = 'fr-FR'
 
 LANGUAGES = (
-    ('fr', 'Français'),
-    ('es', 'Espanol'),
-    ('en', 'English'),
+    (u'fr', u'Français'),
+    (u'es', u'Espanol'),
+    (u'en', u'English'),
 )
 
 SITE_ID = 1
@@ -75,7 +75,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'resarmll.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -95,3 +95,6 @@ INSTALLED_APPS = (
 )
 
 AUTH_PROFILE_MODULE = 'account.UserProfile'
+
+LOGIN_REDIRECT_URL = '/account/profile/'
+LOGIN_URL = '/account/login/'

@@ -1,49 +1,46 @@
-{% extends "base_2col.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
-{% block title %}Log in{% endblock %}
+{% block title %}{% trans "Identification" %}{% endblock %}
 
 {% block content %}
 
-<h1>{% trans "Identifiez-vous" %}</h1>
+	<h2>{% trans "Identifiez-vous" %}</h2>
 
-{% if form.errors %}
-<div class="error">
-{% trans "L'authentification a échouée" %}
-</div>
-{% endif %}
+	{% if form.errors %}
+		<div class="main-error">
+			{% trans "L'authentification a échouée" %}
+		</div>
+	{% endif %}
 
-<div id="login">
-<form method="post" action="?next={{ next|default:"/" }}">
+	<div id="login">
+		<form method="post" action="">
+			<div class="field{% if form.username.errors %} field-error{% endif %}">
+			{% if form.username.errors %} <div class="error">{{ form.username.errors|join:", " }}</div>{% endif %}
+				<label for="id_username">{% trans "Identifiant :" %}</label>
+			{{ form.username }}
+			</div>
 
-<div>
-{% if form.username.errors %} <div class="error">{{ form.username.errors|join:", " }}</div>{% endif %}
-<label for="id_username">{% trans "Identifiant :" %}</label>
-{{ form.username }}
-</div>
+			<div class="field{% if form.password.errors %} field-error{% endif %}">
+				{% if form.password.errors %} <div class="error">{{ form.password.errors|join:", " }}</div>{% endif %}
+					<label for="id_password">{% trans "Mot de passe :" %}</label>
+				{{ form.password }}
+			</div>
 
-<div>
-{% if form.password.errors %} <div class="error">{{ form.password.errors|join:", " }}</div>{% endif %}
-<label for="id_password">{% trans "Mot de passe :" %}</label>
-{{ form.password }}
-</div>
-
-<div>
-<input type="submit" value="{% trans "Se connecter" %}" />
-</div>
-
-<div>
-<p>
-{% trans "Vous n'avez pas encore de compte ? Enregistrez-vous ici :" %} <a href="/account/register/">{% trans "S'enregistrer" %}</a>
-</p>
-<p>
-{% trans "Mot de passe oublié ? Faites-vous envoyer votre mot de passe :" %} <a href="/account/resendpwd/">{% trans "Envoyer le mot de passe" %}</a>
-</p>
-</div>
-
-</form>
-</div>
+			<div class="field sub">
+				<input type="submit" value="{% trans "Se connecter" %}" />
+			</div>
+		</form>
+		<div>
+			<p>
+				{% trans "Vous n'avez pas encore de compte ? Enregistrez-vous ici :" %} <a href="/account/register/">{% trans "S'enregistrer" %}</a>
+			</p>
+			<p>
+				{% trans "Mot de passe oublié ? Faites-vous envoyer votre mot de passe :" %} <a href="/account/resendpwd/">{% trans "Envoyer le mot de passe" %}</a>
+			</p>
+		</div>
+	</div>
 
 {% endblock %}
 

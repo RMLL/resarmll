@@ -1,12 +1,15 @@
-from resa.models import Language, Country
+# -*- coding: utf-8 -*-                                                                                                                                        
+
+from resa.forms import ArticleAdminForm, CountryAdminForm
+from resa.models import Article, Country
 from django.contrib import admin
 
-class LanguageAdmin(admin.ModelAdmin):
-    list_display = ['name']
+class CountryAdmin(admin.ModelAdmin):                                                                                                                          
+    form = CountryAdminForm                                                                                                    
 
-admin.site.register(Language, LanguageAdmin)
+admin.site.register(Country, CountryAdmin)                                                                                                                     
 
-class CountryAdmin(admin.ModelAdmin):
-    list_display = ['name']
+class ArticleAdmin(admin.ModelAdmin):                                                                                                                          
+    form = ArticleAdminForm                                                                                                                                  
 
-admin.site.register(Country, CountryAdmin)
+admin.site.register(Article, ArticleAdmin)                                                                                                                     

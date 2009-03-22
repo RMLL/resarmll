@@ -3,18 +3,27 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
-from resa.models import Language, Country
+from resarmll.resa.models import Country
+from resarmll.resa.widgets import TranslatedLabelField
+
+from resarmll import settings
 
 class UserProfile(models.Model):
     user = models.ForeignKey(User, unique=True)
-    lang = models.ForeignKey(Language)
+    address = models.TextField(_(u"Adresse"))
+    language =  models.CharField(_(u"Langue"), max_length=2,
+                                 choices=settings.LANGUAGES)
     country = models.ForeignKey(Country)
-#    badge = models.ForeignKey(Badge)
-    address = models.TextField(_("adresse"))
-    note = models.TextField(_("note"))
-    pgpkey = models.CharField(_("Clé gpg"), max_length=128)
-    resethash = models.CharField(_("Clé de remise à zéro du mot de passe"), max_length=128)
-    
+    badge_text = models.CharField(_(u"Texte du badge"),max_length=32)
+    fingerprint = models.CharField(_(u"Empreinte PGP/GPG"), max_length=40)
+    notes = models.TextField(_(u"Note(s)"))
+    resethash = models.CharField(_(u"Reset hash"), max_length=32)
+
     class Meta:
-        verbose_name = _("Profil utilisateur")
-        verbose_name_plural = _("Profils utilisateurs")
+        verbose_name = _(u"Profil utilisateur")
+        verbose_name_plural = _(u"Profils utilisateurs")
+
+    def get_attributes(self):
+        attr = self.__dict__
+        del attr['user']
+        return attr

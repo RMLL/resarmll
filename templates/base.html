@@ -1,48 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-	<head>
-		<title>Réservation RMLL - {% block title %}{% endblock %}</title>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<meta http-equiv="Content-Language" content="en-us" />
-
-		<link rel="shortcut icon" type="image/png" href="/templates/images/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="/templates/css/resa.css" />
-
-		{% block extrahead %}{% endblock %}
-	</head>
-
-	<body>
-	<div id="container">
-		<div id="header">
-			<h1 id="logo">
-		  		<a href="">
-		  			<img src="http://media.djangoproject.com/img/site/hdr_logo.gif" alt="Django" />
-		  		</a>
-		  	</h1>
-			<ul id="nav">
-				<li><a href="">Blah</a></li>
-				<li><a href="">Blah</a></li>
-				<li><a href="">Blah</a></li>
-				<li><a href="">Blah</a></li>
+<?xml version="1.0" encoding="utf-8" ?>
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" dir="ltr" lang="fr">
+<head>
+	<title>{% trans "Réservation RMLL" %} - {% block title %}{% endblock %}</title>
+	<link rel="shortcut icon" type="image/png" href="/site_media/images/favicon.png" />
+	<link rel="stylesheet" href="/site_media/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/site_media/css/resa.css" type="text/css" />
+	{% block extrahead %}{% endblock %}
+</head>
+<body>
+	<div id="page">
+		<div id="head">
+			<div id="acces"></div>
+			<a id="mainlink" href="http://2009.rmll.info/" alt="Nantes 2009 : Rendez-vous libres !">&nbsp;</a>
+			<h1>10<sup>es</sup> Rencontres Mondiales du Logiciel Libre</h1>
+			<ul id="menu2">
+				<li>
+					<a href="/">{% trans "Réservation" %}</a>
+				</li>
 			</ul>
 		</div>
-		<!-- END #header -->
-		<div id="content">
-			{% block columnwrap %}
-				<div id="content-main">
-				{% block content %}{% endblock %}
-				</div>
-				<!-- END #content-main -->
-			{% endblock %}
-		</div>
-		<!-- END #content -->
-		<div id="footer">
-			<p>2000-{% now "Y" %} <a href="">RMLL.info</a></p>
-		</div>
-		<!-- END #footer -->
-	</div>
-	<!-- END #container -->
-	</body>
-</html>
 
+		<div id="content">
+			{% block content %}{% endblock %}
+        </div>
+		<div id="footer">
+			<p>2000-{% now "Y" %} <a href="http://rmll.info/">RMLL.info</a></p>
+		</div>
+	</div>
+</body>
+</html>

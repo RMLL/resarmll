@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-06 21:44+0200\n"
+"POT-Creation-Date: 2009-03-22 12:00+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,27 +16,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: account/models.py:13
-msgid "adresse"
+#: account/forms.py:34
+msgid "Cet identifiant est déjà utilisé"
 msgstr ""
 
-#: account/models.py:14
-msgid "note"
+#: account/forms.py:38
+msgid "Le mot de passe et sa confirmation ne sont pas identiques"
 msgstr ""
 
-#: account/models.py:15
-msgid "Clé gpg"
+#: account/models.py:10
+msgid "Texte du badge"
+msgstr ""
+
+#: account/models.py:11
+msgid "Fingerprint PGP/GPG"
 msgstr ""
 
 #: account/models.py:16
-msgid "Clé de remise à zéro du mot de passe"
+msgid "Note(s)"
 msgstr ""
 
-#: account/models.py:19
-msgid "Profil utilisateur"
+#: account/models.py:17
+msgid "Reset hash"
 msgstr ""
 
 #: account/models.py:20
+msgid "Profil utilisateur"
+msgstr ""
+
+#: account/models.py:21
 msgid "Profils utilisateurs"
 msgstr ""
 
@@ -68,34 +76,106 @@ msgstr ""
 msgid "Badges"
 msgstr ""
 
+#: templates/base.html:6
+msgid "Réservation RMLL"
+msgstr ""
+
+#: templates/base.html:23
+msgid "Réservation"
+msgstr ""
+
+#: templates/account/login.html:5
+msgid "Identification"
+msgstr ""
+
 #: templates/account/login.html:9
 msgid "Identifiez-vous"
 msgstr ""
 
-#: templates/account/login.html:20
+#: templates/account/login.html:13
+msgid "L'authentification a échouée"
+msgstr ""
+
+#: templates/account/login.html:21 templates/account/register.html:21
 msgid "Identifiant :"
 msgstr ""
 
-#: templates/account/login.html:26
+#: templates/account/login.html:27 templates/account/register.html:27
 msgid "Mot de passe :"
 msgstr ""
 
-#: templates/account/login.html:31
+#: templates/account/login.html:32
 msgid "Se connecter"
 msgstr ""
 
-#: templates/account/login.html:36
+#: templates/account/login.html:37
 msgid "Vous n'avez pas encore de compte ? Enregistrez-vous ici :"
 msgstr ""
 
-#: templates/account/login.html:36
+#: templates/account/login.html:37
 msgid "S'enregistrer"
 msgstr ""
 
-#: templates/account/login.html:39
+#: templates/account/login.html:40
 msgid "Mot de passe oublié ? Faites-vous envoyer votre mot de passe :"
 msgstr ""
 
-#: templates/account/login.html:39
+#: templates/account/login.html:40
 msgid "Envoyer le mot de passe"
+msgstr ""
+
+#: templates/account/logout.html:5 templates/account/logout.html.py:10
+msgid "Déconnexion"
+msgstr ""
+
+#: templates/account/logout.html:12
+msgid "Le déconnexion s'est déroulée avec succès"
+msgstr ""
+
+#: templates/account/logout.html:15
+msgid "Connexion"
+msgstr ""
+
+#: templates/account/register.html:9
+msgid "Inscrivez vous"
+msgstr ""
+
+#: templates/account/register.html:13
+msgid "L'inscription a échouée"
+msgstr ""
+
+#: templates/account/register.html:33
+msgid "Mot de passe (confirmation) :"
+msgstr ""
+
+#: templates/account/register.html:39
+msgid "Adresse email :"
+msgstr ""
+
+#: templates/account/register.html:45
+msgid "Nom :"
+msgstr ""
+
+#: templates/account/register.html:51
+msgid "Prénom :"
+msgstr ""
+
+#: templates/account/register.html:57
+msgid "Pays :"
+msgstr ""
+
+#: templates/account/register.html:63
+msgid "Langue :"
+msgstr ""
+
+#: templates/account/register.html:69
+msgid "Texte du badge :"
+msgstr ""
+
+#: templates/account/register.html:75
+msgid "Empreinte GPG/PGP :"
+msgstr ""
+
+#: templates/account/register.html:80
+msgid "S'inscrire"
 msgstr ""
