@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 {% load i18n %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" dir="ltr" lang="fr">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{LANGUAGE_CODE}}" dir="ltr" lang="{{LANGUAGE_CODE}}">
 <head>
 	<title>{% trans "Réservation RMLL" %} - {% block title %}{% endblock %}</title>
 	<link rel="shortcut icon" type="image/png" href="/site_media/images/favicon.png" />
@@ -21,7 +21,13 @@
 				</li>
 			</ul>
 		</div>
-
+        <div id="icons">
+            {% for lang in LANGUAGES%}
+            <form action="/i18n/setlang/" method="post">
+                <input type="hidden" name="language" value="{{lang.0}}" />
+                <input type="image" src="/site_media/images/drapeaux/{{lang.0}}.png" alt="{{lang.1}}"/>
+            </form>{%endfor%}
+        </div>
 		<div id="content">
 			{% block content %}{% endblock %}
         </div>

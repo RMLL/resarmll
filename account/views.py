@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
+from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import render_to_response
 from django import forms
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from account.forms import UserForm, UserFormModify
+from django.template import loader, Context, RequestContext
+from django.core.mail import send_mail
+from account.forms import UserForm, UserFormModify, LostPasswordForm
 from account.models import UserProfile
 
 def register(request,
@@ -41,22 +44,48 @@ def register(request,
                 return HttpResponseRedirect('/account/register/complete/')
     else:
         form = UserForm()
+    response_dct = {'form': form, 'syserr': syserr}
+    return render_to_response(template_name, response_dct, 
+                              context_instance=RequestContext(request))
 
-    return render_to_response(template_name, {'form': form, 'syserr': syserr})
-
-def resendpwd(request,
-            template_name='account/resendpwd.html',
+def lostpassword(request,
+            template_name='account/lostpassword.html',
             extra_context=None):
     if request.user.is_authenticated():
         return HttpResponseRedirect('/account/profile/')
 
-    return render_to_response(template_name)
+    notfound = False
+    if request.method == 'POST':
+        form = LostPasswordForm(request.POST)
+        if form.is_valid():
+            try:
+                cur_user = User.objects.get(username=form.cleaned_data['username'],
+                            email=form.cleaned_data['email'])
+            except User.DoesNotExist:
+                notfound = True
+            else:
+                t = loader.get_template('account/lostpassword/mail_lostpassword.txt')
+                c = Context({
+                        'first_name': cur_user.first_name,
+                        'last_name': cur_user.last_name,
+                        'url': 'http://plop'});
+                send_mail(_(u"Perte de votre mot de passe"), t.render(c),
+                    'dev@rmll.info', [cur_user.email])
+                return HttpResponseRedirect('/account/lostpassword/sent/')
+    else:
+        form = LostPasswordForm()
+
+    response_dct = {'form': form, 'notfound': notfound}
+    return render_to_response(template_name, response_dct,
+                              context_instance=RequestContext(request))
 
 @login_required
 def profile(request,
             template_name='account/profile.html',
             extra_context=None):
-    return render_to_response(template_name, {'user': request.user})
+    response_dct = {'user': request.user}
+    return render_to_response(template_name, response_dct,
+                              context_instance=RequestContext(request))
 
 def profile_modify(request,
             template_name='account/profile/modify.html',
@@ -87,5 +116,6 @@ def profile_modify(request,
     else:
         form = UserFormModify()
         form.fill_from_user(cur_user)
-
-    return render_to_response(template_name, {'form': form, 'syserr': syserr})
+    response_dct = {'form': form, 'syserr': syserr}
+    return render_to_response(template_name, response_dct,
+                              context_instance=RequestContext(request))

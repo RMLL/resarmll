@@ -19,6 +19,7 @@ urlpatterns = patterns('',
 	(r'^admin/(.*)', admin.site.root),
 	(r'^$', redirect_to, {'url': 'account/'}),
 	(r'^account/', include('account.urls')),
+    (r'^i18n/', include('django.conf.urls.i18n')),
 )
 
 if settings.DEBUG:

@@ -3,7 +3,7 @@
 from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
 from django.contrib.auth import views as auth_views
-from account.views import register, profile, profile_modify, resendpwd
+from account.views import register, profile, profile_modify, lostpassword
 from django.views.generic.simple import redirect_to
 
 urlpatterns = patterns ('',
@@ -28,10 +28,14 @@ urlpatterns = patterns ('',
         direct_to_template,
         {'template': 'account/register/complete.html'},
         name='account_register_complete'),
-    url(r'^resendpwd/$',
-        resendpwd,
-        {'template_name': 'account/resendpwd.html'},
-        name='account_resendpwd'),
+    url(r'^lostpassword/$',
+        lostpassword,
+        {'template_name': 'account/lostpassword.html'},
+        name='account_lostpassword'),
+    url(r'^lostpassword/sent/$',
+        direct_to_template,
+        {'template': 'account/lostpassword/sent.html'},
+        name='account_lostpassword_sent'),
     url(r'^profile/$',
         profile,
         {'template_name': 'account/profile.html'},
