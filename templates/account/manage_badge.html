@@ -1,0 +1,27 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "User badge" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    {% include "account/menu_manager.html" %}
+
+    <h2>{% trans "Badge" %}</h2>
+
+    <div id="badge">
+        <div>
+            <a href="{{ badge_big_png }}">
+                <img src="{{ badge_png }}" alt="{% trans "The badge" %}" />
+            </a>
+        </div>
+        <div>
+            <a href="{{ badge_pdf }}">{% trans "Download the badge with the right size and ready to print (PDF)" %}</a>
+        </div>
+    </div>
+
+{% endblock %}

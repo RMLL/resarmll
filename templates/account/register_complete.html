@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Registration complete" %}{% endblock %}
+
+{% block content %}
+
+    <h2>{% trans "Registration complete" %}</h2>
+
+    <div class="main-success">
+        {% trans "Registration successfully completed. You may now log in." %}
+    </div>
+    <div>
+        <a href="/account/login/">{% trans "Log in" %}</a>
+    </div>
+
+{% endblock %}

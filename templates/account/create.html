@@ -1,0 +1,59 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+{% load markup %}
+
+{% block title %}{% trans "Create an account" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Create an account" %}</h2>
+    {% if form.errors or syserr %}
+        <div class="main-error">
+            {% if syserr %}
+                {% trans "Operation failed (internal error)" %}
+            {% else %}
+                {% trans "Operation failed (field(s) missing or incomplete)" %}
+            {% endif %}
+        </div>
+    {% endif %}
+
+    {% if create_success %}
+        <div class="main-success">
+            {% trans "User successfully created" %}
+        </div>
+    {% endif %}
+
+    <div id="account_create">
+        <div class="mandfields">
+            {% blocktrans with '<span class="mark">*</span>' as mark %}Fields prefixed with a {{ mark }} are mandatory.{% endblocktrans %}
+        </div>
+        <form method="post" action="">
+            {% for field in form %}
+                <div class="field{% if field.errors %} field-error{% endif %}">
+                    {% if field.errors %} <div class="error">{{ field.errors|join:", " }}</div>{% endif %}
+
+                    <label for="id_{{ field.name }}">
+                        {% if field.field.required %}<span class="mark">*</span>{% endif %}{{ field.label }}
+                    </label>
+
+                    <div class="widget">
+                        {{ field }}
+                    </div>
+
+                    {% if field.help_text %}
+                        <div class="help">
+                        {{ field.help_text|markdown }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <div class="field sub">
+                <input type="submit" value="{% trans "Save" %}" />
+            </div>
+        </form>
+    </div>
+{% endblock %}

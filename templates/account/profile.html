@@ -1,0 +1,93 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Your account" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Your account" %}</h2>
+
+    <div id="profile">
+        <div class="field">
+            <div class="label">{% trans "Username:" %}</div>
+            {{ user.username }}
+        </div>
+
+        <div class="field">
+            <div class="label">{% trans "Email address:" %}</div>
+            {{ user.email }}
+        </div>
+
+        <div class="field">
+            <div class="label">{% trans "Gender:" %}</div>
+            {% ifequal user.get_profile.gender '' %}
+                <em class="notset">{% trans "not set" %}</em>
+            {% else %}
+                {{ user.get_profile.get_gender_display }}
+            {% endifequal %}
+        </div>
+
+        <div class="field">
+            <div class="label">{% trans "Last name:" %}</div>
+            {{ user.last_name }}
+        </div>
+
+        <div class="field">
+            <div class="label">{% trans "First name:" %}</div>
+            {{ user.first_name }}
+        </div>
+
+        <div class="field">
+            <div class="label">{% trans "Address:" %}</div>
+            <div class="areatext">
+                {% ifequal user.get_profile.address.strip '' %}
+                    <em class="notset">{% trans "not set" %}</em>
+                {% else %}
+                    {{ user.get_profile.address|linebreaksbr }}
+                {% endifequal %}
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="label">{% trans "Language:" %}</div>
+            {{ user.get_profile.get_language_display }}
+        </div>
+
+        <div class="field">
+            <div class="label">{% trans "Country:" %}</div>
+            {{ user.get_profile.country }}
+        </div>
+
+        <div class="field">
+            <div class="label">{% trans "Badge type:" %}</div>
+            {{ user.get_profile.badge_type }}
+        </div>
+
+        <div class="field">
+            <div class="label">{% trans "Badge text:" %}</div>
+            {% ifequal user.get_profile.badge_text '' %}
+                <em class="notset">{% trans "not set" %}</em>
+            {% else %}
+                {{ user.get_profile.badge_text }}
+            {% endifequal %}
+        </div>
+
+        <div class="field">
+            <div class="label">{% trans "PGP/GPG Fingerprint:" %}</div>
+            {% ifequal user.get_profile.fingerprint '' %}
+                <em class="notset">{% trans "not set" %}</em>
+            {% else %}
+                {{ user.get_profile.render_fingerprint }}
+            {% endifequal %}
+        </div>
+
+        <div class="action">
+            <a href="/account/profile/modify/">{% trans "Modify" %}</a>
+        </div>
+    </div>
+
+{% endblock %}

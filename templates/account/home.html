@@ -1,0 +1,24 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Home" %}</h2>
+
+    <div id="home">
+        <h3>
+            {% trans "Welcome to the booking program" %}
+        </h3>
+        <div class="main-warn">
+            {% blocktrans %}Orders not payed after July 3th will be removed. There are some exceptions with people coming from abroad which should contact the treasurer if they want to pay on arrival.{% endblocktrans %}
+            <p><strong>{% trans "Treasurer:" %}</strong> {{ treasurer_name }} &lt;<a href="mailto:{{ treasurer_email }}">{{ treasurer_email }}</a>&gt;</p>
+        </div>
+    </div>
+
+{% endblock %}

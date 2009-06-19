@@ -1,0 +1,38 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "User Wifi access" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    {% include "account/menu_manager.html" %}
+
+    <h2>{% trans "Wifi access" %}</h2>
+
+    <div id="maange_wifi">
+
+        <div class="field">
+            <div class="label">{% trans "Username:" %}</div>
+            {% ifequal user.get_profile.network None %}
+                <em class="notset">{% trans "not set" %}</em>
+            {% else %}
+                {{ user.get_profile.network.username }}
+            {% endifequal %}
+        </div>
+
+        <div class="field">
+            <div class="label">{% trans "Password:" %}</div>
+            {% ifequal user.get_profile.network None %}
+                <em class="notset">{% trans "not set" %}</em>
+            {% else %}
+                {{ user.get_profile.network.password }}
+            {% endifequal %}
+        </div>
+
+    </div>
+
+{% endblock %}

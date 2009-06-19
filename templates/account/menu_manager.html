@@ -1,0 +1,19 @@
+{% load i18n %}
+
+{% if user.is_staff or user.get_profile.is_manager %}
+    {% if user_obj %}
+        <h2>{% trans "User:" %} {{ user_obj.get_full_name }} ({{ user_obj.username }} - {{user_obj.email }})</h2>
+        <div class="menu-manager">
+            <a href="/resa/manage_orders/{{ user_obj.id }}">{% trans "Orders" %}</a></li> -
+            <a href="/resa/manage_cart/{{ user_obj.id }}">{% trans "Cart" %}</a></li> -
+            <a href="/account/edit/{{ user_obj.id }}">{% trans "Account" %}</a></li> -
+            <a href="/account/manage_badge/{{ user_obj.id }}">{% trans "Badge" %}</a></li> -
+            <a href="/account/manage_wifi/{{ user_obj.id }}">{% trans "Wifi access" %}</a></li> -
+            <a href="/resa/manage_compta/{{ user_obj.id }}">{% trans "Accounting" %}</a></li>
+        </div>
+    {% else %}
+        <div class="main-error">
+            {% trans "Cannot find the user to edit (check permissions)" %}
+        </div>
+    {% endif %}
+{% endif %}

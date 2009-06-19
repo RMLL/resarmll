@@ -1,0 +1,27 @@
+{% load i18n %}
+
+<div class="menu">
+    <ul>
+        <li><a href="/account/home/">{% trans "Home" %}</a></li>
+        <li><a href="/account/profile/">{% trans "Your account" %}</a></li>
+        <li><a href="/account/profile/badge/">{% trans "Your badge" %}</a></li>
+        <li><a href="/resa/catalog/">{% trans "Catalog" %}</a></li>
+        <li><a href="/resa/cart/">{% trans "Your cart" %}</a></li>
+        <li><a href="/resa/orders/">{% trans "Your orders" %}</a></li>
+        <li><a href="/account/wifi/">{% trans "Wifi access" %}</a></li>
+        <li><a href="/account/logout/">{% trans "Log out" %}</a></li>
+    </ul>
+</div>
+
+{% if user.is_staff or user.get_profile.is_manager %}
+    <div class="menu">
+        <ul>
+            {% if user.is_staff %}
+                <li><a href="/admin/">{% trans "Admin" %}</a></li>
+            {% endif %}
+            <li><a href="/account/create/">{% trans "Create user" %}</a></li>
+            <li><a href="/account/search/">{% trans "Search user" %}</a></li>
+            <li><a href="/resa/stocks/">{% trans "Stocks" %}</a></li>
+        </ul>
+    </div>
+{% endif %}
