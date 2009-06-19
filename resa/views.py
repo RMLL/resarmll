@@ -100,8 +100,9 @@ def orders_details(request, tmpl, order_id=0):
     treasurer_email = settings.TREASURER_EMAIL
     check_payable_to = settings.CHECK_PAYABLE_TO
     ip_addr = request.META['REMOTE_ADDR']
-    cbp = CyberPlus(request)
-    cbpl_err, cbpl_code, cbpl_form = cbp.form(order, request.user, request.LANGUAGE_CODE, ip_addr, url)
+    if order:
+        cbp = CyberPlus(request)
+        cbpl_err, cbpl_code, cbpl_form = cbp.form(order, request.user, request.LANGUAGE_CODE, ip_addr, url)
     return tmpl, locals()
 
 @login_required
