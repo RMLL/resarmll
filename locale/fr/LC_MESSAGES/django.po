@@ -1,507 +1,526 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+# Emmanuel Bouthenot <kolter@openics.org>, 2009.
+# Emmanuel Bouthenot <e.bouthenot@alienor.net>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-18 12:16+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2009-06-18 12:15+0200\n"
+"PO-Revision-Date: 2009-06-18 15:20+0200\n"
+"Last-Translator: Emmanuel Bouthenot <e.bouthenot@alienor.net>\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: account/forms.py:15 templates/account/login.html:25
 #: templates/account/manage_wifi.html:19 templates/account/profile.html:16
 #: templates/account/wifi.html:17
 msgid "Username:"
-msgstr ""
+msgstr "Nom d'utilisateur :"
 
 #: account/forms.py:19 templates/account/login.html:31
 #: templates/account/manage_wifi.html:28 templates/account/wifi.html:26
 msgid "Password:"
-msgstr ""
+msgstr "Mot de passe :"
 
 #: account/forms.py:22
 msgid "The password must contain at least 5 characters."
-msgstr ""
+msgstr "Le mot de passe doit contenir au moins 5 caractères."
 
 #: account/forms.py:24 templates/account/password_reset_confirm.html:28
 msgid "Confirm password:"
-msgstr ""
+msgstr "Mot de passe (confirmation) :"
 
 #: account/forms.py:27 templates/account/password_reset.html:21
 msgid "E-mail address:"
-msgstr ""
+msgstr "Adresse email :"
 
 #: account/forms.py:29 templates/account/profile.html:26
 msgid "Gender:"
-msgstr ""
+msgstr "Sexe :"
 
 #: account/forms.py:30
 msgid "The Gender is not mandatory but could be useful for room distribution."
 msgstr ""
+"Le sexe n'est pas obligatoire mais il pourra être utile lors de la "
+"répartition des chambres."
 
 #: account/forms.py:32 templates/account/profile.html:35
 msgid "Last name:"
-msgstr ""
+msgstr "Nom :"
 
 #: account/forms.py:34 templates/account/profile.html:40
 msgid "First name:"
-msgstr ""
+msgstr "Prénom :"
 
 #: account/forms.py:36 templates/account/profile.html:45
 msgid "Address:"
-msgstr ""
+msgstr "Adresse :"
 
 #: account/forms.py:38
 msgid "Address is useful for speakers or people who'll get a refund."
 msgstr ""
+"L'adresse est utile pour les conférenciers ou les personnes qui "
+"bénéficieront de remboursements."
 
 #: account/forms.py:40 templates/account/profile.html:56
 msgid "Language:"
-msgstr ""
+msgstr "Langue :"
 
 #: account/forms.py:42 templates/account/profile.html:61
 msgid "Country:"
-msgstr ""
+msgstr "Pays."
 
 #: account/forms.py:44 templates/account/profile.html:71
 msgid "Badge text:"
-msgstr ""
+msgstr "Texte du badge"
 
 #: account/forms.py:46
 msgid "Free text printed on your badge (should not be too long)."
-msgstr ""
+msgstr "Texte libre imprimé sur votre badge (de préférence pas trop long)."
 
 #: account/forms.py:48 templates/account/profile.html:80
 msgid "PGP/GPG Fingerprint:"
-msgstr ""
+msgstr "Empreinte PGP/GPG :"
 
 #: account/forms.py:51
 msgid "PGP/GPG fingerprint prefixed by its size, sample:"
-msgstr ""
+msgstr "Empreinte PGP/GPG préfixé par sa taille, exemple :"
 
 #: account/forms.py:61
 msgid "This username is already used"
-msgstr ""
+msgstr "Ce nom d'utilisateur est déjà utilisé"
 
 #: account/forms.py:65
 msgid "The confirmation password does not match the original password"
 msgstr ""
+"Le mot de passe de confirmation ne concorde pas avec le mot de passe "
+"d'origine"
 
 #: account/forms.py:88 templates/account/profile.html:66
 msgid "Badge type:"
-msgstr ""
+msgstr "Type de badge :"
 
 #: account/forms.py:91
 msgid "Notes:"
-msgstr ""
+msgstr "Notes :"
 
 #: account/forms.py:93
 msgid "Payment later:"
-msgstr ""
+msgstr "Paiement décalé :"
 
 #: account/models.py:11
 msgid "Female"
-msgstr ""
+msgstr "Féminin"
 
 #: account/models.py:11
 msgid "Male"
-msgstr ""
+msgstr "Masculin"
 
 #: account/models.py:14 templates/account/search.html:32
 msgid "Username"
-msgstr ""
+msgstr "Nom d'utilisateur"
 
 #: account/models.py:15
 msgid "Password"
-msgstr ""
+msgstr "Mot de passe :"
 
 #: account/models.py:22
 msgid "Is manager"
-msgstr ""
+msgstr "Superviseur"
 
 #: account/models.py:23
 msgid "Gender"
-msgstr ""
+msgstr "Sexe"
 
 #: account/models.py:25
 msgid "Address"
-msgstr ""
+msgstr "Adresse"
 
 #: account/models.py:26 resa/models.py:92 resa/widgets.py:12
 msgid "Language"
-msgstr ""
+msgstr "Langue"
 
 #: account/models.py:29
 msgid "Badge text"
-msgstr ""
+msgstr "Texte du badge"
 
 #: account/models.py:30
 msgid "PGP/GPG Fingerprint"
-msgstr ""
+msgstr "Empreinte PGP/GPG"
 
 #: account/models.py:31
 msgid "Note(s)"
-msgstr ""
+msgstr "Note(s)"
 
 #: account/models.py:33
 msgid "Payment later"
-msgstr ""
+msgstr "Paiement décalé"
 
 #: account/models.py:57
 msgid "User profile"
-msgstr ""
+msgstr "Profile utilisateur"
 
 #: account/models.py:58
 msgid "Users Profiles"
-msgstr ""
+msgstr "Profils des utilisateurs"
 
 #: compta/models.py:10 compta/models.py:25 resa/models.py:179
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: compta/models.py:11 compta/models.py:26 compta/models.py:42
 #: compta/models.py:59 resa/stock.py:7 templates/resa/manage_compta.html:32
 msgid "Label"
-msgstr ""
+msgstr "Libellé"
 
 #: compta/models.py:17
 msgid "Accounting plan"
-msgstr ""
+msgstr "Plan comptable"
 
 #: compta/models.py:18
 msgid "Accounting plans"
-msgstr ""
+msgstr "Plans comptables"
 
 #: compta/models.py:28
 msgid "Internal"
-msgstr ""
+msgstr "Interne"
 
 #: compta/models.py:34
 msgid "Payment method"
-msgstr ""
+msgstr "Méthode de paiement"
 
 #: compta/models.py:35
 msgid "Payment methods"
-msgstr ""
+msgstr "Méthodes de paiement"
 
 #: compta/models.py:53
 msgid "Finance account"
-msgstr ""
+msgstr "Compte financier"
 
 #: compta/models.py:54
 msgid "Finance accounts"
-msgstr ""
+msgstr "Comptes financiers"
 
 #: compta/models.py:60
 msgid "Comment(s)"
-msgstr ""
+msgstr "Commentaire(s)"
 
 #: compta/models.py:61
 msgid "Amount"
-msgstr ""
+msgstr "Montant"
 
 #: compta/models.py:63 templates/resa/manage_compta.html:29
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #: compta/models.py:64 resa/orders.py:16
 msgid "Payment date"
-msgstr ""
+msgstr "Date de paiement"
 
 #: compta/models.py:76
 msgid "Operation"
-msgstr ""
+msgstr "Opération"
 
 #: compta/models.py:77
 msgid "Operations"
-msgstr ""
+msgstr "Opérations"
 
 #: compta/models.py:83
 msgid "Bank account"
-msgstr ""
+msgstr "Compte bancaire"
 
 #: compta/models.py:84
 msgid "Bank accounts"
-msgstr ""
+msgstr "Comptes bancaires"
 
 #: compta/models.py:89
 msgid "Supplier account"
-msgstr ""
+msgstr "Compte fournisseur"
 
 #: compta/models.py:90
 msgid "Suppliers accounts"
-msgstr ""
+msgstr "Compte fournisseurs"
 
 #: compta/models.py:95
 msgid "Client account"
-msgstr ""
+msgstr "Compte client"
 
 #: compta/models.py:96
 msgid "Clients accounts"
-msgstr ""
+msgstr "Comptes client"
 
 #: compta/models.py:102
 msgid "Product account"
-msgstr ""
+msgstr "Compte produit"
 
 #: compta/models.py:103
 msgid "Products accounts"
-msgstr ""
+msgstr "Comptes produit"
 
 #: compta/models.py:108
 msgid "Charge account"
-msgstr ""
+msgstr "Compte de charge "
 
 #: compta/models.py:109
 msgid "Charges accounts"
-msgstr ""
+msgstr "Comptes de charge"
 
 #: resa/forms.py:110
 msgid "Payment Method:"
-msgstr ""
+msgstr "Méthode de paiement :"
 
 #: resa/forms.py:113 templates/resa/manage_orders.html:50
 msgid "Note:"
-msgstr ""
+msgstr "Note :"
 
 #: resa/forms.py:116 templates/resa/manage_orders.html:59
 msgid "Remove:"
-msgstr ""
+msgstr "Supprimer"
 
 #: resa/models.py:103 resa/models.py:108
 msgid "Value"
-msgstr ""
+msgstr "Valeur"
 
 #: resa/models.py:126
 msgid "Simple label"
-msgstr ""
+msgstr "Libellé simple"
 
 #: resa/models.py:127
 msgid "Extended label"
-msgstr ""
+msgstr "Libellé étendu"
 
 #: resa/models.py:128 resa/orders.py:112 templates/resa/cart_list.html:39
 #: templates/resa/manage_cart.html:54
 msgid "Price"
-msgstr ""
+msgstr "Prix"
 
 #: resa/models.py:130 resa/stock.py:11
 msgid "Sorting"
-msgstr ""
+msgstr "Order de tri"
 
 #: resa/models.py:131
 msgid "Enabled"
-msgstr ""
+msgstr "Activé"
 
 #: resa/models.py:135
 msgid "Article"
-msgstr ""
+msgstr "Article"
 
 #: resa/models.py:178 resa/models.py:188
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: resa/models.py:184
 msgid "Country"
-msgstr ""
+msgstr "Pays"
 
 #: resa/models.py:185
 msgid "Countries"
-msgstr ""
+msgstr "Pays"
 
 #: resa/models.py:189
 msgid "Alternate name"
-msgstr ""
+msgstr "Nom alternatif"
 
 #: resa/models.py:190
 msgid "Color"
-msgstr ""
+msgstr "Couleur"
 
 #: resa/models.py:191
 msgid "Default"
-msgstr ""
+msgstr "Défaut"
 
 #: resa/models.py:197 templates/account/manage_badge.html:14
 #: templates/account/menu_manager.html:10 templates/account/search.html:36
 msgid "Badge"
-msgstr ""
+msgstr "Badge"
 
 #: resa/models.py:198
 msgid "Badges"
-msgstr ""
+msgstr "Badges"
 
 #: resa/models.py:201
 msgid "Transaction"
-msgstr ""
+msgstr "Opération"
 
 #: resa/orders.py:15
 msgid "Creation date"
-msgstr ""
+msgstr "Date de création"
 
 #: resa/orders.py:19
 msgid "Order"
-msgstr ""
+msgstr "Commande"
 
 #: resa/orders.py:20 templates/account/menu_manager.html:7
 msgid "Orders"
-msgstr ""
+msgstr "Commandes"
 
 #: resa/orders.py:113 templates/resa/cart_list.html:41
 #: templates/resa/manage_cart.html:56 templates/resa/order_details.html:18
 #: templates/resa/order_details_extended.html:26
 #: templates/resa/orders_pdf.xml:75
 msgid "Quantity"
-msgstr ""
+msgstr "Quantité"
 
 #: resa/orders.py:114 templates/resa/order_details_extended.html:27
 msgid "Distributed quantity"
-msgstr ""
+msgstr "Quantité distribuée"
 
 #: resa/orders.py:144 templates/resa/orders_details.html:5
 msgid "Order detail"
-msgstr ""
+msgstr "Détail de la commande"
 
 #: resa/orders.py:145
 msgid "Orders details"
-msgstr ""
+msgstr "Détails des commandes"
 
 #: resa/stock.py:8
 msgid "Quantity total"
-msgstr ""
+msgstr "Quantité totale"
 
 #: resa/stock.py:9
 msgid "Quantity ordered"
-msgstr ""
+msgstr "Quantité commandée"
 
 #: resa/stock.py:10
 msgid "Quantity paid"
-msgstr ""
+msgstr "Quantité payée"
 
 #: resa/stock.py:14 templates/resa/cart_list.html:40
 #: templates/resa/manage_cart.html:55
 msgid "Stock"
-msgstr ""
+msgstr "Stock"
 
 #: resa/views.py:35 resa/views.py:218
 msgid "Product successfully added to cart"
-msgstr ""
+msgstr "Produit ajouté au panier avec succès"
 
 #: resa/views.py:37 resa/views.py:220
 msgid "Error while adding product to cart"
-msgstr ""
+msgstr "Erreur lors de l'ajout du produit au panier"
 
 #: resa/views.py:40 resa/views.py:223
 msgid "Product successfully removed from cart"
-msgstr ""
+msgstr "Produit supprimé du panier avec succès"
 
 #: resa/views.py:42 resa/views.py:225
 msgid "Error while removing product from cart"
-msgstr ""
+msgstr "Erreur lors de la suppression du produit du panier"
 
 #: resa/views.py:55 resa/views.py:238
 msgid "Product(s) successfully updated"
-msgstr ""
+msgstr "Les produits ont été mis à jour avec succès"
 
 #: resa/views.py:57 resa/views.py:240
 msgid "Error while updating product(s)"
-msgstr ""
+msgstr "Erreur lors de la mise à jour des produits"
 
 #: resa/views.py:59
 msgid ""
 "Unable to confirm your order, one (or more) product(s) in your cart exceed "
 "the available quantity"
 msgstr ""
+"Impossible de confirmer votre commande, l'un des produits de votre panier "
+"dépasse la quantité disponible"
 
 #: resa/views.py:76 resa/views.py:248
 msgid "Order successfully confirmed"
-msgstr ""
+msgstr "Commande confirmée avec succès"
 
 #: resa/views.py:150
 msgid "Order sucessfully marked as paid"
-msgstr ""
+msgstr "Commande marquée comme payée avec succès"
 
 #: resa/views.py:157
 msgid "Order sucessfully removed"
-msgstr ""
+msgstr "Commande supprimée avec succès"
 
 #: resa/views.py:168
 msgid "Order sucessfully updated"
-msgstr ""
+msgstr "Commande mise à jour avec succès"
 
 #: resa/views.py:243
 msgid ""
 "Unable to confirm this order, one (or more) product(s) in the cart exceed "
 "the available quantity"
 msgstr ""
+"Impossible de confirmer votre commande, l'un des produits de votre panier "
+"dépasse la quantité disponible"
 
 #: resa/views.py:291 resa/views.py:328 templates/resa/orders_details.html:16
 msgid "This order is not yours."
-msgstr ""
+msgstr "Cette commande n'est pas la vôtre"
 
 #: resa/views.py:294
 #, python-format
 msgid "It seems that PayPal did not accept your payment (Code: %s)."
-msgstr ""
+msgstr "Il semblerait que PayPal n'ait pas accepté votre paiement (Code : %s)."
 
 #: resa/views.py:296
 msgid ""
 "Your payment has been confirmed by PayPal, you should receive a notification "
 "by email in a few minutes."
 msgstr ""
+"Votre paiement a été confirmé par Paypal, vous devriez recevoir un mail de "
+"confirmation d'ici quelques minutes."
 
 #: resa/views.py:298 resa/views.py:332
 msgid "Unable to find the order related to this payment."
-msgstr ""
+msgstr "Impossible de trouver la commande liée à ce paiement."
 
 #: resa/views.py:318
 msgid "Your payment has been canceled, you could resume it later."
-msgstr ""
+msgstr "Votre paiement a été annulé, vous pouvez le reprendre plus tard."
 
 #: resa/views.py:320
 msgid ""
 "Your payment has been rejected by the bank, you should retry in few days or "
 "try another payment method."
 msgstr ""
+"Votre paiement a été rejeté par la banque, vous devriez réessayer d'ici "
+"quelques jours ou choisir un autre moyen de paiement."
 
 #: resa/views.py:330
 msgid ""
 "Your payment has been confirmed by the bank, you should receive a "
 "notification by email in a few minutes."
 msgstr ""
+"Votre paiement a été confirmé par la banque, vous devriez recevoir un mail "
+"de confirmation d'ici quelques minutes."
 
 #: resa/views.py:334
 msgid ""
 "Your payment has failed, you should retry in few days or try another payment "
 "method."
 msgstr ""
+"Votre paiement a échoué, vous devriez réessayer d'ici quelques jours ou "
+"choisir un autre moyen de paiement."
 
 #: resa/bank/bank.py:50
 #, python-format
 msgid "Commission (fee) order #%d"
-msgstr ""
+msgstr "Commission (frais) commande #%d"
 
 #: resa/bank/cyberplus.py:148
 #, python-format
 msgid "Error while receiving data from the bank: [%s]"
-msgstr ""
+msgstr "Erreur lors de la réception des données de la banque : [%s]"
 
 #: resa/bank/cyberplus.py:155 resa/bank/paypal.py:61
 #, python-format
 msgid "Unable to find order with id: #%d"
-msgstr ""
+msgstr "Impossible de trouver la commande avec le numéro #%d"
 
 #: resa/bank/cyberplus.py:157 resa/bank/paypal.py:63
 #, python-format
 msgid "Order with id: #%d has already been paid"
-msgstr ""
+msgstr "La commande numéro #%d a déjà été payée"
 
 #: resa/bank/cyberplus.py:160 resa/bank/cyberplus.py:163
 #: resa/bank/cyberplus.py:166 resa/bank/cyberplus.py:170
@@ -509,103 +528,103 @@ msgstr ""
 #: resa/bank/paypal.py:79
 #, python-format
 msgid "Wrong parameter '%(arg1)s': [%(arg2)s] instead of [%(arg3)s]"
-msgstr ""
+msgstr "Mauvais paramètre '%(arg1)s': [%(arg2)s] au lieu de [%(arg3)s]"
 
 #: resa/bank/cyberplus.py:179 resa/bank/paypal.py:88
 #, python-format
 msgid "Cannot find user associated to order no: #%d"
-msgstr ""
+msgstr "Impossible de trouver l'utilisateur lié à la commande numéro #%d"
 
 #: resa/bank/cyberplus.py:196
 #, python-format
 msgid "Bank payment - order no #%d"
-msgstr ""
+msgstr "Paiement Bancaire - Commande numéro #%d"
 
 #: resa/bank/paypal.py:105
 #, python-format
 msgid "PayPal payment - order no #%d"
-msgstr ""
+msgstr "Paiement PayPal - Commande numéro #%d"
 
 #: templates/404.html:5 templates/404.html.py:9
 msgid "Error 404"
-msgstr ""
+msgstr "Erreur 404"
 
 #: templates/404.html:12
 msgid "Page not found"
-msgstr ""
+msgstr "Page non trouvée"
 
 #: templates/500.html:5 templates/500.html.py:9
 msgid "Error 500"
-msgstr ""
+msgstr "Erreur 500"
 
 #: templates/500.html:12
 msgid "Internal Error"
-msgstr ""
+msgstr "Erreur interne"
 
 #: templates/base.html:6 templates/base2cols.html:6
 msgid "LSM Booking"
-msgstr ""
+msgstr "Réservation RMLL"
 
 #: templates/base.html:19 templates/base2cols.html:23
 msgid "Booking"
-msgstr ""
+msgstr "Réservation"
 
 #: templates/base.html:22 templates/base2cols.html:26
 msgid "LSM website"
-msgstr ""
+msgstr "Site des RMLL"
 
 #: templates/account/create.html:6 templates/account/create.html.py:13
 msgid "Create an account"
-msgstr ""
+msgstr "Créer un compte"
 
 #: templates/account/create.html:17 templates/account/edit.html:22
 #: templates/account/profile_modify.html:17
 msgid "Operation failed (internal error)"
-msgstr ""
+msgstr "L'opération a échouée (erreur interne)"
 
 #: templates/account/create.html:19 templates/account/edit.html:24
 #: templates/account/profile_modify.html:19
 msgid "Operation failed (field(s) missing or incomplete)"
-msgstr ""
+msgstr "L'opération a échoué (données manquantes ou incomplètes)"
 
 #: templates/account/create.html:26
 msgid "User successfully created"
-msgstr ""
+msgstr "Utilisateur créé avec succès"
 
 #: templates/account/create.html:32 templates/account/edit.html:37
 #: templates/account/profile_modify.html:26 templates/account/register.html:23
 #, python-format
 msgid "Fields prefixed with a %(mark)s are mandatory."
-msgstr ""
+msgstr "Les champs préfixés par %(mark)s sont obligatoires."
 
 #: templates/account/create.html:55 templates/account/edit.html:60
 #: templates/account/profile_modify.html:49
 #: templates/resa/manage_orders.html:52 templates/resa/manage_orders.html:61
 #: templates/resa/order_details_extended.html:50
 msgid "Save"
-msgstr ""
+msgstr "Enregistrer"
 
 #: templates/account/edit.html:6
 msgid "User account"
-msgstr ""
+msgstr "Compte utilisateur"
 
 #: templates/account/edit.html:17 templates/account/menu_manager.html:9
 #: templates/resa/manage_compta.html:31
 msgid "Account"
-msgstr ""
+msgstr "Compte"
 
 #: templates/account/edit.html:31
 msgid "User successfully modified"
-msgstr ""
+msgstr "Utilisateur modifié avec succès"
 
 #: templates/account/home.html:5 templates/account/home.html.py:12
 #: templates/account/menu.html:5
 msgid "Home"
-msgstr ""
+msgstr "Accueil"
 
 #: templates/account/home.html:16
 msgid "Welcome to the booking program"
-msgstr ""
+msgstr "Bienvenue dans l'interface de réservation"
 
 #: templates/account/home.html:19
 msgid ""
@@ -613,485 +632,503 @@ msgid ""
 "with people coming from abroad which should contact the treasurer if they "
 "want to pay on arrival."
 msgstr ""
+"Les commandes impayées au 3 juillet seront supprimées. Il y'a cependant des "
+"exceptions pour les personnes venant de l'étranger qui devront contacter le "
+"trésorier si elles veulent payer à leur arrivée."
 
 #: templates/account/home.html:20
 msgid "Treasurer:"
-msgstr ""
+msgstr "Trésorier :"
 
 #: templates/account/login.html:5 templates/account/login.html.py:9
 #: templates/account/login.html:36 templates/account/logout.html:15
 #: templates/account/password_reset_complete.html:18
 #: templates/account/register_complete.html:15
 msgid "Log in"
-msgstr ""
+msgstr "Connexion"
 
 #: templates/account/login.html:13 templates/account/password_reset.html:10
 #: templates/account/password_reset_complete.html:10
 #: templates/account/password_reset_confirm.html:10
 msgid "Operation failed"
-msgstr ""
+msgstr "L'opération a échoué"
 
 #: templates/account/login.html:18
 msgid "Booking will open in a few hours."
-msgstr ""
+msgstr "La réservation ouvrira dans quelques heures."
 
 #: templates/account/login.html:43
 msgid "Don't have an account?"
-msgstr ""
+msgstr "Vous n'avez pas de compte ?"
 
 #: templates/account/login.html:43 templates/account/register.html:6
 #: templates/account/register.html.py:9
 msgid "Sign up"
-msgstr ""
+msgstr "S'inscrire"
 
 #: templates/account/login.html:46
 msgid "Forgot your password?"
-msgstr ""
+msgstr "Mot de passe oublié ?"
 
 #: templates/account/login.html:46
 msgid "Recover my password"
-msgstr ""
+msgstr "Retrouver mon mot de passe"
 
 #: templates/account/logout.html:5 templates/account/logout.html.py:10
 #: templates/account/menu.html:12
 msgid "Log out"
-msgstr ""
+msgstr "Déconnexion"
 
 #: templates/account/logout.html:12
 msgid "Thanks for spending some quality time with the Web site today."
-msgstr ""
+msgstr "Merci pour le temps que vous avez accordé à ce site aujourd'hui."
 
 #: templates/account/manage_badge.html:5
 msgid "User badge"
-msgstr ""
+msgstr "Badge de l'utilisateur"
 
 #: templates/account/manage_badge.html:19
 msgid "The badge"
-msgstr ""
+msgstr "Le badge"
 
 #: templates/account/manage_badge.html:23
 #: templates/account/profile_badge.html:21
 msgid "Download the badge with the right size and ready to print (PDF)"
 msgstr ""
+"Télécharger le badge aux bonnes dimensions et prêt à être imprimé (PDF)"
 
 #: templates/account/manage_wifi.html:5
 msgid "User Wifi access"
-msgstr ""
+msgstr "Accès Wifi de l'utilisateur"
 
 #: templates/account/manage_wifi.html:14 templates/account/menu.html:11
 #: templates/account/menu_manager.html:11 templates/account/wifi.html:5
 #: templates/account/wifi.html.py:12
 msgid "Wifi access"
-msgstr ""
+msgstr "Accès Wifi"
 
 #: templates/account/manage_wifi.html:21 templates/account/manage_wifi.html:30
 #: templates/account/profile.html:28 templates/account/profile.html.py:48
 #: templates/account/profile.html:73 templates/account/profile.html.py:82
 #: templates/account/wifi.html:19 templates/account/wifi.html.py:28
 msgid "not set"
-msgstr ""
+msgstr "Non défini"
 
 #: templates/account/menu.html:6 templates/account/profile.html:5
 #: templates/account/profile.html.py:12
 msgid "Your account"
-msgstr ""
+msgstr "Votre compte"
 
 #: templates/account/menu.html:7 templates/account/profile_badge.html:5
 #: templates/account/profile_badge.html:12
 #: templates/account/profile_badge.html:17
 msgid "Your badge"
-msgstr ""
+msgstr "Votre badge"
 
 #: templates/account/menu.html:8 templates/resa/catalog_list.html:12
 #: templates/resa/catalog_list.html:19
 msgid "Catalog"
-msgstr ""
+msgstr "Catalogue"
 
 #: templates/account/menu.html:9 templates/resa/cart_list.html:5
 #: templates/resa/cart_list.html.py:12
 msgid "Your cart"
-msgstr ""
+msgstr "Votre panier"
 
 #: templates/account/menu.html:10 templates/resa/orders_list.html:5
 #: templates/resa/orders_list.html.py:12
 msgid "Your orders"
-msgstr ""
+msgstr "Vos commandes"
 
 #: templates/account/menu.html:20
 msgid "Admin"
-msgstr ""
+msgstr "Admin"
 
 #: templates/account/menu.html:22
 msgid "Create user"
-msgstr ""
+msgstr "Créer un utilisateur"
 
 #: templates/account/menu.html:23
 msgid "Search user"
-msgstr ""
+msgstr "Recherche d'utilisateurs"
 
 #: templates/account/menu.html:24 templates/resa/stocks.html:5
 #: templates/resa/stocks.html.py:12
 msgid "Stocks"
-msgstr ""
+msgstr "Stocks"
 
 #: templates/account/menu_manager.html:5
 msgid "User:"
-msgstr ""
+msgstr "Utilisateur :"
 
 #: templates/account/menu_manager.html:8 templates/resa/manage_cart.html:16
 msgid "Cart"
-msgstr ""
+msgstr "Panier"
 
 #: templates/account/menu_manager.html:12
 msgid "Accounting"
-msgstr ""
+msgstr "Comptabilité"
 
 #: templates/account/menu_manager.html:16
 msgid "Cannot find the user to edit (check permissions)"
 msgstr ""
+"Impossible de trouver l'utilisateur à modifier (vérifier les permissions)"
 
 #: templates/account/password_reset.html:5
 #: templates/account/password_reset.html:15
 #: templates/account/password_reset_confirm.html:5
 #: templates/account/password_reset_confirm.html:16
 msgid "Password reset"
-msgstr ""
+msgstr "Réinitialisation du mot de passe"
 
 #: templates/account/password_reset.html:16
 msgid ""
 "Forgotten your password? Enter your e-mail address below, and we'll e-mail "
 "instructions for setting a new one."
 msgstr ""
+"Mot de passe oublié ? Saisissez votre adresse e-mail ci-dessous et des "
+"insctructions vous serons envoyées pour en créer un nouveau."
 
 #: templates/account/password_reset.html:26
 msgid "Reset my password"
-msgstr ""
+msgstr "Réinitialisation de mon mot de passe"
 
 #: templates/account/password_reset_complete.html:5
 #: templates/account/password_reset_complete.html:15
 msgid "Password reset complete"
-msgstr ""
+msgstr "Réinitialisation du mot de passe terminée"
 
 #: templates/account/password_reset_complete.html:16
 msgid "Your password has been set.  You may go ahead and log in now."
 msgstr ""
+"Votre nouveau mot de passe a été enregistré. Vous pouver désormais vous "
+"connecter."
 
 #: templates/account/password_reset_confirm.html:17
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr ""
+"Saisissez votre nouveau mot de passe deux fois afin de vérifier s'il est "
+"saisi correctement."
 
 #: templates/account/password_reset_confirm.html:22
 msgid "New password:"
-msgstr ""
+msgstr "Nouveau mot de passe :"
 
 #: templates/account/password_reset_confirm.html:33
 msgid "Change my password"
-msgstr ""
+msgstr "Modifier mon mot de passe"
 
 #: templates/account/password_reset_confirm.html:37
 msgid "Password reset unsuccessful"
-msgstr ""
+msgstr "La réinitialisation du mot de passe a échoué"
 
 #: templates/account/password_reset_confirm.html:38
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
 msgstr ""
+"Le lien de réinitialisation du mot de passe était invalide, il peut avoir "
+"déjà été utilisé. Veuillez refaire la procédure de perte de mot de passe."
 
 #: templates/account/password_reset_done.html:5
 #: templates/account/password_reset_done.html:9
 msgid "Password reset successful"
-msgstr ""
+msgstr "La réinitialisation du mot de passe a été réalisée avec succès."
 
 #: templates/account/password_reset_done.html:12
 msgid ""
 "We've e-mailed you instructions for setting your password to the e-mail "
 "address you submitted. You should be receiving it shortly."
 msgstr ""
+"Vous devriez rapidement recevoir un mail résumant la procédure de "
+"réinitialisation du mot de passe."
 
 #: templates/account/profile.html:21
 msgid "Email address:"
-msgstr ""
+msgstr "Adresse email :"
 
 #: templates/account/profile.html:89
 msgid "Modify"
-msgstr ""
+msgstr "Modifier"
 
 #: templates/account/profile_modify.html:6
 #: templates/account/profile_modify.html:13
 msgid "Modify your account"
-msgstr ""
+msgstr "Modifier votre compte"
 
 #: templates/account/register.html:14
 msgid "Registration failed (internal errors)"
-msgstr ""
+msgstr "L'inscription a échoué (erreur interne)"
 
 #: templates/account/register.html:16
 msgid "Registration failed (field(s) missing or incomplete)"
-msgstr ""
+msgstr "L'inscription a échoué (données manquantes ou incomplètes)"
 
 #: templates/account/register.html:46
 msgid "Register"
-msgstr ""
+msgstr "Inscription"
 
 #: templates/account/register_complete.html:5
 #: templates/account/register_complete.html:9
 msgid "Registration complete"
-msgstr ""
+msgstr "Inscription terminée"
 
 #: templates/account/register_complete.html:12
 msgid "Registration successfully completed. You may now log in."
-msgstr ""
+msgstr "Inscription terminé avec succès. Vous pouvez désormais vous connecter."
 
 #: templates/account/search.html:5 templates/account/search.html.py:12
 msgid "Search a user"
-msgstr ""
+msgstr "Recherche d'utilisateur"
 
 #: templates/account/search.html:16
 msgid "No results"
-msgstr ""
+msgstr "Pas de résultats"
 
 #: templates/account/search.html:23
 msgid "Search pattern:"
-msgstr ""
+msgstr "Motif de la recherche"
 
 #: templates/account/search.html:25
 msgid "ok"
-msgstr ""
+msgstr "ok"
 
 #: templates/account/search.html:33
 msgid "First name"
-msgstr ""
+msgstr "Prénom"
 
 #: templates/account/search.html:34
 msgid "Last name"
-msgstr ""
+msgstr "Nom"
 
 #: templates/account/search.html:35
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: templates/account/search.html:48
 msgid "View"
-msgstr ""
+msgstr "Voir"
 
 #: templates/common/signature_email.txt:2
 msgid "Regards,"
-msgstr ""
+msgstr "Cordialement,"
 
 #: templates/common/signature_email.txt:5
 msgid "The LSM Organization Team"
-msgstr ""
+msgstr "L'équipe d'organisation des RMLL"
 
 #: templates/registration/password_reset_email.html:2
 msgid "You're receiving this e-mail because you requested a password reset"
 msgstr ""
+"Vous recevez ce mail car vous avez demandé une réinitialisation de votre mot "
+"de passe."
 
 #: templates/registration/password_reset_email.html:3
 #, python-format
 msgid "for your user account at %(site_name)s"
-msgstr ""
+msgstr "pour votre compte sur %(site_name)s"
 
 #: templates/registration/password_reset_email.html:5
 msgid "Please go to the following page and choose a new password:"
 msgstr ""
+"Rendez-vous sur la page suivante pour choisir un nouveau mot de passe :"
 
 #: templates/registration/password_reset_email.html:9
 msgid "Your username, in case you've forgotten:"
-msgstr ""
+msgstr "Votre nom d'utilisateur au cas où vous l'auriez oublié :"
 
 #: templates/resa/cart_addxjx.html:16
 msgid "Close"
-msgstr ""
+msgstr "Fermer"
 
 #: templates/resa/cart_list.html:28
 msgid "Your cart is empty"
-msgstr ""
+msgstr "Votre panier est vide"
 
 #: templates/resa/cart_list.html:38 templates/resa/manage_cart.html:53
 #: templates/resa/order_details.html:17
 #: templates/resa/order_details_extended.html:25
 msgid "Product"
-msgstr ""
+msgstr "Produit"
 
 #: templates/resa/cart_list.html:42 templates/resa/manage_cart.html:57
 #: templates/resa/order_details.html:19
 #: templates/resa/order_details_extended.html:28
 msgid "Subtotal"
-msgstr ""
+msgstr "Sous-total"
 
 #: templates/resa/cart_list.html:55 templates/resa/cart_list.html.py:56
 #: templates/resa/manage_cart.html:70 templates/resa/manage_cart.html.py:71
 msgid "Remove from cart"
-msgstr ""
+msgstr "Supprimer du panier"
 
 #: templates/resa/cart_list.html:64 templates/resa/manage_cart.html:79
 msgid "Update Cart"
-msgstr ""
+msgstr "Mettre à jour le panier"
 
 #: templates/resa/cart_list.html:70 templates/resa/manage_cart.html:85
 #: templates/resa/order_details.html:31
 #: templates/resa/order_details_extended.html:56 templates/resa/stocks.html:30
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #: templates/resa/cart_list.html:80
 msgid "Confirm your order"
-msgstr ""
+msgstr "Confimer votre commande"
 
 #: templates/resa/catalog_list.html:23 templates/resa/stocks.html:16
 msgid "No products."
-msgstr ""
+msgstr "Pas de produits"
 
 #: templates/resa/catalog_list.html:39
 msgid "Price:"
-msgstr ""
+msgstr "Prix :"
 
 #: templates/resa/catalog_list.html:41
 msgid "Remaining stock:"
-msgstr ""
+msgstr "Stock restant :"
 
 #: templates/resa/catalog_list.html:46
 msgid "Add to cart"
-msgstr ""
+msgstr "Ajouter au panier"
 
 #: templates/resa/manage_cart.html:5
 msgid "User cart"
-msgstr ""
+msgstr "Panier de l'utilisateur"
 
 #: templates/resa/manage_cart.html:32
 msgid "The cart is empty"
-msgstr ""
+msgstr "Le panier est vide"
 
 #: templates/resa/manage_cart.html:39
 msgid "Products:"
-msgstr ""
+msgstr "Produits :"
 
 #: templates/resa/manage_cart.html:45
 msgid "Add"
-msgstr ""
+msgstr "Ajouter"
 
 #: templates/resa/manage_cart.html:95 templates/resa/manage_orders.html:45
 msgid "Confirm order"
-msgstr ""
+msgstr "Confimer la commande"
 
 #: templates/resa/manage_compta.html:5
 msgid "User operation(s)"
-msgstr ""
+msgstr "Opération(s) de l'utilisateur"
 
 #: templates/resa/manage_compta.html:16
 msgid "Operation(s)"
-msgstr ""
+msgstr "Opérations"
 
 #: templates/resa/manage_compta.html:21
 msgid "No operation(s)"
-msgstr ""
+msgstr "Pas d'opération(s)"
 
 #: templates/resa/manage_compta.html:30
 msgid "Ord."
-msgstr ""
+msgstr "Cmd"
 
 #: templates/resa/manage_compta.html:33
 msgid "Credit"
-msgstr ""
+msgstr "Crédit"
 
 #: templates/resa/manage_compta.html:34
 msgid "Debit"
-msgstr ""
+msgstr "Débit"
 
 #: templates/resa/manage_compta.html:35
 msgid "Pay."
-msgstr ""
+msgstr "Pay."
 
 #: templates/resa/manage_compta.html:36
 msgid "Balance"
-msgstr ""
+msgstr "Solde"
 
 #: templates/resa/manage_orders.html:5
 msgid "User order(s)"
-msgstr ""
+msgstr "Commande(s) de l'utilisateur"
 
 #: templates/resa/manage_orders.html:16
 msgid "Order(s)"
-msgstr ""
+msgstr "Commande(s)"
 
 #: templates/resa/manage_orders.html:21 templates/resa/orders_list.html:28
 msgid "No orders"
-msgstr ""
+msgstr "Pas de commande(s)"
 
 #: templates/resa/manage_orders.html:39 templates/resa/orders_list.html:36
 msgid "Pending order(s)"
-msgstr ""
+msgstr "Commande(s) en attente"
 
 #: templates/resa/manage_orders.html:41 templates/resa/manage_orders.html:73
 #: templates/resa/orders_details.html:12 templates/resa/orders_details.html:58
 msgid "Order no"
-msgstr ""
+msgstr "Commande no"
 
 #: templates/resa/manage_orders.html:48
 msgid "Payment method:"
-msgstr ""
+msgstr "Méthode de paiement :"
 
 #: templates/resa/manage_orders.html:56
 msgid "Remove order"
-msgstr ""
+msgstr "Supprimer la commande"
 
 #: templates/resa/manage_orders.html:71 templates/resa/orders_list.html:54
 msgid "Paid order(s)"
-msgstr ""
+msgstr "Commande(s) payée(s)"
 
 #: templates/resa/manage_orders.html:76 templates/resa/orders_details.html:30
 msgid "Download billing (pdf)"
-msgstr ""
+msgstr "Télécharger la facture (pdf)"
 
 #: templates/resa/order_details.html:5
 #: templates/resa/order_details_extended.html:10
 msgid "Creation date:"
-msgstr ""
+msgstr "Date de création :"
 
 #: templates/resa/order_details.html:11
 #: templates/resa/order_details_extended.html:16
 msgid "Payment date:"
-msgstr ""
+msgstr "Date de paiement :"
 
 #: templates/resa/order_details_extended.html:47
 msgid "Reset"
-msgstr ""
+msgstr "Reinitialisation"
 
 #: templates/resa/orders_cyberplus_return.html:5
 #: templates/resa/orders_cyberplus_return.html:12
 msgid "Bank payment"
-msgstr ""
+msgstr "Paiement Bancaire"
 
 #: templates/resa/orders_details.html:28 templates/resa/orders_pdf.xml:9
 msgid "Billing"
-msgstr ""
+msgstr "Facturation"
 
 #: templates/resa/orders_details.html:37
 msgid "Payment by credit card"
-msgstr ""
+msgstr "Paiement par carte bancaire"
 
 #: templates/resa/orders_details.html:50 templates/resa/orders_details.html:67
 msgid "Payment by PayPal"
-msgstr ""
+msgstr "Paiement par PayPal"
 
 #: templates/resa/orders_details.html:52
 msgid "Proceed the payment using PayPal:"
-msgstr ""
+msgstr "Procéder au paiement par PayPal"
 
 #: templates/resa/orders_details.html:73
 msgid "Payment by cashiers check"
-msgstr ""
+msgstr "Paiement par chèque"
 
 #: templates/resa/orders_details.html:75
 msgid "Send your check to the treasurer, here is the postal address:"
-msgstr ""
+msgstr "Envoyer votre chèque au trésorier, voici son adresse :"
 
 #: templates/resa/orders_details.html:77
 msgid "payable to:"
-msgstr ""
+msgstr "à l'ordre de :"
 
 #: templates/resa/orders_details.html:80
 msgid ""
@@ -1099,73 +1136,78 @@ msgid ""
 "check has been sent. Cashiers check payments might include fee if your bank "
 "is not located in France or in the EU."
 msgstr ""
+"Pour les paiements par chèque, veuillez informer notre trésorier de l'envoi "
+"du chèque. Le paiement par chèque peut entrainer des frais si votre banque "
+"n'est pas située en France ou en Europe."
 
 #: templates/resa/orders_details.html:86
 msgid "Other payment methods"
-msgstr ""
+msgstr "Autres modes de paiement"
 
 #: templates/resa/orders_details.html:88
 msgid ""
 "If you wish to use other methods of payment, please contact our accountant:"
 msgstr ""
+"Si vous désirez utiliser un autre mode de paiement, veuillez contacter "
+"notre trésorier :"
 
 #: templates/resa/orders_list.html:42 templates/resa/orders_list.html.py:60
 #, python-format
 msgid "Order of %(date_t)s for amount of %(amount_t)s€"
-msgstr ""
+msgstr "Commande du %(date_t)s pour un montant de %(amount_t)s€"
 
 #: templates/resa/orders_paypal_return.html:5
 #: templates/resa/orders_paypal_return.html:12
 msgid "PayPal payment"
-msgstr ""
+msgstr "Paiement PayPal"
 
 #: templates/resa/orders_pdf.xml:12 templates/resa/orders_pdf.xml.py:25
 msgid "Libre Software Meeting"
-msgstr ""
+msgstr "Rencontres Mondiales du Logiciel Libre"
 
 #: templates/resa/orders_pdf.xml:56
 msgid "Document:"
-msgstr ""
+msgstr "Document :"
 
 #: templates/resa/orders_pdf.xml:56
 msgid "Billing num"
-msgstr ""
+msgstr "Numéro de facture"
 
 #: templates/resa/orders_pdf.xml:61
 msgid "Madam"
-msgstr ""
+msgstr "Madame"
 
 #: templates/resa/orders_pdf.xml:61
 msgid "Mister"
-msgstr ""
+msgstr "Monsieur"
 
 #: templates/resa/orders_pdf.xml:67
 msgid "Here is the billing for your order:"
-msgstr ""
+msgstr "Ci-dessous la facture pour votre commande :"
 
 #: templates/resa/orders_pdf.xml:73
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: templates/resa/orders_pdf.xml:74
 msgid "Unit price"
-msgstr ""
+msgstr "Prix unitaire"
 
 #: templates/resa/orders_pdf.xml:76
 msgid "Total price"
-msgstr ""
+msgstr "Prix total"
 
 #: templates/resa/orders_pdf.xml:95
 msgid "VAT:"
-msgstr ""
+msgstr "TVA:"
 
 #: templates/resa/orders_pdf.xml:101
 msgid "Total excl. VAT:"
-msgstr ""
+msgstr "Total HT"
 
 #: templates/resa/orders_pdf.xml:107
 msgid "Total incl. VAT:"
-msgstr ""
+msgstr "Total TTC"
 
 #: templates/resa/payment_cyberplus_email.txt:3
 #, python-format
@@ -1173,11 +1215,13 @@ msgid ""
 "Your payment concerning the order no %(order_id)s for %(amount)s euros\n"
 "has been confirmed by the bank."
 msgstr ""
+"Votre paiment concernant la commande n° %(order_id)s pour un montant de \n"
+"%(amount)s euros a été confirmé par la banque."
 
 #: templates/resa/payment_cyberplus_email.txt:6
 #: templates/resa/payment_paypal_email.txt:6
 msgid "Your order is now complete."
-msgstr ""
+msgstr "Votre commande est maintenant terminée."
 
 #: templates/resa/payment_paypal_email.txt:3
 #, python-format
@@ -1185,19 +1229,58 @@ msgid ""
 "Your payment concerning the order no %(order_id)s for %(amount)s euros\n"
 "has been confirmed by PayPal."
 msgstr ""
+"Votre paiment concernant la commande n° %(order_id)s pour un montant de \n"
+"%(amount)s euros a été confirmé par PayPal."
 
 #: templates/resa/stocks.html:29
 msgid "Quantities"
-msgstr ""
+msgstr "Quantités"
 
 #: templates/resa/stocks.html:31 templates/resa/stocks.html.py:42
 msgid "Confirmed"
-msgstr ""
+msgstr "Confirmé"
 
 #: templates/resa/stocks.html:32 templates/resa/stocks.html.py:43
 msgid "Paid"
-msgstr ""
+msgstr "Payé"
 
 #: templates/resa/stocks.html:41
 msgid "Dispatched"
-msgstr ""
+msgstr "Distribué"
+
+#~ msgid "Solde"
+#~ msgstr "Solde"
+
+#~ msgid "Other methods of payment"
+#~ msgstr "Autres méthodes de paiement"
+
+#~ msgid "Distributed"
+#~ msgstr "Distribué"
+
+#~ msgid "Stock:"
+#~ msgstr "Stock :"
+
+#~ msgid "Quantity distributed"
+#~ msgstr "Quantité distribuée"
+
+#~ msgid "Compta"
+#~ msgstr "Comptabilité"
+
+#~ msgid "Edit"
+#~ msgstr "Modifier"
+
+#~ msgid "Initial"
+#~ msgstr "Initial"
+
+#~ msgid "Avail. (not paid)"
+#~ msgstr "Dispo. (non payées)"
+
+#~ msgid "Réservation RMLL"
+#~ msgstr "RMLL Booking"
+
+#~ msgid "Réservation"
+#~ msgstr "Booking"
+
+#, fuzzy
+#~ msgid "Product(s) successfully confirmed"
+#~ msgstr "Les produits ont été mis à jour avec succès"
