@@ -88,6 +88,17 @@ PROFILES = {
             (1, 0.43, 0.18, 0.03, 0.6)
         ],
     },
+    'turquoise': {
+        'name': 'Turquoise',
+        'source_rgba': (0.2, 0.4, 0.4, 0.6),
+        'gradients': [
+            (0, 0.2, 0.4, 0.4, 0.9),
+            (0.45, 0.2, 0.4, 0.4, 0.1),
+            (0.90, 0.2, 0.4, 0.4, 0.1),
+            (0.93, 0.2, 0.4, 0.4, 1),
+            (1, 0.2, 0.4, 0.4, 0.6)
+        ],
+    },
 }
 COLORS = tuple((x, PROFILES[x]['name']) for x in PROFILES)
 TEXT_COLORS = {
@@ -202,7 +213,7 @@ class cairoContext(cairo.Context):
         return " ".join(font.split()[:-1] + [str(font_size) ])
 
 class BadgeGenerator:
-    def __init__(self, id, name, badge_text, badge_text_alt, badge_color, desc, fingerprint):
+    def __init__(self, id, name, badge_text, badge_text_alt, badge_color, desc, fingerprint, email):
         self.user_id = id
         self.user_name = name.strip()
         self.user_badge_text = badge_text.strip()
@@ -210,6 +221,9 @@ class BadgeGenerator:
         self.user_badge_color = badge_color
         self.user_desc = desc.strip()
         self.user_fingerprint = fingerprint.strip()
+        self.email = email
+        if self.user_fingerprint == '':
+            self.email = ''
         self.organisation_text = settings.BADGE_CITY
 
     def create_big_png(self):
@@ -229,6 +243,7 @@ class BadgeGenerator:
         self.fingerprint_font = "Sans 30"
         self.user_name_font = "Sans bold 70"
         self.user_desc_font = "Sans bold 80"
+        self.email_font = "Sans 40"
 
         # positions
         self.organisation_x, self.organisation_y = self.dimx-10, 30
@@ -242,6 +257,8 @@ class BadgeGenerator:
         self.user_name_padding_x, self.user_name_padding_y = 20, 0
         self.user_desc_x, self.user_desc_y = self.dimx/2, self.dimy-70
         self.user_desc_padding_x, self.user_desc_padding_y = 20, 0
+        self.email_x, self.email_y = self.dimx-10, 100
+        self.email_padding_x, self.email_padding_y = 8, 10
 
         self.create()
 
@@ -263,6 +280,7 @@ class BadgeGenerator:
         self.fingerprint_font = "Sans 9"
         self.user_name_font = "Sans bold 30"
         self.user_desc_font = "Sans bold 39"
+        self.email_font = "Sans 13"
 
         # positions
         self.organisation_x, self.organisation_y = self.dimx, 15
@@ -276,6 +294,8 @@ class BadgeGenerator:
         self.user_name_padding_x, self.user_name_padding_y = 10, 0
         self.user_desc_x, self.user_desc_y = self.dimx/2, self.dimy-25
         self.user_desc_padding_x, self.user_desc_padding_y = 10, 0
+        self.email_x, self.email_y = self.dimx, 40
+        self.email_padding_x, self.email_padding_y = 5, 5
 
         self.create()
 
@@ -329,7 +349,6 @@ class BadgeGenerator:
                 self.user_badge_alt_x, self.user_badge_alt_y,
                 self.user_badge_alt_font, self.user_badge_alt_padding_x,
                 self.user_badge_alt_padding_x)
-
         # organisation title
         cr.write_text_middle_right(self.organisation_text, self.organisation_x,
                 self.organisation_y, self.organisation_font,
@@ -346,6 +365,12 @@ class BadgeGenerator:
         # fingerprint PGP/GPG
         cr.write_text_middle_center(self.user_fingerprint, self.fingerprint_x,
                 self.fingerprint_y, self.fingerprint_font)
+        # email (if fingerprint)
+        font = cr.adjust_font_to_fit(self.email, self.email_font,
+                self.dimx*0.7-self.email_padding_x, self.dimy)
+        cr.write_text_middle_right(self.email, self.email_x,
+                self.email_y, font,
+                self.email_padding_x, self.email_padding_y)
         # user name
         _r, _g, _b = TEXT_COLORS['name']
         cr.set_source_rgba(_r, _g, _b)
