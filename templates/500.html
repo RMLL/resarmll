@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Error 500' %}{% endblock %}
+
+{% block content %}
+
+    <h2>{% trans 'Error 500' %}</h2>
+
+    <div class="main-error">
+        {% trans "Internal Error" %}
+    </div>
+
+    <div id="error-page">
+
+    </div>
+{% endblock %}
