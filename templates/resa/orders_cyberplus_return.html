@@ -1,0 +1,36 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Bank payment" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Bank payment" %}</h2>
+
+    {% if msg_err %}
+        <div class="main-error">
+            {{ msg_err }}
+        </div>
+    {% endif %}
+
+    {% if msg_ok %}
+        <div class="main-success">
+            {{ msg_ok }}
+        </div>
+    {% endif %}
+
+    {% if msg_warn %}
+        <div class="main-warn">
+            {{ msg_warn }}
+        </div>
+    {% endif %}
+
+    <div id="order_paypal_return">
+
+    </div>
+
+{% endblock %}

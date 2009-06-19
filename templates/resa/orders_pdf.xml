@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="iso-8859-15" standalone="no" ?>
+{% load i18n %}
+{% load math %}
+<!DOCTYPE document SYSTEM "rml_1_0.dtd">
+<document filename="=billing_order_{{ order.id }}.pdf">
+    <template
+        pageSize="(21cm, 29.7cm)" allowSplitting="20"
+        leftMargin="2.0cm" rightMargin="2.0cm" topMargin="2.0cm" bottomMargin="2.0cm"
+        title="{% trans "Billing" %}" author="RMLL Team">
+        <pageTemplate id="first">
+            <pageGraphics>
+                <drawCentredString x="105mm" y="3.4cm">{% trans "Libre Software Meeting" %}</drawCentredString>
+                <lines>2cm 3.2cm 19cm 3.2cm</lines>
+                {% for l in address_lines %}
+                    <drawCentredString x="105mm" y="{{ forloop.counter0|dmult:"0.6"|dsub:"2.6"|dmult:"-1" }}cm">{{ l }}</drawCentredString>
+                {% endfor %}
+                <image x="23mm" y="25cm" file="{{ img_path }}logo_facture.png"/>
+            </pageGraphics>
+            <frame id="address" x1="9cm" y1="24.0cm" width="10cm" height="4.5cm"/>
+            <frame id="column" x1="2.0cm" y1="5.0cm" width="17cm" height="18cm"/>
+        </pageTemplate>
+
+        <pageTemplate id="main">
+            <pageGraphics>
+                <drawCentredString x="105mm" y="3.4cm">{% trans "Libre Software Meeting" %}</drawCentredString>
+                <lines>2cm 3.2cm 19cm 3.2cm</lines>
+                {% for l in address_lines %}
+                    <drawCentredString x="105mm" y="{{ forloop.counter0|dmult:"0.6"|dsub:"2.6"|dmult:"-1" }}cm">{{ l }}</drawCentredString>
+                {% endfor %}
+            </pageGraphics>
+            <frame id="column" x1="2.0cm" y1="5.0cm" width="17cm" height="22cm"/>
+        </pageTemplate>
+    </template>
+
+    <stylesheet>
+        <blockTableStyle id="tableau">
+            <blockBackground colorName="grey" start="0,0" stop="-1,0"/>
+            <blockTextColor colorName="white" start="0,0" stop="-1,0"/>
+            <blockValign value="TOP" />
+            <blockAlignment value="RIGHT" start="1,0" stop="-1,-1"/>
+        </blockTableStyle>
+        <paraStyle name="conditions" fontName="Helvetica" fontSize="8" alignment="justify"/>
+    <paraStyle name="nom" fontSize="14" />
+    </stylesheet>
+    <story>
+        <para style="nom">
+            <b>{{ user.get_full_name }}</b>
+        </para>
+        <spacer length="6mm" width="1cm"/>
+        <xpre>{{ user.get_profile.address }}</xpre>
+
+        <setNextTemplate name="main"/>
+        <nextFrame/>
+
+        <para>
+            <b>{% trans "Document:" %}</b> <i>{% trans "Billing num" %} FC_{{ order.id }}</i>
+        </para>
+        <spacer length="1cm" width="1mm"/>
+
+        <para>
+            {% trans "Madam" %}, {% trans "Mister" %},
+        </para>
+
+        <spacer length="5mm" width="1mm"/>
+
+        <para>
+            {% trans "Here is the billing for your order:" %}
+        </para>
+
+        <spacer length="1cm" width="1mm"/>
+        <blockTable colWidths="8cm,2.2cm,2.0cm,2.5cm" style="tableau">
+            <tr>
+                <td>{% trans "Description" %}</td>
+                <td>{% trans "Unit price" %}</td>
+                <td>{% trans "Quantity" %}</td>
+                <td>{% trans "Total price" %}</td>
+            </tr>
+
+            {% for p in order.orderdetail_set.all %}
+                <tr>
+                    <td>{{ p.product.label }}</td>
+                    <td>{{ p.price }}</td>
+                    <td>{{ p.quantity }}</td>
+                    <td>{{ p.totalamount }}</td>
+                </tr>
+            {% endfor %}
+
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+            </tr>
+            <tr>
+                <td><para><b>{% trans "VAT:" %}</b></para></td>
+                <td/>
+                <td/>
+                <td>{{ tva }}%</td>
+            </tr>
+            <tr>
+                <td><para><b>{% trans "Total excl. VAT:" %}</b></para></td>
+                <td/>
+                <td/>
+                <td>{{ order.hors_taxes }} euros</td>
+            </tr>
+            <tr>
+                <td><para><b>{% trans "Total incl. VAT:" %}</b></para></td>
+                <td/>
+                <td/>
+                <td>{{ order.totalamount }} euros</td>
+            </tr>
+        </blockTable>
+
+        <spacer length="1cm" width="1mm"/>
+        <spacer length="0.5cm" width="1mm"/>
+    </story>
+</document>

@@ -1,0 +1,84 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "User order(s)" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    {% include "account/menu_manager.html" %}
+
+    {% if user_obj %}
+
+        <h2>{% trans "Order(s)" %}</h2>
+
+        <div id="manage_orders">
+            {% if not pending_orders and not validated_orders %}
+                <div class="main-warn">
+                    {% trans "No orders" %}
+                </div>
+            {% endif %}
+
+            {% if msg_ok %}
+                <div class="main-success">
+                    {{ msg_ok }}
+                </div>
+            {% endif %}
+
+            {% if msg_err %}
+                <div class="main-error">
+                    {{ msg_err }}
+                </div>
+            {% endif %}
+
+            {% if pending_orders %}
+                <div class="section">
+                    <h3>{% trans "Pending order(s)" %}</h3>
+                    {% for order in pending_orders %}
+                        <h4>{% trans "Order no" %} #{{ order.id }}</h4>
+                        {% include "resa/order_details.html" %}
+                        <div class="process">
+                            <fieldset>
+                                <legend>{% trans 'Confirm order' %}</legend>
+                                <form method="post" action="">
+                                    <input type="hidden" name="order_id" value="{{ order.id }}" />
+                                    <label class="inline" for="id_method">{% trans 'Payment method:' %}</label>
+                                    {{ form.method }}
+                                    <label class="inline" for="id_note">{% trans 'Note:' %}</label>
+                                    {{ form.note }}
+                                    <input type="submit" value="{% trans 'Save' %}" />
+                                </form>
+                            </fieldset>
+                            <fieldset>
+                                <legend>{% trans 'Remove order' %}</legend>
+                                <form method="post" action="">
+                                    <input type="hidden" name="order_id" value="{{ order.id }}" />
+                                    <label class="inline" for="id_check">{% trans 'Remove:' %}</label>
+                                    {{ form_del.check }}
+                                    <input type="submit" value="{% trans 'Save' %}" />
+                                </form>
+                            </fieldset>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% if validated_orders %}
+                <div class="section">
+                    <h3>{% trans "Paid order(s)" %}</h3>
+                    {% for order in validated_orders %}
+                        <h4>{% trans "Order no" %} #{{ order.id }}</h4>
+                        {% include "resa/order_details_extended.html" %}
+                        <div>
+                            <a href="/resa/manage_orders/pdf/{{ order.id }}">{% trans "Download billing (pdf)" %}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Your orders" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Your orders" %}</h2>
+
+    {% if msg_err %}
+        <div class="main-error">
+            {{ msg_err }}
+        </div>
+    {% endif %}
+
+    {% if msg_ok %}
+        <div class="main-success">
+            {{ msg_ok }}
+        </div>
+    {% endif %}
+
+    {% if not pending_orders and not validated_orders %}
+        <div class="main-warn">
+            {% trans "No orders" %}
+        </div>
+    {% endif %}
+
+    <div id="orders_list">
+
+        {% if pending_orders %}
+            <div class="section">
+                <h3>{% trans "Pending order(s)" %}</h3>
+                <div class="content">
+                    <ul>
+                        {% for o in pending_orders %}
+                            <li>
+                                <a href="/resa/orders/details/{{ o.id }}">
+                                    {% blocktrans with o.creation_date|date:"Y-m-d H:i:s" as date_t and o.totalamount as amount_t %}Order of {{ date_t }} for amount of {{ amount_t }}€{% endblocktrans %}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+
+
+        {% if validated_orders %}
+            <div class="section">
+                <h3>{% trans "Paid order(s)" %}</h3>
+                <div class="content">
+                    <ul>
+                        {% for o in validated_orders %}
+                            <li>
+                                <a href="/resa/orders/details/{{ o.id }}">
+                                    {% blocktrans with o.creation_date|date:"Y-m-d H:i:s" as date_t and o.totalamount as amount_t %}Order of {{ date_t }} for amount of {{ amount_t }}€{% endblocktrans %}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
+

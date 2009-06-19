@@ -1,0 +1,63 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "User operation(s)" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    {% include "account/menu_manager.html" %}
+
+    {% if user_obj %}
+
+        <h2>{% trans "Operation(s)" %}</h2>
+
+        <div id="manage_compta">
+            {% if not operations %}
+                <div class="main-warn">
+                    {% trans "No operation(s)" %}
+                </div>
+            {% endif %}
+
+            {% if operations %}
+                <div class="section">
+                    <table class="list">
+                        <tr>
+                            <th>{% trans "Date" %}</th>
+                            <th>{% trans "Ord." %}</th>
+                            <th>{% trans "Account" %}</th>
+                            <th>{% trans "Label" %}</th>
+                            <th>{% trans "Credit" %}</th>
+                            <th>{% trans "Debit" %}</th>
+                            <th>{% trans "Pay." %}</th>
+                            <th>{% trans "Balance" %}</th>
+                        </tr>
+                        {% for o in operations %}
+                            <tr class="{% if o.date_payment %}minus{% else %}plus{% endif %}">
+                                <td>{{ o.date }}</td>
+                                <td>{{ o.order.id }}</td>
+                                <td>{{ o.label }}</td>
+                                <td>
+                                    {% if not o.date_payment %}
+                                        {{  o.debit }}
+                                    {% else %}
+                                        {{ o.payment.account }}
+                                    {% endif %}
+                                </td>
+                                <td>{% if not o.date_payment %} {{ o.amount }} {% endif %}</td>
+                                <td>{% if o.date_payment %} {{ o.amount }} {% endif %}</td>
+                                <td>{{ o.payment.code }}</td>
+                                <td>{{ o.solde }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            {% endif %}
+
+        </div>
+
+    {% endif %}
+{% endblock %}

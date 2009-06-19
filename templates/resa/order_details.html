@@ -1,0 +1,36 @@
+{% load i18n %}
+
+{% if order.creation_date %}
+    <div class="order_date">
+        <strong>{% trans "Creation date:" %}</strong> {{ order.creation_date|date:"Y-m-d H:i:s" }}
+    </div>
+{% endif %}
+
+{% if order.payment_date %}
+    <div class="order_date">
+        <strong>{% trans "Payment date:" %}</strong> {{ order.payment_date|date:"Y-m-d H:i:s" }}
+    </div>
+{% endif %}
+
+<table class="list">
+    <tr>
+        <th>{% trans "Product" %}</th>
+        <th>{% trans "Quantity" %}</th>
+        <th>{% trans "Subtotal" %}</th>
+    </tr>
+    {% for p in order.orderdetail_set.all %}
+        <tr>
+            <td>{{ p.product.label }}</td>
+            <td class="act">{{ p.quantity }}</td>
+            <td class="num">{{ p.totalamount }} €</td>
+        </tr>
+    {% endfor %}
+    <tfoot>
+        <tr>
+            <th colspan="2">
+                {% trans "Total" %}
+            </th>
+            <td class="num">{{ order.totalamount }} €</td>
+        </tr>
+    </tfoot>
+</table>

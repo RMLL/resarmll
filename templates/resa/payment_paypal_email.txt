@@ -1,0 +1,9 @@
+{% load i18n %}{% autoescape off %}
+
+{% blocktrans %}Your payment concerning the order no {{ order_id }} for {{ amount }} euros
+has been confirmed by PayPal.{% endblocktrans %}
+
+{% trans "Your order is now complete." %}
+
+{% include "common/signature_email.txt" %}
+{% endautoescape %}

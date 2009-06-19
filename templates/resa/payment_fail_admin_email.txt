@@ -1,0 +1,11 @@
+{% autoescape off %}
+{% ifnotequal errors "" %}
+ERROR MESSAGES:
+===============
+{{ errors }}
+{% endifnotequal %}
+
+{% include "resa/payment_dump_admin_email.txt" %}
+
+{% include "common/signature_email.txt" %}
+{% endautoescape %}

@@ -1,0 +1,59 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Stocks" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Stocks" %}</h2>
+
+    {% if not stocks %}
+        <div class="main-error">
+            {% trans "No products." %}
+        </div>
+    {% endif %}
+
+    <div id="stocks">
+
+        {% if stocks %}
+            <table class="list">
+                {% for stock in stocks %}
+                    <tr>
+                        <th colspan="4">{{ stock.label }}</th>
+                    </tr>
+                    <tr>
+                        <th class="text" rowspan="2">{% trans "Quantities" %}</th>
+                        <th>{% trans "Total" %}</th>
+                        <th>{% trans "Confirmed" %} ~/=</th>
+                        <th>{% trans "Paid" %} ~/=</th>
+                    </tr>
+                    <tr>
+                        <td class="act">{{ stock.quantity }}</td>
+                        <td class="act">{{ stock.quantity_ordered }} / {{ stock.count_products_confirmed_related }}</th>
+                        <td class="act">{{ stock.quantity_paid }} / {{ stock.count_products_paid_related }}</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>{% trans "Dispatched" %}</th>
+                        <th>{% trans "Confirmed" %}</th>
+                        <th>{% trans "Paid" %}</th>
+                    </tr>
+                    {% for p in stock.article_set.all %}
+                        <tr>
+                            <th class="text">{{ p.label }}</th>
+                            <td class="act">{{ p.count_distributed }}</td>
+                            <td class="act">{{ p.count_confirmed }}</td>
+                            <td class="act">{{ p.count_paid }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+            </table>
+        {% endif %}
+
+    </div>
+
+{% endblock %}

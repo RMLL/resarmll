@@ -1,0 +1,101 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "User cart" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    {% include "account/menu_manager.html" %}
+
+    {% if user_obj %}
+
+        <h2>{% trans "Cart" %}</h2>
+
+        {% if msg_err %}
+            <div class="main-error">
+                {{ msg_err }}
+            </div>
+        {% endif %}
+
+        {% if msg_ok %}
+            <div class="main-success">
+                {{ msg_ok }}
+            </div>
+        {% endif %}
+
+        {% if cart.empty %}
+            <div class="main-warn">
+                {% trans "The cart is empty" %}
+            </div>
+        {% endif %}
+
+        <div id="manage_cart">
+            {% if products %}
+                <form action="/resa/manage_cart/{{ user_obj.id }}/add/" method="post">
+                    <label for="cart_add">{% trans "Products:" %}</label>
+                    <select id="cart_add" name="cart_add">
+                        {% for p in products %}
+                            <option value="{{ p.id }}">{{ p.label }} ({{ p.quantity }})</option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="{% trans "Add" %}" />
+                </form>
+            {% endif %}
+
+            {% if not cart.empty %}
+                <form action="/resa/manage_cart/{{ user_obj.id }}/update/" method="post">
+                    <table class="list">
+                        <tr>
+                            <th>{% trans "Product" %}</th>
+                            <th>{% trans "Price" %}</th>
+                            <th>{% trans "Stock" %}</th>
+                            <th>{% trans "Quantity" %}</th>
+                            <th>{% trans "Subtotal" %}</th>
+                            <th></th>
+                        </tr>
+                        {% for p in cart %}
+                            <tr>
+                                <td>{{ p.label }}</td>
+                                <td class="num">{{ p.price }} €</td>
+                                <td class="num">{{ p.stock }}</td>
+                                <td class="act">
+                                    <input type="text" size="5" name="product_{{ p.id }}" value="{{ p.quantity }}" />
+                                </td>
+                                <td class="num">{{ p.total }} €</td>
+                                <td class="act">
+                                    <a href="/resa/manage_cart/{{ user_obj.id }}/del/{{ p.id }}" title="{% trans "Remove from cart" %}">
+                                        <img src="{{ MEDIA_URL }}images/common/remove.png" alt="{% trans "Remove from cart" %}" />
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" class="num">
+                                    <input type="submit" value="{% trans "Update Cart" %}" />
+                                </td>
+                                <td colspan="3"></td>
+                            </tr>
+                            <tr>
+                                <th colspan="3 ">
+                                    {% trans "Total" %}
+                                </th>
+                                <td colspan="3" class="num total">{{ cart.total }} €</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </form>
+
+                <div class="validate_payment">
+                    <form action="/resa/manage_cart/{{ user_obj.id }}/validate/" method="post">
+                        <input type="submit" value="{% trans "Confirm order" %}" />
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}

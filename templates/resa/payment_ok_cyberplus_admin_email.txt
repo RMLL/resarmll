@@ -1,0 +1,11 @@
+{% autoescape off %}
+
+PAYMENT DETAILS:
+================
+Order Id: {{ order_id }}
+Amount: {{ amount }}
+
+{% include "resa/payment_dump_admin_email.txt" %}
+
+{% include "common/signature_email.txt" %}
+{% endautoescape %}

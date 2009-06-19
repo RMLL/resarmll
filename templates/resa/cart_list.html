@@ -1,0 +1,88 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Your cart" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Your cart" %}</h2>
+
+    {% if msg_err %}
+        <div class="main-error">
+            {{ msg_err }}
+        </div>
+    {% endif %}
+
+    {% if msg_ok %}
+        <div class="main-success">
+            {{ msg_ok }}
+        </div>
+    {% endif %}
+
+    {% if cart.empty %}
+        <div class="main-warn">
+            {% trans "Your cart is empty" %}
+        </div>
+    {% endif %}
+
+    <div id="cart_list">
+
+        {% if not cart.empty %}
+            <form action="/resa/cart/update/" method="post">
+                <table class="list">
+                    <tr>
+                        <th>{% trans "Product" %}</th>
+                        <th>{% trans "Price" %}</th>
+                        <th>{% trans "Stock" %}</th>
+                        <th>{% trans "Quantity" %}</th>
+                        <th>{% trans "Subtotal" %}</th>
+                        <th></th>
+                    </tr>
+                    {% for p in cart %}
+                        <tr>
+                            <td>{{ p.label }}</td>
+                            <td class="num">{{ p.price }} €</td>
+                            <td class="num">{{ p.stock }}</td>
+                            <td class="act">
+                                <input type="text" size="5" name="product_{{ p.id }}" value="{{ p.quantity }}" />
+                            </td>
+                            <td class="num">{{ p.total }} €</td>
+                            <td class="act">
+                                <a href="/resa/cart/del/{{ p.id }}" title="{% trans "Remove from cart" %}">
+                                    <img src="{{ MEDIA_URL }}images/common/remove.png" alt="{% trans "Remove from cart" %}" />
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="num">
+                                <input type="submit" value="{% trans "Update Cart" %}" />
+                            </td>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th colspan="3 ">
+                                {% trans "Total" %}
+                            </th>
+                            <td colspan="3" class="num total">{{ cart.total }} €</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </form>
+
+            <div class="validate_payment">
+                <form action="/resa/orders/validate/" method="post">
+                    <input type="submit" value="{% trans "Confirm your order" %}" />
+                </form>
+            </div>
+        {% endif %}
+
+    </div>
+
+{% endblock %}
+

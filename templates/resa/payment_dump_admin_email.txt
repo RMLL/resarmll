@@ -1,0 +1,7 @@
+QUERY STRING DUMP:
+==================
+{{ dump }}
+
+ENVIRONEMENT DUMP:
+==================
+{{ env }}

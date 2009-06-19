@@ -1,0 +1,57 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+{% load markup %}
+
+{% block extrafoot %}
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.simplemodal.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/common.js"></script>
+{% endblock %}
+
+{% block title %}{% trans "Catalog" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Catalog" %}</h2>
+
+    {% if not products %}
+        <div class="main-error">
+            {% trans "No products." %}
+        </div>
+    {% endif %}
+
+    <div id="catalog_list">
+
+        {% if products %}
+            {% for p in products %}
+                <div class="product">
+                    <h3 class="name">{{ p.title }}</h3>
+                    {% if p.description %}
+                        <div class="desc">
+                            {{ p.description|markdown }}
+                        </div>
+                    {% endif %}
+                    <div class="info">
+                        <span>{% trans "Price:" %} {{ p.price }} €
+                        <br />
+                        <span>{% trans "Remaining stock:" %} {{ p.quantity }}
+                    </div>
+                    {% if not p.unavailable %}
+                        <div class="cart_add">
+                            <a href="/resa/cart/add/{{ p.id }}" onclick="javascript:return add_cart(this.href);">
+                                {% trans "Add to cart" %}
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+
+{% endblock %}
+
