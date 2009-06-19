@@ -1,47 +1,45 @@
 # -*- coding: utf-8 -*-
-
 from django.conf.urls.defaults import *
+from django.views.generic.simple import redirect_to
 from django.views.generic.simple import direct_to_template
 from django.contrib.auth import views as auth_views
-from account.views import register, profile, profile_modify, lostpassword
-from django.views.generic.simple import redirect_to
+
+from resarmll.account.views import *
 
 urlpatterns = patterns ('',
-    (r'^$', redirect_to, {'url': 'login/'}),
+    (r'^$', redirect_to, {'url': 'home/'}),
 
-    url(r'^login/$',
-        auth_views.login,
-        {'template_name': 'account/login.html'},
-        name='auth_login'),
-    url(r'^logout/$',
-        auth_views.logout,
-        {'template_name': 'account/logout.html'},
-        name='auth_logout'),
-    #    url(r'^reset/(?P<hash>\w+)/$',
-    #        reset,
-    #        name='account_reset'),
-    url(r'^register/$',
-        register,
-        {'template_name': 'account/register.html'},
-        name='account_register'),
-    url(r'^register/complete/$',
-        direct_to_template,
-        {'template': 'account/register/complete.html'},
-        name='account_register_complete'),
-    url(r'^lostpassword/$',
-        lostpassword,
-        {'template_name': 'account/lostpassword.html'},
-        name='account_lostpassword'),
-    url(r'^lostpassword/sent/$',
-        direct_to_template,
-        {'template': 'account/lostpassword/sent.html'},
-        name='account_lostpassword_sent'),
-    url(r'^profile/$',
-        profile,
-        {'template_name': 'account/profile.html'},
-        name='account_profile'),
-    url(r'^profile/modify/$',
-        profile_modify,
-        {'template_name': 'account/profile/modify.html'},
-        name='account_profile'),
+    url(r'^langswitch/$', langcheck, {'redirect': '/account/home/'}),
+    url(r'^langchange/$', langcheck, {'redirect': '/account/profile/'}),
+
+    url(r'^login/$', auth_views.login, {'template_name': 'account/login.html'}),
+    url(r'^logout/$', auth_views.logout, {'template_name': 'account/logout.html'}),
+
+    url(r'^register/$', register, {'tmpl': 'account/register.html'}),
+    url(r'^register/complete/$', direct_to_template,
+        {'template': 'account/register_complete.html'}),
+
+    url(r'^password_reset/$', auth_views.password_reset,
+        {'template_name': 'account/password_reset.html'}),
+    url(r'^password_reset/done/$', auth_views.password_reset_done,
+        {'template_name': 'account/password_reset_done.html'}),
+
+    url(r'^reset/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$',
+        auth_views.password_reset_confirm,
+        {'template_name': 'account/password_reset_confirm.html'}),
+    url(r'^reset/done/$', auth_views.password_reset_complete,
+        {'template_name': 'account/password_reset_complete.html'}),
+
+    url(r'^home/$', home, {'tmpl': 'account/home.html'}),
+    url(r'^profile/$', profile, {'tmpl': 'account/profile.html'}),
+    url(r'^profile/modify/$', profile_modify, {'tmpl': 'account/profile_modify.html'}),
+    url(r'^profile/badge/$', profile_badge, {'tmpl': 'account/profile_badge.html'}),
+
+    url(r'^wifi/$', profile_badge, {'tmpl': 'account/wifi.html'}),
+
+    url(r'^create/$', create, {'tmpl': 'account/create.html'}),
+    url(r'^search/$', search, {'tmpl': 'account/search.html'}),
+    url(r'^edit/(?P<user_id>\d+)$', edit, {'tmpl': 'account/edit.html'}),
+    url(r'^manage_badge/(?P<user_id>\d+)$', manage_badge, {'tmpl': 'account/manage_badge.html'}),
+    url(r'^manage_wifi/(?P<user_id>\d+)$', manage_wifi, {'tmpl': 'account/manage_wifi.html'}),
 )
