@@ -13,6 +13,7 @@ from resarmll import settings
 from django.core.exceptions import ObjectDoesNotExist
 from resarmll.resa.models import Country
 from resarmll.compta.models import PlanComptable
+from django.contrib.auth.models import User
 
 #####################
 setup_environ(settings)
@@ -48,5 +49,19 @@ class PlanComptableImport:
         else:
             print "Err: unable to find file '%s'" % fcsv
 
+
+class UserUpdate:
+    @staticmethod
+    def badges(only_with_fingerprint = False):
+        users = User.objects.all().order_by('id')
+        for i in users:
+            if only_with_fingerprint and i.get_profile().fingerprint != '':
+                print "%d : %s" % (i.id, i.email)
+                i.get_profile().update_badge()
+            elif not only_with_fingerprint:
+                print "%d : %s" % (i.id, i.email)
+                i.get_profile().update_badge()
+
 if __name__ == "__main__":
-    CountryImport.from_csv(sys.argv[1])
+    #CountryImport.from_csv(sys.argv[1])
+    UserUpdate.badges(True)
