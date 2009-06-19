@@ -1,0 +1,8 @@
+{% load i18n %}{% autoescape off %}
+{% trans "Regards," %}
+
+--
+{% trans "The LSM Organization Team" %}
+ url: https://reservation.rmll.info/
+mail: reservation@rmll.info
+{% endautoescape %}
