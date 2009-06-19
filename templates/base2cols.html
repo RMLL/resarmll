@@ -5,24 +5,30 @@
 <head>
     <title>{% trans "LSM Booking" %} - {% block title %}{% endblock %}</title>
     <link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png" />
-    <link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css" type="text/css" media="screen"/>
     {% block extrahead %}{% endblock %}
 </head>
 <body>
-    <div id="page">
-        <div id="head">
-            <div id="acces"></div>
-            <a id="mainlink" href="http://2009.rmll.info/" title="Nantes 2009 : Rendez-vous libres !">&nbsp;</a>
-            <h1>10<sup>es</sup> Rencontres Mondiales du Logiciel Libre</h1>
-            <ul id="menu2">
-                <li>
-                    <a href="/">{% trans "Booking" %}</a>
-                </li>
-                <li>
-                    <a href="http://rmll.info">{% trans "LSM website" %}</a>
-                </li>
-            </ul>
-        </div>
+    <div id="page" class="deuxcolonnes">
+        {% if user.is_staff or user.get_profile.is_manager %}
+            <div id="head" class="header_manager">
+            </div>
+        {% else %}
+            <div id="head">
+                <div id="acces"></div>
+                <a id="mainlink" href="http://2009.rmll.info/" title="Nantes 2009 : Rendez-vous libres !">&nbsp;</a>
+                <h1>10<sup>es</sup> Rencontres Mondiales du Logiciel Libre</h1>
+                <ul id="menu2">
+                    <li>
+                        <a href="/">{% trans "Booking" %}</a>
+                    </li>
+                    <li>
+                        <a href="http://rmll.info">{% trans "LSM website" %}</a>
+                    </li>
+                </ul>
+            </div>
+        {% endif %}
+
         <div id="icons">
             {% for lang in LANGUAGES%}
             <form action="/i18n/setlang/" method="post">
@@ -30,6 +36,13 @@
                 <input type="image" src="{{ MEDIA_URL }}images/drapeaux/{{lang.0}}.png" alt="{{lang.1}}"/>
             </form>{%endfor%}
         </div>
+        <div id="location">
+            {% include "account/user_header.html" %}
+        </div>
+        <div id="barredroite">
+            {% block sidebar %}{% endblock %}
+        </div>
+
         <div id="content">
             {% block content %}{% endblock %}
         </div>
