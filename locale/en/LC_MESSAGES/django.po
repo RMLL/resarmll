@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-18 12:16+0200\n"
+"POT-Creation-Date: 2009-06-20 08:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,13 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: account/forms.py:15 templates/account/login.html:25
+#: account/forms.py:15 templates/account/login.html:26
 #: templates/account/manage_wifi.html:19 templates/account/profile.html:16
 #: templates/account/wifi.html:17
 msgid "Username:"
 msgstr ""
 
-#: account/forms.py:19 templates/account/login.html:31
+#: account/forms.py:19 templates/account/login.html:32
 #: templates/account/manage_wifi.html:28 templates/account/wifi.html:26
 msgid "Password:"
 msgstr ""
@@ -115,7 +115,7 @@ msgstr ""
 msgid "Male"
 msgstr ""
 
-#: account/models.py:14 templates/account/search.html:32
+#: account/models.py:14 templates/account/search.html:33
 msgid "Username"
 msgstr ""
 
@@ -155,11 +155,11 @@ msgstr ""
 msgid "Payment later"
 msgstr ""
 
-#: account/models.py:57
+#: account/models.py:58
 msgid "User profile"
 msgstr ""
 
-#: account/models.py:58
+#: account/models.py:59
 msgid "Users Profiles"
 msgstr ""
 
@@ -330,7 +330,7 @@ msgid "Default"
 msgstr ""
 
 #: resa/models.py:197 templates/account/manage_badge.html:14
-#: templates/account/menu_manager.html:10 templates/account/search.html:36
+#: templates/account/menu_manager.html:10 templates/account/search.html:37
 msgid "Badge"
 msgstr ""
 
@@ -390,27 +390,27 @@ msgstr ""
 msgid "Stock"
 msgstr ""
 
-#: resa/views.py:35 resa/views.py:218
+#: resa/views.py:35 resa/views.py:219
 msgid "Product successfully added to cart"
 msgstr ""
 
-#: resa/views.py:37 resa/views.py:220
+#: resa/views.py:37 resa/views.py:221
 msgid "Error while adding product to cart"
 msgstr ""
 
-#: resa/views.py:40 resa/views.py:223
+#: resa/views.py:40 resa/views.py:224
 msgid "Product successfully removed from cart"
 msgstr ""
 
-#: resa/views.py:42 resa/views.py:225
+#: resa/views.py:42 resa/views.py:226
 msgid "Error while removing product from cart"
 msgstr ""
 
-#: resa/views.py:55 resa/views.py:238
+#: resa/views.py:55 resa/views.py:239
 msgid "Product(s) successfully updated"
 msgstr ""
 
-#: resa/views.py:57 resa/views.py:240
+#: resa/views.py:57 resa/views.py:241
 msgid "Error while updating product(s)"
 msgstr ""
 
@@ -420,64 +420,64 @@ msgid ""
 "the available quantity"
 msgstr ""
 
-#: resa/views.py:76 resa/views.py:248
+#: resa/views.py:76 resa/views.py:249
 msgid "Order successfully confirmed"
 msgstr ""
 
-#: resa/views.py:150
+#: resa/views.py:151
 msgid "Order sucessfully marked as paid"
 msgstr ""
 
-#: resa/views.py:157
+#: resa/views.py:158
 msgid "Order sucessfully removed"
 msgstr ""
 
-#: resa/views.py:168
+#: resa/views.py:169
 msgid "Order sucessfully updated"
 msgstr ""
 
-#: resa/views.py:243
+#: resa/views.py:244
 msgid ""
 "Unable to confirm this order, one (or more) product(s) in the cart exceed "
 "the available quantity"
 msgstr ""
 
-#: resa/views.py:291 resa/views.py:328 templates/resa/orders_details.html:16
+#: resa/views.py:292 resa/views.py:329 templates/resa/orders_details.html:16
 msgid "This order is not yours."
 msgstr ""
 
-#: resa/views.py:294
+#: resa/views.py:295
 #, python-format
 msgid "It seems that PayPal did not accept your payment (Code: %s)."
 msgstr ""
 
-#: resa/views.py:296
+#: resa/views.py:297
 msgid ""
 "Your payment has been confirmed by PayPal, you should receive a notification "
 "by email in a few minutes."
 msgstr ""
 
-#: resa/views.py:298 resa/views.py:332
+#: resa/views.py:299 resa/views.py:333
 msgid "Unable to find the order related to this payment."
 msgstr ""
 
-#: resa/views.py:318
+#: resa/views.py:319
 msgid "Your payment has been canceled, you could resume it later."
 msgstr ""
 
-#: resa/views.py:320
+#: resa/views.py:321
 msgid ""
 "Your payment has been rejected by the bank, you should retry in few days or "
 "try another payment method."
 msgstr ""
 
-#: resa/views.py:330
+#: resa/views.py:331
 msgid ""
 "Your payment has been confirmed by the bank, you should receive a "
 "notification by email in a few minutes."
 msgstr ""
 
-#: resa/views.py:334
+#: resa/views.py:335
 msgid ""
 "Your payment has failed, you should retry in few days or try another payment "
 "method."
@@ -619,7 +619,7 @@ msgid "Treasurer:"
 msgstr ""
 
 #: templates/account/login.html:5 templates/account/login.html.py:9
-#: templates/account/login.html:36 templates/account/logout.html:15
+#: templates/account/login.html:37 templates/account/logout.html:15
 #: templates/account/password_reset_complete.html:18
 #: templates/account/register_complete.html:15
 msgid "Log in"
@@ -631,7 +631,7 @@ msgstr ""
 msgid "Operation failed"
 msgstr ""
 
-#: templates/account/login.html:18
+#: templates/account/login.html:19
 msgid "Booking will open in a few hours."
 msgstr ""
 
@@ -861,19 +861,19 @@ msgstr ""
 msgid "ok"
 msgstr ""
 
-#: templates/account/search.html:33
+#: templates/account/search.html:34
 msgid "First name"
 msgstr ""
 
-#: templates/account/search.html:34
+#: templates/account/search.html:35
 msgid "Last name"
 msgstr ""
 
-#: templates/account/search.html:35
+#: templates/account/search.html:36
 msgid "Email"
 msgstr ""
 
-#: templates/account/search.html:48
+#: templates/account/search.html:50
 msgid "View"
 msgstr ""
 
@@ -1190,14 +1190,18 @@ msgstr ""
 msgid "Quantities"
 msgstr ""
 
-#: templates/resa/stocks.html:31 templates/resa/stocks.html.py:42
+#: templates/resa/stocks.html:31
+msgid "Avail."
+msgstr ""
+
+#: templates/resa/stocks.html:32 templates/resa/stocks.html.py:44
 msgid "Confirmed"
 msgstr ""
 
-#: templates/resa/stocks.html:32 templates/resa/stocks.html.py:43
+#: templates/resa/stocks.html:33 templates/resa/stocks.html.py:45
 msgid "Paid"
 msgstr ""
 
-#: templates/resa/stocks.html:41
+#: templates/resa/stocks.html:43
 msgid "Dispatched"
 msgstr ""
