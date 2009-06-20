@@ -29,3 +29,9 @@ class Stock(models.Model):
         if r is None:
             r = 0
         return r
+
+    def count_products_available(self):
+        return self.quantity - self.quantity_paid - self.quantity_ordered
+
+    def count_products_available_related(self):
+        return self.quantity - self.count_products_paid_related() - self.count_products_confirmed_related()
