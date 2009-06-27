@@ -42,7 +42,7 @@
                     </div>
                     {% if not p.unavailable %}
                         <div class="cart_add">
-                            <a href="/resa/cart/add/{{ p.id }}" onclick="javascript:return add_cart(this.href);">
+                            <a href="/resa/cart/add/{{ p.id }}" onclick="javascript:return add_cart(this.href);" title="{% trans "Add to cart" %} : {{ p.title }}">
                                 {% trans "Add to cart" %}
                             </a>
                         </div>
