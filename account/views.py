@@ -241,6 +241,7 @@ def manage_badge(request, tmpl, user_id):
         'badge_png': settings.MEDIA_URL + BadgeGenerator.get_path_png(user_id),
         'badge_big_png': settings.MEDIA_URL + BadgeGenerator.get_path_big_png(user_id),
         'badge_pdf': settings.MEDIA_URL + BadgeGenerator.get_path_pdf(user_id),
+        'badge_pdf_printer': settings.MEDIA_URL + BadgeGenerator.get_path_pdf_printer(user_id),
     }
     return tmpl, response_dct
 

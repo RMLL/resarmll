@@ -146,8 +146,11 @@ BADGE_BIG_BG_IMAGE = PROJECT_DIR + '/templates/images/armelle-big.png'
 BADGE_PNG_DEST_DIR = 'badges/png/'
 BADGE_BIG_PNG_DEST_DIR = 'badges/png/big/'
 BADGE_PDF_DEST_DIR = 'badges/pdf/'
+BADGE_PRINTER_PDF_DEST_DIR = 'badges/pdf/printer/'
 BADGE_WIDTH_MM = 85
 BADGE_HEIGHT_MM = 54
+BADGE_PRINTER_WIDTH_MM = 86.0
+BADGE_PRINTER_HEIGHT_MM = 54.5
 
 ### TREASURER ###
 CHECK_SETTINGS = {
