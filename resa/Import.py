@@ -64,4 +64,5 @@ class UserUpdate:
 
 if __name__ == "__main__":
     #CountryImport.from_csv(sys.argv[1])
-    UserUpdate.badges(True)
+    #UserUpdate.badges(True)
+    UserUpdate.badges(False)
