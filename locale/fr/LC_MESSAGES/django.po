@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-20 08:17+0200\n"
-"PO-Revision-Date: 2009-06-20 08:17+0200\n"
+"POT-Creation-Date: 2009-06-27 13:03+0200\n"
+"PO-Revision-Date: 2009-06-27 13:02+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -697,6 +697,14 @@ msgid "Download the badge with the right size and ready to print (PDF)"
 msgstr ""
 "Télécharger le badge aux bonnes dimensions et prêt à être imprimé (PDF)"
 
+#: templates/account/manage_badge.html:26
+msgid ""
+"Download the badge with the right size and ready to be printed with the "
+"badge printer (PDF)"
+msgstr ""
+"Télécharger le badge aux bonnes dimensions et prêt à être imprimé avec "
+"l'imprimante à badges (PDF)"
+
 #: templates/account/manage_wifi.html:5
 msgid "User Wifi access"
 msgstr "Accès Wifi de l'utilisateur"
@@ -990,7 +998,7 @@ msgstr "Prix :"
 msgid "Remaining stock:"
 msgstr "Stock restant :"
 
-#: templates/resa/catalog_list.html:46
+#: templates/resa/catalog_list.html:45 templates/resa/catalog_list.html:46
 msgid "Add to cart"
 msgstr "Ajouter au panier"
 
