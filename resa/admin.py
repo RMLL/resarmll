@@ -18,7 +18,10 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ('label', 'price', 'quantity', 'count_confirmed', 'count_paid', 'count_distributed', 'enabled')
 admin.site.register(Article, ArticleAdmin)
 
-admin.site.register(Badge, admin.ModelAdmin)
+class BadgeAdmin(admin.ModelAdmin):
+    ordering = ('name',)
+    list_display = ('name','alt_name', 'color', 'section', 'default')
+admin.site.register(Badge, BadgeAdmin)
 
 class StockAdmin(admin.ModelAdmin):
     ordering = ('order',)

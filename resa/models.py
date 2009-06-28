@@ -15,6 +15,8 @@ from utils.BadgeGenerator import COLORS as BadgeColors
 
 from django.utils.translation import get_language
 
+BADGE_PROFILES = (('orga', _('Organization')), ('village', _('Village')), ('visitors', _('Visitors')),)
+
 class LabelClass:
     """
     Classe de base pour un modèle disposant d'n libellé localisé
@@ -189,6 +191,8 @@ class Badge(models.Model):
     alt_name = models.CharField(_(u"Alternate name"), max_length=64)
     color = models.CharField(_(u"Color"), max_length=16, choices=BadgeColors)
     default = models.BooleanField(_(u"Default"))
+    section = models.CharField(_(u"Section"), max_length=32,
+                choices=BADGE_PROFILES, blank=True)
 
     def __unicode__(self):
         return self.name
