@@ -15,7 +15,7 @@ from utils.BadgeGenerator import COLORS as BadgeColors
 
 from django.utils.translation import get_language
 
-BADGE_PROFILES = (('orga', _('Organization')), ('village', _('Village')), ('visitors', _('Visitors')),)
+BADGE_PROFILES = (('orga', _('Organization')), ('speakers', _('Speakers')), ('village', _('Village')), ('visitors', _('Visitors')),)
 
 class LabelClass:
     """
