@@ -1,0 +1,33 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Search order" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Search order" %}</h2>
+
+    {% if noresults %}
+        <div class="main-error">
+            {% trans "No results" %}
+        </div>
+    {% endif %}
+
+    <div id="orders_search">
+        <form method="post" action="">
+            <div>
+                <label class="inline" for="pattern">{% trans "Order number" %}</label>
+                <input type="text" class="text" name="pattern" id="pattern" value="{{ pattern }}" />
+                <input type="submit" value="{% trans "ok" %}" />
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById('pattern').focus()
+    </script>
+{% endblock %}

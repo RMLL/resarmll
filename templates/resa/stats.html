@@ -1,0 +1,38 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Statistics" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Statistics" %}</h2>
+
+    <div id="stats">
+
+        {% if stats_countries %}
+            <div class="section">
+                <h3>{% trans "Participants per country" %}</h3>
+                <div class="content">
+                    <table class="list">
+                        <tr>
+                            <th>{% trans "Country" %}</th>
+                            <th>{% trans "Users count" %}</th>
+                        </tr>
+                        {% for s in stats_countries %}
+                            <tr>
+                                <td>{{ s.label }}</td>
+                                <td>{{ s.num_users }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        {% endif %}
+
+    </div>
+
+{% endblock %}

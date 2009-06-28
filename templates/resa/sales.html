@@ -2,29 +2,37 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Search a user" %}{% endblock %}
+{% block title %}{% trans "Sales" %}{% endblock %}
 
 {% block sidebar %}
     {% include "account/menu.html" %}
 {% endblock %}
 
 {% block content %}
-    <h2>{% trans "Search a user" %}</h2>
+    <h2>{% trans "Sales" %}</h2>
 
-    {% if search_mode and not results %}
+    {% if product and not results %}
         <div class="main-error">
             {% trans "No results" %}
         </div>
     {% endif %}
 
-    <div id="account_search">
-        <form method="post" action="">
-            <div>
-                <label class="inline" for="pattern">{% trans "Search pattern:" %}</label>
-                <input type="text" class="text" name="pattern" id="pattern" value="{{ pattern }}" />
-                <input type="submit" value="{% trans "ok" %}" />
-            </div>
-        </form>
+    <div id="sales">
+        {% if products %}
+            <form action="/resa/sales/" method="post">
+                <label for="product">{% trans "Products:" %}</label>
+                <select id="product" name="product" onchange="javascript:this.form.submit();">
+                    <option value=""></option>
+                    {% for p in products %}
+                        <option{% ifequal p.id product.id %} selected="selected"{% endifequal %} value="{{ p.id }}">{{ p.label }}</option>
+                    {% endfor %}
+                </select>
+                <noscript>
+                    <input type="submit" value="{% trans "ok" %}" />
+                </noscript>
+            </form>
+        {% endif %}
+
 
         {% if results %}
             <table class="list">
@@ -34,7 +42,6 @@
                     <th>{% trans "Last name" %}</th>
                     <th>{% trans "First name" %}</th>
                     <th>{% trans "Email" %}</th>
-                    <th>{% trans "Badge" %}</th>
                     <th></th>
                 </tr>
                 {% for u in results %}
@@ -44,7 +51,6 @@
                         <td>{{ u.last_name }}</td>
                         <td>{{ u.first_name }}</td>
                         <td>{{ u.email }}</td>
-                        <td>{{ u.get_profile.badge_type }}</td>
                         <td>
                             <a href="/resa/manage_orders/{{ u.id }}">
                                 {% trans "View" %}
@@ -54,9 +60,7 @@
                 {% endfor %}
             </table>
         {% endif %}
+
     </div>
 
-    <script type="text/javascript">
-        document.getElementById('pattern').focus()
-    </script>
 {% endblock %}

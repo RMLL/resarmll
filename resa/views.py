@@ -2,12 +2,13 @@
 from datetime import datetime as date
 from decimal import Decimal as dec
 
+from django.db.models import Count
 from django.utils.translation import ugettext_lazy as _
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
-from models import Article
+from models import Article, Country
 from forms import PayOrderForm, DelOrderForm
 from orders import Order, OrderDetail
 from cart import Cart
@@ -123,6 +124,32 @@ def orders_pdf(request, tmpl, order_id=0):
                         'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
                         'tva': settings.TVA}))
     return response
+
+@login_required
+@manager_required
+@auto_render
+def orders_search(request, tmpl):
+    noresults = False
+    if request.method == 'POST':
+        try:
+            order = Order.objects.get(id=int(request.POST['pattern']))
+        except:
+            order = None
+        if order:
+            return HttpResponseRedirect('/resa/manage_orders/'+str(order.user_id))
+        else:
+            noresults = True
+    return tmpl, locals()
+
+@login_required
+@manager_required
+@auto_render
+def orders_notpaid(request, tmpl):
+    results = User.objects.filter(order__payment_date__isnull=True).annotate(num_orders=Count('order')).filter(num_orders__gt=0).order_by('last_name')
+    results_orga = [u for u in results if u.get_profile().badge_type.section == 'orga']
+    results_speakers = [u for u in results if u.get_profile().badge_type.section == 'speakers']
+    results_others = [u for u in results if u.get_profile().badge_type.section != 'orga' and u.get_profile().badge_type.section != 'speakers']
+    return tmpl, locals()
 
 @login_required
 @manager_required
@@ -275,8 +302,30 @@ def manage_compta(request, tmpl, user_id=None):
 @login_required
 @manager_required
 @auto_render
+def stats(request, tmpl):
+    stats_countries = Country.objects.annotate(num_users=Count('userprofile')).filter(num_users__gt=0).order_by('-num_users')
+    return tmpl, locals()
+
+@login_required
+@manager_required
+@auto_render
 def stocks(request, tmpl):
     stocks = Stock.objects.all().order_by('order')
+    return tmpl, locals()
+
+@login_required
+@manager_required
+@auto_render
+def sales(request, tmpl):
+    products = Article.objects.filter(enabled=True).order_by('order')
+    results = product = None
+    if request.method == 'POST':
+        try:
+            product = Article.objects.get(id=int(request.POST['product']))
+        except:
+            product = None
+        if product:
+            results = User.objects.filter(order__payment_date__isnull=False,order__orderdetail__product=product)
     return tmpl, locals()
 
 @login_required

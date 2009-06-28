@@ -54,6 +54,18 @@ class UserProfile(models.Model):
             r = parts[0] + ' - ' + ' '.join(el)
         return r
 
+    def get_order_orga(self):
+        ret = None
+        notes = self.notes.strip().split("\n")
+        if notes:
+            for n in notes:
+                if n.strip().startswith('COMMANDE_ORGA:'):
+                    try:
+                        ret = int(n.strip()[14:])
+                    except:
+                        ret = 0
+        return ret
+
     class Meta:
         verbose_name = _(u"User profile")
         verbose_name_plural = _(u"Users Profiles")
