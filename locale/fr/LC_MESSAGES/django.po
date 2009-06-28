@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-28 20:31+0200\n"
-"PO-Revision-Date: 2009-06-28 20:34+0200\n"
+"PO-Revision-Date: 2009-06-28 21:24+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -931,7 +931,8 @@ msgstr "Inscription terminée"
 
 #: templates/account/register_complete.html:12
 msgid "Registration successfully completed. You may now log in."
-msgstr "Inscription terminé avec succès. Vous pouvez désormais vous connecter."
+msgstr ""
+"Inscription terminée avec succès. Vous pouvez désormais vous connecter."
 
 #: templates/account/search.html:5 templates/account/search.html.py:12
 msgid "Search a user"
