@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-27 13:03+0200\n"
-"PO-Revision-Date: 2009-06-27 13:02+0200\n"
+"POT-Creation-Date: 2009-06-28 20:31+0200\n"
+"PO-Revision-Date: 2009-06-28 20:34+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: account/forms.py:15 templates/account/login.html:26
-#: templates/account/manage_wifi.html:19 templates/account/profile.html:16
+#: templates/account/manage_wifi.html:19 templates/account/profile.html:20
 #: templates/account/wifi.html:17
 msgid "Username:"
 msgstr "Nom d'utilisateur :"
@@ -40,7 +40,7 @@ msgstr "Mot de passe (confirmation) :"
 msgid "E-mail address:"
 msgstr "Adresse email :"
 
-#: account/forms.py:29 templates/account/profile.html:26
+#: account/forms.py:29 templates/account/profile.html:30
 msgid "Gender:"
 msgstr "Sexe :"
 
@@ -50,15 +50,15 @@ msgstr ""
 "Le sexe n'est pas obligatoire mais il pourra être utile lors de la "
 "répartition des chambres."
 
-#: account/forms.py:32 templates/account/profile.html:35
+#: account/forms.py:32 templates/account/profile.html:39
 msgid "Last name:"
 msgstr "Nom :"
 
-#: account/forms.py:34 templates/account/profile.html:40
+#: account/forms.py:34 templates/account/profile.html:44
 msgid "First name:"
 msgstr "Prénom :"
 
-#: account/forms.py:36 templates/account/profile.html:45
+#: account/forms.py:36 templates/account/profile.html:49
 msgid "Address:"
 msgstr "Adresse :"
 
@@ -68,15 +68,15 @@ msgstr ""
 "L'adresse est utile pour les conférenciers ou les personnes qui "
 "bénéficieront de remboursements."
 
-#: account/forms.py:40 templates/account/profile.html:56
+#: account/forms.py:40 templates/account/profile.html:60
 msgid "Language:"
 msgstr "Langue :"
 
-#: account/forms.py:42 templates/account/profile.html:61
+#: account/forms.py:42 templates/account/profile.html:65
 msgid "Country:"
 msgstr "Pays."
 
-#: account/forms.py:44 templates/account/profile.html:71
+#: account/forms.py:44 templates/account/profile.html:75
 msgid "Badge text:"
 msgstr "Texte du badge"
 
@@ -84,7 +84,7 @@ msgstr "Texte du badge"
 msgid "Free text printed on your badge (should not be too long)."
 msgstr "Texte libre imprimé sur votre badge (de préférence pas trop long)."
 
-#: account/forms.py:48 templates/account/profile.html:80
+#: account/forms.py:48 templates/account/profile.html:84
 msgid "PGP/GPG Fingerprint:"
 msgstr "Empreinte PGP/GPG :"
 
@@ -102,7 +102,7 @@ msgstr ""
 "Le mot de passe de confirmation ne concorde pas avec le mot de passe "
 "d'origine"
 
-#: account/forms.py:88 templates/account/profile.html:66
+#: account/forms.py:88 templates/account/profile.html:70
 msgid "Badge type:"
 msgstr "Type de badge :"
 
@@ -122,7 +122,7 @@ msgstr "Féminin"
 msgid "Male"
 msgstr "Masculin"
 
-#: account/models.py:14 templates/account/search.html:33
+#: account/models.py:14
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
@@ -142,7 +142,7 @@ msgstr "Sexe"
 msgid "Address"
 msgstr "Adresse"
 
-#: account/models.py:26 resa/models.py:92 resa/widgets.py:12
+#: account/models.py:26 resa/models.py:94 resa/widgets.py:12
 msgid "Language"
 msgstr "Langue"
 
@@ -162,15 +162,15 @@ msgstr "Note(s)"
 msgid "Payment later"
 msgstr "Paiement décalé"
 
-#: account/models.py:58
+#: account/models.py:70
 msgid "User profile"
 msgstr "Profile utilisateur"
 
-#: account/models.py:59
+#: account/models.py:71
 msgid "Users Profiles"
 msgstr "Profils des utilisateurs"
 
-#: compta/models.py:10 compta/models.py:25 resa/models.py:179
+#: compta/models.py:10 compta/models.py:25 resa/models.py:181
 msgid "Code"
 msgstr "Code"
 
@@ -283,69 +283,91 @@ msgstr "Note :"
 msgid "Remove:"
 msgstr "Supprimer"
 
-#: resa/models.py:103 resa/models.py:108
+#: resa/models.py:18 templates/resa/orders_notpaid.html:24
+msgid "Organization"
+msgstr "Organisation"
+
+#: resa/models.py:18 templates/resa/orders_notpaid.html:71
+msgid "Speakers"
+msgstr "Orateurs"
+
+#: resa/models.py:18
+msgid "Village"
+msgstr "Village"
+
+#: resa/models.py:18
+msgid "Visitors"
+msgstr "Visiteurs"
+
+#: resa/models.py:105 resa/models.py:110
 msgid "Value"
 msgstr "Valeur"
 
-#: resa/models.py:126
+#: resa/models.py:128
 msgid "Simple label"
 msgstr "Libellé simple"
 
-#: resa/models.py:127
+#: resa/models.py:129
 msgid "Extended label"
 msgstr "Libellé étendu"
 
-#: resa/models.py:128 resa/orders.py:112 templates/resa/cart_list.html:39
+#: resa/models.py:130 resa/orders.py:112 templates/resa/cart_list.html:39
 #: templates/resa/manage_cart.html:54
 msgid "Price"
 msgstr "Prix"
 
-#: resa/models.py:130 resa/stock.py:11
+#: resa/models.py:132 resa/stock.py:11
 msgid "Sorting"
 msgstr "Order de tri"
 
-#: resa/models.py:131
+#: resa/models.py:133
 msgid "Enabled"
 msgstr "Activé"
 
-#: resa/models.py:135
+#: resa/models.py:137
 msgid "Article"
 msgstr "Article"
 
-#: resa/models.py:178 resa/models.py:188
+#: resa/models.py:180 resa/models.py:190
 msgid "Name"
 msgstr "Nom"
 
-#: resa/models.py:184
+#: resa/models.py:186 templates/resa/stats.html:22
 msgid "Country"
 msgstr "Pays"
 
-#: resa/models.py:185
+#: resa/models.py:187
 msgid "Countries"
 msgstr "Pays"
 
-#: resa/models.py:189
+#: resa/models.py:191
 msgid "Alternate name"
 msgstr "Nom alternatif"
 
-#: resa/models.py:190
+#: resa/models.py:192
 msgid "Color"
 msgstr "Couleur"
 
-#: resa/models.py:191
+#: resa/models.py:193
 msgid "Default"
 msgstr "Défaut"
 
-#: resa/models.py:197 templates/account/manage_badge.html:14
+#: resa/models.py:194
+msgid "Section"
+msgstr "Section"
+
+#: resa/models.py:201 templates/account/manage_badge.html:14
 #: templates/account/menu_manager.html:10 templates/account/search.html:37
+#: templates/resa/orders_notpaid.html:35 templates/resa/orders_notpaid.html:81
+#: templates/resa/orders_notpaid.html:121
 msgid "Badge"
 msgstr "Badge"
 
-#: resa/models.py:198
+#: resa/models.py:202
 msgid "Badges"
 msgstr "Badges"
 
-#: resa/models.py:201
+#: resa/models.py:205
 msgid "Transaction"
 msgstr "Opération"
 
@@ -397,31 +419,31 @@ msgstr "Quantité payée"
 msgid "Stock"
 msgstr "Stock"
 
-#: resa/views.py:35 resa/views.py:219
+#: resa/views.py:36 resa/views.py:246
 msgid "Product successfully added to cart"
 msgstr "Produit ajouté au panier avec succès"
 
-#: resa/views.py:37 resa/views.py:221
+#: resa/views.py:38 resa/views.py:248
 msgid "Error while adding product to cart"
 msgstr "Erreur lors de l'ajout du produit au panier"
 
-#: resa/views.py:40 resa/views.py:224
+#: resa/views.py:41 resa/views.py:251
 msgid "Product successfully removed from cart"
 msgstr "Produit supprimé du panier avec succès"
 
-#: resa/views.py:42 resa/views.py:226
+#: resa/views.py:43 resa/views.py:253
 msgid "Error while removing product from cart"
 msgstr "Erreur lors de la suppression du produit du panier"
 
-#: resa/views.py:55 resa/views.py:239
+#: resa/views.py:56 resa/views.py:266
 msgid "Product(s) successfully updated"
 msgstr "Les produits ont été mis à jour avec succès"
 
-#: resa/views.py:57 resa/views.py:241
+#: resa/views.py:58 resa/views.py:268
 msgid "Error while updating product(s)"
 msgstr "Erreur lors de la mise à jour des produits"
 
-#: resa/views.py:59
+#: resa/views.py:60
 msgid ""
 "Unable to confirm your order, one (or more) product(s) in your cart exceed "
 "the available quantity"
@@ -429,23 +451,23 @@ msgstr ""
 "Impossible de confirmer votre commande, l'un des produits de votre panier "
 "dépasse la quantité disponible"
 
-#: resa/views.py:76 resa/views.py:249
+#: resa/views.py:77 resa/views.py:276
 msgid "Order successfully confirmed"
 msgstr "Commande confirmée avec succès"
 
-#: resa/views.py:151
+#: resa/views.py:178
 msgid "Order sucessfully marked as paid"
 msgstr "Commande marquée comme payée avec succès"
 
-#: resa/views.py:158
+#: resa/views.py:185
 msgid "Order sucessfully removed"
 msgstr "Commande supprimée avec succès"
 
-#: resa/views.py:169
+#: resa/views.py:196
 msgid "Order sucessfully updated"
 msgstr "Commande mise à jour avec succès"
 
-#: resa/views.py:244
+#: resa/views.py:271
 msgid ""
 "Unable to confirm this order, one (or more) product(s) in the cart exceed "
 "the available quantity"
@@ -453,16 +475,16 @@ msgstr ""
 "Impossible de confirmer votre commande, l'un des produits de votre panier "
 "dépasse la quantité disponible"
 
-#: resa/views.py:292 resa/views.py:329 templates/resa/orders_details.html:16
+#: resa/views.py:341 resa/views.py:378 templates/resa/orders_details.html:16
 msgid "This order is not yours."
 msgstr "Cette commande n'est pas la vôtre"
 
-#: resa/views.py:295
+#: resa/views.py:344
 #, python-format
 msgid "It seems that PayPal did not accept your payment (Code: %s)."
 msgstr "Il semblerait que PayPal n'ait pas accepté votre paiement (Code : %s)."
 
-#: resa/views.py:297
+#: resa/views.py:346
 msgid ""
 "Your payment has been confirmed by PayPal, you should receive a notification "
 "by email in a few minutes."
@@ -470,15 +492,15 @@ msgstr ""
 "Votre paiement a été confirmé par Paypal, vous devriez recevoir un mail de "
 "confirmation d'ici quelques minutes."
 
-#: resa/views.py:299 resa/views.py:333
+#: resa/views.py:348 resa/views.py:382
 msgid "Unable to find the order related to this payment."
 msgstr "Impossible de trouver la commande liée à ce paiement."
 
-#: resa/views.py:319
+#: resa/views.py:368
 msgid "Your payment has been canceled, you could resume it later."
 msgstr "Votre paiement a été annulé, vous pouvez le reprendre plus tard."
 
-#: resa/views.py:321
+#: resa/views.py:370
 msgid ""
 "Your payment has been rejected by the bank, you should retry in few days or "
 "try another payment method."
@@ -486,7 +508,7 @@ msgstr ""
 "Votre paiement a été rejeté par la banque, vous devriez réessayer d'ici "
 "quelques jours ou choisir un autre moyen de paiement."
 
-#: resa/views.py:331
+#: resa/views.py:380
 msgid ""
 "Your payment has been confirmed by the bank, you should receive a "
 "notification by email in a few minutes."
@@ -494,7 +516,7 @@ msgstr ""
 "Votre paiement a été confirmé par la banque, vous devriez recevoir un mail "
 "de confirmation d'ici quelques minutes."
 
-#: resa/views.py:335
+#: resa/views.py:384
 msgid ""
 "Your payment has failed, you should retry in few days or try another payment "
 "method."
@@ -716,8 +738,8 @@ msgid "Wifi access"
 msgstr "Accès Wifi"
 
 #: templates/account/manage_wifi.html:21 templates/account/manage_wifi.html:30
-#: templates/account/profile.html:28 templates/account/profile.html.py:48
-#: templates/account/profile.html:73 templates/account/profile.html.py:82
+#: templates/account/profile.html:32 templates/account/profile.html.py:52
+#: templates/account/profile.html:77 templates/account/profile.html.py:86
 #: templates/account/wifi.html:19 templates/account/wifi.html.py:28
 msgid "not set"
 msgstr "Non défini"
@@ -760,10 +782,30 @@ msgstr "Créer un utilisateur"
 msgid "Search user"
 msgstr "Recherche d'utilisateurs"
 
-#: templates/account/menu.html:24 templates/resa/stocks.html:5
+#: templates/account/menu.html:24 templates/resa/orders_search.html:5
+#: templates/resa/orders_search.html:12
+msgid "Search order"
+msgstr "Recherche de commande"
+
+#: templates/account/menu.html:25 templates/resa/orders_notpaid.html:5
+#: templates/resa/orders_notpaid.html:12
+msgid "Orders not paid"
+msgstr "Commandes impayées"
+
+#: templates/account/menu.html:26 templates/resa/sales.html:5
+#: templates/resa/sales.html.py:12
+msgid "Sales"
+msgstr "Ventes"
+
+#: templates/account/menu.html:27 templates/resa/stocks.html:5
 #: templates/resa/stocks.html.py:12
 msgid "Stocks"
 msgstr "Stocks"
+
+#: templates/account/menu.html:28 templates/resa/stats.html:5
+#: templates/resa/stats.html.py:12
+msgid "Statistics"
+msgstr "Statistiques"
 
 #: templates/account/menu_manager.html:5
 msgid "User:"
@@ -853,11 +895,15 @@ msgstr ""
 "Vous devriez rapidement recevoir un mail résumant la procédure de "
 "réinitialisation du mot de passe."
 
-#: templates/account/profile.html:21
+#: templates/account/profile.html:16
+msgid "Id:"
+msgstr "Num :"
+
+#: templates/account/profile.html:25
 msgid "Email address:"
 msgstr "Adresse email :"
 
-#: templates/account/profile.html:89
+#: templates/account/profile.html:93
 msgid "Modify"
 msgstr "Modifier"
 
@@ -891,7 +937,8 @@ msgstr "Inscription terminé avec succès. Vous pouvez désormais vous connecter
 msgid "Search a user"
 msgstr "Recherche d'utilisateur"
 
-#: templates/account/search.html:16
+#: templates/account/search.html:16 templates/resa/orders_notpaid.html:16
+#: templates/resa/orders_search.html:16 templates/resa/sales.html:16
 msgid "No results"
 msgstr "Pas de résultats"
 
@@ -899,23 +946,38 @@ msgstr "Pas de résultats"
 msgid "Search pattern:"
 msgstr "Motif de la recherche"
 
-#: templates/account/search.html:25
+#: templates/account/search.html:25 templates/resa/orders_search.html:25
+#: templates/resa/sales.html:31
 msgid "ok"
 msgstr "ok"
 
-#: templates/account/search.html:34
-msgid "First name"
-msgstr "Prénom"
+#: templates/account/search.html:33 templates/resa/orders_notpaid.html:29
+#: templates/resa/orders_notpaid.html:76
+#: templates/resa/orders_notpaid.html:116 templates/resa/sales.html:41
+msgid "Id"
+msgstr "Num"
 
-#: templates/account/search.html:35
+#: templates/account/search.html:34 templates/resa/orders_notpaid.html:30
+#: templates/resa/orders_notpaid.html:77
+#: templates/resa/orders_notpaid.html:117 templates/resa/sales.html:42
 msgid "Last name"
 msgstr "Nom"
 
-#: templates/account/search.html:36
+#: templates/account/search.html:35 templates/resa/orders_notpaid.html:31
+#: templates/resa/orders_notpaid.html:78
+#: templates/resa/orders_notpaid.html:118 templates/resa/sales.html:43
+msgid "First name"
+msgstr "Prénom"
+
+#: templates/account/search.html:36 templates/resa/orders_notpaid.html:32
+#: templates/resa/orders_notpaid.html:79
+#: templates/resa/orders_notpaid.html:119 templates/resa/sales.html:44
 msgid "Email"
 msgstr "Email"
 
-#: templates/account/search.html:50
+#: templates/account/search.html:50 templates/resa/orders_notpaid.html:59
+#: templates/resa/orders_notpaid.html:99
+#: templates/resa/orders_notpaid.html:139 templates/resa/sales.html:56
 msgid "View"
 msgstr "Voir"
 
@@ -1010,7 +1072,7 @@ msgstr "Panier de l'utilisateur"
 msgid "The cart is empty"
 msgstr "Le panier est vide"
 
-#: templates/resa/manage_cart.html:39
+#: templates/resa/manage_cart.html:39 templates/resa/sales.html:23
 msgid "Products:"
 msgstr "Produits :"
 
@@ -1164,6 +1226,19 @@ msgstr ""
 msgid "Order of %(date_t)s for amount of %(amount_t)s€"
 msgstr "Commande du %(date_t)s pour un montant de %(amount_t)s€"
 
+#: templates/resa/orders_notpaid.html:33 templates/resa/orders_notpaid.html:80
+#: templates/resa/orders_notpaid.html:120
+msgid "Number"
+msgstr "Nombre"
+
+#: templates/resa/orders_notpaid.html:34
+msgid "Sel."
+msgstr "Sel."
+
+#: templates/resa/orders_notpaid.html:111
+msgid "Others"
+msgstr "Autres"
+
 #: templates/resa/orders_paypal_return.html:5
 #: templates/resa/orders_paypal_return.html:12
 msgid "PayPal payment"
@@ -1217,6 +1292,10 @@ msgstr "Total HT"
 msgid "Total incl. VAT:"
 msgstr "Total TTC"
 
+#: templates/resa/orders_search.html:23
+msgid "Order number"
+msgstr "Num. Com."
+
 #: templates/resa/payment_cyberplus_email.txt:3
 #, python-format
 msgid ""
@@ -1239,6 +1318,14 @@ msgid ""
 msgstr ""
 "Votre paiment concernant la commande n° %(order_id)s pour un montant de \n"
 "%(amount)s euros a été confirmé par PayPal."
+
+#: templates/resa/stats.html:18
+msgid "Participants per country"
+msgstr "Participants par pays"
+
+#: templates/resa/stats.html:23
+msgid "Users count"
+msgstr "Nombre d'utilisateurs"
 
 #: templates/resa/stocks.html:29
 msgid "Quantities"
