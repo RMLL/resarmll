@@ -8,7 +8,7 @@ from orders import Order, OrderDetail
 class CountryAdmin(admin.ModelAdmin):
     form = CountryAdminForm
     ordering = ('code',)
-    search_fields = ('code',)
+    search_fields = ('countrylabel__value', 'code',)
     list_display = ('label', 'code')
 admin.site.register(Country, CountryAdmin)
 
