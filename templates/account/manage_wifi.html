@@ -17,19 +17,19 @@
 
         <div class="field">
             <div class="label">{% trans "Username:" %}</div>
-            {% ifequal user.get_profile.network None %}
+            {% ifequal username None %}
                 <em class="notset">{% trans "not set" %}</em>
             {% else %}
-                {{ user.get_profile.network.username }}
+                {{ username }}
             {% endifequal %}
         </div>
 
         <div class="field">
             <div class="label">{% trans "Password:" %}</div>
-            {% ifequal user.get_profile.network None %}
+            {% ifequal password None %}
                 <em class="notset">{% trans "not set" %}</em>
             {% else %}
-                {{ user.get_profile.network.password }}
+                {{ password }}
             {% endifequal %}
         </div>
 

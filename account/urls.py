@@ -35,7 +35,7 @@ urlpatterns = patterns ('',
     url(r'^profile/modify/$', profile_modify, {'tmpl': 'account/profile_modify.html'}),
     url(r'^profile/badge/$', profile_badge, {'tmpl': 'account/profile_badge.html'}),
 
-    url(r'^wifi/$', profile_badge, {'tmpl': 'account/wifi.html'}),
+    url(r'^wifi/$', wifi, {'tmpl': 'account/wifi.html'}),
 
     url(r'^create/$', create, {'tmpl': 'account/create.html'}),
     url(r'^search/$', search, {'tmpl': 'account/search.html'}),

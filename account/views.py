@@ -11,7 +11,7 @@ from django.conf import settings as django_settings
 
 from resarmll import settings
 from resarmll.account.forms import UserForm, UserFormModify, UserFormManagerCreate, UserFormManagerModify
-from resarmll.account.models import UserProfile
+from resarmll.account.models import UserProfile, NetworkAccess
 from resarmll.resa.models import Badge
 from resarmll.resa.utils import BadgeGenerator
 from resarmll.utils.decorators import auto_render, manager_required
@@ -121,6 +121,13 @@ def profile_badge(request, tmpl):
 @login_required
 @auto_render
 def wifi(request, tmpl):
+    username = password = None
+    try:
+        access = NetworkAccess.objects.get(id=request.user.id)
+        username = access.username
+        password = access.password
+    except:
+        username = password = None
     return tmpl, locals()
 
 @login_required
@@ -249,10 +256,18 @@ def manage_badge(request, tmpl, user_id):
 @manager_required
 @auto_render
 def manage_wifi(request, tmpl, user_id):
-    user = None
+    user = username = password = None
     if user_id:
         try:
             user = User.objects.get(id=user_id)
         except:
             user = None
-    return tmpl, {'user_obj': user}
+        if user:
+            try:
+                access = NetworkAccess.objects.get(id=user.id)
+                username = access.username
+                password = access.password
+            except:
+                username = password = None
+
+    return tmpl, {'user_obj': user, 'username': username, 'password': password}
