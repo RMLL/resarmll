@@ -15,7 +15,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from resarmll.resa.models import Country
 from resarmll.compta.models import PlanComptable
 from django.contrib.auth.models import User
-from resarmll.account.models import UserProfile
+from resarmll.account.models import UserProfile, NetworkAccess
 from resarmll.resa.models import Badge
 
 #####################
@@ -98,15 +98,30 @@ class Users:
         else:
             print "Err: unable to find file '%s' or '%s'" % (fcsv, emailtmpl)
 
+class WiFi:
+    @staticmethod
+    def import_fromcsv(fcsv):
+        if os.path.exists(fcsv):
+            handle = file(fcsv)
+            for i in handle.readlines():
+                values = i.strip().split(';')
+                a = NetworkAccess(username=values[0], password=values[1])
+                a.save()
+        else:
+            print "Err: unable to find file '%s' or '%s'" % (fcsv, emailtmpl)
+
+
 if __name__ == "__main__":
     ok = False
-    args = ['badgegen', 'importusers']
+    args = ['badgegen', 'importusers', 'importwifi']
     if len(sys.argv) > 1 and sys.argv[1] in args:
         ok = True
         if sys.argv[1] == 'badgegen':
             Users.gen_badges()
         elif sys.argv[1] == 'importusers' and len(sys.argv) > 3:
             Users.import_fromcsv(sys.argv[2], sys.argv[3])
+        elif sys.argv[1] == 'importwifi' and len(sys.argv) > 2:
+            WiFi.import_fromcsv(sys.argv[2])
         else:
             ok = False
 
