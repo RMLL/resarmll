@@ -204,28 +204,28 @@ def edit(request, tmpl, user_id=None):
         if request.method == 'POST':
             form = UserFormManagerModify(request.POST)
             if form.is_valid():
-                try:
-                    user.email = form.cleaned_data['email']
-                    user.first_name = form.cleaned_data['first_name']
-                    user.last_name = form.cleaned_data['last_name']
-                    if form.cleaned_data['password'] != '':
-                        user.set_password(form.cleaned_data['password'])
-                    user.save()
-                    p = user.get_profile()
-                    p.gender = form.cleaned_data['gender']
-                    p.address = form.cleaned_data['address']
-                    p.language = form.cleaned_data['language']
-                    p.country = form.cleaned_data['country']
-                    p.badge_text = form.cleaned_data['badge_text']
-                    p.fingerprint = form.cleaned_data['fingerprint']
-                    p.badge_type = form.cleaned_data['badge_type']
-                    p.notes =  form.cleaned_data['notes']
-                    p.payment_later = form.cleaned_data['payment_later']
-                    p.save()
-                except:
-                    syserr = True
-                else:
-                    modify_success = True
+                #try:
+                user.email = form.cleaned_data['email']
+                user.first_name = form.cleaned_data['first_name']
+                user.last_name = form.cleaned_data['last_name']
+                if form.cleaned_data['password'] != '':
+                    user.set_password(form.cleaned_data['password'])
+                user.save()
+                p = user.get_profile()
+                p.gender = form.cleaned_data['gender']
+                p.address = form.cleaned_data['address']
+                p.language = form.cleaned_data['language']
+                p.country = form.cleaned_data['country']
+                p.badge_text = form.cleaned_data['badge_text']
+                p.fingerprint = form.cleaned_data['fingerprint']
+                p.badge_type = form.cleaned_data['badge_type']
+                p.notes =  form.cleaned_data['notes']
+                p.payment_later = form.cleaned_data['payment_later']
+                p.save()
+                #except:
+                    #syserr = True
+                #else:
+                #    modify_success = True
         else:
             form = UserFormManagerModify()
             form.fill_from_user(user)
@@ -249,6 +249,7 @@ def manage_badge(request, tmpl, user_id):
         'badge_big_png': settings.MEDIA_URL + BadgeGenerator.get_path_big_png(user_id),
         'badge_pdf': settings.MEDIA_URL + BadgeGenerator.get_path_pdf(user_id),
         'badge_pdf_printer': settings.MEDIA_URL + BadgeGenerator.get_path_pdf_printer(user_id),
+        'badge_pdf_printer_portait': settings.MEDIA_URL + BadgeGenerator.get_path_pdf_printer_portrait(user_id),
     }
     return tmpl, response_dct
 
