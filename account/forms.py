@@ -13,7 +13,7 @@ _attrs_passwd = { 'class': 'text', 'size': 30, 'autocomplete': 'off'}
 
 class UserForm(forms.Form):
     username = forms.CharField(label=_(u"Username:"),
-        max_length=16, min_length=3, widget=forms.TextInput(attrs=_attrs),
+        max_length=28, min_length=3, widget=forms.TextInput(attrs=_attrs),
         #help_text=_(u"help")
         )
     password = forms.CharField(label=_(u"Password:"),
