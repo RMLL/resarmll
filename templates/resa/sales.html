@@ -11,7 +11,7 @@
 {% block content %}
     <h2>{% trans "Sales" %}</h2>
 
-    {% if product and not results %}
+    {% if product and not results_paid and results_notpaid %}
         <div class="main-error">
             {% trans "No results" %}
         </div>
@@ -34,33 +34,80 @@
         {% endif %}
 
 
-        {% if results %}
-            <table class="list">
-                <tr>
-                    <th>#</th>
-                    <th>{% trans "Id" %}</th>
-                    <th>{% trans "Last name" %}</th>
-                    <th>{% trans "First name" %}</th>
-                    <th>{% trans "Email" %}</th>
-                    <th>{% trans "Count" %}</th>
-                    <th></th>
-                </tr>
-                {% for u in results %}
-                    <tr>
-                        <td>{{ forloop.counter }}</td>
-                        <td>{{ u.id }}</td>
-                        <td>{{ u.last_name }}</td>
-                        <td>{{ u.first_name }}</td>
-                        <td>{{ u.email }}</td>
-                        <td>{{ u.num_products }}</td>
-                        <td>
-                            <a href="/resa/manage_orders/{{ u.id }}">
-                                {% trans "View" %}
-                            </a>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </table>
+        {% if results_paid %}
+            <div class="section">
+                <h3>{% trans "Paid" %}</h3>
+                <div class="content">
+                    <table class="list">
+                        <tr>
+                            <th>#</th>
+                            <th>{% trans "Id" %}</th>
+                            <th>{% trans "Last name" %}</th>
+                            <th>{% trans "First name" %}</th>
+                            <th>{% trans "Email" %}</th>
+                            <th>{% trans "Count" %}</th>
+                            <th></th>
+                        </tr>
+                        {% for u in results_paid %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ u.id }}</td>
+                                <td>{{ u.last_name }}</td>
+                                <td>{{ u.first_name }}</td>
+                                <td>{{ u.email }}</td>
+                                <td>
+                                    <strong style="color:{% if u.get_profile.payment_later %}green{% else %}red{% endif %};">
+                                        {{ u.num_products }}
+                                    </strong>
+                                </td>
+                                <td>
+                                    <a href="/resa/manage_orders/{{ u.id }}">
+                                        {% trans "View" %}
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if results_notpaid %}
+            <div class="section">
+                <h3>{% trans "Not paid" %}</h3>
+                <div class="content">
+                    <table class="list">
+                        <tr>
+                            <th>#</th>
+                            <th>{% trans "Id" %}</th>
+                            <th>{% trans "Last name" %}</th>
+                            <th>{% trans "First name" %}</th>
+                            <th>{% trans "Email" %}</th>
+                            <th>{% trans "Count" %}</th>
+                            <th></th>
+                        </tr>
+                        {% for u in results_notpaid %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ u.id }}</td>
+                                <td>{{ u.last_name }}</td>
+                                <td>{{ u.first_name }}</td>
+                                <td>{{ u.email }}</td>
+                                <td>
+                                    <strong style="color:{% if u.get_profile.payment_later %}green{% else %}red{% endif %};">
+                                        {{ u.num_products }}
+                                    </strong>
+                                </td>
+                                <td>
+                                    <a href="/resa/manage_orders/{{ u.id }}">
+                                        {% trans "View" %}
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
         {% endif %}
 
     </div>

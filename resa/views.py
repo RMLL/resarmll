@@ -318,14 +318,15 @@ def stocks(request, tmpl):
 @auto_render
 def sales(request, tmpl):
     products = Article.objects.filter(enabled=True).order_by('order')
-    results = product = None
+    results_paid = results_notpaid = product = None
     if request.method == 'POST':
         try:
             product = Article.objects.get(id=int(request.POST['product']))
         except:
             product = None
         if product:
-            results = User.objects.filter(order__payment_date__isnull=False,order__orderdetail__product=product).annotate(num_products=Sum('order__orderdetail__quantity')).filter().order_by('last_name')
+            results_paid = User.objects.filter(order__payment_date__isnull=False,order__orderdetail__product=product).annotate(num_products=Sum('order__orderdetail__quantity')).filter().order_by('last_name')
+            results_notpaid = User.objects.filter(order__payment_date__isnull=True,order__orderdetail__product=product).annotate(num_products=Sum('order__orderdetail__quantity')).filter().order_by('last_name')
     return tmpl, locals()
 
 @login_required
