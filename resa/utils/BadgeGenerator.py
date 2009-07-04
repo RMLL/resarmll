@@ -125,23 +125,6 @@ def get_path_pdf_printer(id):
 def get_path_pdf_printer_portrait(id):
     return settings.BADGE_PRINTER_PDF_DEST_DIR+str(id)+'p.pdf'
 
-
-class myImageReader:
-    def __init__(self, fileName):
-        self.fileName = fileName
-        self._image = None
-        self._width = None
-        self._height = None
-        self._transparent = None
-        self._data = None
-        if _isPILImage(fileName):
-            self._image = fileName
-            self.fp = fileName.fp
-            try:
-                self.fileName = self._image.fileName
-            except AttributeError:
-                self.fileName = 'PILIMAGE_%d' % id(self)
-
 class cairoContext(cairo.Context):
 
     def use_font(self, font):
@@ -247,9 +230,9 @@ class BadgeGenerator:
         self.user_badge_color = badge_color
         self.user_desc = desc.strip()
         self.user_fingerprint = fingerprint.strip()
-        self.email = email
-        if self.user_fingerprint == '':
-            self.email = ''
+        self.email = '#'+str(self.user_id)
+        if self.user_fingerprint != '':
+            self.email = email+' '+self.email
         self.organisation_text = settings.BADGE_CITY
 
     def create_big_png(self):
