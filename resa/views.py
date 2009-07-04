@@ -2,7 +2,7 @@
 from datetime import datetime as date
 from decimal import Decimal as dec
 
-from django.db.models import Count
+from django.db.models import Count, Sum
 from django.utils.translation import ugettext_lazy as _
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
@@ -325,7 +325,7 @@ def sales(request, tmpl):
         except:
             product = None
         if product:
-            results = User.objects.filter(order__payment_date__isnull=False,order__orderdetail__product=product)
+            results = User.objects.filter(order__payment_date__isnull=False,order__orderdetail__product=product).annotate(num_products=Sum('order__orderdetail__quantity')).filter().order_by('last_name')
     return tmpl, locals()
 
 @login_required
