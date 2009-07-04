@@ -19,6 +19,9 @@ class Order(models.Model):
         verbose_name = _(u"Order")
         verbose_name_plural = _(u"Orders")
 
+    def __unicode__(self):
+        return '#'+str(self.id)+' - '+self.user.get_full_name()
+
     def remove(self):
         from resarmll.compta.models import Operation
         for o in self.orderdetail_set.all():
@@ -113,6 +116,13 @@ class OrderDetail(models.Model):
     quantity = models.IntegerField(_(u"Quantity"))
     distributed = models.IntegerField(_(u"Distributed quantity"))
 
+    class Meta:
+        verbose_name = _(u"Order detail")
+        verbose_name_plural = _(u"Orders details")
+
+    def __unicode__(self):
+        return self.product.label()+' - '+self.order.user.get_full_name()
+
     def remove(self):
         # Updating stocks
         Stock.objects.filter(id=self.product.stock.id).update(
@@ -136,10 +146,3 @@ class OrderDetail(models.Model):
 
     def quantitydiff(self):
         return range(0, self.quantity+1)
-
-    def __unicode__(self):
-        return self.product
-
-    class Meta:
-        verbose_name = _(u"Order detail")
-        verbose_name_plural = _(u"Orders details")
