@@ -43,10 +43,11 @@
         {% endfor %}
         <tfoot>
             <tr>
-                <td>
+                <td colspan="2">
                     <input type="reset" value="{% trans "Reset" %}" onclick="javascript:return reset_distribution('table_order_{{ order.id }}');" />
+                    <input type="button" value="{% trans "Maximise" %}" onclick="javascript:return maximise_distribution('table_order_{{ order.id }}');" />
                 </td>
-                <td colspan="2" class="num">
+                <td class="num">
                     <input type="submit" value="{% trans "Save" %}" />
                 </td>
                 <td></td>
