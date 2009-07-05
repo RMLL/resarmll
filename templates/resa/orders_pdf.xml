@@ -53,7 +53,7 @@
         <nextFrame/>
 
         <para>
-            <b>{% trans "Document:" %}</b> <i>{% trans "Billing num" %} FC_{{ order.id }}</i>
+            <b>{% trans "Document:" %}</b> <i>{% trans "Billing num" %} FC_{{ order.id }}-{{ user.id }}</i>
         </para>
         <spacer length="1cm" width="1mm"/>
 
