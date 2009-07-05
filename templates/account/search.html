@@ -22,6 +22,14 @@
             <div>
                 <label class="inline" for="pattern">{% trans "Search pattern:" %}</label>
                 <input type="text" class="text" name="pattern" id="pattern" value="{{ pattern }}" />
+                {% if badges %}
+                    <select name="badge">
+                        <option value=""></option>
+                        {% for b in badges %}
+                            <option value="{{ b.id }}"{% ifequal b.id badge.id %} selected="selected"{% endifequal %}>{{ b.name }}</option>
+                        {% endfor %}
+                    </select>
+                {% endif %}
                 <input type="submit" value="{% trans "ok" %}" />
             </div>
         </form>

@@ -174,17 +174,34 @@ def create(request, tmpl):
 @auto_render
 def search(request, tmpl):
     pattern = request.POST.get('pattern')
+    results = None
+    try:
+        badge = Badge.objects.get(id=int(request.POST.get('badge')))
+    except:
+        badge = None
+
     if pattern is None:
         search_mode = False
         pattern = ''
     else:
         search_mode = True
-    results = None
+
     if search_mode and pattern != '':
-        results = User.objects.filter(Q(username__icontains = pattern) |
+        if badge:
+            results = User.objects.filter(
+                Q(username__icontains = pattern) |
+                Q(email__icontains = pattern) |
+                Q(first_name__icontains = pattern) |
+                Q(last_name__icontains = pattern),userprofile__badge_type=badge).order_by('id')
+        else:
+            results = User.objects.filter(Q(username__icontains = pattern) |
                 Q(email__icontains = pattern) |
                 Q(first_name__icontains = pattern) |
                 Q(last_name__icontains = pattern)).order_by('id')
+    elif badge and pattern == '':
+        results = User.objects.filter(userprofile__badge_type=badge).order_by('id')
+
+    badges = Badge.objects.all()
     return tmpl, locals()
 
 @login_required
