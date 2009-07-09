@@ -12,11 +12,15 @@ from resarmll import settings
 
 from django.core.mail import send_mail
 from django.core.exceptions import ObjectDoesNotExist
+from django.utils import translation
+from django.contrib.auth.models import User
+
 from resarmll.resa.models import Country
 from resarmll.compta.models import PlanComptable
-from django.contrib.auth.models import User
 from resarmll.account.models import UserProfile, NetworkAccess
 from resarmll.resa.models import Badge
+from resarmll.utils.pdf import gen_pdf
+from resarmll.resa.orders import Order
 
 #####################
 setup_environ(settings)
@@ -98,6 +102,72 @@ class Users:
         else:
             print "Err: unable to find file '%s' or '%s'" % (fcsv, emailtmpl)
 
+    @staticmethod
+    def bills(folder):
+        results = User.objects.filter(order__payment_date__isnull=False).order_by('id')
+        fails = []
+        for u in results:
+            translation.activate(u.get_profile().language)
+            orders = u.order_set.filter(payment_date__isnull=False).order_by('id')
+            for i, o in enumerate(orders):
+                bname = "%s/bill_%04d-%03d.pdf" % (folder, u.id, i+1)
+                print "Writing bill for %s, #%d : %s ..." % (u.get_full_name(), u.id, bname),
+                try:
+                    buffer = gen_pdf('resa/orders_pdf.xml', {'user': u, 'order': o,
+                        'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
+                        'tva': settings.TVA})
+                except:
+                    buffer = None
+                if buffer:
+                    pdffile = open(bname, 'w')
+                    pdffile.write(buffer)
+                    pdffile.close()
+                    print 'OK'
+                else:
+                    print 'FAIL'
+                    fails.append(u.get_full_name())
+        if fails != []:
+            print "Fails for: \n%s" % ("\n".join(fails))
+
+    @staticmethod
+    def bills_orga(folder):
+        results = User.objects.filter(userprofile__notes__contains='COMMANDE_ORGA').order_by('id')
+        fails = []
+        for u in results:
+            cmd = u.get_profile().get_order_orga()
+            if cmd:
+                translation.activate(u.get_profile().language)
+                o = Order.objects.get(id=int(cmd))
+                bname = "%s/bill_%04d-%03d.pdf" % (folder, u.id, 1)
+                print "Writing bill for %s, #%d : %s ..." % (u.get_full_name(), u.id, bname),
+                try:
+                    buffer = gen_pdf('resa/orders_pdf.xml', {'user': u, 'order': o,
+                        'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
+                        'tva': settings.TVA})
+                except:
+                    buffer = None
+                if buffer:
+                    pdffile = open(bname, 'w')
+                    pdffile.write(buffer)
+                    pdffile.close()
+                    print 'OK'
+                else:
+                    print 'FAIL'
+                    fails.append(u.get_full_name())
+        if fails != []:
+            print "Fails for: \n%s" % ("\n".join(fails))
+
+    @staticmethod
+    def mass_mail(emailtmpl):
+        results = User.objects.all()
+        #results = User.objects.filter(order__orderdetail__product=2).order_by('last_name')
+        for u in results:
+            print u.get_full_name()
+            handle = file(emailtmpl)
+            email = handle.read()
+            handle.close()
+            send_mail("Your particpation at LSM / Votre particpation aux RMLL", email, 'reservation@rmll.info', [u.email])
+
 class WiFi:
     @staticmethod
     def import_fromcsv(fcsv):
@@ -110,10 +180,9 @@ class WiFi:
         else:
             print "Err: unable to find file '%s' or '%s'" % (fcsv, emailtmpl)
 
-
 if __name__ == "__main__":
     ok = False
-    args = ['badgegen', 'importusers', 'importwifi']
+    args = ['badgegen', 'importusers', 'importwifi', 'billsgen', 'billsgenorga', 'usermassmail']
     if len(sys.argv) > 1 and sys.argv[1] in args:
         ok = True
         if sys.argv[1] == 'badgegen':
@@ -122,6 +191,12 @@ if __name__ == "__main__":
             Users.import_fromcsv(sys.argv[2], sys.argv[3])
         elif sys.argv[1] == 'importwifi' and len(sys.argv) > 2:
             WiFi.import_fromcsv(sys.argv[2])
+        elif sys.argv[1] == 'billsgen' and len(sys.argv) > 2:
+            Users.bills(sys.argv[2])
+        elif sys.argv[1] == 'billsgenorga' and len(sys.argv) > 2:
+            Users.bills_orga(sys.argv[2])
+        elif sys.argv[1] == 'usermassmail' and len(sys.argv) > 2:
+            Users.mass_mail(sys.argv[2])
         else:
             ok = False
 
