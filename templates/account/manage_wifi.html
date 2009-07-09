@@ -20,7 +20,7 @@
             {% ifequal username None %}
                 <em class="notset">{% trans "not set" %}</em>
             {% else %}
-                {{ username }}
+                <span>{{ username }}</span>
             {% endifequal %}
         </div>
 
@@ -29,7 +29,7 @@
             {% ifequal password None %}
                 <em class="notset">{% trans "not set" %}</em>
             {% else %}
-                {{ password }}
+                <span>{{ password }}</span>
             {% endifequal %}
         </div>
 
