@@ -317,7 +317,7 @@ def stocks(request, tmpl):
 @manager_required
 @auto_render
 def sales(request, tmpl):
-    products = Article.objects.filter(enabled=True).order_by('order')
+    products = Article.objects.order_by('order')
     results_paid = results_notpaid = product = None
     if request.method == 'POST':
         try:
