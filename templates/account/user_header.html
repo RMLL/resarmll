@@ -1,1 +1,14 @@
+{% load i18n %}
+
 <h2 class="username">{{ user.get_full_name }}</h2>
+
+{% if user.is_staff or user.get_profile.is_manager %}
+    <div class="quicksearch">
+        <form action="/account/search/" method="post">
+            <input type="text" class="text" name="pattern" id="pattern" value="" />
+            <noscript><input type="submit" value="{% trans "ok" %}" /></noscript>
+        </form>
+    </div>
+{% endif %}
+
+<div class="clear"></div>

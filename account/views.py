@@ -136,19 +136,20 @@ def wifi(request, tmpl):
 def create(request, tmpl):
     syserr = False
     create_success = False
+    user_obj = None
     if request.method == 'POST':
         form = UserFormManagerCreate(request.POST)
         if form.is_valid():
             try:
-                u = User(
+                user_obj = User(
                         username = form.cleaned_data['username'],
                         email = form.cleaned_data['email'],
                         first_name = form.cleaned_data['first_name'],
                         last_name = form.cleaned_data['last_name'])
-                u.set_password(form.cleaned_data['password'])
-                u.save()
+                user_obj.set_password(form.cleaned_data['password'])
+                user_obj.save()
                 p = UserProfile(
-                        user=u,
+                        user=user_obj,
                         gender = form.cleaned_data['gender'],
                         address = form.cleaned_data['address'],
                         language = form.cleaned_data['language'],
@@ -167,13 +168,23 @@ def create(request, tmpl):
                 form = UserFormManagerCreate()
     else:
         form = UserFormManagerCreate()
-    return tmpl, {'form': form, 'syserr': syserr, 'create_success': create_success}
+    return tmpl, {'user_obj': user_obj, 'form': form, 'syserr': syserr, 'create_success': create_success}
 
 @login_required
 @manager_required
 @auto_render
 def search(request, tmpl):
     pattern = request.POST.get('pattern')
+
+    # search by id
+    searchuser= None
+    try:
+        searchuser = User.objects.get(id=int(pattern))
+    except:
+        pass
+    if searchuser:
+        return HttpResponseRedirect('/resa/manage_orders/%d' % (searchuser.id))
+
     results = None
     try:
         badge = Badge.objects.get(id=int(request.POST.get('badge')))
@@ -200,6 +211,9 @@ def search(request, tmpl):
                 Q(last_name__icontains = pattern)).order_by('id')
     elif badge and pattern == '':
         results = User.objects.filter(userprofile__badge_type=badge).order_by('id')
+
+    if results and len(results) == 1:
+        return HttpResponseRedirect('/resa/manage_orders/%d' % (results[0].id))
 
     badges = Badge.objects.all()
     return tmpl, locals()

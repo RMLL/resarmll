@@ -494,7 +494,7 @@ label.inline {
 
 .field .widget {
     float : left;
-    width : 40%;
+    width : 50%;
 }
 
 .field .help {
@@ -596,6 +596,10 @@ table.list tr.minus {
     background : #ECACA6;
 }
 
+table.list tr.odd {
+    background : #ececec;
+}
+
 .validate_payment, .validate_payment {
     margin : 20px 0;
     float : right;
@@ -629,8 +633,14 @@ table.modified {
 }
 
 #page h2.username {
+    float : left;
     border : none;
     margin : 0;
+}
+
+#page .quicksearch {
+    margin : 2px 5px 0 0;
+    float : right;
 }
 
 #id_fingerprint {
