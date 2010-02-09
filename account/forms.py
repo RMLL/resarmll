@@ -12,6 +12,12 @@ _attrs = { 'class': 'text', 'size': 30}
 _attrs_passwd = { 'class': 'text', 'size': 30, 'autocomplete': 'off'}
 
 class UserForm(forms.Form):
+    last_name = forms.CharField(label=_(u"Last name:"),
+        max_length=64, min_length=3, widget=forms.TextInput(attrs=_attrs))
+    first_name = forms.CharField(label=_(u"First name:"),
+        max_length=64, min_length=3, widget=forms.TextInput(attrs=_attrs))
+    email = forms.EmailField(label=_(u"E-mail address:"),
+        max_length=64, widget=forms.TextInput(attrs=_attrs))
     username = forms.CharField(label=_(u"Username:"),
         max_length=28, min_length=3, widget=forms.TextInput(attrs=_attrs),
         #help_text=_(u"help")
@@ -24,15 +30,9 @@ class UserForm(forms.Form):
     password_confirm = forms.CharField(label=_(u"Confirm password:"),
         min_length=5, max_length=32,
         widget=forms.PasswordInput(attrs=_attrs_passwd, render_value=False))
-    email = forms.EmailField(label=_(u"E-mail address:"),
-        max_length=64, widget=forms.TextInput(attrs=_attrs))
     gender = forms.ChoiceField(label=_(u"Gender:"), choices=GENDER_CHOICES, required=False,
         help_text=_(u"The Gender is not mandatory but could be useful for room distribution."),
         )
-    last_name = forms.CharField(label=_(u"Last name:"),
-        max_length=64, min_length=3, widget=forms.TextInput(attrs=_attrs))
-    first_name = forms.CharField(label=_(u"First name:"),
-        max_length=64, min_length=3, widget=forms.TextInput(attrs=_attrs))
     address = forms.CharField(label=_(u"Address:"), required=False,
         widget=forms.Textarea(attrs=_attrs),
         help_text=_(u"Address is useful for speakers or people who'll get a refund."),
@@ -40,7 +40,8 @@ class UserForm(forms.Form):
     language = forms.ChoiceField(label=_(u"Language:"),
         choices=settings.LANGUAGES)
     country = forms.ModelChoiceField(label=_(u"Country:"),
-        queryset=Country.objects.all(), widget=forms.Select(), empty_label=None)
+        queryset=Country.objects.all(), widget=forms.Select(), empty_label=None,
+        initial=321) # FIXME (id hardcoded)
     badge_text = forms.CharField(label=_(u"Badge text:"),
         required=False, max_length=32, widget=forms.TextInput(attrs=_attrs),
         help_text=_(u"Free text printed on your badge (should not be too long)."),

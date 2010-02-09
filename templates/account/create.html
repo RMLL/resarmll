@@ -3,6 +3,11 @@
 {% load i18n %}
 {% load markup %}
 
+{% block extrafoot %}
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/common.js"></script>
+{% endblock %}
+
 {% block title %}{% trans "Create an account" %}{% endblock %}
 
 {% block sidebar %}
@@ -24,6 +29,11 @@
     {% if create_success %}
         <div class="main-success">
             {% trans "User successfully created" %}
+            <ul>
+                <li><a href="/account/edit/{{ user_obj.id }}">{% trans "Account" %}</a></li>
+                <li><a href="/account/manage_badge/{{ user_obj.id }}">{% trans "Badge" %}</a></li>
+                <li><a href="/account/manage_wifi/{{ user_obj.id }}">{% trans "Wifi access" %}</a></li>
+            </ul>
         </div>
     {% endif %}
 
@@ -42,6 +52,18 @@
 
                     <div class="widget">
                         {{ field }}
+
+                        {% ifequal field.name 'password' %}
+                            <input type="button" value="{% trans "Auto" %}" onclick="javascript:createform_gen_password('id_password', 'id_password_confirm');" />
+                        {% endifequal %}
+
+                        {% ifequal field.name 'username' %}
+                            <input type="button" value="{% trans "Auto" %}" onclick="javascript:createform_gen_username('id_first_name', 'id_last_name', 'id_username');" />
+                        {% endifequal %}
+
+                        {% ifequal field.name 'email' %}
+                            <input type="button" value="{% trans "Auto" %}" onclick="javascript:createform_gen_email('id_first_name', 'id_last_name', 'id_email', 'nomail.rmll.info');" />
+                        {% endifequal %}
                     </div>
 
                     {% if field.help_text %}
