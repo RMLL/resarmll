@@ -4,27 +4,26 @@ import os
 PROJECT_DIR = os.path.dirname(__file__)
 
 # Django settings for resarmll project.
-#DEBUG = True
-#TEMPLATE_DEBUG = DEBUG
-DEBUG = False
-TEMPLATE_DEBUG = False
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+#DEBUG = False
+#TEMPLATE_DEBUG = False
 
 SERVER_EMAIL = 'reservation@rmll.info'
 # ADMINS needs to be a list (a tuple make mail_admins fails)
 EMAIL_SUBJECT_PREFIX = '[TRACE] '
 ADMINS = (
     ('Resa Rmll Team', 'kolter@openics.org'),
-    ('Resa Rmll Team', 'etienne.loks@peacefrogs.net'),
 )
 
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'postgresql_psycopg2' # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'resarmll'             # Or path to database file if using sqlite3.
-DATABASE_USER = 'resarmll'             # Not used with sqlite3.
-DATABASE_PASSWORD = 'resarmll'         # Not used with sqlite3.
+DATABASE_NAME = 'resarmll2010'          # Or path to database file if using sqlite3.
+DATABASE_USER = 'resarmll'              # Not used with sqlite3.
+DATABASE_PASSWORD = 'resarmll'          # Not used with sqlite3.
 DATABASE_HOST = 'localhost'             # Set to empty string for localhost. Not used with sqlite3.
-DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
+DATABASE_PORT = ''                      # Set to empty string for default. Not used with sqlite3.
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -70,7 +69,7 @@ SECRET_KEY = 'm_y!@s4&q#m1w#ojcf^n(wm(uc#2ip&c3a%x-8_mj6^8*9vp!o'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.load_template_source',
     'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
+#    'django.template.loaders.eggs.load_template_source',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -154,34 +153,34 @@ BADGE_PRINTER_HEIGHT_MM = 54.0
 
 ### TREASURER ###
 CHECK_SETTINGS = {
-    'to': 'Association Linux Nantes',
+    'to': 'Association ABUL',
     'contact_email': SERVER_EMAIL,
 }
 
-TREASURER_NAME = "David COURTIN"
+TREASURER_NAME = "Emmanuel Bouthenot"
 TREASURER_EMAIL = "reservation@rmll.info"
 
 TREASURER_ADDRESS = """
-David COURTIN
-3, impasse de Tananarive
-44800 Saint Herblain
+Emmanuel Bouthenot
+119 rue Malbec
+33800 Bordeaux
 FRANCE
 """
 
-CHECK_PAYABLE_TO = "Association Linux Nantes"
+CHECK_PAYABLE_TO = "Association ABUL"
 
 ### PAYPAL ###
 PAYPAL_SETTINGS = {
-    'id': 'david@lilel.org',
-    #'id': 'paypal_1209199069_biz@openics.org',
-    'url' : 'https://www.paypal.com/cgi-bin/webscr',
-    #'url': 'https://www.sandbox.paypal.com/cgi-bin/webscr',
+    #'id': 'paypal@abul.org',
+    'id': 'paypal_1209199069_biz@openics.org',
+    #'url' : 'https://www.paypal.com/cgi-bin/webscr',
+    'url': 'https://www.sandbox.paypal.com/cgi-bin/webscr',
     'currency': 'EUR',
     'return': '/resa/orders/paypal/return',
     'notify_url': '/resa/orders/paypal/notify',
 }
 
-### PAYPAL ###
+### CYBERPLUS ###
 CYBERPLUS_SETTINGS = {
     'merchant_id': '',
     #'merchant_id': '038862749811111',
@@ -195,8 +194,9 @@ CYBERPLUS_SETTINGS = {
 
 ### MISC ###
 FULL_ADDRESS = """
-Linux Nantes - RMLL 2009 - contact@linux- nantes.org
-c/o Bellamy 17 - 17, rue Paul Bellamy - 44000 Nantes
-0442025800 – SIRET 510 497 159 – Code APE 9499Z
+Association ABUL - RMLL 2010 - contact@abul.org
+S/C Medias-cités - Place de la Republique - 33160 St Médard en Jalles
+SIRET 431 746 833 00026 – Code APE 9499Z
 """
+
 TVA = 19.6
