@@ -1,10 +1,13 @@
 {% load i18n %}
 
-<h2 class="username">{{ user.get_full_name }}</h2>
+<div class="username">
+    <h2 class="username">{{ user.get_full_name }}</h2>
+</div>
 
 {% if user.is_staff or user.get_profile.is_manager %}
     <div class="quicksearch">
         <form action="/account/search/" method="post">
+            <label for="pattern">{% trans "Quick search:" %}</label>
             <input type="text" class="text" name="pattern" id="pattern" value="" />
             <noscript><input type="submit" value="{% trans "ok" %}" /></noscript>
         </form>

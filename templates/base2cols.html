@@ -5,10 +5,41 @@
 <head>
     <title>{% trans "LSM Booking" %} - {% block title %}{% endblock %}</title>
     <link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png" />
-    <link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css" type="text/css" media="screen" />
     {% block extrahead %}{% endblock %}
 </head>
 <body>
+    <div id="page2cols">
+        {% include "layout/header.html" %}
+        <div id="head-wrapper">
+            <div id="head">
+                <div id="logo">
+                    {% include "account/user_header.html" %}
+                </div>
+                <div id="sidelogo">
+                    {% include "layout/flags.html" %}
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="content-wrapper">
+            <div id="content">
+                <div id="menubar">
+                    {% block sidebar %}{% endblock %}
+                </div>
+                <div id="main">
+                     {% block content %}{% endblock %}
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        {% include "layout/footer.html" %}
+    </div>
+    {% block extrafoot %}{% endblock %}
+</body>
+</html>
+
+<!--
     <div id="page" class="deuxcolonnes">
         {% if user.is_staff or user.get_profile.is_manager %}
             <div id="head" class="header_manager">
@@ -37,20 +68,14 @@
             </form>{%endfor%}
         </div>
         <div id="location">
-            {% include "account/user_header.html" %}
+
         </div>
         <div id="barredroite">
-            {% block sidebar %}{% endblock %}
+
         </div>
 
-        <div id="content">
-            {% block content %}{% endblock %}
-        </div>
         <div id="footer">
             <p>2000-{% now "Y" %} <a href="http://rmll.info/">RMLL.info</a></p>
         </div>
     </div>
-
-    {% block extrafoot %}{% endblock %}
-</body>
-</html>
+-->

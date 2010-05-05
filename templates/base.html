@@ -10,34 +10,33 @@
 </head>
 <body>
     <div id="page">
-        <div id="head">
-            <div id="acces"></div>
-            <a id="mainlink" href="http://2009.rmll.info/" title="Nantes 2009 : Rendez-vous libres !">&nbsp;</a>
-            <h1>10<sup>es</sup> Rencontres Mondiales du Logiciel Libre</h1>
-            <ul id="menu2">
-                <li>
-                    <a href="/">{% trans "Booking" %}</a>
-                </li>
-                <li>
-                    <a href="http://rmll.info">{% trans "LSM website" %}</a>
-                </li>
-            </ul>
+        {% include "layout/header.html" %}
+        <div id="head-wrapper">
+            <div id="head">
+                <div id="logo">
+                    <h1>
+                        <a href="/">
+                            <img src="{{ MEDIA_URL }}/images/logo-11es_{{LANGUAGE_CODE}}.png" alt="{% trans "LSM Booking" %}" />
+                        </a>
+                    </h1>
+                </div>
+                <div id="sidelogo"></div>
+                <div class="clear"></div>
+            </div>
         </div>
-        <div id="icons">
-            {% for lang in LANGUAGES%}
-            <form action="/i18n/setlang/" method="post">
-                <input type="hidden" name="language" value="{{lang.0}}" />
-                <input type="image" src="{{ MEDIA_URL }}images/drapeaux/{{lang.0}}.png" alt="{{lang.1}}"/>
-            </form>{%endfor%}
+        <div id="content-wrapper">
+            <div id="content">
+                <div id="main">
+                     {% block content %}{% endblock %}
+                </div>
+                <div id="sidebar">
+                    {% include "layout/flags.html" %}
+                </div>
+                <div class="clear"></div>
+            </div>
         </div>
-        <div id="content">
-            {% block content %}{% endblock %}
-        </div>
-        <div id="footer">
-            <p>2000-{% now "Y" %} <a href="http://rmll.info/">RMLL.info</a></p>
-        </div>
+        {% include "layout/footer.html" %}
     </div>
-
     {% block extrafoot %}{% endblock %}
 </body>
 </html>
