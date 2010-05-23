@@ -200,3 +200,10 @@ SIRET 431 746 833 00026 – Code APE 9499Z
 """
 
 TVA = 19.6
+
+### DEBUG SETTINGS ###
+if DEBUG:
+    BADGE_PNG_DEST_DIR = 'tmp/badges/png/'
+    BADGE_BIG_PNG_DEST_DIR = 'tmp/badges/png/big/'
+    BADGE_PDF_DEST_DIR = 'tmp/badges/pdf/'
+    BADGE_PRINTER_PDF_DEST_DIR = 'tmp/badges/pdf/printer/'
