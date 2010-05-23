@@ -44,7 +44,9 @@ def register(request, tmpl):
                 new_user.first_name = form.cleaned_data['first_name']
                 new_user.last_name = form.cleaned_data['last_name']
                 new_user.save()
-                badge = Badge.objects.filter(default=True)[0]
+                badge = form.cleaned_data['badge_type']
+                if not badge.userchoice:
+                    badge = Badge.objects.filter(default=True)[0]
                 new_profile = UserProfile(
                     user=new_user,
                     gender=form.cleaned_data['gender'],
@@ -98,6 +100,11 @@ def profile_modify(request, tmpl):
                 cur_profile.country = form.cleaned_data['country']
                 cur_profile.badge_text = form.cleaned_data['badge_text']
                 cur_profile.fingerprint = form.cleaned_data['fingerprint']
+                badge = form.cleaned_data['badge_type']
+                if badge:
+                    if not badge.userchoice:
+                        badge = Badge.objects.filter(default=True)[0]
+                    cur_profile.badge_type = badge
                 cur_profile.save()
             except:
                 syserr = True

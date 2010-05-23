@@ -20,7 +20,7 @@ admin.site.register(Article, ArticleAdmin)
 
 class BadgeAdmin(admin.ModelAdmin):
     ordering = ('name',)
-    list_display = ('name','alt_name', 'color', 'section', 'default')
+    list_display = ('name','alt_name', 'color', 'section', 'userchoice', 'default')
 admin.site.register(Badge, BadgeAdmin)
 
 class StockAdmin(admin.ModelAdmin):

@@ -193,9 +193,10 @@ class Badge(models.Model):
     default = models.BooleanField(_(u"Default"))
     section = models.CharField(_(u"Section"), max_length=32,
                 choices=BADGE_PROFILES, blank=True)
+    userchoice = models.BooleanField(_(u"User can choose it"))
 
     def __unicode__(self):
-        return self.name
+        return "%s / %s" % (self.name, self.alt_name)
 
     class Meta:
         verbose_name = _(u"Badge")

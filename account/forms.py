@@ -42,6 +42,9 @@ class UserForm(forms.Form):
     country = forms.ModelChoiceField(label=_(u"Country:"),
         queryset=Country.objects.all(), widget=forms.Select(), empty_label=None,
         initial=321) # FIXME (id hardcoded)
+    badge_type = forms.ModelChoiceField(label=_(u"Badge type:"),
+        queryset=Badge.objects.filter(userchoice=True).order_by('-default'), widget=forms.Select(),
+        empty_label=None)
     badge_text = forms.CharField(label=_(u"Badge text:"),
         required=False, max_length=32, widget=forms.TextInput(attrs=_attrs),
         help_text=_(u"Free text printed on your badge (should not be too long)."),
@@ -74,8 +77,10 @@ class UserFormModify(UserForm):
         del self.fields['username']
         self.fields['password'].__dict__['required'] = False
         self.fields['password_confirm'].__dict__['required'] = False
+        if data and not data.has_key('badge_type'):
+            self.fields['badge_type'].__dict__['required'] = False
 
-    def fill_from_user(self, user):
+    def fill_from_user(self, user, priv=False):
         for field in self.__dict__['fields']:
             if user.__dict__.has_key(field):
                 self.initial[field] = user.__dict__[field]
@@ -84,14 +89,25 @@ class UserFormModify(UserForm):
             # foreign keys
             if user.get_profile().__dict__.has_key(field+'_id'):
                 self.initial[field] = user.get_profile().__dict__[field+'_id']
+        if not priv:
+            try:
+                badge = Badge.objects.get(id=self.initial['badge_type'])
+            except:
+                badge = None
+            if badge and not badge.userchoice:
+                del self.fields['badge_type']
 
 class UserFormManagerCreate(UserForm):
-    badge_type = forms.ModelChoiceField(label=_(u"Badge type:"),
-        queryset=Badge.objects.all().order_by('-default'), widget=forms.Select(),
-        empty_label=None)
     notes = forms.CharField(label=_(u"Notes:"), required=False,
         widget=forms.Textarea(attrs=_attrs))
     payment_later= forms.BooleanField(label=_(u"Payment later:"), required=False)
 
+    def __init__(self, data=None):
+        super(UserFormManagerCreate, self).__init__(data)
+        self.fields['badge_type'] = forms.ModelChoiceField(label=_(u"Badge type:"),
+            queryset=Badge.objects.all().order_by('-default'), widget=forms.Select(),
+            empty_label=None)
+
 class UserFormManagerModify(UserFormManagerCreate, UserFormModify):
-    pass
+    def fill_from_user(self, user, priv=False):
+        super(UserFormManagerModify, self).fill_from_user(user, True)
