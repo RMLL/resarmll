@@ -9,6 +9,7 @@ from resarmll.resa.models import Country, Badge
 from models import GENDER_CHOICES
 
 _attrs = { 'class': 'text', 'size': 30}
+_attrs_gpg = { 'class': 'text', 'size': 55}
 _attrs_passwd = { 'class': 'text', 'size': 30, 'autocomplete': 'off'}
 
 class UserForm(forms.Form):
@@ -51,7 +52,7 @@ class UserForm(forms.Form):
         )
     fingerprint = forms.RegexField(label=_(u"PGP/GPG Fingerprint:"),
         required=False, regex=r'^[0-9]{4}/(R|D):[0-9a-fA-F]{40}$',
-        widget=forms.TextInput(attrs=_attrs),
+        widget=forms.TextInput(attrs=_attrs_gpg),
         help_text=_(u"PGP/GPG fingerprint prefixed by its size, sample:")+" 1024/D:772965E94533414EA1D4C790C793E99F8A1DE03D",
         )
 
