@@ -92,6 +92,10 @@
 
                 <div class="validate_payment">
                     <form action="/resa/manage_cart/{{ user_obj.id }}/validate/" method="post">
+                        {% if is_admin %}
+                            <input type="checkbox" name="force" id="force_cart" value="1" />
+                            <label for="force_cart">{% trans "Force" %}</label>
+                        {% endif %}
                         <input type="submit" value="{% trans "Confirm order" %}" />
                     </form>
                 </div>

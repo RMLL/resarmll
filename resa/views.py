@@ -239,7 +239,10 @@ def manage_cart(request, tmpl, user_id=None, action=None, product_id=None):
     products = None
     if user:
         cart = Cart(request, user.id)
-        products = Article.objects.filter(enabled=True).order_by('order')
+        if request.user.is_staff:
+            products = Article.objects.all().order_by('order')
+        else:
+            products = Article.objects.filter(enabled=True).order_by('order')
         if action == 'add':
             product_id = int(request.POST.get('cart_add'))
             if cart.add(product_id, 1):
@@ -267,7 +270,10 @@ def manage_cart(request, tmpl, user_id=None, action=None, product_id=None):
             else:
                 msg_err = _(u"Error while updating product(s)")
         elif action == 'validate':
-            if not cart.is_valid():
+            valid = cart.is_valid()
+            if not valid and request.user.is_staff:
+                valid = request.POST.get('force') == '1'
+            if not valid:
                 msg_err = _(u"Unable to confirm this order, one (or more) product(s) in the cart exceed the available quantity")
             else:
                 order = Order(user=user, creation_date=date.now())
@@ -276,7 +282,7 @@ def manage_cart(request, tmpl, user_id=None, action=None, product_id=None):
                 msg_ok = _(u"Order successfully confirmed")
         cart.save(request)
     return tmpl, {'user_obj': user, 'products': products, 'cart': cart,
-                    'msg_err': msg_err, 'msg_ok': msg_ok}
+                    'msg_err': msg_err, 'msg_ok': msg_ok, 'is_admin': request.user.is_staff}
 
 @login_required
 @staff_required
