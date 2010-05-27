@@ -41,26 +41,25 @@
                     <th>{% trans "Id" %}</th>
                     <th>{% trans "Last name" %}</th>
                     <th>{% trans "First name" %}</th>
+                    <th>{% trans "Email" %}</th>
                     <th>{% trans "Username" %}</th>
                     <th>{% trans "Badge" %}</th>
                     <th></th>
                 </tr>
                 {% for u in results %}
                     <tr class="{% cycle 'odd' 'even' %}">
-                        <td rowspan="2" class="num">{{ forloop.counter }}</td>
-                        <td rowspan="2" class="num">{{ u.id }}</td>
+                        <td class="num">{{ forloop.counter }}</td>
+                        <td class="num">{{ u.id }}</td>
                         <td class="act">{{ u.last_name }}</td>
                         <td class="act">{{ u.first_name }}</td>
+                        <td class="act">{{ u.email }}</td>
                         <td class="act">{{ u.username }}</td>
-                        <td rowspan="2" class="act">{{ u.get_profile.badge_type }}</td>
-                        <td rowspan="2" class="act">
+                        <td class="act">{{ u.get_profile.badge_type }}</td>
+                        <td class="act">
                             <a href="/resa/manage_orders/{{ u.id }}">
                                 {% trans "View" %}
                             </a>
                         </td>
-                    </tr>
-                    <tr class="{% cycle 'odd' 'even' %}">
-                        <td colspan="3" class="act">{{ u.email }}</td>
                     </tr>
                 {% endfor %}
             </table>
