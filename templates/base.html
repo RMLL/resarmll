@@ -27,7 +27,9 @@
         <div id="content-wrapper">
             <div id="content">
                 <div id="main">
-                     {% block content %}{% endblock %}
+                    <div id="container">
+                        {% block content %}{% endblock %}
+                    </div>
                 </div>
                 <div id="sidebar">
                     {% include "layout/flags.html" %}

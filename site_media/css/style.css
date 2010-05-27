@@ -206,6 +206,10 @@ input#recherche {
     background:#7cd5ef;
 }
 
+#container {
+    margin-bottom: 20px;
+}
+
 #main {
     background: white;
     float: left;
@@ -416,8 +420,13 @@ label.inline {
     padding : 5px;
 }
 
-#catalog_list .product .cart_add {
-    text-align : right;
+#catalog_list .product .selector{
+    float: right;
+}
+
+#catalog_list .addcart {
+    text-align: right;
+    padding: 5px 0px;
 }
 
 table.list {
@@ -544,7 +553,7 @@ table.modified {
 
 #page2cols #main {
     padding: 0 0 20px 0;
-    width: 80%;
+    width: 79%;
     min-height: 300px;
 }
 
