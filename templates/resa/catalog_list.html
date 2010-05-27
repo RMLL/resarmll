@@ -27,28 +27,32 @@
     <div id="catalog_list">
 
         {% if products %}
-            {% for p in products %}
-                <div class="product">
-                    <h3 class="name">{{ p.title }}</h3>
-                    {% if p.description %}
-                        <div class="desc">
-                            {{ p.description|markdown }}
-                        </div>
-                    {% endif %}
-                    <div class="info">
-                        <span>{% trans "Price:" %} {{ p.price }} €
-                        <br />
-                        <span>{% trans "Remaining stock:" %} {{ p.quantity }}
-                    </div>
-                    {% if not p.unavailable %}
-                        <div class="cart_add">
-                            <a href="/resa/cart/add/{{ p.id }}" onclick="javascript:return add_cart(this.href);" title="{% trans "Add to cart" %} : {{ p.title|escape }}">
-                                {% trans "Add to cart" %}
-                            </a>
-                        </div>
-                    {% endif %}
+            <form action="/resa/cart/add/" method="post">
+                <div class="addcart">
+                    <input type="submit" value="{% trans "Add the selected items to cart" %}" />
                 </div>
-            {% endfor %}
+                {% for p in products %}
+                    <div class="product">
+                        <h3 class="name">{{ p.title }}</h3>
+                        {% if not p.unavailable %}
+                            <input class="selector" type="checkbox" name="product_{{ p.id }}" value="1" />
+                        {% endif %}
+                        {% if p.description %}
+                            <div class="desc">
+                                {{ p.description|markdown }}
+                            </div>
+                        {% endif %}
+                        <div class="info">
+                            <span>{% trans "Price:" %} {{ p.price }} €
+                            <br />
+                            <span>{% trans "Remaining stock:" %} {{ p.quantity }}
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="addcart">
+                    <input type="submit" value="{% trans "Add the selected items to cart" %}" />
+                </div>
+            </form>
         {% endif %}
 
     </div>

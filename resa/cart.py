@@ -10,12 +10,14 @@ class CartItem:
     label = ""
     price = 0.0
     salt = ''
+    sorting = 0
 
-    def __init__(self, id=0, quantity=0, label="", price=0.0):
+    def __init__(self, id=0, quantity=0, label="", price=0.0, sorting=0):
         self.id = id
         self.quantity = quantity
         self.label = label
         self.price = price
+        self.sorting = sorting
 
     def total(self):
         return self.quantity*self.price
@@ -30,9 +32,11 @@ class Cart:
         self.salt = str(salt)
         data = request.session.get(self.get_salt())
         if data is not None:
+            products = {}
             for t in data:
                 i,d = t
-                self.add(i, d)
+                products[i] = d
+            self.add_group(products)
 
     def __iter__(self):
         for item in self.items:
@@ -43,6 +47,12 @@ class Cart:
         if self.salt != '':
             ret = CART_KEY+'_'+self.salt
         return ret
+
+    def add_group(self, products):
+        prods = Article.objects.filter(id__in=products.keys()).order_by('order')
+        for product in prods:
+            self.items.append(CartItem(product.id, products[product.id],
+                product.label(), product.price, product.order))
 
     def add(self, product_id, quantity, replace=False):
         ret = False
@@ -58,10 +68,12 @@ class Cart:
             try:
                 product = Article.objects.get(id=product_id)
                 self.items.append(CartItem(product_id, quantity,
-                        product.label(), product.price))
+                    product.label(), product.price, product.order))
                 ret = True
             except:
                 pass
+        # sorting
+        self.items = sorted(self.items, key=lambda i: i.sorting)
         return ret
 
     def delete(self, product_id):

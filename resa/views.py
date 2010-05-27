@@ -31,31 +31,31 @@ def catalog_list(request, tmpl):
 def cart_list(request, tmpl, action=None, product_id=None):
     cart = Cart(request)
     msg_ok = msg_err = None
-    if action == 'add' or action == 'addxjx':
-        if cart.add(int(product_id), 1):
-            msg_ok = _(u"Product successfully added to cart")
-        else:
-            msg_err = _(u"Error while adding product to cart")
-    elif action == 'del':
+    if action == 'del':
         if cart.delete(int(product_id)):
             msg_ok = _(u"Product successfully removed from cart")
         else:
             msg_err = _(u"Error while removing product from cart")
-    elif action == 'update':
-        update = True
-        for k,v  in request.POST.iteritems():
-            product_id = 0
-            try:
-                quantity = int(v)
-            except:
-                quantity = 0
-            if k.startswith('product_'):
-                product_id = int(k[8:])
-                update = update and cart.update(product_id, quantity)
-        if update:
-            msg_ok = _(u"Product(s) successfully updated")
+    elif action == 'add' or action == 'update':
+        statusok = False
+        if len(request.POST)>0:
+            statusok = True
+            for k,v  in request.POST.iteritems():
+                product_id = 0
+                try:
+                    quantity = int(v)
+                except:
+                    quantity = 0
+                if k.startswith('product_'):
+                    product_id = int(k[8:])
+                    if action == 'add':
+                        statusok = statusok and cart.add(product_id, quantity)
+                    else:
+                        statusok = statusok and cart.update(product_id, quantity)
+        if statusok:
+            msg_ok = _(u"Product(s) successfully added") if action == 'add' else _(u"Product(s) successfully updated")
         else:
-            msg_err = _(u"Error while updating product(s)")
+            msg_err = _(u"Error while adding product(s)") if action == 'add' else _(u"Error while updating product(s)")
     elif action == 'invalid':
         msg_err = _(u"Unable to confirm your order, one (or more) product(s) in your cart exceed the available quantity")
     cart.save(request)
