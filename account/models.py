@@ -32,6 +32,7 @@ class UserProfile(models.Model):
     notes = models.TextField(_(u"Note(s)"), blank=True)
     badge_type = models.ForeignKey(Badge)
     payment_later = models.BooleanField(_(u"Payment later"))
+    order_staff = models.CharField(_(u"Staff Order"), max_length=8, blank=True)
     network = models.ForeignKey(NetworkAccess, unique=True, null=True, blank=True)
 
     def save(self):
@@ -57,14 +58,8 @@ class UserProfile(models.Model):
 
     def get_order_orga(self):
         ret = None
-        notes = self.notes.strip().split("\n")
-        if notes:
-            for n in notes:
-                if n.strip().startswith('COMMANDE_ORGA:'):
-                    try:
-                        ret = int(n.strip()[14:])
-                    except:
-                        ret = 0
+        if self.order_staff != '':
+            ret = self.order_staff
         return ret
 
     class Meta:

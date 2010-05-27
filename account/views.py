@@ -265,6 +265,7 @@ def edit(request, tmpl, user_id=None):
                     p.badge_type = form.cleaned_data['badge_type']
                     p.notes =  form.cleaned_data['notes']
                     p.payment_later = form.cleaned_data['payment_later']
+                    p.order_staff = form.cleaned_data['order_staff']
                     p.save()
                 except:
                     syserr = True

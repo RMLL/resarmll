@@ -102,6 +102,8 @@ class UserFormManagerCreate(UserForm):
     notes = forms.CharField(label=_(u"Notes:"), required=False,
         widget=forms.Textarea(attrs=_attrs))
     payment_later= forms.BooleanField(label=_(u"Payment later:"), required=False)
+    order_staff = forms.RegexField(label=_(u"Order staff:"), required=False,
+        regex=r'^[0-9]+$', widget=forms.TextInput(attrs=_attrs))
 
     def __init__(self, data=None):
         super(UserFormManagerCreate, self).__init__(data)
