@@ -14,7 +14,7 @@ from resarmll.account.forms import UserForm, UserFormModify, UserFormManagerCrea
 from resarmll.account.models import UserProfile, NetworkAccess
 from resarmll.resa.models import Badge
 from resarmll.resa.utils import BadgeGenerator
-from resarmll.utils.decorators import auto_render, manager_required
+from resarmll.utils.decorators import auto_render, staff_required, manager_required, reception_required
 
 @login_required
 def langcheck(request, redirect):
@@ -138,7 +138,7 @@ def wifi(request, tmpl):
     return tmpl, locals()
 
 @login_required
-@manager_required
+@reception_required
 @auto_render
 def create(request, tmpl):
     syserr = False
@@ -178,7 +178,7 @@ def create(request, tmpl):
     return tmpl, {'user_obj': user_obj, 'form': form, 'syserr': syserr, 'create_success': create_success}
 
 @login_required
-@manager_required
+@reception_required
 @auto_render
 def search(request, tmpl):
     pattern = request.POST.get('pattern')
@@ -190,7 +190,10 @@ def search(request, tmpl):
     except:
         pass
     if searchuser:
-        return HttpResponseRedirect('/resa/manage_orders/%d' % (searchuser.id))
+        if request.user.get_profile().is_reception:
+            return HttpResponseRedirect('/account/edit/'+str(searchuser.id))
+        else:
+            return HttpResponseRedirect('/resa/manage_orders/%d' % (searchuser.id))
 
     results = None
     try:
@@ -220,13 +223,16 @@ def search(request, tmpl):
         results = User.objects.filter(userprofile__badge_type=badge).order_by('id')
 
     if results and len(results) == 1:
-        return HttpResponseRedirect('/resa/manage_orders/%d' % (results[0].id))
+        if request.user.get_profile().is_reception:
+            return HttpResponseRedirect('/account/edit/'+str(results[0].id))
+        else:
+            return HttpResponseRedirect('/resa/manage_orders/%d' % (results[0].id))
 
     badges = Badge.objects.all()
     return tmpl, locals()
 
 @login_required
-@manager_required
+@reception_required
 @auto_render
 def edit(request, tmpl, user_id=None):
     user = None
@@ -271,7 +277,7 @@ def edit(request, tmpl, user_id=None):
                     'modify_success': modify_success}
 
 @login_required
-@manager_required
+@reception_required
 @auto_render
 def manage_badge(request, tmpl, user_id):
     user = None
@@ -292,7 +298,7 @@ def manage_badge(request, tmpl, user_id):
     return tmpl, response_dct
 
 @login_required
-@manager_required
+@reception_required
 @auto_render
 def manage_wifi(request, tmpl, user_id):
     user = username = password = None

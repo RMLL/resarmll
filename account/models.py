@@ -20,6 +20,7 @@ class NetworkAccess(models.Model):
 class UserProfile(models.Model):
     user = models.ForeignKey(User, unique=True)
     is_manager = models.BooleanField(_(u"Is manager"), null=False)
+    is_reception = models.BooleanField(_(u"Is reception"), null=False)
     gender = models.CharField(_(u"Gender"), max_length=1,
                                 choices=GENDER_CHOICES, blank=True)
     address = models.TextField(_(u"Address"), blank=True)

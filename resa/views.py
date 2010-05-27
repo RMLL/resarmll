@@ -16,7 +16,7 @@ from stock import Stock
 from bank.paypal import Paypal
 from bank.cyberplus import CyberPlus
 from resarmll import settings
-from resarmll.utils.decorators import auto_render, manager_required
+from resarmll.utils.decorators import auto_render, staff_required, manager_required, reception_required
 from resarmll.utils.pdf import gen_pdf
 from resarmll.compta.models import Operation
 
@@ -142,7 +142,7 @@ def orders_search(request, tmpl):
     return tmpl, locals()
 
 @login_required
-@manager_required
+@staff_required
 @auto_render
 def orders_notpaid(request, tmpl):
     results = User.objects.filter(order__payment_date__isnull=True).annotate(num_orders=Count('order')).filter(num_orders__gt=0).order_by('last_name')
@@ -279,7 +279,7 @@ def manage_cart(request, tmpl, user_id=None, action=None, product_id=None):
                     'msg_err': msg_err, 'msg_ok': msg_ok}
 
 @login_required
-@manager_required
+@staff_required
 @auto_render
 def manage_compta(request, tmpl, user_id=None):
     operations = user = None
@@ -300,21 +300,21 @@ def manage_compta(request, tmpl, user_id=None):
     return tmpl, {'user_obj': user, 'operations': operations}
 
 @login_required
-@manager_required
+@staff_required
 @auto_render
 def stats(request, tmpl):
     stats_countries = Country.objects.annotate(num_users=Count('userprofile')).filter(num_users__gt=0).order_by('-num_users')
     return tmpl, locals()
 
 @login_required
-@manager_required
+@staff_required
 @auto_render
 def stocks(request, tmpl):
     stocks = Stock.objects.all().order_by('order')
     return tmpl, locals()
 
 @login_required
-@manager_required
+@staff_required
 @auto_render
 def sales(request, tmpl):
     products = Article.objects.order_by('order')
