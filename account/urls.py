@@ -16,6 +16,7 @@ urlpatterns = patterns ('',
     url(r'^logout/$', auth_views.logout, {'template_name': 'account/logout.html'}),
 
     url(r'^register/$', register, {'tmpl': 'account/register.html'}),
+    url(r'^register/set/(?P<code>\w+)$', register_set, {'redirect': '/account/register/'}),
     url(r'^register/complete/$', direct_to_template,
         {'template': 'account/register_complete.html'}),
 

@@ -26,6 +26,11 @@ def langcheck(request, redirect):
             response.set_cookie(django_settings.LANGUAGE_COOKIE_NAME, lang_code)
     return HttpResponseRedirect(redirect)
 
+def register_set(request, redirect, code = None):
+    if code:
+        request.session['register_data'] = code
+    return HttpResponseRedirect(redirect)
+
 @auto_render
 def register(request, tmpl):
     syserr = False
@@ -47,6 +52,10 @@ def register(request, tmpl):
                 badge = form.cleaned_data['badge_type']
                 if not badge.userchoice:
                     badge = Badge.objects.filter(default=True)[0]
+                if request.session.get('register_data'):
+                    notes = "REGISTER_DATA:%s\n" % (request.session.get('register_data'))
+                else:
+                    notes = ""
                 new_profile = UserProfile(
                     user=new_user,
                     gender=form.cleaned_data['gender'],
@@ -55,7 +64,8 @@ def register(request, tmpl):
                     country=form.cleaned_data['country'],
                     badge_type = badge,
                     badge_text=form.cleaned_data['badge_text'],
-                    fingerprint=form.cleaned_data['fingerprint']
+                    fingerprint=form.cleaned_data['fingerprint'],
+                    notes = notes
                 )
                 new_profile.save()
             except:
