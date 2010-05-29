@@ -499,6 +499,10 @@ table.list tr.odd {
     border : 1px solid red;
 }
 
+#manage_orders fieldset {
+    margin-bottom: 15px;
+}
+
 .header_manager {
     height : 135px !important;
 }
