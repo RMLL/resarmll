@@ -13,8 +13,9 @@ from forms import PayOrderForm, DelOrderForm
 from orders import Order, OrderDetail
 from cart import Cart
 from stock import Stock
-from bank.paypal import Paypal
 from bank.cyberplus import CyberPlus
+from bank.etransactions import eTransactions
+from bank.paypal import Paypal
 from resarmll import settings
 from resarmll.utils.decorators import auto_render, staff_required, manager_required, reception_required
 from resarmll.utils.pdf import gen_pdf
@@ -102,8 +103,10 @@ def orders_details(request, tmpl, order_id=0):
     check_payable_to = settings.CHECK_PAYABLE_TO
     ip_addr = request.META['REMOTE_ADDR']
     if order:
-        cbp = CyberPlus(request)
-        cbpl_err, cbpl_code, cbpl_form = cbp.form(order, request.user, request.LANGUAGE_CODE, ip_addr, url)
+        if settings.BANK_DRIVER.upper() == 'CYBERPLUS':
+            bp_tmpl = 'resa/orders_details_cyberplus.html'
+            bp = CyberPlus(request)
+            bp_err, bp_code, bp_form = bp.form(order, request.user, request.LANGUAGE_CODE, ip_addr, url)
     return tmpl, locals()
 
 @login_required

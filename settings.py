@@ -180,6 +180,9 @@ PAYPAL_SETTINGS = {
     'notify_url': '/resa/orders/paypal/notify',
 }
 
+### Bank Driver ( CyberPlus ) ###
+BANK_DRIVER = 'CyberPlus'
+
 ### CYBERPLUS ###
 CYBERPLUS_SETTINGS = {
     'merchant_id': '',

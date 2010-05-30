@@ -36,13 +36,7 @@
                 <div class="section cyberplus">
                     <h3>{% trans "Payment by credit card" %}</h3>
                     <div class="content">
-                        {% if cbpl_err %}
-                            <div class="main-error">
-                                {{ cbpl_code }}
-                            </div>
-                        {% else %}
-                            {{ cbpl_form|safe }}
-                        {% endif %}
+                        {% include bp_tmpl %}
                     </div>
                 </div>
 

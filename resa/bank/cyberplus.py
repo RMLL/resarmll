@@ -75,6 +75,7 @@ class CyberPlus(Bank):
 
         cmd = 'request ' + " ".join(args)
         error = True
+        code = None
         content = None
         result = self.process(cmd)
         datas = result.split('!')

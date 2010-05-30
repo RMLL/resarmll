@@ -1,0 +1,7 @@
+{% if bp_err %}
+    <div class="main-error">
+        {{ bp_code }}
+    </div>
+{% else %}
+    {{ bp_form|safe }}
+{% endif %}
