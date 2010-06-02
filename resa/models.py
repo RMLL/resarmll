@@ -148,6 +148,10 @@ class Article(models.Model, LabelClass):
     def quantity(self):
         return self.stock.quantity - self.stock.quantity_ordered - self.stock.quantity_paid
 
+    def quantity_ajusted(self):
+        q = self.quantity()
+        return q if q >= 0 else 0
+
     def count_confirmed(self):
         r = self.orderdetail_set.filter(order__payment_date__isnull=True).aggregate(Sum('quantity'))['quantity__sum']
         if r is None:
