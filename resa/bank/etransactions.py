@@ -143,14 +143,13 @@ class eTransactions(Bank):
         return lang
 
     def process(self, cmd):
+        ret = ''
         nwd = "%s/etransactions/" % (os.path.dirname(__file__))
         cmd = "cd %s && ./%s" % (nwd, cmd)
-        stdout, stdin, stderr = popen2.popen3(cmd)
-        stdin.close()
-        stderr.close()
-        lines = stdout.readlines()
-        stdout.close()
-        return "\n".join(lines).strip()
+        c = popen2.Popen3(cmd, 1)
+        if c.wait() == 0:
+            ret = "\n".join(c.fromchild).strip()
+        return ret
 
     def form(self, order, user, lang, ip_addr, url=None):
         args = {}
