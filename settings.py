@@ -140,8 +140,8 @@ COMPTA_PLAN_CLIENT_CODE = 411
 
 ### BADGES ###
 BADGE_CITY = "Nantes 2009"
-BADGE_BG_IMAGE = PROJECT_DIR + '/templates/images/armelle.png'
-BADGE_BIG_BG_IMAGE = PROJECT_DIR + '/templates/images/armelle-big.png'
+BADGE_BG_IMAGE = PROJECT_DIR + '/templates/images/badge-bg.png'
+BADGE_BIG_BG_IMAGE = PROJECT_DIR + '/templates/images/badge-bg-big.png'
 BADGE_PNG_DEST_DIR = 'badges/png/'
 BADGE_BIG_PNG_DEST_DIR = 'badges/png/big/'
 BADGE_PDF_DEST_DIR = 'badges/pdf/'
