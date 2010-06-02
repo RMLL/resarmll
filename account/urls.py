@@ -41,6 +41,8 @@ urlpatterns = patterns ('',
     url(r'^create/$', create, {'tmpl': 'account/create.html'}),
     url(r'^search/$', search, {'tmpl': 'account/search.html'}),
     url(r'^edit/(?P<user_id>\d+)$', edit, {'tmpl': 'account/edit.html'}),
-    url(r'^manage_badge/(?P<user_id>\d+)$', manage_badge, {'tmpl': 'account/manage_badge.html'}),
-    url(r'^manage_wifi/(?P<user_id>\d+)$', manage_wifi, {'tmpl': 'account/manage_wifi.html'}),
+
+    # disable WiFi access
+    #url(r'^manage_badge/(?P<user_id>\d+)$', manage_badge, {'tmpl': 'account/manage_badge.html'}),
+    #url(r'^manage_wifi/(?P<user_id>\d+)$', manage_wifi, {'tmpl': 'account/manage_wifi.html'}),
 )

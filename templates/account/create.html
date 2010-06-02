@@ -32,7 +32,9 @@
             <ul>
                 <li><a href="/account/edit/{{ user_obj.id }}">{% trans "Account" %}</a></li>
                 <li><a href="/account/manage_badge/{{ user_obj.id }}">{% trans "Badge" %}</a></li>
+                {% comment %}
                 <li><a href="/account/manage_wifi/{{ user_obj.id }}">{% trans "Wifi access" %}</a></li>
+                {% endcomment %}
             </ul>
         </div>
     {% endif %}
