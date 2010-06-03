@@ -179,9 +179,9 @@ class CyberPlus(Bank):
                     if not user:
                         self.add_error(_(u"Cannot find user associated to order no: #%d") % (order.id))
                     else:
-                        fee = dec(str(settings.COMPTA_BANK_FEE))
+                        tax = dec(str(settings.COMPTA_BANK_FIXED_TAX)) + dec(str(settings.COMPTA_BANK_VARIABLE_TAX))*order.totalamount()
                         # mark order as paid
-                        self.order_paid(order, fee, user, 'ref:'+params['transaction_id'])
+                        self.order_paid(order, tax, user, 'ref:'+params['transaction_id'])
 
                         # mail info to admins
                         send_admins(
