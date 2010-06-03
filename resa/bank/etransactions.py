@@ -208,7 +208,7 @@ class eTransactions(Bank):
                 accepted = params['action'] == 'return'
             if params.has_key('order'):
                 order_id = params['order']
-            if params.has_key('autor') and not settings.ETRANSACTIONS['testmode']:
+            if params.has_key('autor') and not settings.ETRANSACTIONS_SETTINGS['testmode']:
                 rejected = rejected or params['autor'] == 'XXXXXX'
         return error, canceled, rejected, accepted, order_id
 
@@ -227,7 +227,7 @@ class eTransactions(Bank):
             elif order.payment_date != None:
                 self.add_error(_(u"Order with id: #%d has already been paid") % (order.id))
             else:
-                if params['autor'] == 'XXXXXX' and not settings.ETRANSACTIONS['testmode']:
+                if params['autor'] == 'XXXXXX' and not settings.ETRANSACTIONS_SETTINGS['testmode']:
                     self.add_error(_(u"Fictive payment received (AUTOR=%s)") % (params['autor']))
                 elif params['err'] != '00000' and ETRANSACTIONS_CODES.has_key(params['err']):
                     self.add_error(_(u"Payment error: %s") % (ETRANSACTIONS_CODES[params['err']]))
