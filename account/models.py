@@ -28,6 +28,7 @@ class UserProfile(models.Model):
                                  choices=settings.LANGUAGES)
     country = models.ForeignKey(Country)
     badge_text = models.CharField(_(u"Badge text"), max_length=32, blank=True)
+    comments = models.TextField(_(u"Comment(s)"), blank=True)
     fingerprint = models.CharField(_(u"PGP/GPG Fingerprint"), max_length=56, blank=True)
     notes = models.TextField(_(u"Note(s)"), blank=True)
     badge_type = models.ForeignKey(Badge)

@@ -64,6 +64,7 @@ def register(request, tmpl):
                     country=form.cleaned_data['country'],
                     badge_type = badge,
                     badge_text=form.cleaned_data['badge_text'],
+                    comments=form.cleaned_data['comments'],
                     fingerprint=form.cleaned_data['fingerprint'],
                     notes = notes
                 )
@@ -172,6 +173,7 @@ def create(request, tmpl):
                         language = form.cleaned_data['language'],
                         country = form.cleaned_data['country'],
                         badge_text = form.cleaned_data['badge_text'],
+                        comments =  form.cleaned_data['comments'],
                         fingerprint = form.cleaned_data['fingerprint'],
                         badge_type = form.cleaned_data['badge_type'],
                         notes =  form.cleaned_data['notes'],
@@ -271,6 +273,7 @@ def edit(request, tmpl, user_id=None):
                     p.language = form.cleaned_data['language']
                     p.country = form.cleaned_data['country']
                     p.badge_text = form.cleaned_data['badge_text']
+                    p.comments =  form.cleaned_data['comments'],
                     p.fingerprint = form.cleaned_data['fingerprint']
                     p.badge_type = form.cleaned_data['badge_type']
                     p.notes =  form.cleaned_data['notes']

@@ -50,6 +50,10 @@ class UserForm(forms.Form):
         required=False, max_length=32, widget=forms.TextInput(attrs=_attrs),
         help_text=_(u"Free text printed on your badge (should not be too long)."),
         )
+    comments = forms.CharField(label=_(u"Comment(s):"), required=False,
+        widget=forms.Textarea(attrs=_attrs),
+        help_text=_(u"Distinctiveness (moving with a wheelchair, glad to use an available magnetic-field loop, blind, deep geek, ...)"),
+        )
     fingerprint = forms.RegexField(label=_(u"PGP/GPG Fingerprint:"),
         required=False, regex=r'^[0-9]{4}/(R|D):[0-9a-fA-F]{40}$',
         widget=forms.TextInput(attrs=_attrs_gpg),
