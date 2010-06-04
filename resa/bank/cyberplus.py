@@ -8,7 +8,6 @@ from django.contrib.auth.models import User
 
 from bank import Bank
 from resarmll import settings
-from resarmll.resa.models import TransactionId
 from resarmll.resa.orders import Order
 from resarmll.utils.mail import send_email, send_admins
 from resarmll.compta.models import PaymentMethod
@@ -37,11 +36,6 @@ class CyberPlus(Bank):
         if lang == 'es':
             lang = 'sp'
         return lang
-
-    def get_transactionid(self):
-        t = TransactionId()
-        t.save()
-        return t.id
 
     def process(self, cmd):
         nwd = "%s/cyberplus/" % (os.path.dirname(__file__))

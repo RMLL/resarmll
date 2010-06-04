@@ -5,6 +5,7 @@ from datetime import datetime as date
 from django.utils.translation import ugettext_lazy as _
 
 from resarmll.compta.models import Operation
+from resarmll.resa.models import TransactionId
 
 class Bank(object):
     def __init__(self, req, usePost=False):
@@ -56,3 +57,8 @@ class Bank(object):
                     order=order,
                     user=user)
                 op.save()
+
+    def get_transactionid(self):
+        t = TransactionId()
+        t.save()
+        return t.id
