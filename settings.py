@@ -38,7 +38,7 @@ LANGUAGE_CODE = 'fr-FR'
 
 LANGUAGES = (
     (u'fr', u'Français'),
-#    (u'es', u'Espanol'),
+    (u'es', u'Espanol'),
     (u'en', u'English'),
 )
 
