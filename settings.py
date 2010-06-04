@@ -140,7 +140,7 @@ COMPTA_METHOD_CODE_INTERNAL = 'VI'
 COMPTA_PLAN_CLIENT_CODE = 411
 
 ### BADGES ###
-BADGE_CITY = "Nantes 2009"
+BADGE_CITY = "Bordeaux 2010"
 BADGE_BG_IMAGE = PROJECT_DIR + '/templates/images/badge-bg.png'
 BADGE_BIG_BG_IMAGE = PROJECT_DIR + '/templates/images/badge-bg-big.png'
 BADGE_PNG_DEST_DIR = 'badges/png/'
