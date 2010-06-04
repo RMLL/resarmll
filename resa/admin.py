@@ -15,7 +15,7 @@ admin.site.register(Country, CountryAdmin)
 class ArticleAdmin(admin.ModelAdmin):
     form = ArticleAdminForm
     ordering = ('order',)
-    list_display = ('label', 'price', 'quantity', 'count_confirmed', 'count_paid', 'count_distributed', 'enabled')
+    list_display = ('label', 'price', 'quantity', 'stock', 'order', 'count_confirmed', 'count_paid', 'count_distributed', 'enabled')
 admin.site.register(Article, ArticleAdmin)
 
 class BadgeAdmin(admin.ModelAdmin):
