@@ -227,7 +227,7 @@ class eTransactions(Bank):
             elif order.payment_date != None:
                 self.add_error(_(u"Order with id: #%d has already been paid") % (order.id))
             else:
-                if params['autor'] == 'XXXXXX' and not settings.ETRANSACTIONS_SETTINGS['testmode']:
+                if params.has_key('autor') and params['autor'] == 'XXXXXX' and not settings.ETRANSACTIONS_SETTINGS['testmode']:
                     self.add_error(_(u"Fictive payment received (AUTOR=%s)") % (params['autor']))
                 elif params['err'] != '00000' and ETRANSACTIONS_CODES.has_key(params['err']):
                     self.add_error(_(u"Payment error: %s") % (ETRANSACTIONS_CODES[params['err']]))
