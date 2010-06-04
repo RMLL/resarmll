@@ -162,7 +162,7 @@ class eTransactions(Bank):
 
         args['PBX_MODE'] = settings.ETRANSACTIONS_SETTINGS['mode']
         args['PBX_DEVISE'] = settings.ETRANSACTIONS_SETTINGS['devise']
-        args['PBX_CMD'] = order.id
+        args['PBX_CMD'] = "%d-%d" % (order.id, self.get_transactionid())
         args['PBX_RETOUR'] = 'amount:M;order:R;idtrans:T;numtrans:S;autor:A;payment:P;card:C;country:Y;valid:D;ip:I;num:N;err:E;sign:K'
 
         args['PBX_EFFECTUE'] = "%s%s?action=return" % (url, settings.ETRANSACTIONS_SETTINGS['return_url_prefix'])
@@ -207,7 +207,7 @@ class eTransactions(Bank):
                 rejected = params['action'] == 'reject'
                 accepted = params['action'] == 'return'
             if params.has_key('order'):
-                order_id = params['order']
+                order_id = params['order'].split('-')[0]
             if params.has_key('autor') and not settings.ETRANSACTIONS_SETTINGS['testmode']:
                 rejected = rejected or params['autor'] == 'XXXXXX'
         return error, canceled, rejected, accepted, order_id
@@ -217,7 +217,7 @@ class eTransactions(Bank):
         if error or not params:
             self.add_error(_(u"Error while receiving data from the bank."))
         else:
-            order_id = int(params['order'])
+            order_id = int(params['order'].split('-')[0])
             try:
                 order = Order.objects.get(id=order_id)
             except:
