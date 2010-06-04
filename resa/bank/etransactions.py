@@ -174,7 +174,7 @@ class eTransactions(Bank):
         args['PBX_TXT'] = "<strong>%s</strong><br><br>%s<br><br>" % \
             (_(u"This page will automatically redirect in a few seconds..."), _(u"Click the button if the redirect fail."))
         args['PBX_WAIT'] = 0
-        args['PBX_BOUTPI'] = _(u"Go to payment%s" % ('...'))
+        args['PBX_BOUTPI'] = "%s" % (_(u"Go to payment"))
         args['PBX_BKBD'] = 'white'
         args['PBX_LANGUE'] = self.fix_lang(lang)
 
