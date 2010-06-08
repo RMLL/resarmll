@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-05 16:59+0200\n"
+"POT-Creation-Date: 2010-06-08 00:47+0200\n"
 "PO-Revision-Date: 2010-06-04 15:29+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -658,14 +658,6 @@ msgstr "Erreur interne"
 msgid "LSM Booking"
 msgstr "Réservation RMLL"
 
-#: templates/base2cols.html:54 templates/layout/header.html:4
-msgid "Booking"
-msgstr "Réservation"
-
-#: templates/base2cols.html:57 templates/layout/header.html:5
-msgid "LSM website"
-msgstr "Site des RMLL"
-
 #: templates/account/create.html:11 templates/account/create.html.py:18
 msgid "Create an account"
 msgstr "Créer un compte"
@@ -736,7 +728,7 @@ msgid ""
 "with people coming from abroad which should contact the treasurer if they "
 "want to pay on arrival."
 msgstr ""
-"Les commandes impayées au 3 juillet seront supprimées. Il y'a cependant des "
+"Les commandes impayées au 3 juillet seront supprimées. Il y a cependant des "
 "exceptions pour les personnes venant de l'étranger qui devront contacter le "
 "trésorier si elles veulent payer à leur arrivée."
 
@@ -1080,6 +1072,14 @@ msgstr "L'équipe d'organisation des RMLL"
 msgid "Contact webmaster"
 msgstr "Contacter le webmaster"
 
+#: templates/layout/header.html:4
+msgid "Booking"
+msgstr "Réservation"
+
+#: templates/layout/header.html:5
+msgid "LSM website"
+msgstr "Site des RMLL"
+
 #: templates/registration/password_reset_email.html:2
 msgid "You're receiving this e-mail because you requested a password reset"
 msgstr ""
@@ -1391,8 +1391,9 @@ msgid "Total incl. VAT:"
 msgstr "Total TTC"
 
 #: templates/resa/orders_pdf.xml:119
-msgid "VAT not applicable in accordance with Art. 193B of the French Tax Code"
-msgstr "TVA non applicable - Article 193B du Code Général des Impôts"
+msgid ""
+"VAT not applicable in accordance with Art. 261-7-1° of the French Tax Code"
+msgstr "TVA non applicable - Article 261-7-1° du Code Général des Impôts"
 
 #: templates/resa/orders_search.html:23
 msgid "Order number"

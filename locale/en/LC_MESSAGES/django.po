@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-05 16:59+0200\n"
+"POT-Creation-Date: 2010-06-08 00:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -637,14 +637,6 @@ msgstr ""
 msgid "LSM Booking"
 msgstr ""
 
-#: templates/base2cols.html:54 templates/layout/header.html:4
-msgid "Booking"
-msgstr ""
-
-#: templates/base2cols.html:57 templates/layout/header.html:5
-msgid "LSM website"
-msgstr ""
-
 #: templates/account/create.html:11 templates/account/create.html.py:18
 msgid "Create an account"
 msgstr ""
@@ -1041,6 +1033,14 @@ msgstr ""
 msgid "Contact webmaster"
 msgstr ""
 
+#: templates/layout/header.html:4
+msgid "Booking"
+msgstr ""
+
+#: templates/layout/header.html:5
+msgid "LSM website"
+msgstr ""
+
 #: templates/registration/password_reset_email.html:2
 msgid "You're receiving this e-mail because you requested a password reset"
 msgstr ""
@@ -1344,7 +1344,8 @@ msgid "Total incl. VAT:"
 msgstr ""
 
 #: templates/resa/orders_pdf.xml:119
-msgid "VAT not applicable in accordance with Art. 193B of the French Tax Code"
+msgid ""
+"VAT not applicable in accordance with Art. 261-7-1° of the French Tax Code"
 msgstr ""
 
 #: templates/resa/orders_search.html:23
