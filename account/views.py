@@ -69,7 +69,8 @@ def register(request, tmpl):
                     notes = notes
                 )
                 new_profile.save()
-            except:
+            except Exception, e:
+                print e
                 syserr = True
             else:
                 return HttpResponseRedirect('/account/register/complete/')
@@ -117,7 +118,8 @@ def profile_modify(request, tmpl):
                         badge = Badge.objects.filter(default=True)[0]
                     cur_profile.badge_type = badge
                 cur_profile.save()
-            except:
+            except Exception, e:
+                print e
                 syserr = True
             else:
                 return HttpResponseRedirect('/account/langchange/')
@@ -180,7 +182,8 @@ def create(request, tmpl):
                     payment_later=form.cleaned_data['payment_later'])
                 p.save()
                 create_success = True
-            except:
+            except Exception, e:
+                print e
                 syserr = True
             else:
                 create_success = True
@@ -280,7 +283,8 @@ def edit(request, tmpl, user_id=None):
                     p.payment_later = form.cleaned_data['payment_later']
                     p.order_staff = form.cleaned_data['order_staff']
                     p.save()
-                except:
+                except Exception, e:
+                    print e
                     syserr = True
                 else:
                     modify_success = True
