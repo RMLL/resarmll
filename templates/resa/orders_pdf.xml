@@ -116,7 +116,7 @@
         {% if not tva %}
             <spacer length="0.5cm" width="1mm"/>
             <para style="note">
-                {% trans "VAT not applicable in accordance with Art. 193B of the French Tax Code" %}
+                {% trans "VAT not applicable in accordance with Art. 261-7-1° of the French Tax Code" %}
             </para>
         {% endif %}
         <spacer length="1cm" width="1mm"/>
