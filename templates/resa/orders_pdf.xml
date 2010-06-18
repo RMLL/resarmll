@@ -55,7 +55,10 @@
         <para>
             <b>{% trans "Document:" %}</b> <i>{% trans "Billing num" %} FC_{{ order.id }}-{{ user.id }}</i>
         </para>
-        <spacer length="1cm" width="1mm"/>
+        <para>
+            <b>{% trans "Date:" %}</b> <i>{{ order.payment_date|date:"Y-m-d" }}</i>
+        </para>
+        <spacer length="0.5cm" width="1mm"/>
 
         <para>
             {% trans "Madam" %}, {% trans "Mister" %},
