@@ -78,7 +78,7 @@
 
             {% for p in order.orderdetail_set.all %}
                 <tr>
-                    <td>{{ p.product.label }}</td>
+                    <td>{{ p.product.title }}</td>
                     <td>{{ p.price }}</td>
                     <td>{{ p.quantity }}</td>
                     <td>{{ p.totalamount }}</td>

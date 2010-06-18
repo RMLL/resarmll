@@ -52,7 +52,7 @@ class Cart:
         prods = Article.objects.filter(id__in=products.keys()).order_by('order')
         for product in prods:
             self.items.append(CartItem(product.id, products[product.id],
-                product.label(), product.price, product.order))
+                product.title(), product.price, product.order))
 
     def add(self, product_id, quantity, replace=False):
         ret = False
@@ -68,7 +68,7 @@ class Cart:
             try:
                 product = Article.objects.get(id=product_id)
                 self.items.append(CartItem(product_id, quantity,
-                    product.label(), product.price, product.order))
+                    product.title(), product.price, product.order))
                 ret = True
             except:
                 pass

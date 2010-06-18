@@ -20,7 +20,7 @@
     </tr>
     {% for p in order.orderdetail_set.all %}
         <tr>
-            <td>{{ p.product.label }}</td>
+            <td>{{ p.product.title }}</td>
             <td class="act">{{ p.quantity }}</td>
             <td class="num">{{ p.totalamount }} €</td>
         </tr>
