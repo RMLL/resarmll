@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-08 00:47+0200\n"
+"POT-Creation-Date: 2010-06-18 12:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -406,7 +406,7 @@ msgstr ""
 #: resa/orders.py:116 templates/resa/cart_list.html:41
 #: templates/resa/manage_cart.html:56 templates/resa/order_details.html:18
 #: templates/resa/order_details_extended.html:26
-#: templates/resa/orders_pdf.xml:75
+#: templates/resa/orders_pdf.xml:78
 msgid "Quantity"
 msgstr ""
 
@@ -672,8 +672,8 @@ msgstr ""
 msgid "Fields prefixed with a %(mark)s are mandatory."
 msgstr ""
 
-#: templates/account/create.html:59 templates/account/create.html.py:63
-#: templates/account/create.html:67
+#: templates/account/create.html:65 templates/account/create.html.py:69
+#: templates/account/create.html:73
 msgid "Auto"
 msgstr ""
 
@@ -951,7 +951,7 @@ msgstr ""
 msgid "Registration failed (field(s) missing or incomplete)"
 msgstr ""
 
-#: templates/account/register.html:46
+#: templates/account/register.html:47
 msgid "Register"
 msgstr ""
 
@@ -1307,43 +1307,47 @@ msgstr ""
 msgid "Billing num"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:61
+#: templates/resa/orders_pdf.xml:59
+msgid "Date:"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:64
 msgid "Madam"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:61
+#: templates/resa/orders_pdf.xml:64
 msgid "Mister"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:67
+#: templates/resa/orders_pdf.xml:70
 msgid "Here is the billing for your order:"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:73
+#: templates/resa/orders_pdf.xml:76
 msgid "Description"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:74
+#: templates/resa/orders_pdf.xml:77
 msgid "Unit price"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:76
+#: templates/resa/orders_pdf.xml:79
 msgid "Total price"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:96
+#: templates/resa/orders_pdf.xml:99
 msgid "VAT:"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:102
+#: templates/resa/orders_pdf.xml:105
 msgid "Total excl. VAT:"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:109
+#: templates/resa/orders_pdf.xml:112
 msgid "Total incl. VAT:"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:119
+#: templates/resa/orders_pdf.xml:122
 msgid ""
 "VAT not applicable in accordance with Art. 261-7-1° of the French Tax Code"
 msgstr ""

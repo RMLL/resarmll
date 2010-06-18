@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-08 00:47+0200\n"
+"POT-Creation-Date: 2010-06-18 12:56+0200\n"
 "PO-Revision-Date: 2010-06-04 15:29+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -415,7 +415,7 @@ msgstr "Commandes"
 #: resa/orders.py:116 templates/resa/cart_list.html:41
 #: templates/resa/manage_cart.html:56 templates/resa/order_details.html:18
 #: templates/resa/order_details_extended.html:26
-#: templates/resa/orders_pdf.xml:75
+#: templates/resa/orders_pdf.xml:78
 msgid "Quantity"
 msgstr "Quantité"
 
@@ -693,8 +693,8 @@ msgstr "Accès Wifi"
 msgid "Fields prefixed with a %(mark)s are mandatory."
 msgstr "Les champs préfixés par %(mark)s sont obligatoires."
 
-#: templates/account/create.html:59 templates/account/create.html.py:63
-#: templates/account/create.html:67
+#: templates/account/create.html:65 templates/account/create.html.py:69
+#: templates/account/create.html:73
 msgid "Auto"
 msgstr "Auto."
 
@@ -989,7 +989,7 @@ msgstr "L'inscription a échoué (erreur interne)"
 msgid "Registration failed (field(s) missing or incomplete)"
 msgstr "L'inscription a échoué (données manquantes ou incomplètes)"
 
-#: templates/account/register.html:46
+#: templates/account/register.html:47
 msgid "Register"
 msgstr "Inscription"
 
@@ -1352,45 +1352,49 @@ msgstr "Document :"
 
 #: templates/resa/orders_pdf.xml:56
 msgid "Billing num"
-msgstr "Numéro de facture"
+msgstr "Facture n°"
 
-#: templates/resa/orders_pdf.xml:61
+#: templates/resa/orders_pdf.xml:59
+msgid "Date:"
+msgstr "Date :"
+
+#: templates/resa/orders_pdf.xml:64
 msgid "Madam"
 msgstr "Madame"
 
-#: templates/resa/orders_pdf.xml:61
+#: templates/resa/orders_pdf.xml:64
 msgid "Mister"
 msgstr "Monsieur"
 
-#: templates/resa/orders_pdf.xml:67
+#: templates/resa/orders_pdf.xml:70
 msgid "Here is the billing for your order:"
 msgstr "Ci-dessous la facture pour votre commande :"
 
-#: templates/resa/orders_pdf.xml:73
+#: templates/resa/orders_pdf.xml:76
 msgid "Description"
 msgstr "Description"
 
-#: templates/resa/orders_pdf.xml:74
+#: templates/resa/orders_pdf.xml:77
 msgid "Unit price"
 msgstr "Prix unitaire"
 
-#: templates/resa/orders_pdf.xml:76
+#: templates/resa/orders_pdf.xml:79
 msgid "Total price"
 msgstr "Prix total"
 
-#: templates/resa/orders_pdf.xml:96
+#: templates/resa/orders_pdf.xml:99
 msgid "VAT:"
 msgstr "TVA:"
 
-#: templates/resa/orders_pdf.xml:102
+#: templates/resa/orders_pdf.xml:105
 msgid "Total excl. VAT:"
 msgstr "Total HT"
 
-#: templates/resa/orders_pdf.xml:109
+#: templates/resa/orders_pdf.xml:112
 msgid "Total incl. VAT:"
 msgstr "Total TTC"
 
-#: templates/resa/orders_pdf.xml:119
+#: templates/resa/orders_pdf.xml:122
 msgid ""
 "VAT not applicable in accordance with Art. 261-7-1° of the French Tax Code"
 msgstr "TVA non applicable - Article 261-7-1° du Code Général des Impôts"
@@ -1405,7 +1409,7 @@ msgid ""
 "Your payment concerning the order no %(order_id)s for %(amount)s euros\n"
 "has been confirmed by the bank."
 msgstr ""
-"Votre paiment concernant la commande n° %(order_id)s pour un montant de \n"
+"Votre paiement concernant la commande n° %(order_id)s pour un montant de \n"
 "%(amount)s euros a été confirmé par la banque."
 
 #: templates/resa/payment_bank_email.txt:6
@@ -1419,7 +1423,7 @@ msgid ""
 "Your payment concerning the order no %(order_id)s for %(amount)s euros\n"
 "has been confirmed by PayPal."
 msgstr ""
-"Votre paiment concernant la commande n° %(order_id)s pour un montant de \n"
+"Votre paiement concernant la commande n° %(order_id)s pour un montant de \n"
 "%(amount)s euros a été confirmé par PayPal."
 
 #: templates/resa/sales.html:39 templates/resa/stocks.html:33
@@ -1454,52 +1458,3 @@ msgstr "Confirmé"
 #: templates/resa/stocks.html:43
 msgid "Dispatched"
 msgstr "Distribué"
-
-#~ msgid "Close"
-#~ msgstr "Fermer"
-
-#~ msgid "Add to cart"
-#~ msgstr "Ajouter au panier"
-
-#~ msgid "Number"
-#~ msgstr "Nombre"
-
-#~ msgid "Sel."
-#~ msgstr "Sel."
-
-#~ msgid "Solde"
-#~ msgstr "Solde"
-
-#~ msgid "Other methods of payment"
-#~ msgstr "Autres méthodes de paiement"
-
-#~ msgid "Distributed"
-#~ msgstr "Distribué"
-
-#~ msgid "Stock:"
-#~ msgstr "Stock :"
-
-#~ msgid "Quantity distributed"
-#~ msgstr "Quantité distribuée"
-
-#~ msgid "Compta"
-#~ msgstr "Comptabilité"
-
-#~ msgid "Edit"
-#~ msgstr "Modifier"
-
-#~ msgid "Initial"
-#~ msgstr "Initial"
-
-#~ msgid "Avail. (not paid)"
-#~ msgstr "Dispo. (non payées)"
-
-#~ msgid "Réservation RMLL"
-#~ msgstr "RMLL Booking"
-
-#~ msgid "Réservation"
-#~ msgstr "Booking"
-
-#, fuzzy
-#~ msgid "Product(s) successfully confirmed"
-#~ msgstr "Les produits ont été mis à jour avec succès"
