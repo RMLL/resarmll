@@ -63,6 +63,14 @@ class UserProfile(models.Model):
             ret = self.order_staff
         return ret
 
+    def is_order_orga(self, order_id):
+        order_staff = 0
+        try:
+            order_staff = int(self.get_order_orga())
+        except:
+            order_staff = 0
+        return order_staff == order_id
+
     class Meta:
         verbose_name = _(u"User profile")
         verbose_name_plural = _(u"Users Profiles")

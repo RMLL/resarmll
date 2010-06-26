@@ -1,6 +1,7 @@
 {% extends "base2cols.html" %}
 
 {% load i18n %}
+{% load order %}
 
 {% block title %}{% trans "User order(s)" %}{% endblock %}
 
@@ -39,29 +40,36 @@
                     <h3>{% trans "Pending order(s)" %}</h3>
                     {% for order in pending_orders %}
                         <h4>{% trans "Order no" %} #{{ order.id }}</h4>
+                        {% if order.id|is_staff_order:user_obj %}
+                            <div class="main-warn">
+                                {% trans "This order is supported by the LSM organization." %}
+                            </div>
+                        {% endif %}
                         {% include "resa/order_details.html" %}
-                        <div class="process">
-                            <fieldset>
-                                <legend>{% trans 'Confirm order' %}</legend>
-                                <form method="post" action="">
-                                    <input type="hidden" name="order_id" value="{{ order.id }}" />
-                                    <label class="inline" for="id_method">{% trans 'Payment method:' %}</label>
-                                    {{ form.method }}
-                                    <label class="inline" for="id_note">{% trans 'Note:' %}</label>
-                                    {{ form.note }}
-                                    <input type="submit" value="{% trans 'Save' %}" />
-                                </form>
-                            </fieldset>
-                            <fieldset>
-                                <legend>{% trans 'Remove order' %}</legend>
-                                <form method="post" action="">
-                                    <input type="hidden" name="order_id" value="{{ order.id }}" />
-                                    <label class="inline" for="id_check">{% trans 'Remove:' %}</label>
-                                    {{ form_del.check }}
-                                    <input type="submit" value="{% trans 'Save' %}" />
-                                </form>
-                            </fieldset>
-                        </div>
+                        {% if not order.id|is_staff_order:user_obj %}
+                            <div class="process">
+                                <fieldset>
+                                    <legend>{% trans 'Confirm order' %}</legend>
+                                    <form method="post" action="">
+                                        <input type="hidden" name="order_id" value="{{ order.id }}" />
+                                        <label class="inline" for="id_method">{% trans 'Payment method:' %}</label>
+                                        {{ form.method }}
+                                        <label class="inline" for="id_note">{% trans 'Note:' %}</label>
+                                        {{ form.note }}
+                                        <input type="submit" value="{% trans 'Save' %}" />
+                                    </form>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>{% trans 'Remove order' %}</legend>
+                                    <form method="post" action="">
+                                        <input type="hidden" name="order_id" value="{{ order.id }}" />
+                                        <label class="inline" for="id_check">{% trans 'Remove:' %}</label>
+                                        {{ form_del.check }}
+                                        <input type="submit" value="{% trans 'Save' %}" />
+                                    </form>
+                                </fieldset>
+                            </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             {% endif %}

@@ -80,7 +80,7 @@ def orders_list(request, tmpl, action=None):
     pending_orders = request.user.order_set.filter(payment_date__isnull=True)
     validated_orders = request.user.order_set.filter(payment_date__isnull=False)
     return tmpl, {'pending_orders': pending_orders, 'validated_orders': validated_orders,
-            'msg_err': msg_err, 'msg_ok': msg_ok}
+        'msg_err': msg_err, 'msg_ok': msg_ok, 'user_obj': request.user}
 
 @login_required
 @auto_render
