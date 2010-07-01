@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import os
-PROJECT_DIR = os.path.dirname(__file__)
 
 # Django settings for resarmll project.
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
-#DEBUG = False
-#TEMPLATE_DEBUG = False
+
+PROJECT_DIR = os.path.dirname(__file__)
 
 SERVER_EMAIL = 'reservation@rmll.info'
 # ADMINS needs to be a list (a tuple make mail_admins fails)
@@ -224,9 +221,17 @@ SIRET 431 746 833 00026 – Code APE 9499Z
 
 TVA = 0
 
-### DEBUG SETTINGS ###
-if DEBUG:
+### DEVELOPMENT SETTINGS ###
+
+if os.environ.has_key('DJANGO_DEVEL'):
+    DEBUG = True
+    TEMPLATE_DEBUG = DEBUG
+
     BADGE_PNG_DEST_DIR = 'tmp/badges/png/'
     BADGE_BIG_PNG_DEST_DIR = 'tmp/badges/png/big/'
     BADGE_PDF_DEST_DIR = 'tmp/badges/pdf/'
     BADGE_PRINTER_PDF_DEST_DIR = 'tmp/badges/pdf/printer/'
+else:
+    DEBUG = False
+    TEMPLATE_DEBUG = False
+
