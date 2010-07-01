@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import base64
+
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -94,3 +96,24 @@ def auto_render(func):
 
         return render_to_response(template_name, context, context_instance=RequestContext(request))
     return _dec
+
+
+def logged_in_or_global_basicauth(httpauth_username, httpauth_password, httpauth_message=''):
+    """
+    Inspired from http://djangosnippets.org/snippets/243/
+    """
+    def view_decorator(view):
+        def wrapper(request, *args, **kwargs):
+            if 'HTTP_AUTHORIZATION' in request.META:
+                auth = request.META['HTTP_AUTHORIZATION'].split()
+                if len(auth) == 2:
+                    if auth[0].lower() == "basic":
+                        username, password = base64.b64decode(auth[1]).split(':')
+                        if username == httpauth_username and password == httpauth_password:
+                            return view(request, *args, **kwargs)
+            response = HttpResponse()
+            response.status_code = 401
+            response['WWW-Authenticate'] = 'Basic realm="%s"' % (httpauth_message)
+            return response
+        return wrapper
+    return view_decorator

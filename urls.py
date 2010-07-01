@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     (r'^$', redirect_to, {'url': 'account/'}),
     (r'^account/', include('resarmll.account.urls')),
     (r'^resa/', include('resarmll.resa.urls')),
+    (r'^utils/', include('resarmll.utils.urls')),
     (r'^i18n/', include('django.conf.urls.i18n')),
 )
 

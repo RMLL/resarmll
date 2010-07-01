@@ -152,6 +152,11 @@ BADGE_HEIGHT_MM = 54
 BADGE_PRINTER_WIDTH_MM = 86.0
 BADGE_PRINTER_HEIGHT_MM = 54.0
 
+### USERS DB SYNC ###
+global_httpauth_username = 'rmll'
+global_httpauth_password = 'eZ4xae0o'
+global_httpauth_message = 'LSM users sync'
+
 ### TREASURER ###
 CHECK_SETTINGS = {
     'to': 'Association ABUL',
