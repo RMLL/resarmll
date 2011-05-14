@@ -187,15 +187,15 @@ class CyberPlus(Bank):
                         send_admins(
                             "CYBERPLUS OK - [order=%d] [amount=%.2f] [user=%s] [email=%s]" %
                                 (order.id, order.totalamount(), user.id, user.email),
-                            "resa/payment_ok_cyberplus_admin_email.txt",
-                            {'order_id': order.id, 'amount': order.totalamount(),
-                            'env': self.env_datas(), 'dump': params})
+                                "resa/payment_ok_bank_admin_email.txt",
+                                {'order_id': order.id, 'amount': order.totalamount(),
+                                'env': self.env_datas(), 'dump': params})
 
                         # switch language before sending mail
                         translation.activate(user.get_profile().language)
                         # mail info to user
                         send_email([user.email], _(u"Bank payment - order no #%d") % order.id,
-                            "resa/payment_cyberplus_email.txt",
+                            "resa/payment_bank_email.txt",
                             {'order_id': order.id, 'amount': order.totalamount()})
 
         if self.has_errors():

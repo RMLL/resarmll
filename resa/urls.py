@@ -51,7 +51,12 @@ urlpatterns = patterns ('',
         {'tmpl': 'resa/orders_paypal_return.html'}),
     url(r'^orders/paypal/notify$', orders_paypal_notify),
 
-    url(r'^orders/cyberplus/return$', orders_cyberplus_return,
+    url(r'^orders/cyberplus/return$', orders_bank_return,
         {'tmpl': 'resa/orders_cyberplus_return.html'}),
-    url(r'^orders/cyberplus/notify$', orders_cyberplus_notify),
+    url(r'^orders/cyberplus/notify$', orders_bank_notify),
+
+    url(r'^orders/etransactions/go/(?P<order_id>\d+)$', orders_etransactions_go),
+    url(r'^orders/etransactions/return$', orders_bank_return,
+        {'tmpl': 'resa/orders_bank_return.html'}),
+    url(r'^orders/etransactions/notify$', orders_bank_notify),
 )

@@ -1,0 +1,5 @@
+{% load i18n %}
+
+<form action="/resa/orders/etransactions/go/{{ order.id }}" method="post">
+    <input type="image" src="{{ MEDIA_URL }}etransactions/mastercard_visa.gif" value="{% trans "Payment by Bank" %}" />
+</form>

@@ -180,19 +180,32 @@ PAYPAL_SETTINGS = {
     'notify_url': '/resa/orders/paypal/notify',
 }
 
-### Bank Driver ( CyberPlus ) ###
-BANK_DRIVER = 'CyberPlus'
+### Bank Driver ( CyberPlus or eTransactions) ###
+BANK_DRIVER = 'eTransactions'
 
 ### CYBERPLUS ###
 CYBERPLUS_SETTINGS = {
     'merchant_id': '',
-    #'merchant_id': '038862749811111',
+    #'merchant_id': '038862749811111', #tests
     'merchant_country': 'fr',
     'currency_code': '978', # EURO = 978
     'payment_means': 'CB,1,VISA,1,MASTERCARD,1',
     'normal_return_url': '/resa/orders/cyberplus/return',
     'cancel_return_url': '/resa/orders/cyberplus/return',
     'automatic_response_url': '/resa/orders/cyberplus/notify',
+}
+
+### ETRANSACTIONS ###
+ETRANSACTIONS_SETTINGS = {
+#    'site': '1999888', # tests
+    'site': '',
+#    'rang': '98', # tests
+    'rang': '',
+#    'identifiant': '3', #tests
+    'identifiant': '',
+    'mode': '4',
+    'devise': '978', # EURO = 978
+    'return_url_prefix': '/resa/orders/etransactions/return',
 }
 
 ### MISC ###

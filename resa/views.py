@@ -107,6 +107,9 @@ def orders_details(request, tmpl, order_id=0):
             bp_tmpl = 'resa/orders_details_cyberplus.html'
             bp = CyberPlus(request)
             bp_err, bp_code, bp_form = bp.form(order, request.user, request.LANGUAGE_CODE, ip_addr, url)
+        elif settings.BANK_DRIVER.upper() == 'ETRANSACTIONS':
+            bp_tmpl = 'resa/orders_details_etransactions.html'
+
     return tmpl, locals()
 
 @login_required
@@ -370,10 +373,14 @@ def orders_paypal_notify(request, order_id=0):
 
 @login_required
 @auto_render
-def orders_cyberplus_return(request, tmpl):
+def orders_bank_return(request, tmpl):
     msg_err = msg_ok = msg_warn = None
-    cbp = CyberPlus(request)
-    error, code, canceled, rejected, accepted, order_id = cbp.getreturn()
+    if settings.BANK_DRIVER.upper() == 'CYBERPLUS':
+        bp = CyberPlus(request)
+        error, code, canceled, rejected, accepted, order_id = bp.getreturn()
+    elif settings.BANK_DRIVER.upper() == 'ETRANSACTIONS':
+        bp = eTransactions(request)
+        error, canceled, rejected, accepted, order_id = bp.getreturn()
     if canceled:
         msg_warn = _(u"Your payment has been canceled, you could resume it later.")
     elif rejected:
@@ -394,12 +401,37 @@ def orders_cyberplus_return(request, tmpl):
         msg_err = _(u"Your payment has failed, you should retry in few days or try another payment method.")
     return tmpl, locals()
 
-@auto_render
-def orders_cyberplus_notify(request, order_id=0):
-    p = CyberPlus(request)
+def orders_bank_notify(request):
     r = 'OK'
-    if request.method == 'POST':
-        p.process_order()
-    else:
-        r = 'KO'
+    if settings.BANK_DRIVER.upper() == 'CYBERPLUS':
+        bp = CyberPlus(request)
+        if request.method == 'POST':
+            bp.process_order()
+        else:
+            r = 'KO'
+    elif settings.BANK_DRIVER.upper() == 'ETRANSACTIONS':
+        bp = eTransactions(request)
+        bp.process_order()
     return HttpResponse(r, mimetype="text/html")
+
+def orders_etransactions_go(request, order_id=0):
+    try:
+        order = Order.objects.get(user=request.user, id=int(order_id))
+    except:
+        order = None
+
+    # only allowed to see its own orders
+    if not order or (order and order.user.id != request.user.id):
+        return HttpResponseRedirect("/resa/orders/details/%d" % (int(order_id)))
+
+    protocol = request.is_secure() and 'https' or 'http'
+    url = "%s://%s" % (protocol, request.get_host())
+    ip_addr = request.META['REMOTE_ADDR']
+
+    bp = eTransactions(request)
+    r = HttpResponse(mimetype='text/html')
+    r['Cache-Control'] = 'no-cache, no-store'
+    r['Pragma'] = 'no-cache'
+    r.write(bp.form(order, request.user, request.LANGUAGE_CODE, ip_addr, url))
+
+    return r
