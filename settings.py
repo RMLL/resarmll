@@ -197,6 +197,7 @@ CYBERPLUS_SETTINGS = {
 
 ### ETRANSACTIONS ###
 ETRANSACTIONS_SETTINGS = {
+    'testmode': True,
 #    'site': '1999888', # tests
     'site': '',
 #    'rang': '98', # tests
