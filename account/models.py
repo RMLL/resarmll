@@ -7,6 +7,7 @@ from resarmll import settings
 from resarmll.resa.models import Country, Badge
 from resarmll.resa.widgets import TranslatedLabelField
 from resarmll.resa.utils.BadgeGenerator import BadgeGenerator
+from resarmll.resa.orders import Order
 
 GENDER_CHOICES = (('', '----------'), ('F', _('Female')), ('M', _('Male')),)
 
@@ -58,18 +59,26 @@ class UserProfile(models.Model):
         return r
 
     def get_order_orga(self):
-        ret = None
-        if self.order_staff != '':
-            ret = self.order_staff
+        try:
+            ret = int(self.order_staff)
+        except:
+            ret = None
         return ret
 
     def is_order_orga(self, order_id):
-        order_staff = 0
-        try:
-            order_staff = int(self.get_order_orga())
-        except:
-            order_staff = 0
-        return order_staff == order_id
+        print self.get_order_orga(), order_id, self.get_order_orga() == order_id
+        return self.get_order_orga() == order_id
+
+    def has_orders_ok(self):
+        ok = True
+        if not self.payment_later:
+            orders = Order.objects.filter(user=self.user)
+            if orders:
+                for o in orders:
+                    if o.payment_date is None and o.id != self.get_order_orga():
+                        ok = False
+                        break
+        return ok
 
     class Meta:
         verbose_name = _(u"User profile")
