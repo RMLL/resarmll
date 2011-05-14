@@ -3,7 +3,7 @@
 import sys, os.path
 
 ######################
-sys.path.append('/srv/www/rmll/')
+sys.path.append(os.path.abspath("%s/../" % os.getcwd()))
 os.environ['DJANGO_SETTINGS_MODULE'] ='resarmll.settings'
 
 from django.core.management import setup_environ
@@ -14,6 +14,7 @@ from django.core.mail import send_mail
 from django.core.exceptions import ObjectDoesNotExist
 from django.utils import translation
 from django.contrib.auth.models import User
+from django.db.models import Q
 
 from resarmll.resa.models import Country
 from resarmll.compta.models import PlanComptable
@@ -130,30 +131,30 @@ class Users:
             print "Fails for: \n%s" % ("\n".join(fails))
 
     @staticmethod
-    def bills_orga(folder):
-        results = User.objects.filter(userprofile__notes__contains='COMMANDE_ORGA').order_by('id')
+    def bills_notpaid_toprint(folder):
+        results = User.objects.filter(Q(userprofile__payment_later=True)|Q(userprofile__order_staff__regex='\d+')).order_by('id')
         fails = []
         for u in results:
-            cmd = u.get_profile().get_order_orga()
-            if cmd:
-                translation.activate(u.get_profile().language)
-                o = Order.objects.get(id=int(cmd))
-                bname = "%s/bill_%04d-%03d.pdf" % (folder, u.id, 1)
-                print "Writing bill for %s, #%d : %s ..." % (u.get_full_name(), u.id, bname),
-                try:
-                    buffer = gen_pdf('resa/orders_pdf.xml', {'user': u, 'order': o,
-                        'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
-                        'tva': settings.TVA})
-                except:
-                    buffer = None
-                if buffer:
-                    pdffile = open(bname, 'w')
-                    pdffile.write(buffer)
-                    pdffile.close()
-                    print 'OK'
-                else:
-                    print 'FAIL'
-                    fails.append(u.get_full_name())
+            translation.activate(u.get_profile().language)
+            orders = Order.objects.filter(user=u)
+            for o in orders:
+                if o.payment_date == None:
+                    bname = "%s/bill_%04d-%03d.pdf" % (folder, u.id, 1)
+                    print "Writing bill for %s, #%d : %s ..." % (u.get_full_name(), u.id, bname),
+                    try:
+                        buffer = gen_pdf('resa/orders_pdf.xml', {'user': u, 'order': o,
+                            'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
+                            'tva': settings.TVA})
+                    except:
+                        buffer = None
+                    if buffer:
+                        pdffile = open(bname, 'w')
+                        pdffile.write(buffer)
+                        pdffile.close()
+                        print 'OK'
+                    else:
+                        print 'FAIL'
+                        fails.append(u.get_full_name())
         if fails != []:
             print "Fails for: \n%s" % ("\n".join(fails))
 
@@ -182,7 +183,7 @@ class WiFi:
 
 if __name__ == "__main__":
     ok = False
-    args = ['badgegen', 'importusers', 'importwifi', 'billsgen', 'billsgenorga', 'usermassmail']
+    args = ['badgegen', 'importusers', 'importwifi', 'bills', 'bills_notpaid_toprint', 'usermassmail']
     if len(sys.argv) > 1 and sys.argv[1] in args:
         ok = True
         if sys.argv[1] == 'badgegen':
@@ -191,10 +192,10 @@ if __name__ == "__main__":
             Users.import_fromcsv(sys.argv[2], sys.argv[3])
         elif sys.argv[1] == 'importwifi' and len(sys.argv) > 2:
             WiFi.import_fromcsv(sys.argv[2])
-        elif sys.argv[1] == 'billsgen' and len(sys.argv) > 2:
+        elif sys.argv[1] == 'bills' and len(sys.argv) > 2:
             Users.bills(sys.argv[2])
-        elif sys.argv[1] == 'billsgenorga' and len(sys.argv) > 2:
-            Users.bills_orga(sys.argv[2])
+        elif sys.argv[1] == 'bills_notpaid_toprint' and len(sys.argv) > 2:
+            Users.bills_notpaid_toprint(sys.argv[2])
         elif sys.argv[1] == 'usermassmail' and len(sys.argv) > 2:
             Users.mass_mail(sys.argv[2])
         else:
