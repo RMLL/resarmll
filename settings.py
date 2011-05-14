@@ -11,6 +11,7 @@ SERVER_EMAIL = 'reservation@rmll.info'
 EMAIL_SUBJECT_PREFIX = '[TRACE] '
 ADMINS = (
     ('Resa Rmll Team', 'kolter@openics.org'),
+    ('Resa Rmll Team', 'micgilantoli@nerim.net'),
 )
 
 MANAGERS = ADMINS
@@ -174,10 +175,16 @@ CHECK_PAYABLE_TO = "Association ABUL"
 
 ### PAYPAL ###
 PAYPAL_SETTINGS = {
-    #'id': 'paypal@abul.org',
-    'id': 'paypal_1209199069_biz@openics.org',
-    #'url' : 'https://www.paypal.com/cgi-bin/webscr',
-    'url': 'https://www.sandbox.paypal.com/cgi-bin/webscr',
+#
+# tests
+#
+#    'id': 'paypal_1209199069_biz@openics.org',
+#    'url': 'https://www.sandbox.paypal.com/cgi-bin/webscr',
+#
+# prod
+#
+    'id': 'paypal@abul.org',
+    'url' : 'https://www.paypal.com/cgi-bin/webscr',
     'currency': 'EUR',
     'return': '/resa/orders/paypal/return',
     'notify_url': '/resa/orders/paypal/notify',
@@ -200,12 +207,20 @@ CYBERPLUS_SETTINGS = {
 
 ### ETRANSACTIONS ###
 ETRANSACTIONS_SETTINGS = {
-    'testmode': True,
-#    'site': '1999888', # tests
-    'site': '',
+#
+# tests
+#
+#    'site': '1999888',
 #    'rang': '98', # tests
-    'rang': '',
 #    'identifiant': '3', #tests
+#    'testmode': True,
+
+#
+# prod
+#
+    'testmode': False,
+    'site': '',
+    'rang': '',
     'identifiant': '',
     'mode': '4',
     'devise': '978', # EURO = 978
@@ -214,7 +229,7 @@ ETRANSACTIONS_SETTINGS = {
 
 ### MISC ###
 FULL_ADDRESS = """
-Association ABUL - RMLL 2010 - contact@abul.org
+Association ABUL - RMLL 2010 - web@abul.org
 S/C Medias-cités - Place de la Republique - 33160 St Médard en Jalles
 SIRET 431 746 833 00026 – Code APE 9499Z
 """
