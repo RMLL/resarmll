@@ -16,6 +16,12 @@
 
         <h2>{% trans "Order(s)" %}</h2>
 
+        {% if pending_orders and user_obj.get_profile.payment_later %}
+            <div class="main-warn">
+                {% trans "It has been agreed that these orders will be paid at his arrival." %}
+            </div>
+        {% endif %}
+
         <div id="manage_orders">
             {% if not pending_orders and not validated_orders %}
                 <div class="main-warn">

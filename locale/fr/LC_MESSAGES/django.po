@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-26 21:30+0200\n"
+"POT-Creation-Date: 2010-07-01 08:59+0200\n"
 "PO-Revision-Date: 2010-06-04 15:29+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -299,11 +299,11 @@ msgstr "Comptes de charge"
 msgid "Payment Method:"
 msgstr "Méthode de paiement :"
 
-#: resa/forms.py:113 templates/resa/manage_orders.html:57
+#: resa/forms.py:113 templates/resa/manage_orders.html:63
 msgid "Note:"
 msgstr "Note :"
 
-#: resa/forms.py:116 templates/resa/manage_orders.html:66
+#: resa/forms.py:116 templates/resa/manage_orders.html:72
 msgid "Remove:"
 msgstr "Supprimer"
 
@@ -700,7 +700,7 @@ msgstr "Auto."
 
 #: templates/account/create.html:79 templates/account/edit.html:60
 #: templates/account/profile_modify.html:49
-#: templates/resa/manage_orders.html:59 templates/resa/manage_orders.html:68
+#: templates/resa/manage_orders.html:65 templates/resa/manage_orders.html:74
 #: templates/resa/order_details_extended.html:51
 msgid "Save"
 msgstr "Enregistrer"
@@ -1171,7 +1171,7 @@ msgstr "Ajouter"
 msgid "Force"
 msgstr "Forcer"
 
-#: templates/resa/manage_cart.html:99 templates/resa/manage_orders.html:52
+#: templates/resa/manage_cart.html:99 templates/resa/manage_orders.html:58
 msgid "Confirm order"
 msgstr "Confimer la commande"
 
@@ -1217,36 +1217,40 @@ msgstr "Commande(s) de l'utilisateur"
 msgid "Order(s)"
 msgstr "Commande(s)"
 
-#: templates/resa/manage_orders.html:22 templates/resa/orders_list.html:29
+#: templates/resa/manage_orders.html:21
+msgid "It has been agreed that these orders will be paid at his arrival."
+msgstr "Il a été convenu que ses commandes seront payées à son arrivée."
+
+#: templates/resa/manage_orders.html:28 templates/resa/orders_list.html:29
 msgid "No orders"
 msgstr "Pas de commande(s)"
 
-#: templates/resa/manage_orders.html:40 templates/resa/orders_list.html:37
+#: templates/resa/manage_orders.html:46 templates/resa/orders_list.html:43
 msgid "Pending order(s)"
 msgstr "Commande(s) en attente"
 
-#: templates/resa/manage_orders.html:42 templates/resa/manage_orders.html:81
+#: templates/resa/manage_orders.html:48 templates/resa/manage_orders.html:87
 #: templates/resa/orders_details.html:12 templates/resa/orders_details.html:53
 msgid "Order no"
 msgstr "Commande no"
 
-#: templates/resa/manage_orders.html:45 templates/resa/orders_list.html:46
+#: templates/resa/manage_orders.html:51 templates/resa/orders_list.html:52
 msgid "This order is supported by the LSM organization."
 msgstr "Cette commande est prise en charge par l'organisation des RMLL."
 
-#: templates/resa/manage_orders.html:55
+#: templates/resa/manage_orders.html:61
 msgid "Payment method:"
 msgstr "Méthode de paiement :"
 
-#: templates/resa/manage_orders.html:63
+#: templates/resa/manage_orders.html:69
 msgid "Remove order"
 msgstr "Supprimer la commande"
 
-#: templates/resa/manage_orders.html:79 templates/resa/orders_list.html:63
+#: templates/resa/manage_orders.html:85 templates/resa/orders_list.html:69
 msgid "Paid order(s)"
 msgstr "Commande(s) payée(s)"
 
-#: templates/resa/manage_orders.html:84 templates/resa/orders_details.html:30
+#: templates/resa/manage_orders.html:90 templates/resa/orders_details.html:30
 msgid "Download billing (pdf)"
 msgstr "Télécharger la facture (pdf)"
 
@@ -1326,8 +1330,12 @@ msgstr ""
 msgid "Payment by Bank"
 msgstr "Paiement bancaire"
 
-#: templates/resa/orders_list.html:43 templates/resa/orders_list.html.py:50
-#: templates/resa/orders_list.html:69
+#: templates/resa/orders_list.html:35
+msgid "It has been agreed that your orders will be paid at your arrival."
+msgstr "Il a été convenu que vos commandes seront payées à votre arrivée."
+
+#: templates/resa/orders_list.html:49 templates/resa/orders_list.html.py:56
+#: templates/resa/orders_list.html:75
 #, python-format
 msgid "Order of %(date_t)s for amount of %(amount_t)s€"
 msgstr "Commande du %(date_t)s pour un montant de %(amount_t)s€"

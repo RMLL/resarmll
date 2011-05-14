@@ -30,6 +30,12 @@
         </div>
     {% endif %}
 
+    {% if pending_orders and user_obj.get_profile.payment_later %}
+        <div class="main-warn">
+            {% trans "It has been agreed that your orders will be paid at your arrival." %}
+        </div>
+    {% endif %}
+
     <div id="orders_list">
 
         {% if pending_orders %}
