@@ -44,6 +44,7 @@
                     <h3>{% trans "Payment by PayPal" %}</h3>
                     <div class="content">
                         {% trans "Proceed the payment using PayPal:" %}
+                        <br/>
                         <form action="{{ paypal_settings.url }}" method="post" class="payment">
                             <input type="hidden" name="business" value="{{ paypal_settings.id }}" />
                             <input type="hidden" name="currency_code" value="{{ paypal_settings.currency }}" />
