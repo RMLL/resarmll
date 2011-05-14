@@ -39,8 +39,8 @@
             <blockValign value="TOP" />
             <blockAlignment value="RIGHT" start="1,0" stop="-1,-1"/>
         </blockTableStyle>
-        <paraStyle name="conditions" fontName="Helvetica" fontSize="8" alignment="justify"/>
-    <paraStyle name="nom" fontSize="14" />
+        <paraStyle name="nom" fontSize="14" />
+        <paraStyle name="note" fontName="Helvetica-Oblique" fontSize="8" alignment="justify" leftIndent="1cm" />
     </stylesheet>
     <story>
         <para style="nom">
@@ -91,18 +91,20 @@
                 <td/>
                 <td/>
             </tr>
-            <tr>
-                <td><para><b>{% trans "VAT:" %}</b></para></td>
-                <td/>
-                <td/>
-                <td>{{ tva }}%</td>
-            </tr>
-            <tr>
-                <td><para><b>{% trans "Total excl. VAT:" %}</b></para></td>
-                <td/>
-                <td/>
-                <td>{{ order.hors_taxes }} euros</td>
-            </tr>
+            {% if tva %}
+                <tr>
+                    <td><para><b>{% trans "VAT:" %}</b></para></td>
+                    <td/>
+                    <td/>
+                    <td>{{ tva }}%</td>
+                </tr>
+                <tr>
+                    <td><para><b>{% trans "Total excl. VAT:" %}</b></para></td>
+                    <td/>
+                    <td/>
+                    <td>{{ order.hors_taxes }} euros</td>
+                </tr>
+            {% endif %}
             <tr>
                 <td><para><b>{% trans "Total incl. VAT:" %}</b></para></td>
                 <td/>
@@ -111,6 +113,12 @@
             </tr>
         </blockTable>
 
+        {% if not tva %}
+            <spacer length="0.5cm" width="1mm"/>
+            <para style="note">
+                {% trans "VAT not applicable in accordance with Art. 193B of the French Tax Code" %}
+            </para>
+        {% endif %}
         <spacer length="1cm" width="1mm"/>
         <spacer length="0.5cm" width="1mm"/>
     </story>

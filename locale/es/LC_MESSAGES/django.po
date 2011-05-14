@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-04 15:31+0200\n"
+"POT-Creation-Date: 2010-06-05 16:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -540,43 +540,43 @@ msgid ""
 "method."
 msgstr ""
 
-#: resa/bank/bank.py:50
+#: resa/bank/bank.py:51
 #, python-format
 msgid "Commission (fee) order #%d"
 msgstr ""
 
-#: resa/bank/cyberplus.py:149
+#: resa/bank/cyberplus.py:143
 #, python-format
 msgid "Error while receiving data from the bank: [%s]"
 msgstr ""
 
-#: resa/bank/cyberplus.py:156 resa/bank/etransactions.py:226
+#: resa/bank/cyberplus.py:150 resa/bank/etransactions.py:226
 #: resa/bank/paypal.py:61
 #, python-format
 msgid "Unable to find order with id: #%d"
 msgstr ""
 
-#: resa/bank/cyberplus.py:158 resa/bank/etransactions.py:228
+#: resa/bank/cyberplus.py:152 resa/bank/etransactions.py:228
 #: resa/bank/paypal.py:63
 #, python-format
 msgid "Order with id: #%d has already been paid"
 msgstr ""
 
-#: resa/bank/cyberplus.py:161 resa/bank/cyberplus.py:164
-#: resa/bank/cyberplus.py:167 resa/bank/cyberplus.py:171
+#: resa/bank/cyberplus.py:155 resa/bank/cyberplus.py:158
+#: resa/bank/cyberplus.py:161 resa/bank/cyberplus.py:165
 #: resa/bank/etransactions.py:242 resa/bank/paypal.py:70
 #: resa/bank/paypal.py:73 resa/bank/paypal.py:76 resa/bank/paypal.py:79
 #, python-format
 msgid "Wrong parameter '%(arg1)s': [%(arg2)s] instead of [%(arg3)s]"
 msgstr ""
 
-#: resa/bank/cyberplus.py:180 resa/bank/etransactions.py:251
+#: resa/bank/cyberplus.py:174 resa/bank/etransactions.py:251
 #: resa/bank/paypal.py:88
 #, python-format
 msgid "Cannot find user associated to order no: #%d"
 msgstr ""
 
-#: resa/bank/cyberplus.py:197 resa/bank/etransactions.py:268
+#: resa/bank/cyberplus.py:191 resa/bank/etransactions.py:268
 #, python-format
 msgid "Bank payment - order no #%d"
 msgstr ""
@@ -1331,16 +1331,20 @@ msgstr ""
 msgid "Total price"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:95
+#: templates/resa/orders_pdf.xml:96
 msgid "VAT:"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:101
+#: templates/resa/orders_pdf.xml:102
 msgid "Total excl. VAT:"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:107
+#: templates/resa/orders_pdf.xml:109
 msgid "Total incl. VAT:"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:119
+msgid "VAT not applicable in accordance with Art. 193B of the French Tax Code"
 msgstr ""
 
 #: templates/resa/orders_search.html:23

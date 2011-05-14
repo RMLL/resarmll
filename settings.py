@@ -217,7 +217,7 @@ S/C Medias-cités - Place de la Republique - 33160 St Médard en Jalles
 SIRET 431 746 833 00026 – Code APE 9499Z
 """
 
-TVA = 19.6
+TVA = 0
 
 ### DEBUG SETTINGS ###
 if DEBUG:
