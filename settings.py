@@ -4,12 +4,17 @@ import os
 PROJECT_DIR = os.path.dirname(__file__)
 
 # Django settings for resarmll project.
+#DEBUG = True
+#TEMPLATE_DEBUG = DEBUG
+DEBUG = False
+TEMPLATE_DEBUG = False
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
-
+SERVER_EMAIL = 'reservation@rmll.info'
+# ADMINS needs to be a list (a tuple make mail_admins fails)
+EMAIL_SUBJECT_PREFIX = '[TRACE] '
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('Resa Rmll Team', 'kolter@openics.org'),
+    ('Resa Rmll Team', 'etienne.loks@peacefrogs.net'),
 )
 
 MANAGERS = ADMINS
@@ -51,7 +56,7 @@ MEDIA_ROOT = ''
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/site_media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -75,13 +80,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'resarmll.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    PROJECT_DIR + '/templates/'
+    PROJECT_DIR + '/templates/',
 )
 
 INSTALLED_APPS = (
@@ -90,12 +95,105 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.markup',
+#    'django_evolution',
 #    'django.contrib.sites',
-    'resa',
-    'account',
+    'resarmll.resa',
+    'resarmll.compta',
+    'resarmll.account',
+    'resarmll.utils',
 )
 
-AUTH_PROFILE_MODULE = 'account.UserProfile'
+# template processors
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.auth',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'resarmll.resa.context_processors.user',
+)
 
-LOGIN_REDIRECT_URL = '/account/profile/'
+#############################################
+#############################################
+#############################################
+
+### COMMON ###
+DOCUMENT_ROOT = PROJECT_DIR + MEDIA_URL
+
+### SESSIONS / COOKIES ###
+SESSION_COOKIE_AGE = 10800
+SESSION_ENGINE = "django.contrib.sessions.backends.file"
+
+### EMAIL CONFIG ###
+DEFAULT_FROM_EMAIL = SERVER_EMAIL
+DEFAULT_PREFIX_SUBJECT_EMAIL = '[RMLL RESA] '
+
+### ACCOUNT ###
+AUTH_PROFILE_MODULE = 'account.UserProfile'
+LOGIN_REDIRECT_URL = '/account/langswitch/'
 LOGIN_URL = '/account/login/'
+LOGOUT_URL = '/account/logout/'
+
+### COMPTA ###
+COMPTA_BANK_FEE = 0.24
+COMPTA_METHOD_CODE_BANK = 'CBI'
+COMPTA_METHOD_CODE_PAYPAL = 'VPP'
+COMPTA_METHOD_CODE_INTERNAL = 'VI'
+COMPTA_PLAN_CLIENT_CODE = 411
+
+### BADGES ###
+BADGE_CITY = "Nantes 2009"
+BADGE_BG_IMAGE = PROJECT_DIR + '/templates/images/armelle.png'
+BADGE_BIG_BG_IMAGE = PROJECT_DIR + '/templates/images/armelle-big.png'
+BADGE_PNG_DEST_DIR = 'badges/png/'
+BADGE_BIG_PNG_DEST_DIR = 'badges/png/big/'
+BADGE_PDF_DEST_DIR = 'badges/pdf/'
+BADGE_WIDTH_MM = 85
+BADGE_HEIGHT_MM = 54
+
+### TREASURER ###
+CHECK_SETTINGS = {
+    'to': 'Association Linux Nantes',
+    'contact_email': SERVER_EMAIL,
+}
+
+TREASURER_NAME = "David COURTIN"
+TREASURER_EMAIL = "reservation@rmll.info"
+
+TREASURER_ADDRESS = """
+David COURTIN
+3, impasse de Tananarive
+44800 Saint Herblain
+FRANCE
+"""
+
+CHECK_PAYABLE_TO = "Association Linux Nantes"
+
+### PAYPAL ###
+PAYPAL_SETTINGS = {
+    'id': 'david@lilel.org',
+    #'id': 'paypal_1209199069_biz@openics.org',
+    'url' : 'https://www.paypal.com/cgi-bin/webscr',
+    #'url': 'https://www.sandbox.paypal.com/cgi-bin/webscr',
+    'currency': 'EUR',
+    'return': '/resa/orders/paypal/return',
+    'notify_url': '/resa/orders/paypal/notify',
+}
+
+### PAYPAL ###
+CYBERPLUS_SETTINGS = {
+    'merchant_id': '',
+    #'merchant_id': '038862749811111',
+    'merchant_country': 'fr',
+    'currency_code': '978', # EURO = 978
+    'payment_means': 'CB,1,VISA,1,MASTERCARD,1',
+    'normal_return_url': '/resa/orders/cyberplus/return',
+    'cancel_return_url': '/resa/orders/cyberplus/return',
+    'automatic_response_url': '/resa/orders/cyberplus/notify',
+}
+
+### MISC ###
+FULL_ADDRESS = """
+Linux Nantes - RMLL 2009 - contact@linux- nantes.org
+c/o Bellamy 17 - 17, rue Paul Bellamy - 44000 Nantes
+0442025800 – SIRET 510 497 159 – Code APE 9499Z
+"""
+TVA = 19.6
