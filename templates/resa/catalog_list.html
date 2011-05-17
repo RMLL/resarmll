@@ -27,7 +27,7 @@
     <div id="catalog_list">
 
         {% if products %}
-            <form action="/resa/cart/add/" method="post">
+            <form action="/resa/cart/add/" method="post">{% csrf_token %}
                 <div class="addcart">
                     <input type="submit" value="{% trans "Add the selected items to cart" %}" />
                 </div>

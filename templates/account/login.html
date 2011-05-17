@@ -20,7 +20,7 @@
     </div>!-->
 
     <div id="login">
-        <form method="post" action="">
+        <form method="post" action="">{% csrf_token %}
             <div class="field{% if form.username.errors %} field-error{% endif %}">
             {% if form.username.errors %} <div class="error">{{ form.username.errors|join:", " }}</div>{% endif %}
                 <label for="id_username">{% trans 'Username:' %}</label>

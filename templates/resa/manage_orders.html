@@ -56,7 +56,7 @@
                             <div class="process">
                                 <fieldset>
                                     <legend>{% trans 'Confirm order' %}</legend>
-                                    <form method="post" action="">
+                                    <form method="post" action="">{% csrf_token %}
                                         <input type="hidden" name="order_id" value="{{ order.id }}" />
                                         <label class="inline" for="id_method">{% trans 'Payment method:' %}</label>
                                         {{ form.method }}
@@ -67,7 +67,7 @@
                                 </fieldset>
                                 <fieldset>
                                     <legend>{% trans 'Remove order' %}</legend>
-                                    <form method="post" action="">
+                                    <form method="post" action="">{% csrf_token %}
                                         <input type="hidden" name="order_id" value="{{ order.id }}" />
                                         <label class="inline" for="id_check">{% trans 'Remove:' %}</label>
                                         {{ form_del.check }}

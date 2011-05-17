@@ -35,7 +35,7 @@
 
         <div id="manage_cart">
             {% if products %}
-                <form action="/resa/manage_cart/{{ user_obj.id }}/add/" method="post">
+                <form action="/resa/manage_cart/{{ user_obj.id }}/add/" method="post">{% csrf_token %}
                     <label for="cart_add">{% trans "Products:" %}</label>
                     <select id="cart_add" name="cart_add">
                         {% for p in products %}
@@ -47,7 +47,7 @@
             {% endif %}
 
             {% if not cart.empty %}
-                <form action="/resa/manage_cart/{{ user_obj.id }}/update/" method="post">
+                <form action="/resa/manage_cart/{{ user_obj.id }}/update/" method="post">{% csrf_token %}
                     <table class="list">
                         <tr>
                             <th>{% trans "Product" %}</th>
@@ -91,7 +91,7 @@
                 </form>
 
                 <div class="validate_payment">
-                    <form action="/resa/manage_cart/{{ user_obj.id }}/validate/" method="post">
+                    <form action="/resa/manage_cart/{{ user_obj.id }}/validate/" method="post">{% csrf_token %}
                         {% if is_admin %}
                             <input type="checkbox" name="force" id="force_cart" value="1" />
                             <label for="force_cart">{% trans "Force" %}</label>

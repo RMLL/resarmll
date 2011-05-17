@@ -17,7 +17,7 @@
     </div>
 {% endif %}
 
-<form action="" method="post">
+<form action="" method="post">{% csrf_token %}
     <input type="hidden" name="distribution" value="1" />
     <input type="hidden" name="order_id" value="{{ order.id }}" />
     <table class="list" id="table_order_{{ order.id }}">

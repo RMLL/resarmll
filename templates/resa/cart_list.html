@@ -32,7 +32,7 @@
     <div id="cart_list">
 
         {% if not cart.empty %}
-            <form action="/resa/cart/update/" method="post">
+            <form action="/resa/cart/update/" method="post">{% csrf_token %}
                 <table class="list">
                     <tr>
                         <th>{% trans "Product" %}</th>
@@ -76,7 +76,7 @@
             </form>
 
             <div class="validate_payment">
-                <form action="/resa/orders/validate/" method="post">
+                <form action="/resa/orders/validate/" method="post">{% csrf_token %}
                     <input type="submit" value="{% trans "Confirm your order" %}" />
                 </form>
             </div>

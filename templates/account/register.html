@@ -22,7 +22,7 @@
         <div class="mandfields">
             {% blocktrans with '<span class="mark">*</span>' as mark %}Fields prefixed with a {{ mark }} are mandatory.{% endblocktrans %}
         </div>
-        <form method="post" action="">
+        <form method="post" action="">{% csrf_token %}
             {% for field in form %}
                 <div class="field{% if field.errors %} field-error{% endif %}">
                     {% if field.errors %} <div class="error">{{ field.errors|join:", " }}</div>{% endif %}

@@ -19,7 +19,7 @@
 
     <div id="sales">
         {% if products %}
-            <form action="/resa/sales/" method="post">
+            <form action="/resa/sales/" method="post">{% csrf_token %}
                 <label for="product">{% trans "Products:" %}</label>
                 <select id="product" name="product" onchange="javascript:this.form.submit();">
                     <option value=""></option>

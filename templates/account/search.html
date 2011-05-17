@@ -18,7 +18,7 @@
     {% endif %}
 
     <div id="account_search">
-        <form method="post" action="">
+        <form method="post" action="">{% csrf_token %}
             <div>
                 <label class="inline" for="pattern">{% trans "Search pattern:" %}</label>
                 <input type="text" class="text" name="pattern" id="pattern" value="{{ pattern }}" />
