@@ -1,7 +1,0 @@
-<div id="flags">
-    {% for lang in LANGUAGES%}
-    <form action="/i18n/setlang/" method="post">
-        <input type="hidden" name="language" value="{{lang.0}}" />
-        <input type="image" src="{{ MEDIA_URL }}images/flags/{{lang.0}}.png" alt="{{lang.1}}"/>
-    </form>{%endfor%}
-</div>

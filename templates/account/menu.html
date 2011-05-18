@@ -1,6 +1,6 @@
 {% load i18n %}
 
-<div class="menu">
+<div>
     <ul>
         <li><a href="/account/home/">{% trans "Home" %}</a></li>
         <li><a href="/account/profile/">{% trans "Your account" %}</a></li>
@@ -16,7 +16,7 @@
 </div>
 
 {% if user.is_staff or user.get_profile.is_manager or user.get_profile.is_reception %}
-    <div class="menu">
+    <div>
         <ul>
             {% if user.is_staff %}
                 <li><a href="/admin/">{% trans "Admin" %}</a></li>

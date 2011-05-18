@@ -2,43 +2,22 @@
 {% load i18n %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{LANGUAGE_CODE}}" dir="ltr" lang="{{LANGUAGE_CODE}}">
-<head>
-    <title>{% trans "LSM Booking" %} - {% block title %}{% endblock %}</title>
-    <link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png" />
-    <link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css" type="text/css" media="screen" />
-    {% block extrahead %}{% endblock %}
-</head>
-<body>
-    <div id="page">
-        {% include "layout/header.html" %}
-        <div id="head-wrapper">
-            <div id="head">
-                <div id="logo">
-                    <h1>
-                        <a href="/">
-                            <img src="{{ MEDIA_URL }}/images/logo-11es_{{LANGUAGE_CODE}}.png" alt="{% trans "LSM Booking" %}" />
-                        </a>
-                    </h1>
-                </div>
-                <div id="sidelogo"></div>
-                <div class="clear"></div>
-            </div>
-        </div>
-        <div id="content-wrapper">
-            <div id="content">
-                <div id="main">
-                    <div id="container">
-                        {% block content %}{% endblock %}
-                    </div>
-                </div>
-                <div id="sidebar">
-                    {% include "layout/flags.html" %}
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-        {% include "layout/footer.html" %}
-    </div>
-    {% block extrafoot %}{% endblock %}
-</body>
+	<head>
+		<title>{% trans "LSM Booking" %} - {% block title %}{% endblock %}</title>
+		<link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png" />
+		<link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css" type="text/css" media="screen" />
+		{% block extrahead %}{% endblock %}
+	</head>
+
+	<body>
+		<div id="page" class="home">
+			{% include "layout/header.html" %}
+
+			<div id="content">
+				{% block content %}{% endblock %}
+			</div>
+
+			{% include "layout/footer.html" %}
+		</div>
+	</body>
 </html>
