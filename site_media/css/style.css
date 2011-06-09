@@ -31,7 +31,7 @@ html, body {
 @font-face {
     font-family: 'FolksBold';
     src: url('Folks-Bold-webfont.eot');
-    src: url('Folks-Bold-dafont.ttf') format('truetype'); /* OK pour Firefox uniquement, pas testé ailleurs (cause: bug sur 'è' */
+    src: url('Folks-Bold-webfont.ttf') format('truetype'); /* OK pour Firefox uniquement, pas testé ailleurs (cause: bug sur 'è' */
     font-weight: normal;
     font-style: normal;
 
@@ -265,7 +265,7 @@ hr {
 /* ***TODO :focus en doublon de :hover */
 #menu1 li a:hover, #menu1 li a.on {
 	color: black;
-	background: white url(../images/bg_menuhaut_survol.png) center bottom no-repeat;
+	background: white;
 }
 
 /* TODO*** uniquement first et last child */
