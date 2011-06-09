@@ -1,0 +1,29 @@
+#!/bin/sh
+
+OWNER=manu
+
+status() {
+    if [ $1 = 0 ]; then
+        echo 'OK'
+    else
+        echo 'FAIL'
+        exit 1
+    fi
+}
+
+echo -n 'Force re-compile of Python bytecode...   '
+find -iname '*.py' -exec py_compilefiles -fq {} \;
+status $?
+
+echo -n 'Fix permissions of Python bytecode files...   '
+find -iname '*.pyc' -exec chown ${OWNER}:${OWNER} {} \;
+status $?
+
+echo -n 'Checking web server config...   '
+apache2ctl configtest >/dev/null 2>&1
+status $?
+
+echo -n 'Reload web server...   '
+apache2ctl graceful >/dev/null 2>&1
+status $?
+
