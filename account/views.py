@@ -111,6 +111,7 @@ def profile_modify(request, tmpl):
                 cur_profile.language = form.cleaned_data['language']
                 cur_profile.country = form.cleaned_data['country']
                 cur_profile.badge_text = form.cleaned_data['badge_text']
+                cur_profile.comments = form.cleaned_data['comments']
                 cur_profile.fingerprint = form.cleaned_data['fingerprint']
                 badge = form.cleaned_data['badge_type']
                 if badge:
@@ -276,7 +277,7 @@ def edit(request, tmpl, user_id=None):
                     p.language = form.cleaned_data['language']
                     p.country = form.cleaned_data['country']
                     p.badge_text = form.cleaned_data['badge_text']
-                    p.comments =  form.cleaned_data['comments'],
+                    p.comments =  form.cleaned_data['comments']
                     p.fingerprint = form.cleaned_data['fingerprint']
                     p.badge_type = form.cleaned_data['badge_type']
                     p.notes =  form.cleaned_data['notes']
