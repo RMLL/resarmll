@@ -11,13 +11,12 @@ SERVER_EMAIL = 'reservation@rmll.info'
 EMAIL_SUBJECT_PREFIX = '[TRACE] '
 ADMINS = (
     ('Resa Rmll Team', 'kolter@openics.org'),
-    ('Resa Rmll Team', 'micgilantoli@nerim.net'),
 )
 
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'postgresql_psycopg2' # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'resarmll2010'          # Or path to database file if using sqlite3.
+DATABASE_NAME = 'resarmll2011'          # Or path to database file if using sqlite3.
 DATABASE_USER = 'resarmll'              # Not used with sqlite3.
 DATABASE_PASSWORD = 'resarmll'          # Not used with sqlite3.
 DATABASE_HOST = 'localhost'             # Set to empty string for localhost. Not used with sqlite3.
@@ -36,7 +35,6 @@ LANGUAGE_CODE = 'fr-FR'
 
 LANGUAGES = (
     (u'fr', u'Français'),
-    (u'es', u'Espanol'),
     (u'en', u'English'),
 )
 
@@ -61,7 +59,7 @@ MEDIA_URL = '/site_media/'
 ADMIN_MEDIA_PREFIX = '/media/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'm_y!@s4&q#m1w#ojcf^n(wm(uc#2ip&c3a%x-8_mj6^8*9vp!o'
+SECRET_KEY = 'NEx}l{s>a!A)q|wgoNCgU?=i8gnl"{cB?yU"OL}qy:TTq$8=FW8rSybKG1#q}(\H'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -139,7 +137,7 @@ COMPTA_METHOD_CODE_INTERNAL = 'VI'
 COMPTA_PLAN_CLIENT_CODE = 411
 
 ### BADGES ###
-BADGE_CITY = "Bordeaux 2010"
+BADGE_CITY = "Strasbourg 2011"
 BADGE_BG_IMAGE = PROJECT_DIR + '/templates/images/badge-bg.png'
 BADGE_BIG_BG_IMAGE = PROJECT_DIR + '/templates/images/badge-bg-big.png'
 BADGE_PNG_DEST_DIR = 'badges/png/'
@@ -153,17 +151,17 @@ BADGE_PRINTER_HEIGHT_MM = 54.0
 
 ### USERS DB SYNC ###
 global_httpauth_username = 'rmll'
-global_httpauth_password = 'eZ4xae0o'
+global_httpauth_password = 'EraoLi7iex'
 global_httpauth_message = 'LSM users sync'
 
 ### TREASURER ###
 CHECK_SETTINGS = {
-    'to': 'Association ABUL',
+    'to': 'Association RMLL Strasbourg',
     'contact_email': SERVER_EMAIL,
 }
 
-TREASURER_NAME = "Emmanuel Bouthenot"
-TREASURER_EMAIL = "reservation@rmll.info"
+TREASURER_NAME = "Trésorier RMLL 2011"
+TREASURER_EMAIL = "tresorier@2011.rmll.info"
 
 TREASURER_ADDRESS = """
 Emmanuel Bouthenot
@@ -172,7 +170,7 @@ Emmanuel Bouthenot
 FRANCE
 """
 
-CHECK_PAYABLE_TO = "Association ABUL"
+CHECK_PAYABLE_TO = CHECK_SETTINGS['to']
 
 ### PAYPAL ###
 PAYPAL_SETTINGS = {
@@ -184,7 +182,7 @@ PAYPAL_SETTINGS = {
 #
 # prod
 #
-    'id': 'paypal@abul.org',
+    'id': '',
     'url' : 'https://www.paypal.com/cgi-bin/webscr',
     'currency': 'EUR',
     'return': '/resa/orders/paypal/return',
@@ -192,7 +190,7 @@ PAYPAL_SETTINGS = {
 }
 
 ### Bank Driver ( CyberPlus or eTransactions) ###
-BANK_DRIVER = 'eTransactions'
+BANK_DRIVER = 'cmcic'
 
 ### CYBERPLUS ###
 CYBERPLUS_SETTINGS = {
@@ -228,11 +226,41 @@ ETRANSACTIONS_SETTINGS = {
     'return_url_prefix': '/resa/orders/etransactions/return',
 }
 
+### CMCIC ###
+CMCIC_SETTINGS = {
+#
+# tests
+#
+    'testmode': True,
+    'cle': '',
+    'tpe': '',
+    'version': '3.0',
+    'serveur': 'https://paiement.creditmutuel.fr/test/paiement.cgi',
+    'codesociete': '',
+    'devise': 'EUR',
+    'url_ret': '/resa/orders/cmcic/return',
+    'url_ok': '/resa/orders/cmcic/return/ok',
+    'url_err': '/resa/orders/cmcic/return/err',
+#
+# prod
+#
+#    'testmode': False,
+#    'cle': '',
+#    'tpe': '0000001',
+#    'version': '3.0',
+#    'serveur': 'https://paiement.creditmutuel.fr/paiement.cgi',
+#    'codesociete': '',
+#    'devise': 'EUR',
+#    'url_ret': '/resa/orders/cmcic/return',
+#    'url_ok': '/resa/orders/cmcic/return/ok',
+#    'url_err': '/resa/orders/cmcic/return/err',
+}
+
 ### MISC ###
 FULL_ADDRESS = """
-Association ABUL - RMLL 2010 - web@abul.org
-S/C Medias-cités - Place de la Republique - 33160 St Médard en Jalles
-SIRET 431 746 833 00026 – Code APE 9499Z
+Association RMLL Strasbourg - 2011 - contact@2011.rmll.info
+S/C Maison des Associations - 1a place des Orphelins - 67000 Strasbourg
+SIRET 520 081 431 00014 – Code APE 9499Z
 """
 
 TVA = 0
