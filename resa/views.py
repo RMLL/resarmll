@@ -343,6 +343,12 @@ def sales(request, tmpl):
 
 @login_required
 @auto_render
+def orders_paypal_cancel(request, tmpl):
+    msg_warn = _(u"Your payment has been canceled, you could resume it later.")
+    return tmpl, locals()
+
+@login_required
+@auto_render
 def orders_paypal_return(request, tmpl):
     msg_err = msg_ok = None
     try:

@@ -17,14 +17,16 @@
         </div>
     {% endif %}
 
+    {% if msg_warn %}
+        <div class="main-warn">
+            {{ msg_warn }}
+        </div>
+    {% endif %}
+
     {% if msg_ok %}
         <div class="main-success">
             {{ msg_ok }}
         </div>
     {% endif %}
-
-    <div id="order_paypal_return">
-
-    </div>
 
 {% endblock %}

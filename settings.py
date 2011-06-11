@@ -186,6 +186,7 @@ PAYPAL_SETTINGS = {
     'url' : 'https://www.paypal.com/cgi-bin/webscr',
     'currency': 'EUR',
     'return': '/resa/orders/paypal/return',
+    'cancel_return': '/resa/orders/paypal/cancel',
     'notify_url': '/resa/orders/paypal/notify',
 }
 

@@ -47,6 +47,8 @@ urlpatterns = patterns ('',
 
     url(r'^stocks/$', stocks, {'tmpl': 'resa/stocks.html'}),
 
+    url(r'^orders/paypal/cancel$', orders_paypal_cancel,
+        {'tmpl': 'resa/orders_paypal_return.html'}),
     url(r'^orders/paypal/return$', orders_paypal_return,
         {'tmpl': 'resa/orders_paypal_return.html'}),
     url(r'^orders/paypal/notify$', orders_paypal_notify),
