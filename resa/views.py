@@ -352,20 +352,20 @@ def orders_paypal_cancel(request, tmpl):
 def orders_paypal_return(request, tmpl):
     msg_err = msg_ok = None
     try:
-        order = Order.objects.get(id=int(request.GET.get('invoice')))
+        order = Order.objects.get(id=int(request.POST.get('invoice')))
     except:
         order = None
     if order:
         if order.user.id != request.user.id:
             msg_err = _(u"This order is not yours.")
         else:
-            if request.GET.get('payment_status') not in ['Completed', 'Pending']:
-                msg_err = _(u"It seems that PayPal did not accept your payment (Code: %s).") % (request.GET.get('payment_status'))
+            if request.POST.get('payment_status') not in ['Completed', 'Pending']:
+                msg_err = _(u"It seems that PayPal did not accept your payment (Code: %s).") % (request.POST.get('payment_status'))
             else:
                 msg_ok = _(u"Your payment has been confirmed by PayPal, you should receive a notification by email in a few minutes.")
     else:
         msg_err = _(u"Unable to find the order related to this payment.")
-    return tmpl, {'msg_err': msg_err, 'msg_ok': msg_ok}
+    return tmpl, locals()
 
 @auto_render
 def orders_paypal_notify(request, order_id=0):

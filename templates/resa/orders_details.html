@@ -49,6 +49,7 @@
                             <input type="hidden" name="business" value="{{ paypal_settings.id }}" />
                             <input type="hidden" name="currency_code" value="{{ paypal_settings.currency }}" />
                             <input type="hidden" name="return" value="{{ url }}{{ paypal_settings.return }}" />
+                            <input type="hidden" name="rm" value="2" />
                             <input type="hidden" name="notify_url" value="{{ url }}{{ paypal_settings.notify_url }}" />
                             <input type="hidden" name="cancel_return" value="{{ url }}{{ paypal_settings.cancel_return}}" />
                             <input type="hidden" name="item_name_1" value="{% trans "Order no" %} {{ order.id }}" />
