@@ -1,0 +1,21 @@
+{% load i18n %}
+
+<form action="{{ bp_form.cmcic_serveur }}" method="post">
+    <input type="hidden" name="version" value="{{ bp_form.cmcic_version }}" />
+    <input type="hidden" name="TPE" value="{{ bp_form.cmcic_tpe }}" />
+    <input type="hidden" name="url_retour" value="{{ bp_form.cmcic_url_ret }}" />
+    <input type="hidden" name="url_retour_ok" value="{{ bp_form.cmcic_url_ok }}" />
+    <input type="hidden" name="url_retour_err" value="{{ bp_form.cmcic_url_err }}" />
+
+    <input type="hidden" name="date" value="{{ bp_form.date }}" />
+    <input type="hidden" name="montant" value="{{ bp_form.montant }}" />
+    <input type="hidden" name="reference" value="{{ bp_form.reference }}" />
+    <input type="hidden" name="MAC" value="{{ bp_form.mac }}" />
+
+    <input type="hidden" name="lgue" value="{{ bp_form.lgue }}" />
+    <input type="hidden" name="societe" value="{{ bp_form.cmcic_codesociete }}" />
+    <input type="hidden" name="texte-libre" value="{{ bp_form.texte }}" />
+    <input type="hidden" name="mail" value="{{ bp_form.email }}" />
+
+    <input type="image" src="{{ MEDIA_URL }}/cmcic/logocmcicpaiement.gif" value="{% trans "Go to Payment" %}" />
+</form>

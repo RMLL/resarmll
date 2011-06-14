@@ -15,6 +15,7 @@ from cart import Cart
 from stock import Stock
 from bank.cyberplus import CyberPlus
 from bank.etransactions import eTransactions
+from bank.cmcic import cmcic
 from bank.paypal import Paypal
 from resarmll import settings
 from resarmll.utils.decorators import auto_render, staff_required, manager_required, reception_required
@@ -109,6 +110,10 @@ def orders_details(request, tmpl, order_id=0):
             bp_err, bp_code, bp_form = bp.form(order, request.user, request.LANGUAGE_CODE, ip_addr, url)
         elif settings.BANK_DRIVER.upper() == 'ETRANSACTIONS':
             bp_tmpl = 'resa/orders_details_etransactions.html'
+        elif settings.BANK_DRIVER.upper() == 'CMCIC':
+            bp_tmpl = 'resa/orders_details_cmcic.html'
+            bp = cmcic(request)
+            bp_form = bp.form(order, request.user, request.LANGUAGE_CODE, url)
 
     return tmpl, locals()
 
@@ -379,7 +384,7 @@ def orders_paypal_notify(request, order_id=0):
 
 @login_required
 @auto_render
-def orders_bank_return(request, tmpl):
+def orders_bank_return(request, tmpl, status=None, order_id=None):
     msg_err = msg_ok = msg_warn = None
     if settings.BANK_DRIVER.upper() == 'CYBERPLUS':
         bp = CyberPlus(request)
@@ -387,6 +392,10 @@ def orders_bank_return(request, tmpl):
     elif settings.BANK_DRIVER.upper() == 'ETRANSACTIONS':
         bp = eTransactions(request)
         error, canceled, rejected, accepted, order_id = bp.getreturn()
+    elif settings.BANK_DRIVER.upper() == 'CMCIC':
+        bp = cmcic(request)
+        canceled, rejected, accepted, order_id = bp.getreturn(status, order_id)
+
     if canceled:
         msg_warn = _(u"Your payment has been canceled, you could resume it later.")
     elif rejected:
@@ -418,6 +427,10 @@ def orders_bank_notify(request):
     elif settings.BANK_DRIVER.upper() == 'ETRANSACTIONS':
         bp = eTransactions(request)
         bp.process_order()
+    elif settings.BANK_DRIVER.upper() == 'CMCIC':
+        bp = cmcic(request)
+        r = bp.process_order()
+
     return HttpResponse(r, mimetype="text/html")
 
 def orders_etransactions_go(request, order_id=0):

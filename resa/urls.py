@@ -61,4 +61,8 @@ urlpatterns = patterns ('',
     url(r'^orders/etransactions/return$', orders_bank_return,
         {'tmpl': 'resa/orders_bank_return.html'}),
     url(r'^orders/etransactions/notify$', orders_bank_notify),
+
+    url(r'^orders/cmcic/return(/(?P<status>ok|err))?(/(?P<order_id>\d+))?$', orders_bank_return,
+        {'tmpl': 'resa/orders_bank_return.html'}),
+    url(r'^orders/cmcic/notify$', orders_bank_notify),
 )
