@@ -17,9 +17,7 @@ from resarmll.compta.models import SupplierAccount
 
 class cmcic(Bank):
     def __init__(self, req):
-        # FIXME
-        #super(cmcic, self).__init__(req, True)
-        super(cmcic, self).__init__(req)
+        super(cmcic, self).__init__(req, True)
 
     def get_paiement_method(self):
         try:
@@ -57,9 +55,7 @@ class cmcic(Bank):
         return hmac.HMAC(self.compute_key(cle), sdata, sha).hexdigest()
 
     def valid_hmac_sha1(self, cle, sdata, mac):
-        # FIXME
-        #return self.get_hmac_sha1(cle, sdata).lower() == mac.lower()
-        return True
+        return self.get_hmac_sha1(cle, sdata).lower() == mac.lower()
 
     def form(self, order, user, lang, url=None):
         data = {}
@@ -73,7 +69,7 @@ class cmcic(Bank):
         data['email'] = user.email
         data['reference'] = "%d-%d" % (order.id, self.get_transactionid())
         data['montant'] = "%.2f%s" % (order.totalamount(), data['cmcic_devise'])
-        data['texte'] = _(u"Order no #%d").replace('*', '-') % (order.id)
+        data['texte'] = _(u"Order no %d").replace('*', '-') % (order.id)
 
         smac = []
         # TPE
@@ -154,22 +150,40 @@ class cmcic(Bank):
             # 3D secure ?
             smac.append(data['status3ds'])
             # Numéro autorisation
-            smac.append(data['numauto'])
+            if data.has_key('numauto'):
+                smac.append(data['numauto'])
+            else:
+                smac.append('')
             # Motif refus (optional)
             if data.has_key('motifrefus'):
                 smac.append(data['motifrefus'])
             else:
                 smac.append('')
             # Code pays origine carte
-            smac.append(data['originecb'])
+            if data.has_key('originecb'):
+                smac.append(data['originecb'])
+            else:
+                smac.append('')
             # Code BIN de la banque du porteur
-            smac.append(data['bincb'])
+            if data.has_key('bincb'):
+                smac.append(data['bincb'])
+            else:
+                smac.append('')
             # hash du numéro de la carte
-            smac.append(data['hpancb'])
+            if data.has_key('hpancb'):
+                smac.append(data['hpancb'])
+            else:
+                smac.append('')
             # IP client
-            smac.append(data['ipclient'])
+            if data.has_key('ipclient'):
+                smac.append(data['ipclient'])
+            else:
+                smac.append('')
             # Code Pays origine transaction
-            smac.append(data['originetr'])
+            if data.has_key('originetr'):
+                smac.append(data['originetr'])
+            else:
+                smac.append('')
             # Montant échéance (optional)
             if data.has_key('montantech'):
                 smac.append(data['montantech'])
@@ -219,6 +233,9 @@ class cmcic(Bank):
                 elif params['code-retour'] == 'payetest' and not settings.CMCIC_SETTINGS['testmode']:
                     self.add_error(_(u"Wrong parameter '%(arg1)s': [%(arg2)s] instead of [%(arg3)s]") %
                         {'arg1': 'code-retour', 'arg2': params['code-retour'], 'arg3': '\'Annulation\' or \'paiement\''})
+                elif params['code-retour'] == 'Annulation':
+                    self.add_error(_(u"Wrong parameter '%(arg1)s': [%(arg2)s] instead of [%(arg3)s]") %
+                    {'arg1': 'code-retour', 'arg2': params['code-retour'], 'arg3': '\'paiement\''})
                 if params['TPE'] != settings.CMCIC_SETTINGS['tpe']:
                     self.add_error(_(u"Wrong parameter '%(arg1)s': [%(arg2)s] instead of [%(arg3)s]") %
                         {'arg1': 'TPE', 'arg2': params['TPE'], 'arg3': settings.CMCIC_SETTINGS['tpe']})
