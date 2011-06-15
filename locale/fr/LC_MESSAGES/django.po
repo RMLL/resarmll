@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-15 13:24+0200\n"
+"POT-Creation-Date: 2011-06-15 19:27+0200\n"
 "PO-Revision-Date: 2011-06-15 08:22+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -416,6 +416,7 @@ msgstr "Commandes"
 #: resa/orders.py:116 templates/resa/cart_list.html:41
 #: templates/resa/manage_cart.html:56 templates/resa/order_details.html:18
 #: templates/resa/order_details_extended.html:26
+#: templates/resa/orders_pdf.xml:78
 msgid "Quantity"
 msgstr "Quantité"
 
@@ -832,8 +833,8 @@ msgstr "Votre compte"
 msgid "Your badge"
 msgstr "Votre badge"
 
-#: templates/account/menu.html:8 templates/resa/catalog_list.html:12
-#: templates/resa/catalog_list.html:19
+#: templates/account/menu.html:8 templates/resa/catalog_list.html:11
+#: templates/resa/catalog_list.html:18
 msgid "Catalog"
 msgstr "Catalogue"
 
@@ -1147,19 +1148,19 @@ msgstr "Total"
 msgid "Confirm your order"
 msgstr "Confimer votre commande"
 
-#: templates/resa/catalog_list.html:23 templates/resa/stocks.html:16
+#: templates/resa/catalog_list.html:22 templates/resa/stocks.html:16
 msgid "No products."
 msgstr "Pas de produits"
 
-#: templates/resa/catalog_list.html:32 templates/resa/catalog_list.html:53
+#: templates/resa/catalog_list.html:31 templates/resa/catalog_list.html:52
 msgid "Add the selected items to cart"
 msgstr "Ajouter les éléments sélectionnés au panier"
 
-#: templates/resa/catalog_list.html:46
+#: templates/resa/catalog_list.html:45
 msgid "Price:"
 msgstr "Prix :"
 
-#: templates/resa/catalog_list.html:48
+#: templates/resa/catalog_list.html:47
 msgid "Remaining stock:"
 msgstr "Stock restant :"
 
@@ -1289,7 +1290,7 @@ msgstr "Maximiser"
 msgid "Bank payment"
 msgstr "Paiement Bancaire"
 
-#: templates/resa/orders_details.html:28
+#: templates/resa/orders_details.html:28 templates/resa/orders_pdf.xml:9
 msgid "Billing"
 msgstr "Facturation"
 
@@ -1376,6 +1377,63 @@ msgstr "Autres"
 msgid "PayPal payment"
 msgstr "Paiement PayPal"
 
+#: templates/resa/orders_pdf.xml:12 templates/resa/orders_pdf.xml.py:25
+msgid "Libre Software Meeting"
+msgstr "Rencontres Mondiales du Logiciel Libre"
+
+#: templates/resa/orders_pdf.xml:56
+msgid "Document:"
+msgstr "Document :"
+
+#: templates/resa/orders_pdf.xml:56
+msgid "Billing num"
+msgstr "Facture n°"
+
+#: templates/resa/orders_pdf.xml:59
+msgid "Date:"
+msgstr "Date :"
+
+#: templates/resa/orders_pdf.xml:64
+msgid "Madam"
+msgstr "Madame"
+
+#: templates/resa/orders_pdf.xml:64
+msgid "Mister"
+msgstr "Monsieur"
+
+#: templates/resa/orders_pdf.xml:70
+msgid "Here is the billing for your order:"
+msgstr "Ci-dessous la facture pour votre commande :"
+
+#: templates/resa/orders_pdf.xml:76
+msgid "Description"
+msgstr "Description"
+
+#: templates/resa/orders_pdf.xml:77
+msgid "Unit price"
+msgstr "Prix unitaire"
+
+#: templates/resa/orders_pdf.xml:79
+msgid "Total price"
+msgstr "Prix total"
+
+#: templates/resa/orders_pdf.xml:99
+msgid "VAT:"
+msgstr "TVA:"
+
+#: templates/resa/orders_pdf.xml:105
+msgid "Total excl. VAT:"
+msgstr "Total HT"
+
+#: templates/resa/orders_pdf.xml:112
+msgid "Total incl. VAT:"
+msgstr "Total TTC"
+
+#: templates/resa/orders_pdf.xml:122
+msgid ""
+"VAT not applicable in accordance with Art. 261-7-1° of the French Tax Code"
+msgstr "TVA non applicable - Article 261-7-1° du Code Général des Impôts"
+
 #: templates/resa/orders_search.html:23
 msgid "Order number"
 msgstr "Num. Com."
@@ -1435,46 +1493,3 @@ msgstr "Confirmé"
 #: templates/resa/stocks.html:43
 msgid "Dispatched"
 msgstr "Distribué"
-
-#~ msgid "Libre Software Meeting"
-#~ msgstr "Rencontres Mondiales du Logiciel Libre"
-
-#~ msgid "Document:"
-#~ msgstr "Document :"
-
-#~ msgid "Billing num"
-#~ msgstr "Facture n°"
-
-#~ msgid "Date:"
-#~ msgstr "Date :"
-
-#~ msgid "Madam"
-#~ msgstr "Madame"
-
-#~ msgid "Mister"
-#~ msgstr "Monsieur"
-
-#~ msgid "Here is the billing for your order:"
-#~ msgstr "Ci-dessous la facture pour votre commande :"
-
-#~ msgid "Description"
-#~ msgstr "Description"
-
-#~ msgid "Unit price"
-#~ msgstr "Prix unitaire"
-
-#~ msgid "Total price"
-#~ msgstr "Prix total"
-
-#~ msgid "VAT:"
-#~ msgstr "TVA:"
-
-#~ msgid "Total excl. VAT:"
-#~ msgstr "Total HT"
-
-#~ msgid "Total incl. VAT:"
-#~ msgstr "Total TTC"
-
-#~ msgid ""
-#~ "VAT not applicable in accordance with Art. 261-7-1° of the French Tax Code"
-#~ msgstr "TVA non applicable - Article 261-7-1° du Code Général des Impôts"

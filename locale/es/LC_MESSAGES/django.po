@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-15 13:24+0200\n"
+"POT-Creation-Date: 2011-06-15 19:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -406,6 +406,7 @@ msgstr ""
 #: resa/orders.py:116 templates/resa/cart_list.html:41
 #: templates/resa/manage_cart.html:56 templates/resa/order_details.html:18
 #: templates/resa/order_details_extended.html:26
+#: templates/resa/orders_pdf.xml:78
 msgid "Quantity"
 msgstr ""
 
@@ -804,8 +805,8 @@ msgstr ""
 msgid "Your badge"
 msgstr ""
 
-#: templates/account/menu.html:8 templates/resa/catalog_list.html:12
-#: templates/resa/catalog_list.html:19
+#: templates/account/menu.html:8 templates/resa/catalog_list.html:11
+#: templates/resa/catalog_list.html:18
 msgid "Catalog"
 msgstr ""
 
@@ -1104,19 +1105,19 @@ msgstr ""
 msgid "Confirm your order"
 msgstr ""
 
-#: templates/resa/catalog_list.html:23 templates/resa/stocks.html:16
+#: templates/resa/catalog_list.html:22 templates/resa/stocks.html:16
 msgid "No products."
 msgstr ""
 
-#: templates/resa/catalog_list.html:32 templates/resa/catalog_list.html:53
+#: templates/resa/catalog_list.html:31 templates/resa/catalog_list.html:52
 msgid "Add the selected items to cart"
 msgstr ""
 
-#: templates/resa/catalog_list.html:46
+#: templates/resa/catalog_list.html:45
 msgid "Price:"
 msgstr ""
 
-#: templates/resa/catalog_list.html:48
+#: templates/resa/catalog_list.html:47
 msgid "Remaining stock:"
 msgstr ""
 
@@ -1246,7 +1247,7 @@ msgstr ""
 msgid "Bank payment"
 msgstr ""
 
-#: templates/resa/orders_details.html:28
+#: templates/resa/orders_details.html:28 templates/resa/orders_pdf.xml:9
 msgid "Billing"
 msgstr ""
 
@@ -1326,6 +1327,63 @@ msgstr ""
 #: templates/resa/orders_paypal_return.html:5
 #: templates/resa/orders_paypal_return.html:12
 msgid "PayPal payment"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:12 templates/resa/orders_pdf.xml.py:25
+msgid "Libre Software Meeting"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:56
+msgid "Document:"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:56
+msgid "Billing num"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:59
+msgid "Date:"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:64
+msgid "Madam"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:64
+msgid "Mister"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:70
+msgid "Here is the billing for your order:"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:76
+msgid "Description"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:77
+msgid "Unit price"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:79
+msgid "Total price"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:99
+msgid "VAT:"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:105
+msgid "Total excl. VAT:"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:112
+msgid "Total incl. VAT:"
+msgstr ""
+
+#: templates/resa/orders_pdf.xml:122
+msgid ""
+"VAT not applicable in accordance with Art. 261-7-1° of the French Tax Code"
 msgstr ""
 
 #: templates/resa/orders_search.html:23
