@@ -14,13 +14,13 @@ _attrs_passwd = { 'class': 'text', 'size': 30, 'autocomplete': 'off'}
 
 class UserForm(forms.Form):
     last_name = forms.CharField(label=_(u"Last name:"),
-        max_length=64, min_length=3, widget=forms.TextInput(attrs=_attrs))
+        max_length=30, min_length=3, widget=forms.TextInput(attrs=_attrs))
     first_name = forms.CharField(label=_(u"First name:"),
-        max_length=64, min_length=3, widget=forms.TextInput(attrs=_attrs))
+        max_length=30, min_length=3, widget=forms.TextInput(attrs=_attrs))
     email = forms.EmailField(label=_(u"E-mail address:"),
-        max_length=64, widget=forms.TextInput(attrs=_attrs))
+        max_length=75, widget=forms.TextInput(attrs=_attrs))
     username = forms.CharField(label=_(u"Username:"),
-        max_length=28, min_length=3, widget=forms.TextInput(attrs=_attrs),
+        max_length=30, min_length=3, widget=forms.TextInput(attrs=_attrs),
         #help_text=_(u"help")
         )
     password = forms.CharField(label=_(u"Password:"),
