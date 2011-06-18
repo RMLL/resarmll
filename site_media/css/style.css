@@ -896,6 +896,30 @@ a,
 	text-decoration: none;
 }
 
+.annonce {
+    margin: 0 0 1.6em 0;
+    padding: 0 20px;
+    text-align: center;
+    border: 1px solid #107EA3;
+    background-color: #E2F4FC;
+}
+
+#content .annonce p {
+    font-size: 1.1em;
+}
+
+.annonce a {
+    padding: 2px;
+}
+
+.annonce a:focus,
+.annonce a:hover,
+.annonce a:active {
+    text-decoration: none;
+    color: white;
+    background-color: #107EA3;
+}
+
 /**********************
  * ResaRMLL specifics *
  **********************/

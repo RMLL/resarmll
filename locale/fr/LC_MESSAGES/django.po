@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-15 19:27+0200\n"
-"PO-Revision-Date: 2011-06-15 08:22+0200\n"
+"POT-Creation-Date: 2011-06-18 20:25+0200\n"
+"PO-Revision-Date: 2011-06-18 20:34+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -30,13 +30,13 @@ msgstr "Prénom :"
 msgid "E-mail address:"
 msgstr "Adresse email :"
 
-#: account/forms.py:22 templates/account/login.html:26
+#: account/forms.py:22 templates/account/login.html:30
 #: templates/account/manage_wifi.html:19 templates/account/profile.html:20
 #: templates/account/wifi.html:17
 msgid "Username:"
 msgstr "Nom d'utilisateur :"
 
-#: account/forms.py:26 templates/account/login.html:32
+#: account/forms.py:26 templates/account/login.html:36
 #: templates/account/manage_wifi.html:28 templates/account/wifi.html:26
 msgid "Password:"
 msgstr "Mot de passe :"
@@ -745,37 +745,49 @@ msgstr ""
 msgid "Treasurer:"
 msgstr "Trésorier :"
 
-#: templates/account/login.html:5 templates/account/login.html.py:9
-#: templates/account/login.html:37 templates/account/logout.html:15
+#: templates/account/login.html:5 templates/account/login.html.py:13
+#: templates/account/login.html:41 templates/account/logout.html:15
 #: templates/account/password_reset_complete.html:18
 #: templates/account/register_complete.html:15
 msgid "Log in"
 msgstr "Connexion"
 
-#: templates/account/login.html:13 templates/account/password_reset.html:10
+#: templates/account/login.html:10
+msgid ""
+"It is recommended (but not mandatory) to register to get a badge and net "
+"connection parameters. You'll also be able to book a room in academic "
+"accommodations, tickets for lunches and the Free Software Banquet and the t-"
+"shirt dedicated to the event"
+msgstr ""
+"Il est recommandé (mais non obligatoire) de s'inscrire pour obtenir un badge "
+"et les paramètres d'accès au réseau. Vous aurez également la possibilité "
+"d'acheter des nuitées dans des chambres universitaires du CROUS, des tickets "
+"pour les déjeuners et le repas du libre ainsi que le t-shirt de l'événement."
+
+#: templates/account/login.html:17 templates/account/password_reset.html:10
 #: templates/account/password_reset_complete.html:10
 #: templates/account/password_reset_confirm.html:10
 msgid "Operation failed"
 msgstr "L'opération a échoué"
 
-#: templates/account/login.html:19
+#: templates/account/login.html:23
 msgid "Booking will open in a few hours."
 msgstr "La réservation ouvrira dans quelques heures."
 
-#: templates/account/login.html:43
+#: templates/account/login.html:47
 msgid "Don't have an account?"
 msgstr "Vous n'avez pas de compte ?"
 
-#: templates/account/login.html:43 templates/account/register.html:6
+#: templates/account/login.html:47 templates/account/register.html:6
 #: templates/account/register.html.py:9
 msgid "Sign up"
 msgstr "S'inscrire"
 
-#: templates/account/login.html:46
+#: templates/account/login.html:50
 msgid "Forgot your password?"
 msgstr "Mot de passe oublié ?"
 
-#: templates/account/login.html:46
+#: templates/account/login.html:50
 msgid "Recover my password"
 msgstr "Retrouver mon mot de passe"
 
@@ -1493,3 +1505,5 @@ msgstr "Confirmé"
 #: templates/resa/stocks.html:43
 msgid "Dispatched"
 msgstr "Distribué"
+
+

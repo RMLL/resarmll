@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-15 19:27+0200\n"
+"POT-Creation-Date: 2011-06-18 20:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,13 +28,13 @@ msgstr ""
 msgid "E-mail address:"
 msgstr ""
 
-#: account/forms.py:22 templates/account/login.html:26
+#: account/forms.py:22 templates/account/login.html:30
 #: templates/account/manage_wifi.html:19 templates/account/profile.html:20
 #: templates/account/wifi.html:17
 msgid "Username:"
 msgstr ""
 
-#: account/forms.py:26 templates/account/login.html:32
+#: account/forms.py:26 templates/account/login.html:36
 #: templates/account/manage_wifi.html:28 templates/account/wifi.html:26
 msgid "Password:"
 msgstr ""
@@ -720,37 +720,45 @@ msgstr ""
 msgid "Treasurer:"
 msgstr ""
 
-#: templates/account/login.html:5 templates/account/login.html.py:9
-#: templates/account/login.html:37 templates/account/logout.html:15
+#: templates/account/login.html:5 templates/account/login.html.py:13
+#: templates/account/login.html:41 templates/account/logout.html:15
 #: templates/account/password_reset_complete.html:18
 #: templates/account/register_complete.html:15
 msgid "Log in"
 msgstr ""
 
-#: templates/account/login.html:13 templates/account/password_reset.html:10
+#: templates/account/login.html:10
+msgid ""
+"It is recommended (but not mandatory) to register to get a badge and net "
+"connection parameters. You'll also be able to book a room in academic "
+"accommodations, tickets for lunches and the Free Software Banquet and the t-"
+"shirt dedicated to the event"
+msgstr ""
+
+#: templates/account/login.html:17 templates/account/password_reset.html:10
 #: templates/account/password_reset_complete.html:10
 #: templates/account/password_reset_confirm.html:10
 msgid "Operation failed"
 msgstr ""
 
-#: templates/account/login.html:19
+#: templates/account/login.html:23
 msgid "Booking will open in a few hours."
 msgstr ""
 
-#: templates/account/login.html:43
+#: templates/account/login.html:47
 msgid "Don't have an account?"
 msgstr ""
 
-#: templates/account/login.html:43 templates/account/register.html:6
+#: templates/account/login.html:47 templates/account/register.html:6
 #: templates/account/register.html.py:9
 msgid "Sign up"
 msgstr ""
 
-#: templates/account/login.html:46
+#: templates/account/login.html:50
 msgid "Forgot your password?"
 msgstr ""
 
-#: templates/account/login.html:46
+#: templates/account/login.html:50
 msgid "Recover my password"
 msgstr ""
 
