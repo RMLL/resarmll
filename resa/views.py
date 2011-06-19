@@ -102,6 +102,8 @@ def orders_details(request, tmpl, order_id=0):
     treasurer_name = settings.TREASURER_NAME
     treasurer_email = settings.TREASURER_EMAIL
     check_payable_to = settings.CHECK_PAYABLE_TO
+    iban = settings.BANK_IBAN
+    bic = settings.BANK_BIC
     ip_addr = request.META['REMOTE_ADDR']
     if order:
         if settings.BANK_DRIVER.upper() == 'CYBERPLUS':

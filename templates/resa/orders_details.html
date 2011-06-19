@@ -66,6 +66,17 @@
                 </div>
 
                 <div class="section">
+                    <h3>{% trans "Payment by bank transfer" %}</h3>
+                    <div class="content">
+                        <p>{% trans "IBAN (International Bank Account Number):" %}</p>
+                        <pre>{{ iban }}</pre>
+                        <p>{% trans "BIC (Bank Identifier Code):" %}</p>
+                        <pre>{{ bic }}</pre>
+                        <p>{% trans "Please add the order(s) id(s) in the bank transfer title and notify our accountant when the check has been sent." %}</p>
+                    </div>
+                </div>
+
+                <div class="section">
                     <h3>{% trans "Payment by cashiers check" %}</h3>
                     <div class="content">
                         <p>{% trans "Send your check to the treasurer, here is the postal address:" %}</p>

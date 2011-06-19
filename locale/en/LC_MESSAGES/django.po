@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-19 17:38+0200\n"
+"POT-Creation-Date: 2011-06-19 19:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -439,11 +439,11 @@ msgstr ""
 msgid "Stock"
 msgstr ""
 
-#: resa/views.py:38 resa/views.py:265
+#: resa/views.py:38 resa/views.py:267
 msgid "Product successfully removed from cart"
 msgstr ""
 
-#: resa/views.py:40 resa/views.py:267
+#: resa/views.py:40 resa/views.py:269
 msgid "Error while removing product from cart"
 msgstr ""
 
@@ -451,7 +451,7 @@ msgstr ""
 msgid "Product(s) successfully added"
 msgstr ""
 
-#: resa/views.py:58 resa/views.py:280
+#: resa/views.py:58 resa/views.py:282
 msgid "Product(s) successfully updated"
 msgstr ""
 
@@ -459,7 +459,7 @@ msgstr ""
 msgid "Error while adding product(s)"
 msgstr ""
 
-#: resa/views.py:60 resa/views.py:282
+#: resa/views.py:60 resa/views.py:284
 msgid "Error while updating product(s)"
 msgstr ""
 
@@ -469,72 +469,72 @@ msgid ""
 "the available quantity"
 msgstr ""
 
-#: resa/views.py:79 resa/views.py:293
+#: resa/views.py:79 resa/views.py:295
 msgid "Order successfully confirmed"
 msgstr ""
 
-#: resa/views.py:189
+#: resa/views.py:191
 msgid "Order sucessfully marked as paid"
 msgstr ""
 
-#: resa/views.py:196
+#: resa/views.py:198
 msgid "Order sucessfully removed"
 msgstr ""
 
-#: resa/views.py:207
+#: resa/views.py:209
 msgid "Order sucessfully updated"
 msgstr ""
 
-#: resa/views.py:260
+#: resa/views.py:262
 msgid "Product successfully added to cart"
 msgstr ""
 
-#: resa/views.py:262
+#: resa/views.py:264
 msgid "Error while adding product to cart"
 msgstr ""
 
-#: resa/views.py:288
+#: resa/views.py:290
 msgid ""
 "Unable to confirm this order, one (or more) product(s) in the cart exceed "
 "the available quantity"
 msgstr ""
 
-#: resa/views.py:352 resa/views.py:400
+#: resa/views.py:354 resa/views.py:402
 msgid "Your payment has been canceled, you could resume it later."
 msgstr ""
 
-#: resa/views.py:365 resa/views.py:410 templates/resa/orders_details.html:16
+#: resa/views.py:367 resa/views.py:412 templates/resa/orders_details.html:16
 msgid "This order is not yours."
 msgstr ""
 
-#: resa/views.py:368
+#: resa/views.py:370
 #, python-format
 msgid "It seems that PayPal did not accept your payment (Code: %s)."
 msgstr ""
 
-#: resa/views.py:370
+#: resa/views.py:372
 msgid ""
 "Your payment has been confirmed by PayPal, you should receive a notification "
 "by email in a few minutes."
 msgstr ""
 
-#: resa/views.py:372 resa/views.py:414
+#: resa/views.py:374 resa/views.py:416
 msgid "Unable to find the order related to this payment."
 msgstr ""
 
-#: resa/views.py:402
+#: resa/views.py:404
 msgid ""
 "Your payment has been rejected by the bank, you should retry in few days or "
 "try another payment method."
 msgstr ""
 
-#: resa/views.py:412
+#: resa/views.py:414
 msgid ""
 "Your payment has been confirmed by the bank, you should receive a "
 "notification by email in a few minutes."
 msgstr ""
 
-#: resa/views.py:416
+#: resa/views.py:418
 msgid ""
 "Your payment has failed, you should retry in few days or try another payment "
 "method."
@@ -1278,29 +1278,47 @@ msgid ""
 msgstr ""
 
 #: templates/resa/orders_details.html:69
-msgid "Payment by cashiers check"
+msgid "Payment by bank transfer"
 msgstr ""
 
 #: templates/resa/orders_details.html:71
-msgid "Send your check to the treasurer, here is the postal address:"
+msgid "IBAN (International Bank Account Number):"
 msgstr ""
 
 #: templates/resa/orders_details.html:73
+msgid "BIC (Bank Identifier Code):"
+msgstr ""
+
+#: templates/resa/orders_details.html:75
+msgid ""
+"Please add the order(s) id(s) in the bank transfer title and notify our "
+"accountant when the check has been sent."
+msgstr ""
+
+#: templates/resa/orders_details.html:80
+msgid "Payment by cashiers check"
+msgstr ""
+
+#: templates/resa/orders_details.html:82
+msgid "Send your check to the treasurer, here is the postal address:"
+msgstr ""
+
+#: templates/resa/orders_details.html:84
 msgid "payable to:"
 msgstr ""
 
-#: templates/resa/orders_details.html:76
+#: templates/resa/orders_details.html:87
 msgid ""
 "For payments with cashiers check, please notify our accountant when the "
 "check has been sent. Cashiers check payments might include fee if your bank "
 "is not located in France or in the EU."
 msgstr ""
 
-#: templates/resa/orders_details.html:82
+#: templates/resa/orders_details.html:93
 msgid "Other payment methods"
 msgstr ""
 
-#: templates/resa/orders_details.html:84
+#: templates/resa/orders_details.html:95
 msgid ""
 "If you wish to use other methods of payment, please contact our accountant:"
 msgstr ""
