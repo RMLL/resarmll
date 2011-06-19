@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-18 20:25+0200\n"
+"POT-Creation-Date: 2011-06-19 17:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,7 +71,7 @@ msgstr ""
 msgid "Country:"
 msgstr ""
 
-#: account/forms.py:46 account/forms.py:114 templates/account/profile.html:70
+#: account/forms.py:46 account/forms.py:116 templates/account/profile.html:70
 msgid "Badge type:"
 msgstr ""
 
@@ -109,15 +109,15 @@ msgstr ""
 msgid "The confirmation password does not match the original password"
 msgstr ""
 
-#: account/forms.py:106
+#: account/forms.py:108
 msgid "Notes:"
 msgstr ""
 
-#: account/forms.py:108
+#: account/forms.py:110
 msgid "Payment later:"
 msgstr ""
 
-#: account/forms.py:109
+#: account/forms.py:111
 msgid "Order staff:"
 msgstr ""
 
@@ -181,11 +181,11 @@ msgstr ""
 msgid "Staff Order"
 msgstr ""
 
-#: account/models.py:84
+#: account/models.py:85
 msgid "User profile"
 msgstr ""
 
-#: account/models.py:85
+#: account/models.py:86
 msgid "Users Profiles"
 msgstr ""
 
@@ -1208,7 +1208,7 @@ msgid "Pending order(s)"
 msgstr ""
 
 #: templates/resa/manage_orders.html:48 templates/resa/manage_orders.html:87
-#: templates/resa/orders_details.html:12 templates/resa/orders_details.html:55
+#: templates/resa/orders_details.html:12 templates/resa/orders_details.html:54
 msgid "Order no"
 msgstr ""
 
@@ -1263,12 +1263,18 @@ msgstr ""
 msgid "Payment by credit card"
 msgstr ""
 
-#: templates/resa/orders_details.html:44 templates/resa/orders_details.html:63
+#: templates/resa/orders_details.html:44 templates/resa/orders_details.html:62
 msgid "Payment by PayPal"
 msgstr ""
 
 #: templates/resa/orders_details.html:46
 msgid "Proceed the payment using PayPal:"
+msgstr ""
+
+#: templates/resa/orders_details.html:64
+msgid ""
+"If it is possible for you to use another payment method than PayPal, please "
+"do it. PayPal payments involves expensive fees for us."
 msgstr ""
 
 #: templates/resa/orders_details.html:69

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-18 20:25+0200\n"
-"PO-Revision-Date: 2011-06-18 20:34+0200\n"
+"POT-Creation-Date: 2011-06-19 17:38+0200\n"
+"PO-Revision-Date: 2011-06-19 17:55+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -77,7 +77,7 @@ msgstr "Langue :"
 msgid "Country:"
 msgstr "Pays."
 
-#: account/forms.py:46 account/forms.py:114 templates/account/profile.html:70
+#: account/forms.py:46 account/forms.py:116 templates/account/profile.html:70
 msgid "Badge type:"
 msgstr "Type de badge :"
 
@@ -119,15 +119,15 @@ msgstr ""
 "Le mot de passe de confirmation ne concorde pas avec le mot de passe "
 "d'origine"
 
-#: account/forms.py:106
+#: account/forms.py:108
 msgid "Notes:"
 msgstr "Notes :"
 
-#: account/forms.py:108
+#: account/forms.py:110
 msgid "Payment later:"
 msgstr "Paiement décalé :"
 
-#: account/forms.py:109
+#: account/forms.py:111
 msgid "Order staff:"
 msgstr "Commande orga."
 
@@ -191,11 +191,11 @@ msgstr "Paiement décalé"
 msgid "Staff Order"
 msgstr "Commande Orga."
 
-#: account/models.py:84
+#: account/models.py:85
 msgid "User profile"
 msgstr "Profile utilisateur"
 
-#: account/models.py:85
+#: account/models.py:86
 msgid "Users Profiles"
 msgstr "Profils des utilisateurs"
 
@@ -1255,7 +1255,7 @@ msgid "Pending order(s)"
 msgstr "Commande(s) en attente"
 
 #: templates/resa/manage_orders.html:48 templates/resa/manage_orders.html:87
-#: templates/resa/orders_details.html:12 templates/resa/orders_details.html:55
+#: templates/resa/orders_details.html:12 templates/resa/orders_details.html:54
 msgid "Order no"
 msgstr "Commande no"
 
@@ -1310,13 +1310,22 @@ msgstr "Facturation"
 msgid "Payment by credit card"
 msgstr "Paiement par carte bancaire"
 
-#: templates/resa/orders_details.html:44 templates/resa/orders_details.html:63
+#: templates/resa/orders_details.html:44 templates/resa/orders_details.html:62
 msgid "Payment by PayPal"
 msgstr "Paiement par PayPal"
 
 #: templates/resa/orders_details.html:46
 msgid "Proceed the payment using PayPal:"
 msgstr "Procéder au paiement par PayPal"
+
+#: templates/resa/orders_details.html:64
+msgid ""
+"If it is possible for you to use another payment method than PayPal, please "
+"do it. PayPal payments involves expensive fees for us."
+msgstr ""
+"S'il vous est possible d'utiliser un autre moyen de paiement que PayPal, "
+"n'hésitez pas à le faire. PayPal prend une commission importante sur chaque "
+"transaction. "
 
 #: templates/resa/orders_details.html:69
 msgid "Payment by cashiers check"
