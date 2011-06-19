@@ -11,6 +11,12 @@ status() {
     fi
 }
 
+if [ -f 'manage.py' ]; then
+    echo -n 'Recompiling .po files...   '
+    python manage.py compilemessages >/dev/null 2>&1
+    status $?
+fi
+
 echo -n 'Force re-compile of Python bytecode...   '
 find -iname '*.py' -exec py_compilefiles -fq {} \;
 status $?
