@@ -11,7 +11,7 @@
             - <a href="/account/edit/{{ user_obj.id }}">{% trans "Account" %}</a>
             - <a href="/account/manage_badge/{{ user_obj.id }}">{% trans "Badge" %}</a>
             {% comment %}
-            - <a href="/account/manage_wifi/{{ user_obj.id }}">{% trans "Wifi access" %}</a>
+            - <a href="/account/manage_netparams/{{ user_obj.id }}">{% trans "Network parameters" %}</a>
             {% endcomment %}
             {% if user.is_staff %}
                 - <a href="/resa/manage_compta/{{ user_obj.id }}">{% trans "Accounting" %}</a>

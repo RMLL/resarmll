@@ -2,7 +2,7 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "User Wifi access" %}{% endblock %}
+{% block title %}{% trans "User Network parameters" %}{% endblock %}
 
 {% block sidebar %}
     {% include "account/menu.html" %}
@@ -11,10 +11,10 @@
 {% block content %}
     {% include "account/menu_manager.html" %}
 
-    <h2>{% trans "Wifi access" %}</h2>
+    <h2>{% trans "Network parameters" %}</h2>
 
-    <div id="maange_wifi">
-
+    {% comment %}
+    <div id="manage_wifi">
         <div class="field">
             <div class="label">{% trans "Username:" %}</div>
             {% ifequal username None %}
@@ -23,7 +23,6 @@
                 <span>{{ username }}</span>
             {% endifequal %}
         </div>
-
         <div class="field">
             <div class="label">{% trans "Password:" %}</div>
             {% ifequal password None %}
@@ -32,7 +31,19 @@
                 <span>{{ password }}</span>
             {% endifequal %}
         </div>
+    </div>
+    {% endcomment %}
 
+    <div id="netparams">
+        {% if sxb_ip %}
+            <pre><strong>{% trans "User IP address:" %}</strong> {{ sxb_ip }}
+<strong>{% trans "Netmask:" %}</strong> 255.255.248.0
+<strong>{% trans "Gateway:" %}</strong> 89.234.175.254
+<strong>{% trans "Mac address gateway:" %}</strong> 00:09:3d:00:31:4a
+<strong>{% trans "DNS server:" %}</strong> 89.234.175.254
+<strong>{% trans "Domain:" %}</strong> sxb.rmll.info
+<strong>{% trans "Outgoing SMTP server:" %}</strong> smtp.sxb.rmll.info</pre>
+        {% endif %}
     </div>
 
 {% endblock %}

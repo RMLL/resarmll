@@ -1,0 +1,57 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Network parameters" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Network parameters" %}</h2>
+
+    {% comment %}
+    <div id="wifi">
+        <div class="field">
+            <div class="label">{% trans "Username:" %}</div>
+            {% ifequal username None %}
+                <em class="notset">{% trans "not set" %}</em>
+            {% else %}
+                <span>{{ username }}</span>
+            {% endifequal %}
+        </div>
+        <div class="field">
+            <div class="label">{% trans "Password:" %}</div>
+            {% ifequal password None %}
+                <em class="notset">{% trans "not set" %}</em>
+            {% else %}
+                <span>{{ password }}</span>
+            {% endifequal %}
+        </div>
+    </div>
+    {% endcomment %}
+
+    <div id="netparams">
+        <p>
+            {% trans "There are two ways to gain Internet access (through 2 networks)" %}
+            (<a href="http://2011.rmll.info/-Network-access-?lang={{ LANGUAGE_CODE }}">{% trans "Detailed informations on the website" %}</a>)
+        </p>
+        <p>
+            {% trans "These networks will provide you a public IP address for the event, without filtering, without QoS, without any security, a real connection to the Internet in real pure net neutrality. As such you must manage your own security." %}
+        </p>
+        <h3>{% trans "Network:" %} RMLLPUBLIC</h3>
+        <p>{% trans "Just select this wireless network (automatic connection), open your browser, go to your homepage,  and you will have to log into a captive portal." %}</p>
+
+        <h3>{% trans "Network:" %} RMLL2011</h3>
+        <p>{% trans "This one (more robust than RMLLPUBLIC) will be available by Ethernet and WiFi. To use it you will need to configure your network connection by hand with the following parameters." %}</p>
+        <pre><strong>{% trans "Your IP address:" %}</strong> {{ sxb_ip }}
+<strong>{% trans "Netmask:" %}</strong> 255.255.248.0
+<strong>{% trans "Gateway:" %}</strong> 89.234.175.254
+<strong>{% trans "Mac address gateway:" %}</strong> 00:09:3d:00:31:4a
+<strong>{% trans "DNS server:" %}</strong> 89.234.175.254
+<strong>{% trans "Domain:" %}</strong> sxb.rmll.info
+<strong>{% trans "Outgoing SMTP server:" %}</strong> smtp.sxb.rmll.info</pre>
+    </div>
+
+{% endblock %}

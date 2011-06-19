@@ -141,7 +141,7 @@ def profile_badge(request, tmpl):
 
 @login_required
 @auto_render
-def wifi(request, tmpl):
+def netparams(request, tmpl):
     username = password = None
     try:
         access = NetworkAccess.objects.get(id=request.user.id)
@@ -149,6 +149,7 @@ def wifi(request, tmpl):
         password = access.password
     except:
         username = password = None
+    sxb_ip = "89.234.%d.%d" % (168 + request.user.id/256, request.user.id % 256)
     return tmpl, locals()
 
 @login_required
@@ -319,8 +320,8 @@ def manage_badge(request, tmpl, user_id):
 @login_required
 @reception_required
 @auto_render
-def manage_wifi(request, tmpl, user_id):
-    user = username = password = None
+def manage_netparams(request, tmpl, user_id):
+    user = username = password = sxb_ip = None
     if user_id:
         try:
             user = User.objects.get(id=user_id)
@@ -333,5 +334,5 @@ def manage_wifi(request, tmpl, user_id):
                 password = access.password
             except:
                 username = password = None
-
-    return tmpl, {'user_obj': user, 'username': username, 'password': password}
+            sxb_ip = "89.234.%d.%d" % (168 + user.id/256, user.id % 256)
+    return tmpl, {'user_obj': user, 'username': username, 'password': password, 'sxb_ip': sxb_ip}

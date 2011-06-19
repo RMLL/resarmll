@@ -36,13 +36,11 @@ urlpatterns = patterns ('',
     url(r'^profile/modify/$', profile_modify, {'tmpl': 'account/profile_modify.html'}),
     url(r'^profile/badge/$', profile_badge, {'tmpl': 'account/profile_badge.html'}),
 
-    url(r'^wifi/$', wifi, {'tmpl': 'account/wifi.html'}),
+    url(r'^netparams/$', netparams, {'tmpl': 'account/netparams.html'}),
+    url(r'^manage_netparams/(?P<user_id>\d+)$', manage_netparams, {'tmpl': 'account/manage_netparams.html'}),
 
     url(r'^create/$', create, {'tmpl': 'account/create.html'}),
     url(r'^search/$', search, {'tmpl': 'account/search.html'}),
     url(r'^edit/(?P<user_id>\d+)$', edit, {'tmpl': 'account/edit.html'}),
     url(r'^manage_badge/(?P<user_id>\d+)$', manage_badge, {'tmpl': 'account/manage_badge.html'}),
-
-# disable WiFi access
-    #url(r'^manage_wifi/(?P<user_id>\d+)$', manage_wifi, {'tmpl': 'account/manage_wifi.html'}),
 )

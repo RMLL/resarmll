@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-19 19:41+0200\n"
+"POT-Creation-Date: 2011-06-19 22:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,13 +29,14 @@ msgid "E-mail address:"
 msgstr ""
 
 #: account/forms.py:22 templates/account/login.html:30
-#: templates/account/manage_wifi.html:19 templates/account/profile.html:20
-#: templates/account/wifi.html:17
+#: templates/account/manage_netparams.html:19
+#: templates/account/netparams.html:17 templates/account/profile.html:20
 msgid "Username:"
 msgstr ""
 
 #: account/forms.py:26 templates/account/login.html:36
-#: templates/account/manage_wifi.html:28 templates/account/wifi.html:26
+#: templates/account/manage_netparams.html:27
+#: templates/account/netparams.html:25
 msgid "Password:"
 msgstr ""
 
@@ -668,9 +669,7 @@ msgstr ""
 msgid "Account"
 msgstr ""
 
-#: templates/account/create.html:36 templates/account/manage_wifi.html:14
-#: templates/account/menu.html:12 templates/account/menu_manager.html:14
-#: templates/account/wifi.html:5 templates/account/wifi.html.py:12
+#: templates/account/create.html:36
 msgid "Wifi access"
 msgstr ""
 
@@ -763,7 +762,7 @@ msgid "Recover my password"
 msgstr ""
 
 #: templates/account/logout.html:5 templates/account/logout.html.py:10
-#: templates/account/menu.html:14
+#: templates/account/menu.html:12
 msgid "Log out"
 msgstr ""
 
@@ -791,15 +790,56 @@ msgid ""
 "badge printer (PDF)"
 msgstr ""
 
-#: templates/account/manage_wifi.html:5
-msgid "User Wifi access"
+#: templates/account/manage_netparams.html:5
+msgid "User Network parameters"
 msgstr ""
 
-#: templates/account/manage_wifi.html:21 templates/account/manage_wifi.html:30
+#: templates/account/manage_netparams.html:14 templates/account/menu.html:11
+#: templates/account/menu_manager.html:14 templates/account/netparams.html:5
+#: templates/account/netparams.html:12
+msgid "Network parameters"
+msgstr ""
+
+#: templates/account/manage_netparams.html:21
+#: templates/account/manage_netparams.html:29
+#: templates/account/netparams.html:19 templates/account/netparams.html:27
 #: templates/account/profile.html:32 templates/account/profile.html.py:52
 #: templates/account/profile.html:77 templates/account/profile.html.py:86
-#: templates/account/wifi.html:19 templates/account/wifi.html.py:28
 msgid "not set"
+msgstr ""
+
+#: templates/account/manage_netparams.html:39
+msgid "User IP address:"
+msgstr ""
+
+#: templates/account/manage_netparams.html:40
+#: templates/account/netparams.html:49
+msgid "Netmask:"
+msgstr ""
+
+#: templates/account/manage_netparams.html:41
+#: templates/account/netparams.html:50
+msgid "Gateway:"
+msgstr ""
+
+#: templates/account/manage_netparams.html:42
+#: templates/account/netparams.html:51
+msgid "Mac address gateway:"
+msgstr ""
+
+#: templates/account/manage_netparams.html:43
+#: templates/account/netparams.html:52
+msgid "DNS server:"
+msgstr ""
+
+#: templates/account/manage_netparams.html:44
+#: templates/account/netparams.html:53
+msgid "Domain:"
+msgstr ""
+
+#: templates/account/manage_netparams.html:45
+#: templates/account/netparams.html:54
+msgid "Outgoing SMTP server:"
 msgstr ""
 
 #: templates/account/menu.html:6 templates/account/profile.html:5
@@ -828,39 +868,39 @@ msgstr ""
 msgid "Your orders"
 msgstr ""
 
-#: templates/account/menu.html:22
+#: templates/account/menu.html:20
 msgid "Admin"
 msgstr ""
 
-#: templates/account/menu.html:24
+#: templates/account/menu.html:22
 msgid "Create user"
 msgstr ""
 
-#: templates/account/menu.html:25
+#: templates/account/menu.html:23
 msgid "Search user"
 msgstr ""
 
-#: templates/account/menu.html:27 templates/resa/orders_search.html:5
+#: templates/account/menu.html:25 templates/resa/orders_search.html:5
 #: templates/resa/orders_search.html:12
 msgid "Search order"
 msgstr ""
 
-#: templates/account/menu.html:30 templates/resa/orders_notpaid.html:5
+#: templates/account/menu.html:28 templates/resa/orders_notpaid.html:5
 #: templates/resa/orders_notpaid.html:12
 msgid "Orders not paid"
 msgstr ""
 
-#: templates/account/menu.html:31 templates/resa/sales.html:5
+#: templates/account/menu.html:29 templates/resa/sales.html:5
 #: templates/resa/sales.html.py:12
 msgid "Sales"
 msgstr ""
 
-#: templates/account/menu.html:32 templates/resa/stocks.html:5
+#: templates/account/menu.html:30 templates/resa/stocks.html:5
 #: templates/resa/stocks.html.py:12
 msgid "Stocks"
 msgstr ""
 
-#: templates/account/menu.html:33 templates/resa/stats.html:5
+#: templates/account/menu.html:31 templates/resa/stats.html:5
 #: templates/resa/stats.html.py:12
 msgid "Statistics"
 msgstr ""
@@ -879,6 +919,43 @@ msgstr ""
 
 #: templates/account/menu_manager.html:22
 msgid "Cannot find the user to edit (check permissions)"
+msgstr ""
+
+#: templates/account/netparams.html:37
+msgid "There are two ways to gain Internet access (through 2 networks)"
+msgstr ""
+
+#: templates/account/netparams.html:38
+msgid "Detailed informations on the website"
+msgstr ""
+
+#: templates/account/netparams.html:41
+msgid ""
+"These networks will provide you a public IP address for the event, without "
+"filtering, without QoS, without any security, a real connection to the "
+"Internet in real pure net neutrality. As such you must manage your own "
+"security."
+msgstr ""
+
+#: templates/account/netparams.html:43 templates/account/netparams.html:46
+msgid "Network:"
+msgstr ""
+
+#: templates/account/netparams.html:44
+msgid ""
+"Just select this wireless network (automatic connection), open your browser, "
+"go to your homepage,  and you will have to log into a captive portal."
+msgstr ""
+
+#: templates/account/netparams.html:47
+msgid ""
+"This one (more robust than RMLLPUBLIC) will be available by Ethernet and "
+"WiFi. To use it you will need to configure your network connection by hand "
+"with the following parameters."
+msgstr ""
+
+#: templates/account/netparams.html:48
+msgid "Your IP address:"
 msgstr ""
 
 #: templates/account/password_reset.html:5

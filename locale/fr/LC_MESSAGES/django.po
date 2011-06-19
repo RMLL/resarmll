@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-19 19:41+0200\n"
-"PO-Revision-Date: 2011-06-19 19:38+0200\n"
+"POT-Creation-Date: 2011-06-19 22:20+0200\n"
+"PO-Revision-Date: 2011-06-19 23:31+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -31,13 +31,14 @@ msgid "E-mail address:"
 msgstr "Adresse email :"
 
 #: account/forms.py:22 templates/account/login.html:30
-#: templates/account/manage_wifi.html:19 templates/account/profile.html:20
-#: templates/account/wifi.html:17
+#: templates/account/manage_netparams.html:19
+#: templates/account/netparams.html:17 templates/account/profile.html:20
 msgid "Username:"
 msgstr "Nom d'utilisateur :"
 
 #: account/forms.py:26 templates/account/login.html:36
-#: templates/account/manage_wifi.html:28 templates/account/wifi.html:26
+#: templates/account/manage_netparams.html:27
+#: templates/account/netparams.html:25
 msgid "Password:"
 msgstr "Mot de passe :"
 
@@ -690,9 +691,7 @@ msgstr "Utilisateur créé avec succès"
 msgid "Account"
 msgstr "Compte"
 
-#: templates/account/create.html:36 templates/account/manage_wifi.html:14
-#: templates/account/menu.html:12 templates/account/menu_manager.html:14
-#: templates/account/wifi.html:5 templates/account/wifi.html.py:12
+#: templates/account/create.html:36
 msgid "Wifi access"
 msgstr "Accès Wifi"
 
@@ -792,7 +791,7 @@ msgid "Recover my password"
 msgstr "Retrouver mon mot de passe"
 
 #: templates/account/logout.html:5 templates/account/logout.html.py:10
-#: templates/account/menu.html:14
+#: templates/account/menu.html:12
 msgid "Log out"
 msgstr "Déconnexion"
 
@@ -823,16 +822,57 @@ msgstr ""
 "Télécharger le badge aux bonnes dimensions et prêt à être imprimé avec "
 "l'imprimante à badges (PDF)"
 
-#: templates/account/manage_wifi.html:5
-msgid "User Wifi access"
-msgstr "Accès Wifi de l'utilisateur"
+#: templates/account/manage_netparams.html:5
+msgid "User Network parameters"
+msgstr "Paramètres réseau de l'utilisateur"
 
-#: templates/account/manage_wifi.html:21 templates/account/manage_wifi.html:30
+#: templates/account/manage_netparams.html:14 templates/account/menu.html:11
+#: templates/account/menu_manager.html:14 templates/account/netparams.html:5
+#: templates/account/netparams.html:12
+msgid "Network parameters"
+msgstr "Paramètres réseau"
+
+#: templates/account/manage_netparams.html:21
+#: templates/account/manage_netparams.html:29
+#: templates/account/netparams.html:19 templates/account/netparams.html:27
 #: templates/account/profile.html:32 templates/account/profile.html.py:52
 #: templates/account/profile.html:77 templates/account/profile.html.py:86
-#: templates/account/wifi.html:19 templates/account/wifi.html.py:28
 msgid "not set"
 msgstr "Non défini"
+
+#: templates/account/manage_netparams.html:39
+msgid "User IP address:"
+msgstr "Adresse IP de l'utilisateur :"
+
+#: templates/account/manage_netparams.html:40
+#: templates/account/netparams.html:49
+msgid "Netmask:"
+msgstr "Masque de réseau :"
+
+#: templates/account/manage_netparams.html:41
+#: templates/account/netparams.html:50
+msgid "Gateway:"
+msgstr "Passerelle :"
+
+#: templates/account/manage_netparams.html:42
+#: templates/account/netparams.html:51
+msgid "Mac address gateway:"
+msgstr "Adresse MAC de la passerelle :"
+
+#: templates/account/manage_netparams.html:43
+#: templates/account/netparams.html:52
+msgid "DNS server:"
+msgstr "Serveur de noms (DNS) :"
+
+#: templates/account/manage_netparams.html:44
+#: templates/account/netparams.html:53
+msgid "Domain:"
+msgstr "Domaine :"
+
+#: templates/account/manage_netparams.html:45
+#: templates/account/netparams.html:54
+msgid "Outgoing SMTP server:"
+msgstr "Serveur SMTP sortant :"
 
 #: templates/account/menu.html:6 templates/account/profile.html:5
 #: templates/account/profile.html.py:12
@@ -860,39 +900,39 @@ msgstr "Votre panier"
 msgid "Your orders"
 msgstr "Vos commandes"
 
-#: templates/account/menu.html:22
+#: templates/account/menu.html:20
 msgid "Admin"
 msgstr "Admin"
 
-#: templates/account/menu.html:24
+#: templates/account/menu.html:22
 msgid "Create user"
 msgstr "Créer un utilisateur"
 
-#: templates/account/menu.html:25
+#: templates/account/menu.html:23
 msgid "Search user"
 msgstr "Recherche d'utilisateurs"
 
-#: templates/account/menu.html:27 templates/resa/orders_search.html:5
+#: templates/account/menu.html:25 templates/resa/orders_search.html:5
 #: templates/resa/orders_search.html:12
 msgid "Search order"
 msgstr "Recherche de commande"
 
-#: templates/account/menu.html:30 templates/resa/orders_notpaid.html:5
+#: templates/account/menu.html:28 templates/resa/orders_notpaid.html:5
 #: templates/resa/orders_notpaid.html:12
 msgid "Orders not paid"
 msgstr "Commandes impayées"
 
-#: templates/account/menu.html:31 templates/resa/sales.html:5
+#: templates/account/menu.html:29 templates/resa/sales.html:5
 #: templates/resa/sales.html.py:12
 msgid "Sales"
 msgstr "Ventes"
 
-#: templates/account/menu.html:32 templates/resa/stocks.html:5
+#: templates/account/menu.html:30 templates/resa/stocks.html:5
 #: templates/resa/stocks.html.py:12
 msgid "Stocks"
 msgstr "Stocks"
 
-#: templates/account/menu.html:33 templates/resa/stats.html:5
+#: templates/account/menu.html:31 templates/resa/stats.html:5
 #: templates/resa/stats.html.py:12
 msgid "Statistics"
 msgstr "Statistiques"
@@ -913,6 +953,53 @@ msgstr "Comptabilité"
 msgid "Cannot find the user to edit (check permissions)"
 msgstr ""
 "Impossible de trouver l'utilisateur à modifier (vérifier les permissions)"
+
+#: templates/account/netparams.html:37
+msgid "There are two ways to gain Internet access (through 2 networks)"
+msgstr "Il y a 2 façons de se connecter à Internet (via 2 réseaux)"
+
+#: templates/account/netparams.html:38
+msgid "Detailed informations on the website"
+msgstr "Informations détaillées sur le site web"
+
+#: templates/account/netparams.html:41
+msgid ""
+"These networks will provide you a public IP address for the event, without "
+"filtering, without QoS, without any security, a real connection to the "
+"Internet in real pure net neutrality. As such you must manage your own "
+"security."
+msgstr ""
+"Ces réseaux vous fourniront une adresse IP publique pendant l'événement, "
+"sans filtrage, sans modification de la qualité de service, sans sécurité "
+"additionnelle. Une « vraie » connexion à Internet dans la plus pure "
+"neutralité du net. Par conséquent, vous devrez gérer votre propre sécurité."
+
+#: templates/account/netparams.html:43 templates/account/netparams.html:46
+msgid "Network:"
+msgstr "Réseau :"
+
+#: templates/account/netparams.html:44
+msgid ""
+"Just select this wireless network (automatic connection), open your browser, "
+"go to your homepage,  and you will have to log into a captive portal."
+msgstr ""
+"Sélectionnez ce réseau WiFi (connexion automatique), ouvrez votre "
+"navigateur web sur votre page d'accueil et vous tomberez sur un portail "
+"captif où vous devrez vous authentifier."
+
+#: templates/account/netparams.html:47
+msgid ""
+"This one (more robust than RMLLPUBLIC) will be available by Ethernet and "
+"WiFi. To use it you will need to configure your network connection by hand "
+"with the following parameters."
+msgstr ""
+"Ce réseau (plus robuste que RMLLPUBLIC) sera disponible en Ethernet et en "
+"WiFi. Pour l'utiliser, vous devrez configurer votre connexion manuellement "
+"avec les paramètres suivants."
+
+#: templates/account/netparams.html:48
+msgid "Your IP address:"
+msgstr "Votre adresse IP :"
 
 #: templates/account/password_reset.html:5
 #: templates/account/password_reset.html:15
@@ -1534,3 +1621,6 @@ msgstr "Confirmé"
 #: templates/resa/stocks.html:43
 msgid "Dispatched"
 msgstr "Distribué"
+
+#~ msgid "User Wifi access"
+#~ msgstr "Accès Wifi de l'utilisateur"
