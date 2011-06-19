@@ -43,8 +43,7 @@
                 <div class="section">
                     <h3>{% trans "Payment by PayPal" %}</h3>
                     <div class="content">
-                        {% trans "Proceed the payment using PayPal:" %}
-                        <br/><br/>
+                        <p>{% trans "Proceed the payment using PayPal:" %}</p>
                         <form action="{{ paypal_settings.url }}" method="post" class="payment">
                             <input type="hidden" name="business" value="{{ paypal_settings.id }}" />
                             <input type="hidden" name="currency_code" value="{{ paypal_settings.currency }}" />
@@ -68,20 +67,20 @@
                 <div class="section">
                     <h3>{% trans "Payment by cashiers check" %}</h3>
                     <div class="content">
-                        {% trans "Send your check to the treasurer, here is the postal address:" %}
+                        <p>{% trans "Send your check to the treasurer, here is the postal address:" %}</p>
                         <pre>{{ treasurer_address }}</pre>
-                        {% trans "payable to:" %}
+                        <p>{% trans "payable to:" %}</p>
                         <pre>{{ check_payable_to }}</pre>
-                        <div>
+                        <p>
                             {% trans "For payments with cashiers check, please notify our accountant when the check has been sent. Cashiers check payments might include fee if your bank is not located in France or in the EU." %}
-                        </div>
+                        </p>
                     </div>
                 </div>
 
                 <div class="section">
                     <h3>{% trans "Other payment methods" %}</h3>
                     <div class="content">
-                        {% trans "If you wish to use other methods of payment, please contact our accountant:" %}
+                        <p>{% trans "If you wish to use other methods of payment, please contact our accountant:" %}</p>
                         <pre>{{ treasurer_name }} &lt;<a href="mailto:{{ treasurer_email }}">{{ treasurer_email }}</a>&gt;</pre>
                     </div>
                 </div>
