@@ -30,7 +30,7 @@ class UserProfile(models.Model):
     country = models.ForeignKey(Country)
     badge_text = models.CharField(_(u"Badge text"), max_length=32, blank=True)
     comments = models.TextField(_(u"Comment(s)"), blank=True)
-    fingerprint = models.CharField(_(u"PGP/GPG Fingerprint"), max_length=56, blank=True)
+    fingerprint = models.CharField(_(u"PGP/GPG Fingerprint"), max_length=75, blank=True)
     notes = models.TextField(_(u"Note(s)"), blank=True)
     badge_type = models.ForeignKey(Badge)
     payment_later = models.BooleanField(_(u"Payment later"))
@@ -51,7 +51,8 @@ class UserProfile(models.Model):
     def render_fingerprint(self):
         r = ''
         if self.fingerprint != '':
-            parts = self.fingerprint.split(':')
+            fp = self.fingerprint.replace(' ', '')
+            parts = fp.split(':')
             el = []
             for x in range(0,10):
                 el.append(parts[1][x*4:(x+1)*4])

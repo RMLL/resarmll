@@ -9,7 +9,7 @@ from resarmll.resa.models import Country, Badge
 from models import GENDER_CHOICES
 
 _attrs = { 'class': 'text', 'size': 30}
-_attrs_gpg = { 'class': 'text', 'size': 55}
+_attrs_gpg = { 'class': 'text', 'size': 75}
 _attrs_passwd = { 'class': 'text', 'size': 30, 'autocomplete': 'off'}
 
 class UserForm(forms.Form):
@@ -55,9 +55,9 @@ class UserForm(forms.Form):
         help_text=_(u"Distinctiveness (moving with a wheelchair, glad to use an available magnetic-field loop, blind, deep geek, ...)"),
         )
     fingerprint = forms.RegexField(label=_(u"PGP/GPG Fingerprint:"),
-        required=False, regex=r'^[0-9]{4}/(R|D):[0-9a-fA-F]{40}$',
+        required=False, regex=r'^[0-9]{4}/(R|D):([0-9a-fA-F]{4}\s*){10}$',
         widget=forms.TextInput(attrs=_attrs_gpg),
-        help_text=_(u"PGP/GPG fingerprint prefixed by its size, sample:")+" 1024/D:772965E94533414EA1D4C790C793E99F8A1DE03D",
+        help_text=_(u"PGP/GPG fingerprint prefixed by its size, sample:")+" 1024/D:7729 65E9 4533 414E A1D4 C790 C793 E99F 8A1D E03D",
         )
 
     def clean(self):
