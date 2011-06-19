@@ -4,10 +4,8 @@
     {% if user_obj %}
         <h2>{% trans "User:" %} {{ user_obj.get_full_name }} ({{ user_obj.username }} - {{user_obj.email }})</h2>
         <div class="menu-manager">
-            {% if user.is_staff or user.get_profile.is_manager %}
-                <a href="/resa/manage_orders/{{ user_obj.id }}">{% trans "Orders" %}</a>
-                - <a href="/resa/manage_cart/{{ user_obj.id }}">{% trans "Cart" %}</a>
-            {% endif %}
+            <a href="/resa/manage_orders/{{ user_obj.id }}">{% trans "Orders" %}</a>
+            - <a href="/resa/manage_cart/{{ user_obj.id }}">{% trans "Cart" %}</a>
             - <a href="/account/edit/{{ user_obj.id }}">{% trans "Account" %}</a>
             - <a href="/account/manage_badge/{{ user_obj.id }}">{% trans "Badge" %}</a>
             {% comment %}

@@ -4,7 +4,7 @@
     <h2 class="username">{{ user.get_full_name }}</h2>
 </div>
 
-{% if user.is_staff or user.get_profile.is_manager %}
+{% if user.is_staff or user.get_profile.is_manager or user.get_profile.is_reception %}
     <div class="quicksearch">
         <form action="/account/search/" method="post">{% csrf_token %}
             <label for="pattern">{% trans "Quick search:" %}</label>

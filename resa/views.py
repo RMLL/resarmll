@@ -139,7 +139,7 @@ def orders_pdf(request, tmpl, order_id=0):
     return response
 
 @login_required
-@manager_required
+@reception_required
 @auto_render
 def orders_search(request, tmpl):
     noresults = False
@@ -155,7 +155,7 @@ def orders_search(request, tmpl):
     return tmpl, locals()
 
 @login_required
-@staff_required
+@manager_required
 @auto_render
 def orders_notpaid(request, tmpl):
     results = User.objects.filter(order__payment_date__isnull=True).annotate(num_orders=Count('order')).filter(num_orders__gt=0).order_by('last_name')
@@ -165,7 +165,7 @@ def orders_notpaid(request, tmpl):
     return tmpl, locals()
 
 @login_required
-@manager_required
+@reception_required
 @auto_render
 def manage_orders(request, tmpl, user_id=None):
     user = None
@@ -319,21 +319,21 @@ def manage_compta(request, tmpl, user_id=None):
     return tmpl, {'user_obj': user, 'operations': operations}
 
 @login_required
-@staff_required
+@manager_required
 @auto_render
 def stats(request, tmpl):
     stats_countries = Country.objects.annotate(num_users=Count('userprofile')).filter(num_users__gt=0).order_by('-num_users')
     return tmpl, locals()
 
 @login_required
-@staff_required
+@manager_required
 @auto_render
 def stocks(request, tmpl):
     stocks = Stock.objects.all().order_by('order')
     return tmpl, locals()
 
 @login_required
-@staff_required
+@manager_required
 @auto_render
 def sales(request, tmpl):
     products = Article.objects.order_by('order')
