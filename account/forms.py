@@ -72,8 +72,10 @@ class UserForm(forms.Form):
 
         if cleaned_data.get('password') != cleaned_data.get('password_confirm'):
             self._errors['password'] = ErrorList([_(u"The confirmation password does not match the original password")])
-            del cleaned_data['password']
-            del cleaned_data['password_confirm']
+            if cleaned_data.has_key('password'):
+                del cleaned_data['password']
+            if cleaned_data.has_key('password_confirm'):
+                del cleaned_data['password_confirm']
         return cleaned_data
 
 class UserFormModify(UserForm):
