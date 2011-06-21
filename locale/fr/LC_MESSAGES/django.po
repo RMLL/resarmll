@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-19 22:20+0200\n"
-"PO-Revision-Date: 2011-06-19 23:31+0200\n"
+"POT-Creation-Date: 2011-06-22 01:16+0200\n"
+"PO-Revision-Date: 2011-06-22 01:19+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -192,11 +192,11 @@ msgstr "Paiement décalé"
 msgid "Staff Order"
 msgstr "Commande Orga."
 
-#: account/models.py:85
+#: account/models.py:84
 msgid "User profile"
 msgstr "Profile utilisateur"
 
-#: account/models.py:86
+#: account/models.py:85
 msgid "Users Profiles"
 msgstr "Profils des utilisateurs"
 
@@ -388,7 +388,7 @@ msgstr "Choix par l'utilisateur"
 
 #: resa/models.py:206 templates/account/create.html:34
 #: templates/account/manage_badge.html:14
-#: templates/account/menu_manager.html:12 templates/account/search.html:46
+#: templates/account/menu_manager.html:10 templates/account/search.html:46
 #: templates/resa/orders_notpaid.html:36 templates/resa/orders_notpaid.html:95
 #: templates/resa/orders_notpaid.html:154
 msgid "Badge"
@@ -410,7 +410,7 @@ msgstr "Date de création"
 msgid "Order"
 msgstr "Commande"
 
-#: resa/orders.py:20 templates/account/menu_manager.html:8
+#: resa/orders.py:20 templates/account/menu_manager.html:7
 msgid "Orders"
 msgstr "Commandes"
 
@@ -450,11 +450,11 @@ msgstr "Quantité payée"
 msgid "Stock"
 msgstr "Stock"
 
-#: resa/views.py:38 resa/views.py:267
+#: resa/views.py:38 resa/views.py:285
 msgid "Product successfully removed from cart"
 msgstr "Produit supprimé du panier avec succès"
 
-#: resa/views.py:40 resa/views.py:269
+#: resa/views.py:40 resa/views.py:287
 msgid "Error while removing product from cart"
 msgstr "Erreur lors de la suppression du produit du panier"
 
@@ -462,7 +462,7 @@ msgstr "Erreur lors de la suppression du produit du panier"
 msgid "Product(s) successfully added"
 msgstr "Les produits ont été ajoutés avec succès"
 
-#: resa/views.py:58 resa/views.py:282
+#: resa/views.py:58 resa/views.py:300
 msgid "Product(s) successfully updated"
 msgstr "Les produits ont été mis à jour avec succès"
 
@@ -470,7 +470,7 @@ msgstr "Les produits ont été mis à jour avec succès"
 msgid "Error while adding product(s)"
 msgstr "Erreur lors de l'ajout des produits"
 
-#: resa/views.py:60 resa/views.py:284
+#: resa/views.py:60 resa/views.py:302
 msgid "Error while updating product(s)"
 msgstr "Erreur lors de la mise à jour des produits"
 
@@ -482,31 +482,31 @@ msgstr ""
 "Impossible de confirmer votre commande, l'un des produits de votre panier "
 "dépasse la quantité disponible"
 
-#: resa/views.py:79 resa/views.py:295
+#: resa/views.py:79 resa/views.py:313
 msgid "Order successfully confirmed"
 msgstr "Commande confirmée avec succès"
 
-#: resa/views.py:191
+#: resa/views.py:209
 msgid "Order sucessfully marked as paid"
 msgstr "Commande marquée comme payée avec succès"
 
-#: resa/views.py:198
+#: resa/views.py:216
 msgid "Order sucessfully removed"
 msgstr "Commande supprimée avec succès"
 
-#: resa/views.py:209
+#: resa/views.py:227
 msgid "Order sucessfully updated"
 msgstr "Commande mise à jour avec succès"
 
-#: resa/views.py:262
+#: resa/views.py:280
 msgid "Product successfully added to cart"
 msgstr "Produit ajouté au panier avec succès"
 
-#: resa/views.py:264
+#: resa/views.py:282
 msgid "Error while adding product to cart"
 msgstr "Erreur lors de l'ajout du produit au panier"
 
-#: resa/views.py:290
+#: resa/views.py:308
 msgid ""
 "Unable to confirm this order, one (or more) product(s) in the cart exceed "
 "the available quantity"
@@ -514,20 +514,20 @@ msgstr ""
 "Impossible de confirmer votre commande, l'un des produits de votre panier "
 "dépasse la quantité disponible"
 
-#: resa/views.py:354 resa/views.py:402
+#: resa/views.py:372 resa/views.py:420
 msgid "Your payment has been canceled, you could resume it later."
 msgstr "Votre paiement a été annulé, vous pouvez le reprendre plus tard."
 
-#: resa/views.py:367 resa/views.py:412 templates/resa/orders_details.html:16
+#: resa/views.py:385 resa/views.py:430 templates/resa/orders_details.html:16
 msgid "This order is not yours."
 msgstr "Cette commande n'est pas la vôtre"
 
-#: resa/views.py:370
+#: resa/views.py:388
 #, python-format
 msgid "It seems that PayPal did not accept your payment (Code: %s)."
 msgstr "Il semblerait que PayPal n'ait pas accepté votre paiement (Code : %s)."
 
-#: resa/views.py:372
+#: resa/views.py:390
 msgid ""
 "Your payment has been confirmed by PayPal, you should receive a notification "
 "by email in a few minutes."
@@ -535,11 +535,11 @@ msgstr ""
 "Votre paiement a été confirmé par Paypal, vous devriez recevoir un mail de "
 "confirmation d'ici quelques minutes."
 
-#: resa/views.py:374 resa/views.py:416
+#: resa/views.py:392 resa/views.py:434
 msgid "Unable to find the order related to this payment."
 msgstr "Impossible de trouver la commande liée à ce paiement."
 
-#: resa/views.py:404
+#: resa/views.py:422
 msgid ""
 "Your payment has been rejected by the bank, you should retry in few days or "
 "try another payment method."
@@ -547,7 +547,7 @@ msgstr ""
 "Votre paiement a été rejeté par la banque, vous devriez réessayer d'ici "
 "quelques jours ou choisir un autre moyen de paiement."
 
-#: resa/views.py:414
+#: resa/views.py:432
 msgid ""
 "Your payment has been confirmed by the bank, you should receive a "
 "notification by email in a few minutes."
@@ -555,7 +555,7 @@ msgstr ""
 "Votre paiement a été confirmé par la banque, vous devriez recevoir un mail "
 "de confirmation d'ici quelques minutes."
 
-#: resa/views.py:418
+#: resa/views.py:436
 msgid ""
 "Your payment has failed, you should retry in few days or try another payment "
 "method."
@@ -687,7 +687,7 @@ msgid "User successfully created"
 msgstr "Utilisateur créé avec succès"
 
 #: templates/account/create.html:33 templates/account/edit.html:17
-#: templates/account/menu_manager.html:11 templates/resa/manage_compta.html:31
+#: templates/account/menu_manager.html:9 templates/resa/manage_compta.html:31
 msgid "Account"
 msgstr "Compte"
 
@@ -827,7 +827,7 @@ msgid "User Network parameters"
 msgstr "Paramètres réseau de l'utilisateur"
 
 #: templates/account/manage_netparams.html:14 templates/account/menu.html:11
-#: templates/account/menu_manager.html:14 templates/account/netparams.html:5
+#: templates/account/menu_manager.html:12 templates/account/netparams.html:5
 #: templates/account/netparams.html:12
 msgid "Network parameters"
 msgstr "Paramètres réseau"
@@ -912,27 +912,27 @@ msgstr "Créer un utilisateur"
 msgid "Search user"
 msgstr "Recherche d'utilisateurs"
 
-#: templates/account/menu.html:25 templates/resa/orders_search.html:5
+#: templates/account/menu.html:24 templates/resa/orders_search.html:5
 #: templates/resa/orders_search.html:12
 msgid "Search order"
 msgstr "Recherche de commande"
 
-#: templates/account/menu.html:28 templates/resa/orders_notpaid.html:5
+#: templates/account/menu.html:26 templates/resa/orders_notpaid.html:5
 #: templates/resa/orders_notpaid.html:12
 msgid "Orders not paid"
 msgstr "Commandes impayées"
 
-#: templates/account/menu.html:29 templates/resa/sales.html:5
+#: templates/account/menu.html:27 templates/resa/sales.html:5
 #: templates/resa/sales.html.py:12
 msgid "Sales"
 msgstr "Ventes"
 
-#: templates/account/menu.html:30 templates/resa/stocks.html:5
+#: templates/account/menu.html:28 templates/resa/stocks.html:5
 #: templates/resa/stocks.html.py:12
 msgid "Stocks"
 msgstr "Stocks"
 
-#: templates/account/menu.html:31 templates/resa/stats.html:5
+#: templates/account/menu.html:29 templates/resa/stats.html:5
 #: templates/resa/stats.html.py:12
 msgid "Statistics"
 msgstr "Statistiques"
@@ -941,15 +941,15 @@ msgstr "Statistiques"
 msgid "User:"
 msgstr "Utilisateur :"
 
-#: templates/account/menu_manager.html:9 templates/resa/manage_cart.html:16
+#: templates/account/menu_manager.html:8 templates/resa/manage_cart.html:16
 msgid "Cart"
 msgstr "Panier"
 
-#: templates/account/menu_manager.html:17
+#: templates/account/menu_manager.html:15
 msgid "Accounting"
 msgstr "Comptabilité"
 
-#: templates/account/menu_manager.html:22
+#: templates/account/menu_manager.html:20
 msgid "Cannot find the user to edit (check permissions)"
 msgstr ""
 "Impossible de trouver l'utilisateur à modifier (vérifier les permissions)"
@@ -983,9 +983,9 @@ msgid ""
 "Just select this wireless network (automatic connection), open your browser, "
 "go to your homepage,  and you will have to log into a captive portal."
 msgstr ""
-"Sélectionnez ce réseau WiFi (connexion automatique), ouvrez votre "
-"navigateur web sur votre page d'accueil et vous tomberez sur un portail "
-"captif où vous devrez vous authentifier."
+"Sélectionnez ce réseau WiFi (connexion automatique), ouvrez votre navigateur "
+"web sur votre page d'accueil et vous tomberez sur un portail captif où vous "
+"devrez vous authentifier."
 
 #: templates/account/netparams.html:47
 msgid ""
@@ -1342,7 +1342,7 @@ msgid "Pending order(s)"
 msgstr "Commande(s) en attente"
 
 #: templates/resa/manage_orders.html:48 templates/resa/manage_orders.html:87
-#: templates/resa/orders_details.html:12 templates/resa/orders_details.html:54
+#: templates/resa/orders_details.html:12 templates/resa/orders_details.html:63
 msgid "Order no"
 msgstr "Commande no"
 
@@ -1394,18 +1394,30 @@ msgid "Billing"
 msgstr "Facturation"
 
 #: templates/resa/orders_details.html:37
+msgid "Delete this order"
+msgstr "Supprimer cette commande"
+
+#: templates/resa/orders_details.html:40
+msgid "Delete this order definitely"
+msgstr "Supprimer cette commande définitivement"
+
+#: templates/resa/orders_details.html:40
+msgid "Are you sure?"
+msgstr "Êtes vous sûr ?"
+
+#: templates/resa/orders_details.html:46
 msgid "Payment by credit card"
 msgstr "Paiement par carte bancaire"
 
-#: templates/resa/orders_details.html:44 templates/resa/orders_details.html:62
+#: templates/resa/orders_details.html:53 templates/resa/orders_details.html:71
 msgid "Payment by PayPal"
 msgstr "Paiement par PayPal"
 
-#: templates/resa/orders_details.html:46
+#: templates/resa/orders_details.html:55
 msgid "Proceed the payment using PayPal:"
 msgstr "Procéder au paiement par PayPal"
 
-#: templates/resa/orders_details.html:64
+#: templates/resa/orders_details.html:73
 msgid ""
 "If it is possible for you to use another payment method than PayPal, please "
 "do it. PayPal payments involves expensive fees for us."
@@ -1414,19 +1426,19 @@ msgstr ""
 "n'hésitez pas à le faire. PayPal prend une commission importante sur chaque "
 "transaction. "
 
-#: templates/resa/orders_details.html:69
+#: templates/resa/orders_details.html:78
 msgid "Payment by bank transfer"
 msgstr "Paiement par virement bancaire "
 
-#: templates/resa/orders_details.html:71
+#: templates/resa/orders_details.html:80
 msgid "IBAN (International Bank Account Number):"
 msgstr "IBAN (numéro de compte bancaire internationnal) :"
 
-#: templates/resa/orders_details.html:73
+#: templates/resa/orders_details.html:82
 msgid "BIC (Bank Identifier Code):"
 msgstr "BIC (code d'identification de la banque) :"
 
-#: templates/resa/orders_details.html:75
+#: templates/resa/orders_details.html:84
 msgid ""
 "Please add the order(s) id(s) in the bank transfer title and notify our "
 "accountant when the check has been sent."
@@ -1434,19 +1446,19 @@ msgstr ""
 "Veuillez ajouter le(s) numéro(s) de commande dans l'intitulé du virement et "
 "informer notre trésorier du virement."
 
-#: templates/resa/orders_details.html:80
+#: templates/resa/orders_details.html:89
 msgid "Payment by cashiers check"
 msgstr "Paiement par chèque"
 
-#: templates/resa/orders_details.html:82
+#: templates/resa/orders_details.html:91
 msgid "Send your check to the treasurer, here is the postal address:"
 msgstr "Envoyer votre chèque au trésorier, voici son adresse :"
 
-#: templates/resa/orders_details.html:84
+#: templates/resa/orders_details.html:93
 msgid "payable to:"
 msgstr "à l'ordre de :"
 
-#: templates/resa/orders_details.html:87
+#: templates/resa/orders_details.html:96
 msgid ""
 "For payments with cashiers check, please notify our accountant when the "
 "check has been sent. Cashiers check payments might include fee if your bank "
@@ -1456,11 +1468,11 @@ msgstr ""
 "du chèque. Le paiement par chèque peut entrainer des frais si votre banque "
 "n'est pas située en France ou en Europe."
 
-#: templates/resa/orders_details.html:93
+#: templates/resa/orders_details.html:102
 msgid "Other payment methods"
 msgstr "Autres modes de paiement"
 
-#: templates/resa/orders_details.html:95
+#: templates/resa/orders_details.html:104
 msgid ""
 "If you wish to use other methods of payment, please contact our accountant:"
 msgstr ""

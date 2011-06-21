@@ -120,6 +120,24 @@ def orders_details(request, tmpl, order_id=0):
     return tmpl, locals()
 
 @login_required
+@auto_render
+def orders_delete(request, order_id=0):
+    try:
+        order = Order.objects.get(user=request.user, id=int(order_id))
+    except:
+        order = None
+
+    # only allowed to see its own orders
+    if order and order.user.id != request.user.id:
+        order = None
+
+    if not order:
+        return HttpResponseRedirect('/resa/orders/details/'+order_id)
+    order.remove()
+
+    return HttpResponseRedirect('/resa/orders/')
+
+@login_required
 def orders_pdf(request, tmpl, order_id=0):
     try:
         order_id = int(order_id)

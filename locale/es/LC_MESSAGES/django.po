@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-19 22:20+0200\n"
+"POT-Creation-Date: 2011-06-22 01:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -182,11 +182,11 @@ msgstr ""
 msgid "Staff Order"
 msgstr ""
 
-#: account/models.py:85
+#: account/models.py:84
 msgid "User profile"
 msgstr ""
 
-#: account/models.py:86
+#: account/models.py:85
 msgid "Users Profiles"
 msgstr ""
 
@@ -378,7 +378,7 @@ msgstr ""
 
 #: resa/models.py:206 templates/account/create.html:34
 #: templates/account/manage_badge.html:14
-#: templates/account/menu_manager.html:12 templates/account/search.html:46
+#: templates/account/menu_manager.html:10 templates/account/search.html:46
 #: templates/resa/orders_notpaid.html:36 templates/resa/orders_notpaid.html:95
 #: templates/resa/orders_notpaid.html:154
 msgid "Badge"
@@ -400,7 +400,7 @@ msgstr ""
 msgid "Order"
 msgstr ""
 
-#: resa/orders.py:20 templates/account/menu_manager.html:8
+#: resa/orders.py:20 templates/account/menu_manager.html:7
 msgid "Orders"
 msgstr ""
 
@@ -440,11 +440,11 @@ msgstr ""
 msgid "Stock"
 msgstr ""
 
-#: resa/views.py:38 resa/views.py:267
+#: resa/views.py:38 resa/views.py:285
 msgid "Product successfully removed from cart"
 msgstr ""
 
-#: resa/views.py:40 resa/views.py:269
+#: resa/views.py:40 resa/views.py:287
 msgid "Error while removing product from cart"
 msgstr ""
 
@@ -452,7 +452,7 @@ msgstr ""
 msgid "Product(s) successfully added"
 msgstr ""
 
-#: resa/views.py:58 resa/views.py:282
+#: resa/views.py:58 resa/views.py:300
 msgid "Product(s) successfully updated"
 msgstr ""
 
@@ -460,7 +460,7 @@ msgstr ""
 msgid "Error while adding product(s)"
 msgstr ""
 
-#: resa/views.py:60 resa/views.py:284
+#: resa/views.py:60 resa/views.py:302
 msgid "Error while updating product(s)"
 msgstr ""
 
@@ -470,72 +470,72 @@ msgid ""
 "the available quantity"
 msgstr ""
 
-#: resa/views.py:79 resa/views.py:295
+#: resa/views.py:79 resa/views.py:313
 msgid "Order successfully confirmed"
 msgstr ""
 
-#: resa/views.py:191
+#: resa/views.py:209
 msgid "Order sucessfully marked as paid"
 msgstr ""
 
-#: resa/views.py:198
+#: resa/views.py:216
 msgid "Order sucessfully removed"
 msgstr ""
 
-#: resa/views.py:209
+#: resa/views.py:227
 msgid "Order sucessfully updated"
 msgstr ""
 
-#: resa/views.py:262
+#: resa/views.py:280
 msgid "Product successfully added to cart"
 msgstr ""
 
-#: resa/views.py:264
+#: resa/views.py:282
 msgid "Error while adding product to cart"
 msgstr ""
 
-#: resa/views.py:290
+#: resa/views.py:308
 msgid ""
 "Unable to confirm this order, one (or more) product(s) in the cart exceed "
 "the available quantity"
 msgstr ""
 
-#: resa/views.py:354 resa/views.py:402
+#: resa/views.py:372 resa/views.py:420
 msgid "Your payment has been canceled, you could resume it later."
 msgstr ""
 
-#: resa/views.py:367 resa/views.py:412 templates/resa/orders_details.html:16
+#: resa/views.py:385 resa/views.py:430 templates/resa/orders_details.html:16
 msgid "This order is not yours."
 msgstr ""
 
-#: resa/views.py:370
+#: resa/views.py:388
 #, python-format
 msgid "It seems that PayPal did not accept your payment (Code: %s)."
 msgstr ""
 
-#: resa/views.py:372
+#: resa/views.py:390
 msgid ""
 "Your payment has been confirmed by PayPal, you should receive a notification "
 "by email in a few minutes."
 msgstr ""
 
-#: resa/views.py:374 resa/views.py:416
+#: resa/views.py:392 resa/views.py:434
 msgid "Unable to find the order related to this payment."
 msgstr ""
 
-#: resa/views.py:404
+#: resa/views.py:422
 msgid ""
 "Your payment has been rejected by the bank, you should retry in few days or "
 "try another payment method."
 msgstr ""
 
-#: resa/views.py:414
+#: resa/views.py:432
 msgid ""
 "Your payment has been confirmed by the bank, you should receive a "
 "notification by email in a few minutes."
 msgstr ""
 
-#: resa/views.py:418
+#: resa/views.py:436
 msgid ""
 "Your payment has failed, you should retry in few days or try another payment "
 "method."
@@ -665,7 +665,7 @@ msgid "User successfully created"
 msgstr ""
 
 #: templates/account/create.html:33 templates/account/edit.html:17
-#: templates/account/menu_manager.html:11 templates/resa/manage_compta.html:31
+#: templates/account/menu_manager.html:9 templates/resa/manage_compta.html:31
 msgid "Account"
 msgstr ""
 
@@ -795,7 +795,7 @@ msgid "User Network parameters"
 msgstr ""
 
 #: templates/account/manage_netparams.html:14 templates/account/menu.html:11
-#: templates/account/menu_manager.html:14 templates/account/netparams.html:5
+#: templates/account/menu_manager.html:12 templates/account/netparams.html:5
 #: templates/account/netparams.html:12
 msgid "Network parameters"
 msgstr ""
@@ -880,27 +880,27 @@ msgstr ""
 msgid "Search user"
 msgstr ""
 
-#: templates/account/menu.html:25 templates/resa/orders_search.html:5
+#: templates/account/menu.html:24 templates/resa/orders_search.html:5
 #: templates/resa/orders_search.html:12
 msgid "Search order"
 msgstr ""
 
-#: templates/account/menu.html:28 templates/resa/orders_notpaid.html:5
+#: templates/account/menu.html:26 templates/resa/orders_notpaid.html:5
 #: templates/resa/orders_notpaid.html:12
 msgid "Orders not paid"
 msgstr ""
 
-#: templates/account/menu.html:29 templates/resa/sales.html:5
+#: templates/account/menu.html:27 templates/resa/sales.html:5
 #: templates/resa/sales.html.py:12
 msgid "Sales"
 msgstr ""
 
-#: templates/account/menu.html:30 templates/resa/stocks.html:5
+#: templates/account/menu.html:28 templates/resa/stocks.html:5
 #: templates/resa/stocks.html.py:12
 msgid "Stocks"
 msgstr ""
 
-#: templates/account/menu.html:31 templates/resa/stats.html:5
+#: templates/account/menu.html:29 templates/resa/stats.html:5
 #: templates/resa/stats.html.py:12
 msgid "Statistics"
 msgstr ""
@@ -909,15 +909,15 @@ msgstr ""
 msgid "User:"
 msgstr ""
 
-#: templates/account/menu_manager.html:9 templates/resa/manage_cart.html:16
+#: templates/account/menu_manager.html:8 templates/resa/manage_cart.html:16
 msgid "Cart"
 msgstr ""
 
-#: templates/account/menu_manager.html:17
+#: templates/account/menu_manager.html:15
 msgid "Accounting"
 msgstr ""
 
-#: templates/account/menu_manager.html:22
+#: templates/account/menu_manager.html:20
 msgid "Cannot find the user to edit (check permissions)"
 msgstr ""
 
@@ -1285,7 +1285,7 @@ msgid "Pending order(s)"
 msgstr ""
 
 #: templates/resa/manage_orders.html:48 templates/resa/manage_orders.html:87
-#: templates/resa/orders_details.html:12 templates/resa/orders_details.html:54
+#: templates/resa/orders_details.html:12 templates/resa/orders_details.html:63
 msgid "Order no"
 msgstr ""
 
@@ -1337,65 +1337,77 @@ msgid "Billing"
 msgstr ""
 
 #: templates/resa/orders_details.html:37
-msgid "Payment by credit card"
+msgid "Delete this order"
 msgstr ""
 
-#: templates/resa/orders_details.html:44 templates/resa/orders_details.html:62
-msgid "Payment by PayPal"
+#: templates/resa/orders_details.html:40
+msgid "Delete this order definitely"
+msgstr ""
+
+#: templates/resa/orders_details.html:40
+msgid "Are you sure?"
 msgstr ""
 
 #: templates/resa/orders_details.html:46
+msgid "Payment by credit card"
+msgstr ""
+
+#: templates/resa/orders_details.html:53 templates/resa/orders_details.html:71
+msgid "Payment by PayPal"
+msgstr ""
+
+#: templates/resa/orders_details.html:55
 msgid "Proceed the payment using PayPal:"
 msgstr ""
 
-#: templates/resa/orders_details.html:64
+#: templates/resa/orders_details.html:73
 msgid ""
 "If it is possible for you to use another payment method than PayPal, please "
 "do it. PayPal payments involves expensive fees for us."
 msgstr ""
 
-#: templates/resa/orders_details.html:69
+#: templates/resa/orders_details.html:78
 msgid "Payment by bank transfer"
 msgstr ""
 
-#: templates/resa/orders_details.html:71
+#: templates/resa/orders_details.html:80
 msgid "IBAN (International Bank Account Number):"
 msgstr ""
 
-#: templates/resa/orders_details.html:73
+#: templates/resa/orders_details.html:82
 msgid "BIC (Bank Identifier Code):"
 msgstr ""
 
-#: templates/resa/orders_details.html:75
+#: templates/resa/orders_details.html:84
 msgid ""
 "Please add the order(s) id(s) in the bank transfer title and notify our "
 "accountant when the check has been sent."
 msgstr ""
 
-#: templates/resa/orders_details.html:80
+#: templates/resa/orders_details.html:89
 msgid "Payment by cashiers check"
 msgstr ""
 
-#: templates/resa/orders_details.html:82
+#: templates/resa/orders_details.html:91
 msgid "Send your check to the treasurer, here is the postal address:"
 msgstr ""
 
-#: templates/resa/orders_details.html:84
+#: templates/resa/orders_details.html:93
 msgid "payable to:"
 msgstr ""
 
-#: templates/resa/orders_details.html:87
+#: templates/resa/orders_details.html:96
 msgid ""
 "For payments with cashiers check, please notify our accountant when the "
 "check has been sent. Cashiers check payments might include fee if your bank "
 "is not located in France or in the EU."
 msgstr ""
 
-#: templates/resa/orders_details.html:93
+#: templates/resa/orders_details.html:102
 msgid "Other payment methods"
 msgstr ""
 
-#: templates/resa/orders_details.html:95
+#: templates/resa/orders_details.html:104
 msgid ""
 "If you wish to use other methods of payment, please contact our accountant:"
 msgstr ""

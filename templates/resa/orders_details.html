@@ -34,6 +34,15 @@
             {% else %}
 
                 <div class="section">
+                    <h3>{% trans "Delete this order" %}</h3>
+                    <div class="content">
+                        <form action="/resa/orders/delete/{{ order.id }}" method="get">
+                            <input type="submit" value="{% trans "Delete this order definitely" %}" onclick="return confirm('{% trans "Are you sure?" %}');" />
+                        </form>
+                    </div>
+                </div>
+
+                <div class="section">
                     <h3>{% trans "Payment by credit card" %}</h3>
                     <div class="content">
                         {% include bp_tmpl %}
