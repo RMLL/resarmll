@@ -67,7 +67,6 @@ class UserProfile(models.Model):
         return ret
 
     def is_order_orga(self, order_id):
-        print self.get_order_orga(), order_id, self.get_order_orga() == order_id
         return self.get_order_orga() == order_id
 
     def has_orders_ok(self):
