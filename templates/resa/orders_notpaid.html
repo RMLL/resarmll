@@ -2,6 +2,11 @@
 
 {% load i18n %}
 
+{% block extrafoot %}
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/common.js"></script>
+{% endblock %}
+
 {% block title %}{% trans "Orders not paid" %}{% endblock %}
 
 {% block sidebar %}
@@ -20,180 +25,228 @@
     <div id="orders_notpaid">
 
         {% if results_orga %}
-            <div class="section">
-                <h3>{% trans "Organization" %}</h3>
-                <div class="content">
-                    <table class="list">
-                        <tr>
-                            <th>#</th>
-                            <th>{% trans "Id" %}</th>
-                            <th>{% trans "Last name" %}</th>
-                            <th>{% trans "First name" %}</th>
-                            <th>{% trans "Email" %}</th>
-                            <th>{% trans "Count" %}</th>
-                            <th>{% trans "Res." %}</th>
-                            <th>{% trans "Ord." %}</th>
-                            <th>{% trans "Badge" %}</th>
-                            <th></th>
-                        </tr>
-                        {% for u in results_orga %}
+            <form action="/resa/orders/notpaid/#emailcompose" method="post">
+                <div class="section">
+                    <h3>{% trans "Organization" %}</h3>
+                    <div class="content">
+                        <table class="list">
                             <tr>
-                                <td>{{ forloop.counter }}</td>
-                                <td>{{ u.id }}</td>
-                                <td>{{ u.last_name }}</td>
-                                <td>{{ u.first_name }}</td>
-                                <td>{{ u.email }}</td>
-                                <td>
-                                    <strong style="color:{% if u.get_profile.payment_later %}green{% else %}red{% endif %};">
-                                        {{ u.num_orders }}
-                                    </strong>
-                                    {% if u.get_profile.get_order_orga %}
-                                        <strong>-1</strong>
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    <strong style="color:{% if u.get_profile.has_orders_ok %}green{% else %}red{% endif %};">
-                                        {% if u.get_profile.has_orders_ok %}
-                                            ok
-                                        {% else %}
-                                            ko
-                                        {% endif %}
-                                    </strong>
-                                </td>
-                                <td>
-                                    {% if u.get_profile.get_order_orga %}
-                                        {{ u.get_profile.get_order_orga }}
-                                    {% endif %}
-                                </td>
-                                <td>{{ u.get_profile.badge_type }}</td>
-                                <td>
-                                    <a href="/resa/manage_orders/{{ u.id }}">
-                                        {% trans "View" %}
-                                    </a>
-                                </td>
+                                <th><input type="checkbox" id="select_orgas" name="select_orgas" onclick="toggle_checkboxes_from_checkbox(this, 'select_orga');" /></th>
+                                <th>#</th>
+                                <th>{% trans "Id" %}</th>
+                                <th>{% trans "Last name" %}</th>
+                                <th>{% trans "First name" %}</th>
+                                <th>{% trans "Email" %}</th>
+                                <th>{% trans "Count" %}</th>
+                                <th>{% trans "Res." %}</th>
+                                <th>{% trans "Ord." %}</th>
+                                <th>{% trans "Badge" %}</th>
+                                <th></th>
                             </tr>
-                        {% endfor %}
-                    </table>
+                            {% for u in results_orga %}
+                                <tr>
+                                    <td><input type="checkbox" name="user_{{ u.id }}" class="select_orga" {% if u.id in selected_users %} checked="checked"{% endif %} /></td>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ u.id }}</td>
+                                    <td>{{ u.last_name }}</td>
+                                    <td>{{ u.first_name }}</td>
+                                    <td>{{ u.email }}</td>
+                                    <td>
+                                        <strong style="color:{% if u.get_profile.payment_later %}green{% else %}red{% endif %};">
+                                            {{ u.num_orders }}
+                                        </strong>
+                                        {% if u.get_profile.get_order_orga %}
+                                            <strong>-1</strong>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <strong style="color:{% if u.get_profile.has_orders_ok %}green{% else %}red{% endif %};">
+                                            {% if u.get_profile.has_orders_ok %}
+                                                ok
+                                            {% else %}
+                                                ko
+                                            {% endif %}
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        {% if u.get_profile.get_order_orga %}
+                                            {{ u.get_profile.get_order_orga }}
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ u.get_profile.badge_type }}</td>
+                                    <td>
+                                        <a href="/resa/manage_orders/{{ u.id }}">
+                                            {% trans "View" %}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
                 </div>
-            </div>
-        {% endif %}
+            {% endif %}
 
-        {% if results_speakers %}
-            <div class="section">
-                <h3>{% trans "Speakers" %}</h3>
-                <div class="content">
-                    <table class="list">
-                        <tr>
-                            <th>#</th>
-                            <th>{% trans "Id" %}</th>
-                            <th>{% trans "Last name" %}</th>
-                            <th>{% trans "First name" %}</th>
-                            <th>{% trans "Email" %}</th>
-                            <th>{% trans "Count" %}</th>
-                            <th>{% trans "Res." %}</th>
-                            <th>{% trans "Ord." %}</th>
-                            <th>{% trans "Badge" %}</th>
-                            <th></th>
-                        </tr>
-                        {% for u in results_speakers %}
+            {% if results_speakers %}
+                <div class="section">
+                    <h3>{% trans "Speakers" %}</h3>
+                    <div class="content">
+                        <table class="list">
                             <tr>
-                                <td>{{ forloop.counter }}</td>
-                                <td>{{ u.id }}</td>
-                                <td>{{ u.last_name }}</td>
-                                <td>{{ u.first_name }}</td>
-                                <td>{{ u.email }}</td>
-                                <td>
-                                    <strong style="color:{% if u.get_profile.payment_later %}green{% else %}red{% endif %};">
-                                        {{ u.num_orders }}
-                                    </strong>
-                                    {% if u.get_profile.get_order_orga %}
-                                        <strong>-1</strong>
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    <strong style="color:{% if u.get_profile.has_orders_ok %}green{% else %}red{% endif %};">
-                                        {% if u.get_profile.has_orders_ok %}
-                                            ok
-                                        {% else %}
-                                            ko
-                                        {% endif %}
-                                    </strong>
-                                </td>
-                                <td>
-                                    {% if u.get_profile.get_order_orga %}
-                                        {{ u.get_profile.get_order_orga }}
-                                    {% endif %}
-                                </td>
-                                <td>{{ u.get_profile.badge_type }}</td>
-                                <td>
-                                    <a href="/resa/manage_orders/{{ u.id }}">
-                                        {% trans "View" %}
-                                    </a>
-                                </td>
+                                <th><input type="checkbox" id="select_speakers" name="select_speakers" onclick="toggle_checkboxes_from_checkbox(this, 'select_speaker');" /></th>
+                                <th>#</th>
+                                <th>{% trans "Id" %}</th>
+                                <th>{% trans "Last name" %}</th>
+                                <th>{% trans "First name" %}</th>
+                                <th>{% trans "Email" %}</th>
+                                <th>{% trans "Count" %}</th>
+                                <th>{% trans "Res." %}</th>
+                                <th>{% trans "Ord." %}</th>
+                                <th>{% trans "Badge" %}</th>
+                                <th></th>
                             </tr>
-                        {% endfor %}
-                    </table>
+                            {% for u in results_speakers %}
+                                <tr>
+                                    <td><input type="checkbox" name="user_{{ u.id }}" class="select_speaker" {% if u.id in selected_users %} checked="checked"{% endif %} /></td>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ u.id }}</td>
+                                    <td>{{ u.last_name }}</td>
+                                    <td>{{ u.first_name }}</td>
+                                    <td>{{ u.email }}</td>
+                                    <td>
+                                        <strong style="color:{% if u.get_profile.payment_later %}green{% else %}red{% endif %};">
+                                            {{ u.num_orders }}
+                                        </strong>
+                                        {% if u.get_profile.get_order_orga %}
+                                            <strong>-1</strong>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <strong style="color:{% if u.get_profile.has_orders_ok %}green{% else %}red{% endif %};">
+                                            {% if u.get_profile.has_orders_ok %}
+                                                ok
+                                            {% else %}
+                                                ko
+                                            {% endif %}
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        {% if u.get_profile.get_order_orga %}
+                                            {{ u.get_profile.get_order_orga }}
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ u.get_profile.badge_type }}</td>
+                                    <td>
+                                        <a href="/resa/manage_orders/{{ u.id }}">
+                                            {% trans "View" %}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
                 </div>
-            </div>
-        {% endif %}
+            {% endif %}
 
-        {% if results_others %}
-            <div class="section">
-                <h3>{% trans "Others" %}</h3>
-                <div class="content">
-                    <table class="list">
-                        <tr>
-                            <th>#</th>
-                            <th>{% trans "Id" %}</th>
-                            <th>{% trans "Last name" %}</th>
-                            <th>{% trans "First name" %}</th>
-                            <th>{% trans "Email" %}</th>
-                            <th>{% trans "Count" %}</th>
-                            <th>{% trans "Res." %}</th>
-                            <th>{% trans "Ord." %}</th>
-                            <th>{% trans "Badge" %}</th>
-                            <th></th>
-                        </tr>
-                        {% for u in results_others %}
+            {% if results_others %}
+                <div class="section">
+                    <h3>{% trans "Others" %}</h3>
+                    <div class="content">
+                        <table class="list">
                             <tr>
-                                <td>{{ forloop.counter }}</td>
-                                <td>{{ u.id }}</td>
-                                <td>{{ u.last_name }}</td>
-                                <td>{{ u.first_name }}</td>
-                                <td>{{ u.email }}</td>
-                                <td>
-                                    <strong style="color:{% if u.get_profile.payment_later %}green{% else %}red{% endif %};">
-                                        {{ u.num_orders }}
-                                    </strong>
-                                    {% if u.get_profile.get_order_orga %}
-                                        <strong>-1</strong>
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    <strong style="color:{% if u.get_profile.has_orders_ok %}green{% else %}red{% endif %};">
-                                        {% if u.get_profile.has_orders_ok %}
-                                            ok
-                                        {% else %}
-                                            ko
-                                        {% endif %}
-                                    </strong>
-                                </td>
-                                <td>
-                                    {% if u.get_profile.get_order_orga %}
-                                        {{ u.get_profile.get_order_orga }}
-                                    {% endif %}
-                                </td>
-                                <td>{{ u.get_profile.badge_type }}</td>
-                                <td>
-                                    <a href="/resa/manage_orders/{{ u.id }}">
-                                        {% trans "View" %}
-                                    </a>
-                                </td>
+                                <th><input type="checkbox" id="select_others" name="select_others" onclick="toggle_checkboxes_from_checkbox(this, 'select_other');" /></th>
+                                <th>#</th>
+                                <th>{% trans "Id" %}</th>
+                                <th>{% trans "Last name" %}</th>
+                                <th>{% trans "First name" %}</th>
+                                <th>{% trans "Email" %}</th>
+                                <th>{% trans "Count" %}</th>
+                                <th>{% trans "Res." %}</th>
+                                <th>{% trans "Ord." %}</th>
+                                <th>{% trans "Badge" %}</th>
+                                <th></th>
                             </tr>
-                        {% endfor %}
-                    </table>
+                            {% for u in results_others %}
+                                <tr>
+                                    <td><input type="checkbox" name="user_{{ u.id }}" class="select_other" {% if u.id in selected_users %} checked="checked"{% endif %} /></td>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ u.id }}</td>
+                                    <td>{{ u.last_name }}</td>
+                                    <td>{{ u.first_name }}</td>
+                                    <td>{{ u.email }}</td>
+                                    <td>
+                                        <strong style="color:{% if u.get_profile.payment_later %}green{% else %}red{% endif %};">
+                                            {{ u.num_orders }}
+                                        </strong>
+                                        {% if u.get_profile.get_order_orga %}
+                                            <strong>-1</strong>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <strong style="color:{% if u.get_profile.has_orders_ok %}green{% else %}red{% endif %};">
+                                            {% if u.get_profile.has_orders_ok %}
+                                                ok
+                                            {% else %}
+                                                ko
+                                            {% endif %}
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        {% if u.get_profile.get_order_orga %}
+                                            {{ u.get_profile.get_order_orga }}
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ u.get_profile.badge_type }}</td>
+                                    <td>
+                                        <a href="/resa/manage_orders/{{ u.id }}">
+                                            {% trans "View" %}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
                 </div>
-            </div>
+
+                <div class="section" id="emailcompose">
+                    <h3>{% trans "Mass mailing" %}</h3>
+                    <div class="content">
+                        {% if msg_err %}
+                            <div class="main-error">
+                                {{ msg_err }}
+                            </div>
+                        {% endif %}
+                        {% if msg_ok %}
+                            <div class="main-success">
+                                {{ msg_ok }}
+                            </div>
+                        {% endif %}
+                        <fieldset>
+                            <legend>{% trans "Email settings" %}</legend>
+                            <div class="field">
+                                <label>{% trans "Sender:" %}</label>
+                                <div class="widget">
+                                    {{ mail_sender_name }} &lt;{{ mail_sender_email }}&gt;
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="subject">{% trans "Email subject:" %}</label>
+                                <div class="widget">
+                                    <input name="subject" id="subject" type="text" class="text" size="50" value="{{ mail_subject }}"/>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="body">{% trans "Email body:" %}</label>
+                                <div class="widget">
+                                    <textarea rows="20" name="body" id="body" cols="50" class="text">{{ mail_body }}</textarea>
+                                </div>
+                            </div>
+                            <div class="field sub">
+                                <input type="submit" value="{% trans "Send" %}" />
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </form>
         {% endif %}
 
     </div>

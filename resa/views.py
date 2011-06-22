@@ -7,6 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core.mail import send_mail
 
 from models import Article, Country
 from forms import PayOrderForm, DelOrderForm
@@ -180,6 +181,40 @@ def orders_notpaid(request, tmpl):
     results_orga = [u for u in results if u.get_profile().badge_type.section == 'orga']
     results_speakers = [u for u in results if u.get_profile().badge_type.section == 'speakers']
     results_others = [u for u in results if u.get_profile().badge_type.section != 'orga' and u.get_profile().badge_type.section != 'speakers']
+
+    mail_sender_name = request.user.get_full_name()
+    mail_sender_email = settings.TREASURER_EMAIL
+    mail_subject = request.POST['subject'] if request.POST.has_key('subject') else ''
+    mail_body = request.POST['body'] if request.POST.has_key('body') else ''
+    selected_users = []
+
+    msg_err = msg_ok = None
+
+    if len(request.POST) > 0:
+        for k,v  in request.POST.iteritems():
+            if k.startswith('user_'):
+                selected_users.append(int(k[5:]))
+
+        if mail_body.strip() == '':
+            msg_err = _("Email body should not be empty")
+        if mail_subject.strip() == '':
+            msg_err = _("Email subject should not be empty")
+        if selected_users == []:
+            msg_err = _("At least one user should be selected")
+
+        if msg_err == None:
+            users = User.objects.filter(id__in=selected_users)
+            emailfrom = "%s <%s>" % (mail_sender_name, mail_sender_email)
+            for user in users:
+                if send_mail(mail_subject, mail_body, emailfrom, [user.email]) != 1:
+                    msg_err = _("One or more emails were not sent correctly")
+
+            if msg_err == None:
+                msg_ok = _("All emails were sucessfully sent")
+                mail_subject = ''
+                mail_body = ''
+                selected_users = []
+
     return tmpl, locals()
 
 @login_required

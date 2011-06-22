@@ -57,4 +57,10 @@ function createform_gen_email(firstname,lastname,email,domain) {
     return $('#'+email).val(replace_accents($('#'+firstname).val())+'.'+replace_accents($('#'+lastname).val())+'@'+domain);
 }
 
+function toggle_checkboxes_from_checkbox(checkbox, cls) {
+    $('.'+cls).each(function(index, value) {
+        $(value).attr('checked', $(checkbox).attr('checked'));
+    });
+}
+
 //]]>
