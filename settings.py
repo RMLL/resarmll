@@ -143,11 +143,8 @@ BADGE_BIG_BG_IMAGE = PROJECT_DIR + '/templates/images/badge-bg-big.png'
 BADGE_PNG_DEST_DIR = 'badges/png/'
 BADGE_BIG_PNG_DEST_DIR = 'badges/png/big/'
 BADGE_PDF_DEST_DIR = 'badges/pdf/'
-BADGE_PRINTER_PDF_DEST_DIR = 'badges/pdf/printer/'
 BADGE_WIDTH_MM = 85
 BADGE_HEIGHT_MM = 54
-BADGE_PRINTER_WIDTH_MM = 86.0
-BADGE_PRINTER_HEIGHT_MM = 54.0
 
 ### USERS DB SYNC ###
 global_httpauth_username = 'rmll'
@@ -279,7 +276,6 @@ if os.environ.has_key('DJANGO_DEVEL'):
     BADGE_PNG_DEST_DIR = 'tmp/badges/png/'
     BADGE_BIG_PNG_DEST_DIR = 'tmp/badges/png/big/'
     BADGE_PDF_DEST_DIR = 'tmp/badges/pdf/'
-    BADGE_PRINTER_PDF_DEST_DIR = 'tmp/badges/pdf/printer/'
 else:
     DEBUG = False
     TEMPLATE_DEBUG = False

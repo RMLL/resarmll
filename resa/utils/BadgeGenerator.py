@@ -119,12 +119,6 @@ def get_path_big_png_portrait(id):
 def get_path_pdf(id):
     return settings.BADGE_PDF_DEST_DIR+str(id)+'.pdf'
 
-def get_path_pdf_printer(id):
-    return settings.BADGE_PRINTER_PDF_DEST_DIR+str(id)+'.pdf'
-
-def get_path_pdf_printer_portrait(id):
-    return settings.BADGE_PRINTER_PDF_DEST_DIR+str(id)+'p.pdf'
-
 class cairoContext(cairo.Context):
 
     def use_font(self, font):
@@ -408,44 +402,6 @@ class BadgeGenerator:
             elems.append(Image(img, w, h))
             sdoc.build(elems)
 
-    def create_pdf_printer(self):
-        img = settings.DOCUMENT_ROOT + get_path_big_png(self.user_id)
-        if os.path.isfile(img):
-            pdf = settings.DOCUMENT_ROOT + get_path_pdf_printer(self.user_id)
-            w = settings.BADGE_PRINTER_WIDTH_MM*mm
-            h = settings.BADGE_PRINTER_HEIGHT_MM*mm
-            sdoc = SimpleDocTemplate(pdf, pagesize=landscape((w,h)))
-            elems = []
-            elems.append(PageBreak())
-            sdoc.build(elems, onFirstPage=self.create_pdf_printer_firstPage)
-
-    def create_pdf_printer_firstPage(self, canvas, doc):
-        w = settings.BADGE_PRINTER_WIDTH_MM*mm
-        h = settings.BADGE_PRINTER_HEIGHT_MM*mm
-        img = settings.DOCUMENT_ROOT + get_path_big_png(self.user_id)
-        canvas.saveState()
-        canvas.drawImage(img, 0, 0, w, h)
-        canvas.restoreState()
-
-    def create_pdf_printer_portrait(self):
-        img = settings.DOCUMENT_ROOT + get_path_big_png(self.user_id)
-        if os.path.isfile(img):
-            pdf = settings.DOCUMENT_ROOT + get_path_pdf_printer_portrait(self.user_id)
-            w = settings.BADGE_PRINTER_HEIGHT_MM*mm
-            h = settings.BADGE_PRINTER_WIDTH_MM*mm
-            sdoc = SimpleDocTemplate(pdf, pagesize=portrait((w,h)))
-            elems = []
-            elems.append(PageBreak())
-            sdoc.build(elems, onFirstPage=self.create_pdf_printer_firstPage_portrait)
-
-    def create_pdf_printer_firstPage_portrait(self, canvas, doc):
-        w = settings.BADGE_PRINTER_HEIGHT_MM*mm
-        h = settings.BADGE_PRINTER_WIDTH_MM*mm
-        img = settings.DOCUMENT_ROOT + get_path_big_png_portrait(self.user_id)
-        canvas.saveState()
-        canvas.drawImage(img, 0, 0, w, h)
-        canvas.restoreState()
-
     def create_all(self):
         self.create_png()
         self.create_big_png()
@@ -453,8 +409,6 @@ class BadgeGenerator:
         img = PImage.open(settings.DOCUMENT_ROOT + get_path_big_png(self.user_id)).rotate(90)
         img.save(settings.DOCUMENT_ROOT + get_path_big_png_portrait(self.user_id))
         self.create_pdf()
-        self.create_pdf_printer()
-        self.create_pdf_printer_portrait()
 
     #def masspdfbadge(self, ids):
         #top = 5*mm
