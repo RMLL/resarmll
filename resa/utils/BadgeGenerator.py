@@ -233,7 +233,7 @@ class BadgeGenerator:
         # image de fond
         self.bg = settings.BADGE_BIG_BG_IMAGE
         # destination file
-        self.dest = settings.DOCUMENT_ROOT + get_path_big_png(self.user_id)
+        self.dest = get_path_big_png(self.user_id)
         # dimension du badge
         self.dimx, self.dimy = 1050, 637
         # footer height
@@ -269,7 +269,7 @@ class BadgeGenerator:
         # image de fond
         self.bg = settings.BADGE_BG_IMAGE
         # destination file
-        self.dest = settings.DOCUMENT_ROOT + get_path_png(self.user_id)
+        self.dest = get_path_png(self.user_id)
         # dimension du badge
         self.dimx, self.dimy = 319, 195
         # footer height
@@ -392,9 +392,9 @@ class BadgeGenerator:
 
 
     def create_pdf(self):
-        img = settings.DOCUMENT_ROOT + get_path_big_png(self.user_id)
+        img = get_path_big_png(self.user_id)
         if os.path.isfile(img):
-            pdf = settings.DOCUMENT_ROOT + get_path_pdf(self.user_id)
+            pdf = get_path_pdf(self.user_id)
             sdoc = SimpleDocTemplate(pdf, pagesize=A4)
             elems = []
             w = settings.BADGE_WIDTH_MM*mm
@@ -406,8 +406,8 @@ class BadgeGenerator:
         self.create_png()
         self.create_big_png()
         # create a rotated image
-        img = PImage.open(settings.DOCUMENT_ROOT + get_path_big_png(self.user_id)).rotate(90)
-        img.save(settings.DOCUMENT_ROOT + get_path_big_png_portrait(self.user_id))
+        img = PImage.open(get_path_big_png(self.user_id)).rotate(90)
+        img.save(get_path_big_png_portrait(self.user_id))
         self.create_pdf()
 
     #def masspdfbadge(self, ids):
