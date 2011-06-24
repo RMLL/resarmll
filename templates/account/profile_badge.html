@@ -13,12 +13,12 @@
 
     <div id="profile_badge">
         <div>
-            <a href="{{ badge_big_png }}">
-                <img src="{{ badge_png }}" alt="{% trans "Your badge" %}" />
+            <a href="/account/profile/badge/bigpng/{{ user.id }}">
+                <img src="/account/profile/badge/png/{{ user.id }}" alt="{% trans "Your badge" %}" />
             </a>
         </div>
         <p>
-            <a href="{{ badge_pdf }}">{% trans "Download the badge with the right size and ready to print (PDF)" %}</a>
+            <a href="/account/profile/badge/pdf/{{ user.id }}">{% trans "Download the badge with the right size and ready to print (PDF)" %}</a>
         </p>
     </div>
 

@@ -3,7 +3,8 @@ import os.path
 
 from django.db.models import Q
 from django.utils.translation import check_for_language, ugettext_lazy as _
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse, HttpResponseForbidden
+from django.core.servers.basehttp import FileWrapper
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django import forms
@@ -132,12 +133,36 @@ def profile_modify(request, tmpl):
 @login_required
 @auto_render
 def profile_badge(request, tmpl):
-    response_dct = {
-        'badge_png': settings.MEDIA_URL + BadgeGenerator.get_path_png(request.user.id),
-        'badge_big_png': settings.MEDIA_URL + BadgeGenerator.get_path_big_png(request.user.id),
-        'badge_pdf': settings.MEDIA_URL + BadgeGenerator.get_path_pdf(request.user.id),
-    }
-    return tmpl, response_dct
+    user =  request.user
+    return tmpl, locals()
+
+@login_required
+def profile_badge_view(request, output = 'png', user_id = 0):
+    response = HttpResponseForbidden()
+    user_id = int(user_id)
+
+    if user_id == request.user.id:
+        filepath = content_type = None
+        if output == 'png':
+            filepath = BadgeGenerator.get_path_png(user_id)
+            content_type = 'image/png'
+            content_disposition = 'inline; filename=badge-%s_%d.png' % (request.user.username, user_id)
+        elif output == 'bigpng':
+            filepath = BadgeGenerator.get_path_big_png(user_id)
+            content_type = 'image/png'
+            content_disposition = 'inline; filename=badgebig-%s_%d.png' % (request.user.username, user_id)
+        elif output == 'pdf':
+            filepath = BadgeGenerator.get_path_pdf(user_id)
+            content_type = 'application/pdf'
+            content_disposition = 'attachement; filename=badge-%s_%d.pdf' % (request.user.username, user_id)
+
+        if filepath and os.path.exists(filepath):
+            wrapper = FileWrapper(file(filepath))
+            response = HttpResponse(wrapper, content_type=content_type)
+            response['Content-Disposition'] = content_disposition
+            response['Content-Length'] = os.path.getsize(filepath)
+
+    return response
 
 @login_required
 @auto_render
@@ -300,22 +325,48 @@ def edit(request, tmpl, user_id=None):
 @reception_required
 @auto_render
 def manage_badge(request, tmpl, user_id):
-    user = None
+    user_obj = None
     if user_id:
         try:
-            user = User.objects.get(id=user_id)
+            user_obj = User.objects.get(id=user_id)
         except:
-            user = None
+            user_obj = None
 
-    response_dct = {
-        'user_obj': user,
-        'badge_png': settings.MEDIA_URL + BadgeGenerator.get_path_png(user_id),
-        'badge_big_png': settings.MEDIA_URL + BadgeGenerator.get_path_big_png(user_id),
-        'badge_pdf': settings.MEDIA_URL + BadgeGenerator.get_path_pdf(user_id),
-        'badge_pdf_printer': settings.MEDIA_URL + BadgeGenerator.get_path_pdf_printer(user_id),
-        'badge_pdf_printer_portait': settings.MEDIA_URL + BadgeGenerator.get_path_pdf_printer_portrait(user_id),
-    }
-    return tmpl, response_dct
+    return tmpl, locals()
+
+@login_required
+@reception_required
+def manage_badge_view(request, output = 'png', user_id = 0):
+    response = HttpResponseForbidden()
+
+    user = None
+    try:
+        user = User.objects.get(id=int(user_id))
+    except:
+        user = None
+
+    if user:
+        filepath = content_type = None
+        if output == 'png':
+            filepath = BadgeGenerator.get_path_png(user_id)
+            content_type = 'image/png'
+            content_disposition = 'inline; filename=badge-%s_%d.png' % (user.username, user.id)
+        elif output == 'bigpng':
+            filepath = BadgeGenerator.get_path_big_png(user_id)
+            content_type = 'image/png'
+            content_disposition = 'inline; filename=badgebig-%s_%d.png' % (user.username, user.id)
+        elif output == 'pdf':
+            filepath = BadgeGenerator.get_path_pdf(user_id)
+            content_type = 'application/pdf'
+            content_disposition = 'attachement; filename=badge-%s_%d.pdf' % (user.username, user.id)
+
+        if filepath and os.path.exists(filepath):
+            wrapper = FileWrapper(file(filepath))
+            response = HttpResponse(wrapper, content_type=content_type)
+            response['Content-Disposition'] = content_disposition
+            response['Content-Length'] = os.path.getsize(filepath)
+
+    return response
 
 @login_required
 @reception_required

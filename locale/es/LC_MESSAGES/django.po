@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-23 00:07+0200\n"
+"POT-Creation-Date: 2011-06-24 07:53+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -799,16 +799,9 @@ msgstr ""
 msgid "The badge"
 msgstr ""
 
-#: templates/account/manage_badge.html:24
+#: templates/account/manage_badge.html:23
 #: templates/account/profile_badge.html:21
 msgid "Download the badge with the right size and ready to print (PDF)"
-msgstr ""
-
-#: templates/account/manage_badge.html:28
-#: templates/account/manage_badge.html:32
-msgid ""
-"Download the badge with the right size and ready to be printed with the "
-"badge printer (PDF)"
 msgstr ""
 
 #: templates/account/manage_netparams.html:5

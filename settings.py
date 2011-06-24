@@ -140,9 +140,9 @@ COMPTA_PLAN_CLIENT_CODE = 411
 BADGE_CITY = "Strasbourg 2011"
 BADGE_BG_IMAGE = PROJECT_DIR + '/templates/images/badge-bg.png'
 BADGE_BIG_BG_IMAGE = PROJECT_DIR + '/templates/images/badge-bg-big.png'
-BADGE_PNG_DEST_DIR = 'badges/png/'
-BADGE_BIG_PNG_DEST_DIR = 'badges/png/big/'
-BADGE_PDF_DEST_DIR = 'badges/pdf/'
+BADGE_PNG_DEST_DIR = PROJECT_DIR + '/badges/png/'
+BADGE_BIG_PNG_DEST_DIR = PROJECT_DIR + '/badges/png/big/'
+BADGE_PDF_DEST_DIR = PROJECT_DIR + '/badges/pdf/'
 BADGE_WIDTH_MM = 85
 BADGE_HEIGHT_MM = 54
 
@@ -272,10 +272,6 @@ if os.environ.has_key('DJANGO_DEVEL'):
     SESSION_COOKIE_NAME += '-dev'
     DEBUG = True
     TEMPLATE_DEBUG = DEBUG
-
-    BADGE_PNG_DEST_DIR = 'tmp/badges/png/'
-    BADGE_BIG_PNG_DEST_DIR = 'tmp/badges/png/big/'
-    BADGE_PDF_DEST_DIR = 'tmp/badges/pdf/'
 else:
     DEBUG = False
     TEMPLATE_DEBUG = False

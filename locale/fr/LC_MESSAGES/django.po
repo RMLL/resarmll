@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-23 00:07+0200\n"
+"POT-Creation-Date: 2011-06-24 07:53+0200\n"
 "PO-Revision-Date: 2011-06-23 00:11+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -828,20 +828,11 @@ msgstr "Badge de l'utilisateur"
 msgid "The badge"
 msgstr "Le badge"
 
-#: templates/account/manage_badge.html:24
+#: templates/account/manage_badge.html:23
 #: templates/account/profile_badge.html:21
 msgid "Download the badge with the right size and ready to print (PDF)"
 msgstr ""
 "Télécharger le badge aux bonnes dimensions et prêt à être imprimé (PDF)"
-
-#: templates/account/manage_badge.html:28
-#: templates/account/manage_badge.html:32
-msgid ""
-"Download the badge with the right size and ready to be printed with the "
-"badge printer (PDF)"
-msgstr ""
-"Télécharger le badge aux bonnes dimensions et prêt à être imprimé avec "
-"l'imprimante à badges (PDF)"
 
 #: templates/account/manage_netparams.html:5
 msgid "User Network parameters"
@@ -1680,6 +1671,13 @@ msgstr "Confirmé"
 #: templates/resa/stocks.html:43
 msgid "Dispatched"
 msgstr "Distribué"
+
+#~ msgid ""
+#~ "Download the badge with the right size and ready to be printed with the "
+#~ "badge printer (PDF)"
+#~ msgstr ""
+#~ "Télécharger le badge aux bonnes dimensions et prêt à être imprimé avec "
+#~ "l'imprimante à badges (PDF)"
 
 #~ msgid "User Wifi access"
 #~ msgstr "Accès Wifi de l'utilisateur"
