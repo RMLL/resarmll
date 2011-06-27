@@ -4,6 +4,7 @@ import os.path
 from django.db.models import Q
 from django.utils.translation import check_for_language, ugettext_lazy as _
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseForbidden
+from django.utils.http import urlquote
 from django.core.servers.basehttp import FileWrapper
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -142,19 +143,19 @@ def profile_badge_view(request, output = 'png', user_id = 0):
     user_id = int(user_id)
 
     if user_id == request.user.id:
-        filepath = content_type = None
+        filepath = content_type = content_disposition = None
         if output == 'png':
             filepath = BadgeGenerator.get_path_png(user_id)
             content_type = 'image/png'
-            content_disposition = 'inline; filename=badge-%s_%d.png' % (request.user.username, user_id)
+            content_disposition = 'inline; filename=badge-%s_%d.png' % (urlquote(request.user.username), user_id)
         elif output == 'bigpng':
             filepath = BadgeGenerator.get_path_big_png(user_id)
             content_type = 'image/png'
-            content_disposition = 'inline; filename=badgebig-%s_%d.png' % (request.user.username, user_id)
+            content_disposition = 'inline; filename=badgebig-%s_%d.png' % (urlquote(request.user.username), user_id)
         elif output == 'pdf':
             filepath = BadgeGenerator.get_path_pdf(user_id)
             content_type = 'application/pdf'
-            content_disposition = 'attachement; filename=badge-%s_%d.pdf' % (request.user.username, user_id)
+            content_disposition = 'attachement; filename=badge-%s_%d.pdf' % (urlquote(request.user.username), user_id)
 
         if filepath and os.path.exists(filepath):
             wrapper = FileWrapper(file(filepath))
@@ -346,19 +347,19 @@ def manage_badge_view(request, output = 'png', user_id = 0):
         user = None
 
     if user:
-        filepath = content_type = None
+        filepath = content_type = content_disposition = None
         if output == 'png':
             filepath = BadgeGenerator.get_path_png(user_id)
             content_type = 'image/png'
-            content_disposition = 'inline; filename=badge-%s_%d.png' % (user.username, user.id)
+            content_disposition = 'inline; filename=badge-%s_%d.png' % (urlquote(user.username), user.id)
         elif output == 'bigpng':
             filepath = BadgeGenerator.get_path_big_png(user_id)
             content_type = 'image/png'
-            content_disposition = 'inline; filename=badgebig-%s_%d.png' % (user.username, user.id)
+            content_disposition = 'inline; filename=badgebig-%s_%d.png' % (urlquote(user.username), user.id)
         elif output == 'pdf':
             filepath = BadgeGenerator.get_path_pdf(user_id)
             content_type = 'application/pdf'
-            content_disposition = 'attachement; filename=badge-%s_%d.pdf' % (user.username, user.id)
+            content_disposition = 'attachement; filename=badge-%s_%d.pdf' % (urlquote(user.username), user.id)
 
         if filepath and os.path.exists(filepath):
             wrapper = FileWrapper(file(filepath))
