@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-24 07:53+0200\n"
+"POT-Creation-Date: 2011-06-27 23:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -162,7 +162,7 @@ msgstr ""
 msgid "Badge text"
 msgstr ""
 
-#: account/models.py:32 compta/models.py:60
+#: account/models.py:32 compta/models.py:60 templates/account/comments.html:27
 msgid "Comment(s)"
 msgstr ""
 
@@ -344,7 +344,7 @@ msgstr ""
 msgid "Article"
 msgstr ""
 
-#: resa/models.py:184 resa/models.py:194
+#: resa/models.py:184 resa/models.py:194 templates/account/comments.html:26
 msgid "Name"
 msgstr ""
 
@@ -667,6 +667,32 @@ msgstr ""
 msgid "LSM Booking"
 msgstr ""
 
+#: templates/account/comments.html:5 templates/account/comments.html.py:12
+#: templates/account/menu.html:25
+msgid "User's comments"
+msgstr ""
+
+#: templates/account/comments.html:16 templates/account/search.html:16
+#: templates/resa/orders_notpaid.html:21 templates/resa/orders_search.html:16
+#: templates/resa/sales.html:16
+msgid "No results"
+msgstr ""
+
+#: templates/account/comments.html:25 templates/account/search.html:41
+#: templates/resa/orders_notpaid.html:36 templates/resa/orders_notpaid.html:97
+#: templates/resa/orders_notpaid.html:158 templates/resa/sales.html:44
+#: templates/resa/sales.html.py:82
+msgid "Id"
+msgstr ""
+
+#: templates/account/comments.html:38 templates/account/search.html:60
+#: templates/resa/orders_notpaid.html:79
+#: templates/resa/orders_notpaid.html:140
+#: templates/resa/orders_notpaid.html:201 templates/resa/sales.html:65
+#: templates/resa/sales.html.py:103
+msgid "View"
+msgstr ""
+
 #: templates/account/create.html:11 templates/account/create.html.py:18
 msgid "Create an account"
 msgstr ""
@@ -894,27 +920,27 @@ msgstr ""
 msgid "Search user"
 msgstr ""
 
-#: templates/account/menu.html:24 templates/resa/orders_search.html:5
+#: templates/account/menu.html:27 templates/resa/orders_search.html:5
 #: templates/resa/orders_search.html:12
 msgid "Search order"
 msgstr ""
 
-#: templates/account/menu.html:26 templates/resa/orders_notpaid.html:10
+#: templates/account/menu.html:29 templates/resa/orders_notpaid.html:10
 #: templates/resa/orders_notpaid.html:17
 msgid "Orders not paid"
 msgstr ""
 
-#: templates/account/menu.html:27 templates/resa/sales.html:5
+#: templates/account/menu.html:30 templates/resa/sales.html:5
 #: templates/resa/sales.html.py:12
 msgid "Sales"
 msgstr ""
 
-#: templates/account/menu.html:28 templates/resa/stocks.html:5
+#: templates/account/menu.html:31 templates/resa/stocks.html:5
 #: templates/resa/stocks.html.py:12
 msgid "Stocks"
 msgstr ""
 
-#: templates/account/menu.html:29 templates/resa/stats.html:5
+#: templates/account/menu.html:32 templates/resa/stats.html:5
 #: templates/resa/stats.html.py:12
 msgid "Statistics"
 msgstr ""
@@ -1075,11 +1101,6 @@ msgstr ""
 msgid "Search a user"
 msgstr ""
 
-#: templates/account/search.html:16 templates/resa/orders_notpaid.html:21
-#: templates/resa/orders_search.html:16 templates/resa/sales.html:16
-msgid "No results"
-msgstr ""
-
 #: templates/account/search.html:23
 msgid "Search pattern:"
 msgstr ""
@@ -1087,13 +1108,6 @@ msgstr ""
 #: templates/account/search.html:33 templates/account/user_header.html:12
 #: templates/resa/orders_search.html:25 templates/resa/sales.html:31
 msgid "ok"
-msgstr ""
-
-#: templates/account/search.html:41 templates/resa/orders_notpaid.html:36
-#: templates/resa/orders_notpaid.html:97
-#: templates/resa/orders_notpaid.html:158 templates/resa/sales.html:44
-#: templates/resa/sales.html.py:82
-msgid "Id"
 msgstr ""
 
 #: templates/account/search.html:42 templates/resa/orders_notpaid.html:37
@@ -1115,13 +1129,6 @@ msgstr ""
 #: templates/resa/orders_notpaid.html:161 templates/resa/sales.html:47
 #: templates/resa/sales.html.py:85
 msgid "Email"
-msgstr ""
-
-#: templates/account/search.html:60 templates/resa/orders_notpaid.html:79
-#: templates/resa/orders_notpaid.html:140
-#: templates/resa/orders_notpaid.html:201 templates/resa/sales.html:65
-#: templates/resa/sales.html.py:103
-msgid "View"
 msgstr ""
 
 #: templates/account/user_header.html:10

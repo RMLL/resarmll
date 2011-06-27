@@ -275,6 +275,13 @@ def search(request, tmpl):
     return tmpl, locals()
 
 @login_required
+@manager_required
+@auto_render
+def comments(request, tmpl):
+    results = User.objects.exclude(Q(userprofile__comments__exact = '')).order_by('-id')
+    return tmpl, locals()
+
+@login_required
 @reception_required
 @auto_render
 def edit(request, tmpl, user_id=None):

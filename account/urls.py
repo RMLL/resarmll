@@ -45,4 +45,5 @@ urlpatterns = patterns ('',
     url(r'^edit/(?P<user_id>\d+)$', edit, {'tmpl': 'account/edit.html'}),
     url(r'^manage_badge/(?P<user_id>\d+)$', manage_badge, {'tmpl': 'account/manage_badge.html'}),
     url(r'^manage_badge/(?P<output>\w+)/(?P<user_id>\d+)$', manage_badge_view),
+    url(r'^comments/$', comments, {'tmpl': 'account/comments.html'}),
 )

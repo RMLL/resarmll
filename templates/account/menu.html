@@ -21,6 +21,9 @@
             {% endif %}
             <li><a href="/account/create/">{% trans "Create user" %}</a></li>
             <li><a href="/account/search/">{% trans "Search user" %}</a></li>
+            {% if user.is_staff or user.get_profile.is_manager %}
+                <li><a href="/account/comments/">{% trans "User's comments" %}</a></li>
+            {% endif %}
             <li><a href="/resa/orders/search/">{% trans "Search order" %}</a></li>
             {% if user.is_staff or user.get_profile.is_manager %}
                 <li><a href="/resa/orders/notpaid/">{% trans "Orders not paid" %}</a></li>
