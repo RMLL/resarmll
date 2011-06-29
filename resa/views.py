@@ -273,7 +273,7 @@ def manage_orders(request, tmpl, user_id=None):
     return tmpl, params
 
 @login_required
-@manager_required
+@reception_required
 def manage_orders_pdf(request, tmpl, order_id=0):
     try:
         order_id = int(order_id)
@@ -292,7 +292,7 @@ def manage_orders_pdf(request, tmpl, order_id=0):
     return response
 
 @login_required
-@manager_required
+@reception_required
 @auto_render
 def manage_cart(request, tmpl, user_id=None, action=None, product_id=None):
     user = None
