@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import os.path, cairo
 
-from cStringIO import StringIO
 from reportlab.platypus import PageTemplate, BaseDocTemplate, SimpleDocTemplate, Image, PageBreak
 from reportlab.lib.pagesizes import *
 from reportlab.lib.units import mm
@@ -410,37 +409,32 @@ class BadgeGenerator:
         img.save(get_path_big_png_portrait(self.user_id))
         self.create_pdf()
 
-    #def masspdfbadge(self, ids):
-        #top = 5*mm
-        #left = 10*mm
-        #vspace = 10*mm
-        #hspace = 4*mm
+    @staticmethod
+    def allbadges2pdf(outputfile, ids):
+        top = 5*mm
+        left = 10*mm
+        vspace = 10*mm
+        hspace = 4*mm
+        w = settings.BADGE_WIDTH_MM*mm
+        h = settings.BADGE_HEIGHT_MM*mm
 
-        #w = config.badgesettings()['width']*mm
-        #h = config.badgesettings()['height']*mm
+        c = canvas.Canvas(outputfile, pagesize=A4, pageCompression=0)
+        c.setAuthor('RMLL/LSM team')
+        c.setTitle('Mass Badges Generator')
 
-        #tmp = StringIO()
-        #c = canvas.Canvas(tmp, pagesize=A4, pageCompression=0)
-        #c.setAuthor('RMLL organisation')
-        #c.setTitle('Mass Badges Generator')
-
-        #imgs = []
-        #for id in ids:
-            #f = config.getroot()+'/www/badges/'+str(id)+'.png'
-            #if os.path.isfile(f):
-                #imgs.append(f)
-        #n = 0
-        #for img in imgs:
-            #xx = left + (n % 2)*w + (n % 2)*vspace
-            #yy = top + (n/2)*hspace + (n/2)*h
-            #c.drawInlineImage(PImage.open(img), x=xx, y=yy, width=w, height=h)
-            #n += 1
-            #if n==10:
-                #n = 0
-                #c.showPage()
-
-        #c.showPage()
-        #c.save()
-        #tmp.seek(0)
-
-        #return tmp.read()
+        imgs = []
+        for id in ids:
+            f = settings.BADGE_BIG_PNG_DEST_DIR + str(id)+'.png'
+            if os.path.isfile(f):
+                imgs.append(f)
+        n = 0
+        for img in imgs:
+            xx = left + (n % 2)*w + (n % 2)*vspace
+            yy = top + (n/2)*hspace + (n/2)*h
+            c.drawInlineImage(PImage.open(img), x=xx, y=yy, width=w, height=h)
+            n += 1
+            if n==10:
+                n = 0
+                c.showPage()
+        c.showPage()
+        c.save()
