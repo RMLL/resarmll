@@ -112,6 +112,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 ### COMMON ###
 DOCUMENT_ROOT = PROJECT_DIR + MEDIA_URL
+TMPDIR = PROJECT_DIR + '/tmp/'
 
 ### DOCUMENTS (all badges or invoices into one PDF) ###
 DOCUMENTSDIR = PROJECT_DIR + '/documents/'
