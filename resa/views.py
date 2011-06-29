@@ -423,7 +423,7 @@ def documents(request, tmpl):
             fsize = os.path.getsize(documents[k]['path'])
             fmtime = int(os.path.getmtime(documents[k]['path']))
             documents[k]['size'] = "%0.2f" % float(fsize/(1024.0*1024.0))
-            documents[k]['mtime'] = time.strftime('%m/%d/%Y %H:%M:%S',time.localtime(fmtime))
+            documents[k]['mtime'] = time.strftime('%d/%m/%Y %H:%M:%S',time.localtime(fmtime))
 
     return tmpl, locals()
 
