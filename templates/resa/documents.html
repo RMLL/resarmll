@@ -1,0 +1,57 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Documents" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Documents" %}</h2>
+
+    {% if not documents %}
+        <div class="main-error">
+            {% trans "No documents available." %}
+        </div>
+    {% endif %}
+
+    {% if documents %}
+        <div id="documents">
+            <div class="section">
+                {% if documents.allbadges %}
+                    <h3>{% trans "All badges into a single PDF file" %}</h3>
+                    <div class="content">
+                        <a href="/resa/documents/allbadges">
+                            {% trans "Download" %}
+                        </a>
+                        &mdash; {{ documents.allbadges.size }} {% trans "MB" %} &mdash; <em>{% trans "Last update:" %} {{ documents.allbadges.mtime }}</em>
+                    </div>
+                {% endif %}
+
+                {% if documents.allbills %}
+                    <h3>{% trans "All paid invoices into a single PDF file" %}</h3>
+                    <div class="content">
+                        <a href="/resa/documents/allbills">
+                            {% trans "Download" %}
+                        </a>
+                        &mdash; {{ documents.allbills.size }} {% trans "MB" %} &mdash; <em>{% trans "Last update:" %} {{ documents.allbills.mtime }}</em>
+                    </div>
+                {% endif %}
+
+                {% if documents.allbillsnotpaid %}
+                    <h3>{% trans "All unpaid invoices into a single PDF file" %}</h3>
+                    <div class="content">
+                        <a href="/resa/documents/allbillsnotpaid">
+                            {% trans "Download" %}
+                        </a>
+                        &mdash; {{ documents.allbillsnotpaid.size }} {% trans "MB" %} &mdash; <em>{% trans "Last update:" %} {{ documents.allbillsnotpaid.mtime }}</em>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}

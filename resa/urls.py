@@ -31,6 +31,8 @@ urlpatterns = patterns ('',
     url(r'^orders/notpaid/$', orders_notpaid, {'tmpl': 'resa/orders_notpaid.html'}),
     url(r'^stats/$', stats, {'tmpl': 'resa/stats.html'}),
     url(r'^sales/$', sales, {'tmpl': 'resa/sales.html'}),
+    url(r'^documents/$', documents, {'tmpl': 'resa/documents.html'}),
+    url(r'^documents/(?P<docid>\w+)/$', documents_view),
 
     url(r'^manage_orders/(?P<user_id>\d+)$', manage_orders,
         {'tmpl': 'resa/manage_orders.html'}),

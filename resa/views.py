@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
+import os, time
 from datetime import datetime as date
 from decimal import Decimal as dec
 
 from django.db.models import Count, Sum
 from django.utils.translation import ugettext_lazy as _
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
+from django.core.servers.basehttp import FileWrapper
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
@@ -400,6 +402,44 @@ def sales(request, tmpl):
             results_paid = User.objects.filter(order__payment_date__isnull=False,order__orderdetail__product=product).annotate(num_products=Sum('order__orderdetail__quantity')).filter().order_by('last_name')
             results_notpaid = User.objects.filter(order__payment_date__isnull=True,order__orderdetail__product=product).annotate(num_products=Sum('order__orderdetail__quantity')).filter().order_by('last_name')
     return tmpl, locals()
+
+@login_required
+@manager_required
+@auto_render
+def documents(request, tmpl):
+    documents = {}
+    cpdf = '%s/allbadges.pdf' % (settings.DOCUMENTSDIR)
+    if os.path.exists(cpdf):
+        documents['allbadges'] = {'path': cpdf, 'size': 0, 'mtime': 0}
+    cpdf = '%s/allbills.pdf' % (settings.DOCUMENTSDIR)
+    if os.path.exists(cpdf):
+        documents['allbills'] = {'path': cpdf, 'size': 0, 'mtime': 0}
+    cpdf = '%s/allbillsnotpaid.pdf' % (settings.DOCUMENTSDIR)
+    if os.path.exists(cpdf):
+        documents['allbillsnotpaid'] = {'path': cpdf, 'size': 0, 'mtime': 0}
+
+    if documents:
+        for k in documents:
+            fsize = os.path.getsize(documents[k]['path'])
+            fmtime = int(os.path.getmtime(documents[k]['path']))
+            documents[k]['size'] = "%0.2f" % float(fsize/(1024.0*1024.0))
+            documents[k]['mtime'] = time.strftime('%m/%d/%Y %H:%M:%S',time.localtime(fmtime))
+
+    return tmpl, locals()
+
+@login_required
+@manager_required
+def documents_view(request, docid):
+    response = HttpResponseNotFound()
+    doc = '%s/%s.pdf' % (settings.DOCUMENTSDIR, docid)
+    ctime = time.strftime('%Y%m%d-%H%M%S')
+    content_disposition = 'attachement; filename=%s_%s.pdf' % (docid, ctime)
+    if os.path.exists(doc):
+        wrapper = FileWrapper(file(doc))
+        response = HttpResponse(wrapper, content_type='application/pdf')
+        response['Content-Disposition'] = content_disposition
+        response['Content-Length'] = os.path.getsize(doc)
+    return response
 
 @login_required
 @auto_render
