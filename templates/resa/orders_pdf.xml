@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-15" standalone="no" ?>
 {% load i18n %}
 {% load math %}
+{% load unicode %}
 <!DOCTYPE document SYSTEM "rml_1_0.dtd">
 <document filename="=billing_order_{{ order.id }}.pdf">
     <template
@@ -12,7 +13,7 @@
                 <drawCentredString x="105mm" y="3.4cm">{% trans "Libre Software Meeting" %}</drawCentredString>
                 <lines>2cm 3.2cm 19cm 3.2cm</lines>
                 {% for l in address_lines %}
-                    <drawCentredString x="105mm" y="{{ forloop.counter0|dmult:"0.6"|dsub:"2.6"|dmult:"-1" }}cm">{{ l }}</drawCentredString>
+                <drawCentredString x="105mm" y="{{ forloop.counter0|dmult:"0.6"|dsub:"2.6"|dmult:"-1" }}cm"><![CDATA[{{ l }}]]></drawCentredString>
                 {% endfor %}
                 <image x="23mm" y="25cm" file="{{ img_path }}logo_facture.png" width="4cm"/>
             </pageGraphics>
@@ -25,7 +26,7 @@
                 <drawCentredString x="105mm" y="3.4cm">{% trans "Libre Software Meeting" %}</drawCentredString>
                 <lines>2cm 3.2cm 19cm 3.2cm</lines>
                 {% for l in address_lines %}
-                    <drawCentredString x="105mm" y="{{ forloop.counter0|dmult:"0.6"|dsub:"2.6"|dmult:"-1" }}cm">{{ l }}</drawCentredString>
+                <drawCentredString x="105mm" y="{{ forloop.counter0|dmult:"0.6"|dsub:"2.6"|dmult:"-1" }}cm"><![CDATA[{{ l }}]]></drawCentredString>
                 {% endfor %}
             </pageGraphics>
             <frame id="column" x1="2.0cm" y1="5.0cm" width="17cm" height="22cm"/>
@@ -44,10 +45,10 @@
     </stylesheet>
     <story>
         <para style="nom">
-            <b>{{ user.get_full_name }}</b>
+        <b><![CDATA[{% autoescape off %}{{ user.get_full_name|unicode_filter }}{% endautoescape %}]]></b>
         </para>
         <spacer length="6mm" width="1cm"/>
-        <xpre>{{ user.get_profile.address }}</xpre>
+        <xpre><![CDATA[{% autoescape off %}{{ user.address|unicode_filter }}{% endautoescape %}]]></xpre>
 
         <setNextTemplate name="main"/>
         <nextFrame/>
