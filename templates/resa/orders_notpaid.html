@@ -44,7 +44,7 @@
                                 <th></th>
                             </tr>
                             {% for u in results_orga %}
-                                <tr>
+                                <tr class="{% cycle 'odd' 'even' %}">
                                     <td><input type="checkbox" name="user_{{ u.id }}" class="select_orga" {% if u.id in selected_users %} checked="checked"{% endif %} /></td>
                                     <td>{{ forloop.counter }}</td>
                                     <td>{{ u.id }}</td>
@@ -105,7 +105,7 @@
                                 <th></th>
                             </tr>
                             {% for u in results_speakers %}
-                                <tr>
+                                <tr class="{% cycle 'odd' 'even' %}">
                                     <td><input type="checkbox" name="user_{{ u.id }}" class="select_speaker" {% if u.id in selected_users %} checked="checked"{% endif %} /></td>
                                     <td>{{ forloop.counter }}</td>
                                     <td>{{ u.id }}</td>
@@ -166,7 +166,7 @@
                                 <th></th>
                             </tr>
                             {% for u in results_others %}
-                                <tr>
+                                <tr class="{% cycle 'odd' 'even' %}">
                                     <td><input type="checkbox" name="user_{{ u.id }}" class="select_other" {% if u.id in selected_users %} checked="checked"{% endif %} /></td>
                                     <td>{{ forloop.counter }}</td>
                                     <td>{{ u.id }}</td>
