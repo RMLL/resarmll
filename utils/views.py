@@ -4,9 +4,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 
 from resarmll import settings
-from resarmll.utils.decorators import logged_in_or_global_basicauth
+from resarmll.utils.decorators import http_basicauth
 
-@logged_in_or_global_basicauth(settings.global_httpauth_username, settings.global_httpauth_password)
+@http_basicauth(settings.global_httpauth_username, settings.global_httpauth_password)
 def sync(request):
     content = ''
     users = User.objects.all()

@@ -98,7 +98,7 @@ def auto_render(func):
     return _dec
 
 
-def logged_in_or_global_basicauth(httpauth_username, httpauth_password, httpauth_message=''):
+def http_basicauth(httpauth_username, httpauth_password, httpauth_message=''):
     """
     Inspired from http://djangosnippets.org/snippets/243/
     """
