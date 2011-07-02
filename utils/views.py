@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import csv, time
+import csv, time, unicodedata
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
