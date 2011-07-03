@@ -1,0 +1,21 @@
+#head, #barredroite, #footer {
+    display: none;
+}
+
+#head, #page, #footer {
+    max-width: 3000px;
+}
+
+#content {
+    padding-bottom: 40px;
+}
+
+#footer {
+    visibility: hidden;
+    height: 30px;
+    min-height: 0;
+}
+
+.deuxcolonnes #content {
+    float: none;
+}

@@ -1,0 +1,43 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+{% load markup %}
+
+{% block title %}{% trans "Accomodation" %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Accomodation" %}</h2>
+
+    {% if not form %}
+        <div class="main-error">
+            {% trans "No accomodation places available." %}
+        </div>
+    {% else %}
+        <form method="post" action="">{% csrf_token %}
+            {% for field in form %}
+                <div class="field{% if field.errors %} field-error{% endif %}">
+                    {% if field.errors %} <div class="error">{{ field.errors|join:", " }}</div>{% endif %}
+                    <label for="id_{{ field.name }}">
+                        {% if field.field.required %}<span class="mark">*</span>{% endif %}{{ field.label }}
+                    </label>
+                    <div class="widget">
+                        {{ field }}
+                    </div>
+                    {% if field.help_text %}
+                        <div class="help">
+                        {{ field.help_text|markdown }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <div class="field sub">
+                <input type="submit" value="{% trans "Show" %}" />
+            </div>
+        </form>
+    {% endif %}
+
+{% endblock %}

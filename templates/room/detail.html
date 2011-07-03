@@ -1,0 +1,60 @@
+{% extends "base2cols.html" %}
+
+{% load i18n %}
+
+{% block title %}{% blocktrans %}Accomodation for “{{ place }}”{% endblocktrans %}{% endblock %}
+
+{% block sidebar %}
+    {% include "account/menu.html" %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% blocktrans %}Accomodation for “{{ place }}”{% endblocktrans %}</h2>
+
+    {% if not acclist %}
+        <div class="main-error">
+            {% trans "No data for this accomodation place." %}
+        </div>
+    {% endif %}
+
+    {% if acclist %}
+        <div id="room_detail">
+            {% if printurl %}
+                <div>
+                    <a href="{{ printurl }}">
+                        {% trans "Print preview" %}
+                    </a>
+                    &nbsp;
+                    <a href="{{ printurl }}" target="_blank">
+                        <em>({% trans "New window" %}</em>)
+                    </a>
+                </div>
+            {% endif %}
+            <p>
+                <strong>
+                    {% if fromdate %}
+                        {% blocktrans with fromdate|date:"d/m/Y" as date %}Listing established with orders created after: {{ date }}{% endblocktrans %}
+                    {% endif %}
+                </strong>
+            </p>
+            <p>
+                {% trans 'This listing take into account people with paid orders, people with unpaid orders who are marked as paying at their arrival, and people with unpaid orders which have at least one order supported by the organization.' %}
+            </p>
+            <table class="list">
+                <tr>
+                    <th>#</th>
+                    <th>{% trans "Name" %}</th>
+                    <th>{% trans "Days" %}</th>
+                </tr>
+                {% for u,dates in acclist.items %}
+                    <tr class="{% cycle 'odd' 'even' %}">
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ u }}</td>
+                        <td>{{ dates }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endif %}
+
+{% endblock %}

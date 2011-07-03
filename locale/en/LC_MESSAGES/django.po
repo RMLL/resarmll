@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-30 00:07+0200\n"
+"POT-Creation-Date: 2011-07-03 10:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -345,6 +345,7 @@ msgid "Article"
 msgstr ""
 
 #: resa/models.py:184 resa/models.py:194 templates/account/comments.html:26
+#: templates/room/detail.html:46 templates/room/print.html:25
 msgid "Name"
 msgstr ""
 
@@ -645,6 +646,20 @@ msgstr ""
 #: resa/bank/paypal.py:105
 #, python-format
 msgid "PayPal payment - order no #%d"
+msgstr ""
+
+#: room/forms.py:11
+msgid "From the date:"
+msgstr ""
+
+#: room/forms.py:13
+msgid ""
+"If not empty, only orders created since this date (DD/MM/YYYY) will be "
+"displayed"
+msgstr ""
+
+#: room/forms.py:14
+msgid "Place:"
 msgstr ""
 
 #: templates/404.html:5 templates/404.html.py:9
@@ -948,6 +963,11 @@ msgstr ""
 #: templates/account/menu.html:33 templates/resa/documents.html:5
 #: templates/resa/documents.html.py:12
 msgid "Documents"
+msgstr ""
+
+#: templates/account/menu.html:34 templates/room/list.html:6
+#: templates/room/list.html.py:13
+msgid "Accomodation"
 msgstr ""
 
 #: templates/account/menu_manager.html:5
@@ -1644,4 +1664,51 @@ msgstr ""
 
 #: templates/resa/stocks.html:43
 msgid "Dispatched"
+msgstr ""
+
+#: templates/room/detail.html:5 templates/room/detail.html.py:12
+#: templates/room/print.html:12
+#, python-format
+msgid "Accomodation for “%(place)s”"
+msgstr ""
+
+#: templates/room/detail.html:16 templates/room/print.html:16
+msgid "No data for this accomodation place."
+msgstr ""
+
+#: templates/room/detail.html:25
+msgid "Print preview"
+msgstr ""
+
+#: templates/room/detail.html:29
+msgid "New window"
+msgstr ""
+
+#: templates/room/detail.html:36
+#, python-format
+msgid "Listing established with orders created after: %(date)s"
+msgstr ""
+
+#: templates/room/detail.html:41
+msgid ""
+"This listing take into account people with paid orders, people with unpaid "
+"orders who are marked as paying at their arrival, and people with unpaid "
+"orders which have at least one order supported by the organization."
+msgstr ""
+
+#: templates/room/detail.html:47 templates/room/print.html:26
+msgid "Days"
+msgstr ""
+
+#: templates/room/list.html:17
+msgid "No accomodation places available."
+msgstr ""
+
+#: templates/room/list.html:38
+msgid "Show"
+msgstr ""
+
+#: templates/room/print.html:5
+#, python-format
+msgid "Accomodation for “%(place)s (printing)”"
 msgstr ""
