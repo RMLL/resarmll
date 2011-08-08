@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-03 10:17+0200\n"
+"POT-Creation-Date: 2011-08-08 08:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -150,7 +150,7 @@ msgstr ""
 msgid "Gender"
 msgstr ""
 
-#: account/models.py:27
+#: account/models.py:27 resa/views.py:429
 msgid "Address"
 msgstr ""
 
@@ -522,42 +522,82 @@ msgid ""
 "the available quantity"
 msgstr ""
 
-#: resa/views.py:447 resa/views.py:495
+#: resa/views.py:422 templates/account/search.html:42
+#: templates/resa/orders_notpaid.html:37 templates/resa/orders_notpaid.html:98
+#: templates/resa/orders_notpaid.html:159 templates/resa/sales.html:49
+#: templates/resa/sales.html.py:87
+msgid "Last name"
+msgstr ""
+
+#: resa/views.py:423 templates/account/search.html:43
+#: templates/resa/orders_notpaid.html:38 templates/resa/orders_notpaid.html:99
+#: templates/resa/orders_notpaid.html:160 templates/resa/sales.html:50
+#: templates/resa/sales.html.py:88
+msgid "First name"
+msgstr ""
+
+#: resa/views.py:424 templates/resa/cart_list.html:38
+#: templates/resa/manage_cart.html:53 templates/resa/order_details.html:17
+#: templates/resa/order_details_extended.html:25
+msgid "Product"
+msgstr ""
+
+#: resa/views.py:425
+msgid "Number of products ordered"
+msgstr ""
+
+#: resa/views.py:426
+msgid "Number of products distributed"
+msgstr ""
+
+#: resa/views.py:427
+msgid "Number of products not yet distributed"
+msgstr ""
+
+#: resa/views.py:428 templates/account/search.html:44
+#: templates/resa/orders_notpaid.html:39
+#: templates/resa/orders_notpaid.html:100
+#: templates/resa/orders_notpaid.html:161 templates/resa/sales.html:51
+#: templates/resa/sales.html.py:89
+msgid "Email"
+msgstr ""
+
+#: resa/views.py:485 resa/views.py:533
 msgid "Your payment has been canceled, you could resume it later."
 msgstr ""
 
-#: resa/views.py:460 resa/views.py:505 templates/resa/orders_details.html:16
+#: resa/views.py:498 resa/views.py:543 templates/resa/orders_details.html:16
 msgid "This order is not yours."
 msgstr ""
 
-#: resa/views.py:463
+#: resa/views.py:501
 #, python-format
 msgid "It seems that PayPal did not accept your payment (Code: %s)."
 msgstr ""
 
-#: resa/views.py:465
+#: resa/views.py:503
 msgid ""
 "Your payment has been confirmed by PayPal, you should receive a notification "
 "by email in a few minutes."
 msgstr ""
 
-#: resa/views.py:467 resa/views.py:509
+#: resa/views.py:505 resa/views.py:547
 msgid "Unable to find the order related to this payment."
 msgstr ""
 
-#: resa/views.py:497
+#: resa/views.py:535
 msgid ""
 "Your payment has been rejected by the bank, you should retry in few days or "
 "try another payment method."
 msgstr ""
 
-#: resa/views.py:507
+#: resa/views.py:545
 msgid ""
 "Your payment has been confirmed by the bank, you should receive a "
 "notification by email in a few minutes."
 msgstr ""
 
-#: resa/views.py:511
+#: resa/views.py:549
 msgid ""
 "Your payment has failed, you should retry in few days or try another payment "
 "method."
@@ -695,16 +735,16 @@ msgstr ""
 
 #: templates/account/comments.html:25 templates/account/search.html:41
 #: templates/resa/orders_notpaid.html:36 templates/resa/orders_notpaid.html:97
-#: templates/resa/orders_notpaid.html:158 templates/resa/sales.html:44
-#: templates/resa/sales.html.py:82
+#: templates/resa/orders_notpaid.html:158 templates/resa/sales.html:48
+#: templates/resa/sales.html.py:86
 msgid "Id"
 msgstr ""
 
 #: templates/account/comments.html:38 templates/account/search.html:60
 #: templates/resa/orders_notpaid.html:79
 #: templates/resa/orders_notpaid.html:140
-#: templates/resa/orders_notpaid.html:201 templates/resa/sales.html:65
-#: templates/resa/sales.html.py:103
+#: templates/resa/orders_notpaid.html:201 templates/resa/sales.html:69
+#: templates/resa/sales.html.py:107
 msgid "View"
 msgstr ""
 
@@ -1135,27 +1175,6 @@ msgstr ""
 msgid "ok"
 msgstr ""
 
-#: templates/account/search.html:42 templates/resa/orders_notpaid.html:37
-#: templates/resa/orders_notpaid.html:98
-#: templates/resa/orders_notpaid.html:159 templates/resa/sales.html:45
-#: templates/resa/sales.html.py:83
-msgid "Last name"
-msgstr ""
-
-#: templates/account/search.html:43 templates/resa/orders_notpaid.html:38
-#: templates/resa/orders_notpaid.html:99
-#: templates/resa/orders_notpaid.html:160 templates/resa/sales.html:46
-#: templates/resa/sales.html.py:84
-msgid "First name"
-msgstr ""
-
-#: templates/account/search.html:44 templates/resa/orders_notpaid.html:39
-#: templates/resa/orders_notpaid.html:100
-#: templates/resa/orders_notpaid.html:161 templates/resa/sales.html:47
-#: templates/resa/sales.html.py:85
-msgid "Email"
-msgstr ""
-
 #: templates/account/user_header.html:10
 msgid "Quick search:"
 msgstr ""
@@ -1203,12 +1222,6 @@ msgstr ""
 
 #: templates/resa/cart_list.html:28
 msgid "Your cart is empty"
-msgstr ""
-
-#: templates/resa/cart_list.html:38 templates/resa/manage_cart.html:53
-#: templates/resa/order_details.html:17
-#: templates/resa/order_details_extended.html:25
-msgid "Product"
 msgstr ""
 
 #: templates/resa/cart_list.html:42 templates/resa/manage_cart.html:57
@@ -1509,8 +1522,8 @@ msgstr ""
 
 #: templates/resa/orders_notpaid.html:40
 #: templates/resa/orders_notpaid.html:101
-#: templates/resa/orders_notpaid.html:162 templates/resa/sales.html:48
-#: templates/resa/sales.html.py:86
+#: templates/resa/orders_notpaid.html:162 templates/resa/sales.html:52
+#: templates/resa/sales.html.py:90
 msgid "Count"
 msgstr ""
 
@@ -1633,12 +1646,16 @@ msgid ""
 "has been confirmed by PayPal."
 msgstr ""
 
-#: templates/resa/sales.html:39 templates/resa/stocks.html:33
+#: templates/resa/sales.html:38 templates/resa/stocks.html:33
 #: templates/resa/stocks.html.py:45
 msgid "Paid"
 msgstr ""
 
-#: templates/resa/sales.html:77
+#: templates/resa/sales.html:41
+msgid "Export detailed list (CSV)"
+msgstr ""
+
+#: templates/resa/sales.html:81
 msgid "Not paid"
 msgstr ""
 

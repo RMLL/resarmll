@@ -33,10 +33,14 @@
             </form>
         {% endif %}
 
-
         {% if results_paid %}
             <div class="section">
                 <h3>{% trans "Paid" %}</h3>
+                <div class="content">
+                    <a href="/resa/sales/export/{{ product.id }}">
+                        {% trans "Export detailed list (CSV)" %}
+                    </a>
+                </div>
                 <div class="content">
                     <table class="list">
                         <tr>

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import os, time
+import os, time, csv
 from datetime import datetime as date
 from decimal import Decimal as dec
 
@@ -402,6 +402,44 @@ def sales(request, tmpl):
             results_paid = User.objects.filter(order__payment_date__isnull=False,order__orderdetail__product=product).annotate(num_products=Sum('order__orderdetail__quantity')).filter().order_by('last_name')
             results_notpaid = User.objects.filter(order__payment_date__isnull=True,order__orderdetail__product=product).annotate(num_products=Sum('order__orderdetail__quantity')).filter().order_by('last_name')
     return tmpl, locals()
+
+@login_required
+@manager_required
+def sales_export(request, product_id):
+    response = HttpResponse(mimetype='text/csv')
+    try:
+        product = Article.objects.get(id=product_id)
+    except:
+        product = None
+    if product:
+        response = HttpResponse(mimetype='text/csv')
+        response['Content-Disposition'] = 'attachement; filename=export_product_%d_%s.csv' % (product.id, time.strftime('%Y%m%d-%H%M%S',  time.localtime()))
+        writer = csv.writer(response, delimiter=';', quoting=csv.QUOTE_NONNUMERIC)
+        results =               User.objects.filter(order__payment_date__isnull=False,order__orderdetail__product=product).annotate(num_ordered=Sum('order__orderdetail__quantity'), num_distributed=Sum('order__orderdetail__distributed')).filter().order_by('last_name')
+        if results:
+            for user in results:
+                fields = []
+                fields.append(_("Last name").encode('utf-8'))
+                fields.append(_("First name").encode('utf-8'))
+                fields.append(_("Product").encode('utf-8'))
+                fields.append(_("Number of products ordered").encode('utf-8'))
+                fields.append(_("Number of products distributed").encode('utf-8'))
+                fields.append(_("Number of products not yet distributed").encode('utf-8'))
+                fields.append(_("Email").encode('utf-8'))
+                fields.append(_("Address").encode('utf-8'))
+                writer.writerow(fields)
+                if user.num_ordered-user.num_distributed > 0:
+                    fields = []
+                    fields.append(user.last_name.encode('utf-8'))
+                    fields.append(user.first_name.encode('utf-8'))
+                    fields.append(product.label().encode('utf-8'))
+                    fields.append(user.num_ordered)
+                    fields.append(user.num_distributed)
+                    fields.append(user.num_ordered-user.num_distributed)
+                    fields.append(user.email)
+                    fields.append(user.get_profile().address.encode('utf-8').strip())
+                    writer.writerow(fields)
+    return response
 
 @login_required
 @manager_required
