@@ -133,8 +133,8 @@ LOGIN_URL = '/account/login/'
 LOGOUT_URL = '/account/logout/'
 
 ### COMPTA ###
-COMPTA_BANK_FIXED_TAX = 0.24
-COMPTA_BANK_VARIABLE_TAX = 0.005 # percentage
+COMPTA_BANK_FIXED_TAX = 0.15
+COMPTA_BANK_VARIABLE_TAX = 0.008 # percentage
 COMPTA_METHOD_CODE_BANK = 'CBI'
 COMPTA_METHOD_CODE_PAYPAL = 'VPP'
 COMPTA_METHOD_CODE_INTERNAL = 'VI'
@@ -152,22 +152,22 @@ BADGE_HEIGHT_MM = 54
 
 ### USERS DB SYNC ###
 global_httpauth_username = 'rmll'
-global_httpauth_password = 'EraoLi7iex'
+global_httpauth_password = 'EraoLi7iexa'
 global_httpauth_message = 'LSM users sync'
 
 ### TREASURER ###
-CHECK_SETTINGS = {
-    'to': 'Association RMLL Strasbourg',
-    'contact_email': SERVER_EMAIL,
-}
-
-TREASURER_NAME = "Trésorier RMLL 2011"
+TREASURER_NAME = "Damien GLEITZ"
 TREASURER_EMAIL = "tresorier@2011.rmll.info"
 
+CHECK_SETTINGS = {
+    'to': 'RMLL Strasbourg',
+    'contact_email': TREASURER_EMAIL,
+}
+
 TREASURER_ADDRESS = """
-Emmanuel Bouthenot
-119 rue Malbec
-33800 Bordeaux
+Damien GLEITZ
+3 rue Léon Ungemach
+67300 SCHILTIGHEIM
 FRANCE
 """
 
@@ -187,7 +187,7 @@ PAYPAL_SETTINGS = {
 #
 # prod
 #
-    'id': '',
+    'id': 'treso2011@formidable-inc.net',
     'url' : 'https://www.paypal.com/cgi-bin/webscr',
     'currency': 'EUR',
     'return': '/resa/orders/paypal/return',
@@ -237,29 +237,22 @@ CMCIC_SETTINGS = {
 #
 # tests
 #
-    'testmode': True,
-    'cle': '',
-    'tpe': '',
+#    'testmode': True,
+#    'serveur': 'https://paiement.creditmutuel.fr/test/paiement.cgi',
+#
+# prod
+#
+    'testmode': False,
+    'serveur': 'https://paiement.creditmutuel.fr/paiement.cgi',
+
+    'cle': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+    'tpe': '0123456',
     'version': '3.0',
-    'serveur': 'https://paiement.creditmutuel.fr/test/paiement.cgi',
-    'codesociete': '',
+    'codesociete': 'rmllstrasb',
     'devise': 'EUR',
     'url_ret': '/resa/orders/cmcic/return',
     'url_ok': '/resa/orders/cmcic/return/ok',
     'url_err': '/resa/orders/cmcic/return/err',
-#
-# prod
-#
-#    'testmode': False,
-#    'cle': '',
-#    'tpe': '0000001',
-#    'version': '3.0',
-#    'serveur': 'https://paiement.creditmutuel.fr/paiement.cgi',
-#    'codesociete': '',
-#    'devise': 'EUR',
-#    'url_ret': '/resa/orders/cmcic/return',
-#    'url_ok': '/resa/orders/cmcic/return/ok',
-#    'url_err': '/resa/orders/cmcic/return/err',
 }
 
 ### MISC ###
@@ -286,6 +279,6 @@ ROOMS = {
         '2011-07-09': 23, '2011-07-10': 25, '2011-07-11': 27, '2011-07-12': 29, '2011-07-13': 31,
     },
     'Robertsau': {
-        '2011-07-09': 20, '2011-07-10': 1, '2011-07-11': 3, '2011-07-12': 5, '2011-07-13': 37,
+        '2011-07-09': 20, '2011-07-10': 1, '2011-07-11': 3, '2011-07-12': 5, '2011-07-13': 7,
     },
 }
