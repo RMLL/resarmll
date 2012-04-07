@@ -245,7 +245,7 @@ CMCIC_SETTINGS = {
     'testmode': False,
     'serveur': 'https://paiement.creditmutuel.fr/paiement.cgi',
 
-    'cle': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+    'cle': 'AB013CDF9422832933ABC494DE389319EAABC99D',
     'tpe': '0123456',
     'version': '3.0',
     'codesociete': 'rmllstrasb',
