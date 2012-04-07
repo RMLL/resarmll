@@ -1304,7 +1304,7 @@ msgstr "Total"
 
 #: templates/resa/cart_list.html:80
 msgid "Confirm your order"
-msgstr "Confimer votre commande"
+msgstr "Confirmer votre commande"
 
 #: templates/resa/catalog_list.html:22 templates/resa/stocks.html:16
 msgid "No products."
