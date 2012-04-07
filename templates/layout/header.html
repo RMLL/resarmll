@@ -1,25 +1,48 @@
 {% load i18n %}
-<div id="head">
-	<div id="header_links">
-		<div id="acces">
-			<a href="#content">{% trans "Go to main content" %}</a>
-		</div>
-		<div id="flags">
-			{% for lang in LANGUAGES%}
-			<form action="/i18n/setlang/" method="post">{% csrf_token %}
-				<input type="hidden" name="language" value="{{lang.0}}" />
-				<input type="submit" value="{{lang.1}}"/>
-			</form>{%endfor%}
-		</div>
-		<div id="menu1">
-			<ul>
-				<li><a href="/">{% trans "Booking" %}</a></li>
-				<li><a href="http://rmll.info">{% trans "LSM website" %}</a></li>
-			</ul>
-		</div>
-	</div>
-	<div id="header_bg">
-		<a id="mainlink" href="/" title="RMLL (span)12e édition">&nbsp;</a>
-		<p>9 au 14 juillet 2011 - Strasbourg, libre sans frontières</p>
-	</div>
+
+{% if user %}
+    {% if user.is_staff or user.get_profile.is_manager or user.get_profile.is_reception %}
+        <noscript>
+            <div class="main-warn">
+                {% trans "You will need to enable JavaScript to use some advanced features." %}
+            </div>
+        </noscript>
+    {% endif %}
+{% endif %}
+
+<div id="skip-link">
+    <a href="#content" class="element-invisible element-focusable">{% trans "Go to main content" %}</a>
+</div>
+
+<div id="header">
+    <div class="container">
+        <div class="span-22 push-1">
+            <div class="span-6 first logo">
+                <a href="/">
+                    <img src="{{ MEDIA_URL }}images/logo-rmll-2012-{{ LANGUAGE_CODE }}.png" alt="{% trans "LSM website" %}" width="206" height="83" />
+                </a>
+            </div>
+            <div class="span-16 last event">
+                <a href="http://2012.rmll.info/">
+                    <img src="{{ MEDIA_URL }}images/geneve-2012-{{ LANGUAGE_CODE }}.png" alt="{% trans "LSM website" %}" width="186" height="47" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="languages">
+        <div id="block-locale-language" class="block block-locale">
+            <div class="content">
+                <ul class="language-switcher-locale-url">
+                    {% for lang in LANGUAGES%}
+                        <form action="/i18n/setlang/" method="post">{% csrf_token %}
+                            <li class="{{ lang.0 }}{% cycle ' first' ' last' %}{% if LANGUAGE_CODE == lang.0 %} active{% endif %}">
+                                <input type="hidden" name="language" value="{{ lang.0 }}" />
+                                <input type="submit" value="{{ lang.1}}"/>
+                            </li>
+                        </form>
+                    {%endfor%}
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>

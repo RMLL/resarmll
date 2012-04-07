@@ -1,28 +1,56 @@
 <?xml version="1.0" encoding="utf-8" ?>
 {% load i18n %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{LANGUAGE_CODE}}" dir="ltr" lang="{{LANGUAGE_CODE}}">
-	<head>
-		<title>{% trans "LSM Booking" %} - {% block title %}{% endblock %}</title>
-		<link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png" />
-		<link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css" type="text/css" media="screen" />
-		{% block extrahead %}{% endblock %}
-	</head>
+    <head>
+        <title>{% trans "LSM Booking" %} - {% block title %}{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/vnd.microsoft.icon" />
+        <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/screen.css" type="text/css" media="screen, projection">
+        <link rel="stylesheet" href="{{ MEDIA_URL }}css/rmll.css" type="text/css" media="screen, projection">
+        <!--[if lt IE 8]>
+            <link rel="stylesheet" href="{{ MEDIA_URL }}/css/blueprint/ie.css" type="text/css" media="screen, projection">
+        <![endif]-->
+        <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.js"></script>
+        <script type="text/javascript" src="{{ MEDIA_URL }}js/common.js"></script>
+        {% block extrahead %}{% endblock %}
+    </head>
 
-	<body>
-		<div id="page" class="home deuxcolonnes">
-			{% include "layout/header2cols.html" %}
+    <body id="resarmll-2cols">
+        {% include "layout/header.html" %}
 
-			<div id="barredroite">
-				{% block sidebar %}{% endblock %}
-			</div>
+        <div id="menu">
+            <div class="container">
+                <div class="span-22 push-1">
+                    {% include "account/user_header.html" %}
+                </div>
+            </div>
+        </div>
 
-			<div id="content">
-				{% block content %}{% endblock %}
-			</div>
+        <div id="wrapper">
+            <div class="container">
+                <div class="span-22 push-1 blueprint">
+                    <div class="span-22 shadow">
+                        <div class="maincontent">
+                            <div class="span-4 first leftcol">
+                                <div class="col-content">
+                                    {% block sidebar %}{% endblock %}
+                                </div>
+                            </div>
+                            <div class="span-18 last rightcol">
+                                <div class="col-content">
+                                    {% block content %}{% endblock %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-			{% include "layout/footer.html" %}
-		</div>
-		{% block extrafoot %}{% endblock %}
-	</body>
+        {% include "layout/footer.html" %}
+
+        {% block extrafoot %}{% endblock %}
+
+    </body>
 </html>

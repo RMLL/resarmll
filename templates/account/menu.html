@@ -1,20 +1,22 @@
 {% load i18n %}
 
-<div>
-    <ul>
-        <li><a href="/account/home/">{% trans "Home" %}</a></li>
-        <li><a href="/account/profile/">{% trans "Your account" %}</a></li>
-        <li><a href="/account/profile/badge/">{% trans "Your badge" %}</a></li>
-        <li><a href="/resa/catalog/">{% trans "Catalog" %}</a></li>
-        <li><a href="/resa/cart/">{% trans "Your cart" %}</a></li>
-        <li><a href="/resa/orders/">{% trans "Your orders" %}</a></li>
-        <li><a href="/account/netparams/">{% trans "Network parameters" %}</a></li>
-        <li><a href="/account/logout/">{% trans "Log out" %}</a></li>
-    </ul>
-</div>
+{% if user %}
+    <div class="menu-user">
+        <ul>
+            <li><a href="/account/home/">{% trans "Home" %}</a></li>
+            <li><a href="/account/profile/">{% trans "Your account" %}</a></li>
+            <li><a href="/account/profile/badge/">{% trans "Your badge" %}</a></li>
+            <li><a href="/resa/catalog/">{% trans "Catalog" %}</a></li>
+            <li><a href="/resa/cart/">{% trans "Your cart" %}</a></li>
+            <li><a href="/resa/orders/">{% trans "Your orders" %}</a></li>
+            <li><a href="/account/netparams/">{% trans "Network parameters" %}</a></li>
+            <li><a href="/account/logout/">{% trans "Log out" %}</a></li>
+        </ul>
+    </div>
+{% endif %}
 
 {% if user.is_staff or user.get_profile.is_manager or user.get_profile.is_reception %}
-    <div>
+    <div class="menu-user menu-admin">
         <ul>
             {% if user.is_staff %}
                 <li><a href="/admin/">{% trans "Admin" %}</a></li>
