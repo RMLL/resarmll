@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-15" standalone="no" ?>
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
 {% load i18n %}
 {% load math %}
 {% load unicode %}
