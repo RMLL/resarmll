@@ -271,10 +271,12 @@ TVA = 0
 
 ### DEVELOPMENT SETTINGS ###
 if os.environ.has_key('DJANGO_DEVEL'):
+    DEVEL_MODE = True
     SESSION_COOKIE_NAME += '-dev'
     DEBUG = True
     TEMPLATE_DEBUG = DEBUG
 else:
+    DEVEL_MODE = False
     DEBUG = False
     TEMPLATE_DEBUG = False
 
