@@ -30,6 +30,8 @@ from resarmll.compta.models import Operation
 @auto_render
 def catalog_list(request, tmpl):
     products = Article.objects.filter(enabled=True).order_by('order')
+    currency = settings.CURRENCY
+    currency_alt = settings.CURRENCY_ALT
     return tmpl, locals()
 
 @login_required
@@ -65,7 +67,11 @@ def cart_list(request, tmpl, action=None, product_id=None):
     elif action == 'invalid':
         msg_err = _(u"Unable to confirm your order, one (or more) product(s) in your cart exceed the available quantity")
     cart.save(request)
-    return tmpl, {'cart': cart, 'msg_err': msg_err, 'msg_ok': msg_ok}
+    return tmpl, {
+        'cart': cart,
+        'msg_err': msg_err, 'msg_ok': msg_ok,
+        'currency': settings.CURRENCY, 'currency_alt': settings.CURRENCY_ALT,
+        }
 
 @login_required
 @auto_render
@@ -84,8 +90,13 @@ def orders_list(request, tmpl, action=None):
 
     pending_orders = request.user.order_set.filter(payment_date__isnull=True)
     validated_orders = request.user.order_set.filter(payment_date__isnull=False)
-    return tmpl, {'pending_orders': pending_orders, 'validated_orders': validated_orders,
-        'msg_err': msg_err, 'msg_ok': msg_ok, 'user_obj': request.user}
+    return tmpl, {
+        'pending_orders': pending_orders,
+        'validated_orders': validated_orders,
+        'msg_err': msg_err, 'msg_ok': msg_ok,
+        'user_obj': request.user,
+        'currency': settings.CURRENCY, 'currency_alt': settings.CURRENCY_ALT,
+    }
 
 @login_required
 @auto_render
@@ -235,7 +246,13 @@ def manage_orders(request, tmpl, user_id=None):
         except:
             user = None
 
-    params = {'user_obj': user, 'msg_ok': None, 'msg_err': None}
+    params = {
+        'user_obj': user,
+        'msg_ok': None,
+        'msg_err': None,
+        'currency': settings.CURRENCY,
+        'currency_alt': settings.CURRENCY_ALT,
+    }
     if user:
         form = form_del = None
         if request.method == 'POST':
@@ -354,8 +371,14 @@ def manage_cart(request, tmpl, user_id=None, action=None, product_id=None):
                 cart.clear()
                 msg_ok = _(u"Order successfully confirmed")
         cart.save(request)
-    return tmpl, {'user_obj': user, 'products': products, 'cart': cart,
-                    'msg_err': msg_err, 'msg_ok': msg_ok, 'is_admin': request.user.is_staff}
+    return tmpl, {
+        'user_obj': user,
+        'products': products,
+        'cart': cart,
+        'msg_err': msg_err, 'msg_ok': msg_ok,
+        'is_admin': request.user.is_staff,
+        'currency': settings.CURRENCY, 'currency_alt': settings.CURRENCY_ALT,
+    }
 
 @login_required
 @staff_required

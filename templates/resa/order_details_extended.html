@@ -38,7 +38,9 @@
                         {% endfor %}
                     </select>
                 </td>
-                <td class="num">{{ p.totalamount }} €</td>
+                <td class="num">
+                    {{ p.totalamount }} {{ currency }}
+                </td>
             </tr>
         {% endfor %}
         <tfoot>
@@ -56,7 +58,12 @@
                 <th colspan="3">
                     {% trans "Total" %}
                 </th>
-                <td class="num">{{ order.totalamount }} €</td>
+                <td class="num">
+                    {{ order.totalamount }} {{ currency }}
+                    {% if currency_alt %}
+                        <em>(~ {{ order.totalamount_alt }} {{ currency_alt }})</em>
+                    {% endif %}
+                </td>
             </tr>
         </tfoot>
     </table>

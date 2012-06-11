@@ -9,6 +9,7 @@ from django.contrib.auth.models import User
 
 from stock import Stock
 from resarmll import settings
+from resarmll.utils.currency import currency_alt
 
 class Order(models.Model):
     user = user = models.ForeignKey(User)
@@ -106,6 +107,12 @@ class Order(models.Model):
             ret += o.totalamount()
         return ret
 
+    def totalamount_alt(self):
+        ret = 0
+        for o in self.orderdetail_set.all():
+            ret += o.totalamount_alt()
+        return ret
+        
     def hors_taxes(self):
         return Decimal("%.02f" % (float(self.totalamount()) / (1.0 + (float(settings.TVA) / 100.0))))
 
@@ -122,7 +129,7 @@ class OrderDetail(models.Model):
 
     def __unicode__(self):
         return self.product.label()+' - '+self.order.user.get_full_name()
-
+    
     def remove(self):
         # Updating stocks
         Stock.objects.filter(id=self.product.stock.id).update(
@@ -138,6 +145,9 @@ class OrderDetail(models.Model):
     def totalamount(self):
         return self.price * self.quantity
 
+    def totalamount_alt(self):
+        return currency_alt(self.totalamount())
+        
     def paid(self):
         Stock.objects.filter(id=self.product.stock.id).update(
             quantity_ordered=F('quantity_ordered')-self.quantity)

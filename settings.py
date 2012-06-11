@@ -160,6 +160,12 @@ global_httpauth_username = 'rmll'
 global_httpauth_password = 'EraoLi7iexa'
 global_httpauth_message = 'LSM users sync'
 
+### CURRENCIES ###
+CURRENCY = 'CHF'
+#CURRENCY_ALT = None
+CURRENCY_ALT = 'EUR'
+CURRENCY_ALT_RATE = 1.20
+
 ### TREASURER ###
 TREASURER_NAME = "Damien GLEITZ"
 TREASURER_EMAIL = "tresorier@2011.rmll.info"

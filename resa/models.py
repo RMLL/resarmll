@@ -12,6 +12,7 @@ from resarmll.compta.models import ProductAccount
 from stock import Stock
 from widgets import TranslatedLabelField
 from utils.BadgeGenerator import COLORS as BadgeColors
+from resarmll.utils.currency import currency_alt
 
 from django.utils.translation import get_language
 
@@ -172,6 +173,9 @@ class Article(models.Model, LabelClass):
 
     def unavailable(self):
         return self.quantity() < 1
+
+    def price_alt(self):
+        return currency_alt(self.price)
 
 class CountryLabel(BaseShortLabel):
     """

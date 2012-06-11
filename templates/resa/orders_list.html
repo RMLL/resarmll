@@ -46,14 +46,20 @@
                         {% for o in pending_orders %}
                             <li>
                                 {% if o.id|is_staff_order:user_obj %}
-                                    {% blocktrans with o.creation_date|date:"Y-m-d H:i:s" as date_t and o.totalamount as amount_t %}Order of {{ date_t }} for amount of {{ amount_t }}€{% endblocktrans %}
+                                    {% blocktrans with o.creation_date|date:"Y-m-d H:i:s" as date_t and o.totalamount as amount_t %}Order of {{ date_t }} for amount of {{ amount_t }}{% endblocktrans %} {{ currency }}
+                                    {% if currency_alt %}
+                                        <em>(~ {{ o.totalamount_alt }} {{ currency_alt }})</em>
+                                    {% endif %}
                                     <br/>
                                     <strong>
                                         <em>{% trans "This order is supported by the LSM organization." %}</em>
                                     </strong>
                                 {% else %}
                                     <a href="/resa/orders/details/{{ o.id }}">
-                                        {% blocktrans with o.creation_date|date:"Y-m-d H:i:s" as date_t and o.totalamount as amount_t %}Order of {{ date_t }} for amount of {{ amount_t }}€{% endblocktrans %}
+                                        {% blocktrans with o.creation_date|date:"Y-m-d H:i:s" as date_t and o.totalamount as amount_t %}Order of {{ date_t }} for amount of {{ amount_t }}{% endblocktrans %} {{ currency }}
+                                        {% if currency_alt %}
+                                            <em>(~ {{ o.totalamount_alt }} {{ currency_alt }})</em>
+                                        {% endif %}
                                     </a>
                                 {% endif %}
                             </li>
@@ -63,7 +69,6 @@
             </div>
         {% endif %}
 
-
         {% if validated_orders %}
             <div class="section">
                 <h3>{% trans "Paid order(s)" %}</h3>
@@ -72,7 +77,10 @@
                         {% for o in validated_orders %}
                             <li>
                                 <a href="/resa/orders/details/{{ o.id }}">
-                                    {% blocktrans with o.creation_date|date:"Y-m-d H:i:s" as date_t and o.totalamount as amount_t %}Order of {{ date_t }} for amount of {{ amount_t }}€{% endblocktrans %}
+                                    {% blocktrans with o.creation_date|date:"Y-m-d H:i:s" as date_t and o.totalamount as amount_t %}Order of {{ date_t }} for amount of {{ amount_t }}{% endblocktrans %} {{ currency }}
+                                    {% if currency_alt %}
+                                        <em>(~ {{ o.totalamount_alt }} {{ currency_alt }})</em>
+                                    {% endif %}
                                 </a>
                             </li>
                         {% endfor %}

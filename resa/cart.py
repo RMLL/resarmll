@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from resarmll.resa.models import Article
+from resarmll.utils.currency import currency_alt
 
 CART_KEY = 'CART_KEY'
 
@@ -19,8 +20,14 @@ class CartItem:
         self.price = price
         self.sorting = sorting
 
+    def price_alt(self):
+        return currency_alt(self.price)
+
     def total(self):
         return self.quantity*self.price
+
+    def total_alt(self):
+        return currency_alt(self.total())
 
     def stock(self):
         product = Article.objects.get(id=self.id)
@@ -102,6 +109,9 @@ class Cart:
         for item in self.items:
             ret += item.total()
         return ret
+
+    def total_alt(self):
+        return currency_alt(self.total())
 
     def save(self, request):
         session_data = []

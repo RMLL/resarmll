@@ -42,9 +42,12 @@
                             </div>
                         {% endif %}
                         <div class="info">
-                            <span>{% trans "Price:" %} {{ p.price }} €
+                            {% trans "Price:" %} {{ p.price }} {{ currency }}
+                            {% if currency_alt %}
+                                <em>(~ {{ p.price_alt }} {{ currency_alt }})</em>
+                            {% endif %}
                             <br />
-                            <span>{% trans "Remaining stock:" %} {{ p.quantity_ajusted }}
+                            {% trans "Remaining stock:" %} {{ p.quantity_ajusted }}
                         </div>
                     </div>
                 {% endfor %}
