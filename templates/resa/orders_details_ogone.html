@@ -1,0 +1,10 @@
+{% load i18n %}
+
+<form action="{{ bp_form.server }}" method="post">
+
+    {% for key in bp_form.fields.items %}
+        <input type="hidden" name="{{ key.0 }}" value="{{ key.1 }}" />
+    {% endfor %}
+
+    <input class="img" type="image" src="{{ MEDIA_URL }}/ogone/ogone.jpg" value="{% trans "Go to Payment" %}" />
+</form>

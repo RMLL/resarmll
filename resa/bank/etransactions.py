@@ -198,7 +198,7 @@ class eTransactions(Bank):
 
     def getreturn(self):
         error, params = self.getreturndatas()
-        canceled = rejected = accepted = order_id = None
+        canceled = rejected = delayed = accepted = order_id = None
         if params:
             if not params.has_key('action'):
                 error = True
@@ -206,11 +206,12 @@ class eTransactions(Bank):
                 canceled = params['action'] == 'cancel'
                 rejected = params['action'] == 'reject'
                 accepted = params['action'] == 'return'
+                delayed = False
             if params.has_key('order'):
                 order_id = params['order'].split('-')[0]
             if params.has_key('autor') and not settings.ETRANSACTIONS_SETTINGS['testmode']:
                 rejected = rejected or params['autor'] == 'XXXXXX'
-        return error, canceled, rejected, accepted, order_id
+        return error, canceled, rejected, delayed, accepted, order_id
 
     def process_order(self):
         error, params = self.getreturndatas()

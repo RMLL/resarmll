@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import os, os.path, popen2, datetime, re
+import os, os.path, datetime, re
 import hmac, sha, encodings.hex_codec
 from decimal import Decimal as dec
 
@@ -118,7 +118,8 @@ class cmcic(Bank):
         canceled = status == None
         rejected = status == 'err'
         accepted = status == 'ok'
-        return canceled, rejected, accepted, order_id
+        delayed = False
+        return canceled, rejected, delayed, accepted, order_id
 
     def getreturndatas(self):
         data = {}
@@ -223,7 +224,7 @@ class cmcic(Bank):
             except:
                 order = None
             if not order:
-                self.add_error(_(u"Unable to find order with id: #%d") % (order.id))
+                self.add_error(_(u"Unable to find order with id: #%d") % (int(params['order_id'])))
             elif order.payment_date != None:
                 self.add_error(_(u"Order with id: #%d has already been paid") % (order.id))
             else:

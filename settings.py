@@ -260,6 +260,30 @@ CMCIC_SETTINGS = {
     'url_err': '/resa/orders/cmcic/return/err',
 }
 
+### OGONE ###
+OGONE_SETTINGS = {
+    #
+    # tests
+    #
+    'testmode': True,
+    'server': 'https://secure.ogone.com/ncol/test/orderstandard.asp',
+    #
+    # prod
+    #
+    #'testmode': False,
+    #'server': 'https://secure.ogone.com/ncol/prod/orderstandard.asp',
+
+    'pspid': 'FreeITtest',
+    'currency': 'CHF',
+    'secretkey-in': '!zCo3qEvb3<}6IhCz@vRCCVi{5l2@~dW',
+    'secretkey-out': 'HeN9DPq+#{4$F)E$,SKT&3AUQKVv"5+e',
+    'hashtype': 'sha1', # sha1, sha256 or sha512
+    'accepturl': '/resa/orders/ogone/return/accept',
+    'declineurl': '/resa/orders/ogone/return/decline',
+    'exceptionurl': '/resa/orders/ogone/return/exception',
+    'cancelurl': '/resa/orders/ogone/return/cancel',
+}
+
 ### MISC ###
 FULL_ADDRESS = """
 Association RMLL Strasbourg - 2011 - contact@2011.rmll.info

@@ -129,13 +129,14 @@ class CyberPlus(Bank):
 
     def getreturn(self):
         error, code, params = self.getreturndatas()
-        rejected = accepted = order_id = None
+        canceled = rejected = delayed = accepted = order_id = None
         if params:
             canceled = params['bank_response_code'] == ''
             rejected = params['bank_response_code'] == '05'
             accepted = params['bank_response_code'] == '00'
+            delayed = False
             order_id = params['order_id']
-        return error, code, canceled, rejected, accepted, order_id
+        return error, code, canceled, rejected, delayed, accepted, order_id
 
     def process_order(self):
         error, code, params = self.getreturndatas()

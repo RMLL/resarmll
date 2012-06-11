@@ -19,6 +19,7 @@ from stock import Stock
 from bank.cyberplus import CyberPlus
 from bank.etransactions import eTransactions
 from bank.cmcic import cmcic
+from bank.ogone import ogone
 from bank.paypal import Paypal
 from resarmll import settings
 from resarmll.utils.decorators import auto_render, staff_required, manager_required, reception_required
@@ -118,6 +119,10 @@ def orders_details(request, tmpl, order_id=0):
         elif settings.BANK_DRIVER.upper() == 'CMCIC':
             bp_tmpl = 'resa/orders_details_cmcic.html'
             bp = cmcic(request)
+            bp_form = bp.form(order, request.user, request.LANGUAGE_CODE, url)
+        elif settings.BANK_DRIVER.upper() == 'OGONE':
+            bp_tmpl = 'resa/orders_details_ogone.html'
+            bp = ogone(request)
             bp_form = bp.form(order, request.user, request.LANGUAGE_CODE, url)
 
     return tmpl, locals()
@@ -521,15 +526,20 @@ def orders_bank_return(request, tmpl, status=None, order_id=None):
     msg_err = msg_ok = msg_warn = None
     if settings.BANK_DRIVER.upper() == 'CYBERPLUS':
         bp = CyberPlus(request)
-        error, code, canceled, rejected, accepted, order_id = bp.getreturn()
+        error, code, canceled, rejected, delayed, accepted, order_id = bp.getreturn()
     elif settings.BANK_DRIVER.upper() == 'ETRANSACTIONS':
         bp = eTransactions(request)
-        error, canceled, rejected, accepted, order_id = bp.getreturn()
+        error, canceled, rejected, delayed, accepted, order_id = bp.getreturn()
     elif settings.BANK_DRIVER.upper() == 'CMCIC':
         bp = cmcic(request)
-        canceled, rejected, accepted, order_id = bp.getreturn(status, order_id)
+        canceled, rejected, delayed, accepted, order_id = bp.getreturn(status, order_id)
+    elif settings.BANK_DRIVER.upper() == 'OGONE':
+        bp = ogone(request)
+        canceled, rejected, delayed, accepted, order_id = bp.getreturn(status)
 
-    if canceled:
+    if delayed:
+        msg_warn = _(u"Confirmation of your payment by your bank has not been received yet. You should contact your bank before retrying.")
+    elif canceled:
         msg_warn = _(u"Your payment has been canceled, you could resume it later.")
     elif rejected:
         msg_err = _(u"Your payment has been rejected by the bank, you should retry in few days or try another payment method.")
@@ -562,6 +572,9 @@ def orders_bank_notify(request):
         bp.process_order()
     elif settings.BANK_DRIVER.upper() == 'CMCIC':
         bp = cmcic(request)
+        r = bp.process_order()
+    elif settings.BANK_DRIVER.upper() == 'OGONE':
+        bp = ogone(request)
         r = bp.process_order()
 
     return HttpResponse(r, mimetype="text/html")
