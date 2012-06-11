@@ -118,12 +118,10 @@ def orders_details(request, tmpl, order_id=0):
     protocol = request.is_secure() and 'https' or 'http'
     url = "%s://%s" % (protocol, request.get_host())
     paypal_settings = settings.PAYPAL_SETTINGS
-    treasurer_address = settings.TREASURER_ADDRESS
-    treasurer_name = settings.TREASURER_NAME
-    treasurer_email = settings.TREASURER_EMAIL
-    check_payable_to = settings.CHECK_PAYABLE_TO
-    iban = settings.BANK_IBAN
-    bic = settings.BANK_BIC
+    treasurer = settings.TREASURER_SETTINGS
+    wiretransfer = settings.WIRETRANSFER_SETTINGS
+    check = settings.CHECK_SETTINGS
+
     ip_addr = request.META['REMOTE_ADDR']
     if order:
         if settings.BANK_DRIVER.upper() == 'CYBERPLUS':

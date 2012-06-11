@@ -17,7 +17,7 @@
         </h3>
         <div class="main-warn">
             {% blocktrans %}Orders not payed after July 5th will be removed. There are some exceptions with people coming from abroad which should contact the treasurer if they want to pay on arrival.{% endblocktrans %}
-            <p><strong>{% trans "Treasurer:" %}</strong> {{ treasurer_name }} &lt;<a href="mailto:{{ treasurer_email }}">{{ treasurer_email }}</a>&gt;</p>
+            <p><strong>{% trans "Treasurer:" %}</strong> {{ treasurer.name }} &lt;<a href="mailto:{{ treasurer.email }}">{{ treasurer.email }}</a>&gt;</p>
         </div>
     </div>
 

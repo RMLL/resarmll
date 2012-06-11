@@ -173,26 +173,40 @@ CURRENCY_ALT = 'EUR'
 CURRENCY_ALT_RATE = 1.20
 
 ### TREASURER ###
-TREASURER_NAME = "Damien GLEITZ"
-TREASURER_EMAIL = "tresorier@2011.rmll.info"
-
-CHECK_SETTINGS = {
-    'to': 'RMLL Strasbourg',
-    'contact_email': TREASURER_EMAIL,
+TREASURER_SETTINGS = {
+    'name': "Alexandre Poltorak",
+    'email': "tresorier@rmll.info",
+    'address': """
+Alexandre Poltorak
+Num XXX Street YYYY
+City ZZZZZ
+Country 00000
+""",
 }
 
-TREASURER_ADDRESS = """
-Damien GLEITZ
-3 rue Léon Ungemach
-67300 SCHILTIGHEIM
-FRANCE
-"""
-
-CHECK_PAYABLE_TO = CHECK_SETTINGS['to']
+### CHECK ###
+CHECK_SETTINGS = {
+    'inuse': False,
+    'to': 'RMLL Strasbourg',
+    'treasurer': TREASURER_SETTINGS,
+}
 
 ### BANK TRASNFER ###
-BANK_IBAN = "FR76 1027 8010 8400 0205 1310 123"
-BANK_BIC = "CMCIFR2A"
+WIRETRANSFER_SETTINGS = {
+    'inuse': True,
+    'iban': 'CH97 0076 7000 E52850875',
+    'bic': 'BCVLCH2LXXX',
+    'bank_name': 'BCV',
+    'account_no': 'E 5285.08.75 CHF RMLL',
+    'clearing': '767',
+    'owner': """
+Free IT Foundation
+Ch. de Champ-Claude 10
+1214 Vernier, Genève
+Suisse
+CH-660.2.608.005-3
+""",
+}
 
 ### PAYPAL ###
 PAYPAL_SETTINGS = {
@@ -212,8 +226,8 @@ PAYPAL_SETTINGS = {
     'notify_url': '/resa/orders/paypal/notify',
 }
 
-### Bank Driver ( CyberPlus or eTransactions) ###
-BANK_DRIVER = 'cmcic'
+### Bank Driver ( CyberPlus, eTransactions, Cmcic, Ogone) ###
+BANK_DRIVER = 'ogone'
 
 ### CYBERPLUS ###
 CYBERPLUS_SETTINGS = {

@@ -83,8 +83,7 @@ def register(request, tmpl):
 @login_required
 @auto_render
 def home(request, tmpl):
-    treasurer_name = settings.TREASURER_NAME
-    treasurer_email = settings.TREASURER_EMAIL
+    treasurer = settings.TREASURER_SETTINGS
     return tmpl, locals()
 
 @login_required

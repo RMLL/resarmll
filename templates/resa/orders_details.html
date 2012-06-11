@@ -68,41 +68,71 @@
                             <input type="hidden" name="no_note" value="1" />
                             <input type="hidden" name="upload" value="1" />
                             <input type="hidden" name="no_shipping" value="1" />
-                            <input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but23.gif" value="{% trans "Payment by PayPal" %}" name="submit" />
+                            <input class="img" type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but23.gif" value="{% trans "Payment by PayPal" %}" name="submit" />
                         </form>
-                        <p>{% trans "If it is possible for you to use another payment method than PayPal, please do it. PayPal payments involves expensive fees for us." %}</p>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>{% trans "Payment by bank transfer" %}</h3>
-                    <div class="content">
-                        <p>{% trans "IBAN (International Bank Account Number):" %}</p>
-                        <pre>{{ iban }}</pre>
-                        <p>{% trans "BIC (Bank Identifier Code):" %}</p>
-                        <pre>{{ bic }}</pre>
-                        <p>{% trans "Please add the order(s) id(s) in the bank transfer title and notify our accountant when the check has been sent." %}</p>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>{% trans "Payment by cashiers check" %}</h3>
-                    <div class="content">
-                        <p>{% trans "Send your check to the treasurer, here is the postal address:" %}</p>
-                        <pre>{{ treasurer_address }}</pre>
-                        <p>{% trans "payable to:" %}</p>
-                        <pre>{{ check_payable_to }}</pre>
                         <p>
-                            {% trans "For payments with cashiers check, please notify our accountant when the check has been sent. Cashiers check payments might include fee if your bank is not located in France or in the EU." %}
+                            <em>{% trans "If it is possible for you to use another payment method than PayPal, please do it. PayPal payments involves expensive fees for us." %}</em>
                         </p>
                     </div>
                 </div>
+
+                {% if wiretransfer.inuse %}
+                    <div class="section">
+                        <h3>{% trans "Payment by bank transfer" %}</h3>
+                        <div class="content">
+                            <p>{% trans "Proceed the payment by making a bank transfer:" %}</p>
+                            {% if wiretransfer.bank_name %}
+                                <div>
+                                    <strong>{% trans "Bank name:" %}</strong> {{ wiretransfer.bank_name }}
+                                </div>
+                            {% endif %}
+                            {% if wiretransfer.account_no %}
+                                <div>
+                                    <strong>{% trans "Account number:" %}</strong> {{ wiretransfer.account_no }}
+                                </div>
+                            {% endif %}
+                            {% if wiretransfer. %}
+                                <div>
+                                    <strong>{% trans "IBAN (International Bank Account Number):" %}</strong> {{ wiretransfer.iban }}
+                                </div>
+                            {% endif %}
+                            <div>
+                                <strong>{% trans "IBAN (International Bank Account Number):" %}</strong> {{ wiretransfer.iban }}
+                            </div>
+                            <div>
+                                <strong>{% trans "BIC (Bank Identifier Code):" %}</strong> {{ wiretransfer.bic }}
+                            </div>
+                            {% if wiretransfer.owner %}
+                                <div>
+                                    <strong>{% trans "Account owner:" %}</strong>
+                                    <pre>{{ wiretransfer.owner }}</pre>
+                                </div>
+                            {% endif %}
+                            <p>{% trans "Please add the order(s) id(s) in the bank transfer title and notify our accountant when the check has been sent." %}</p>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if check.inuse %}
+                    <div class="section">
+                        <h3>{% trans "Payment by cashiers check" %}</h3>
+                        <div class="content">
+                            <p>{% trans "Send your check to the treasurer, here is the postal address:" %}</p>
+                            <pre>{{ check.treasurer.address }}</pre>
+                            <p>{% trans "payable to:" %}</p>
+                            <pre>{{ check.to }}</pre>
+                            <p>
+                                {% trans "For payments with cashiers check, please notify our accountant when the check has been sent. Cashiers check payments might include fee if your bank is not located in France or in the EU." %}
+                            </p>
+                        </div>
+                    </div>
+                {% endif %}
 
                 <div class="section">
                     <h3>{% trans "Other payment methods" %}</h3>
                     <div class="content">
                         <p>{% trans "If you wish to use other methods of payment, please contact our accountant:" %}</p>
-                        <pre>{{ treasurer_name }} &lt;<a href="mailto:{{ treasurer_email }}">{{ treasurer_email }}</a>&gt;</pre>
+                        <pre>{{ treasurer.name }} &lt;<a href="mailto:{{ treasurer.email }}">{{ treasurer.email }}</a>&gt;</pre>
                     </div>
                 </div>
 
