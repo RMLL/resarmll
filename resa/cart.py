@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from resarmll import settings
 from resarmll.resa.models import Article
 from resarmll.utils.currency import currency_alt
 
@@ -36,6 +37,7 @@ class CartItem:
 class Cart:
     def __init__(self, request, salt=None):
         self.items = []
+        self.request = request
         self.salt = str(salt)
         data = request.session.get(self.get_salt())
         if data is not None:
@@ -127,4 +129,11 @@ class Cart:
         for i,item in enumerate(self.items):
             product = Article.objects.get(id=item.id)
             ret = ret and product.quantity() >= item.quantity
+        return ret
+
+    def has_gcs_ckecked(self):
+        ret = False
+        if not settings.CART_SETTINGS['gcsuse'] or \
+            (self.request.POST.has_key('accept_gcs') and self.request.POST['accept_gcs'] == '1'):
+            ret = True
         return ret

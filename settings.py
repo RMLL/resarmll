@@ -160,6 +160,12 @@ global_httpauth_username = 'rmll'
 global_httpauth_password = 'EraoLi7iexa'
 global_httpauth_message = 'LSM users sync'
 
+### CART ###
+CART_SETTINGS = {
+    # General terms and conditions of sales
+    'gcsuse': True,
+}
+
 ### CURRENCIES ###
 CURRENCY = 'CHF'
 #CURRENCY_ALT = None

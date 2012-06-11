@@ -86,7 +86,18 @@
 
             <div class="validate_payment">
                 <form action="/resa/orders/validate/" method="post">{% csrf_token %}
-                    <input type="submit" value="{% trans "Confirm your order" %}" />
+                    {% if usegcs %}
+                        <div class="accept_gcs">
+                            <input type="checkbox" name="accept_gcs" value="1" />
+                            <a href="/resa/orders/gcs/" title="{% trans "Read the general terms and conditions of sales" %}">
+                                {% trans "I have read and I accept the general terms and conditions of sales" %}
+                            </a>
+                        </div>
+                    {% endif %}
+                    <div class="confirm_payment">
+                        <input type="submit" value="{% trans "Confirm your order" %}" />
+                    </div>
+                    <div class="clear"></div>
                 </form>
             </div>
         {% endif %}

@@ -66,10 +66,13 @@ def cart_list(request, tmpl, action=None, product_id=None):
             msg_err = _(u"Error while adding product(s)") if action == 'add' else _(u"Error while updating product(s)")
     elif action == 'invalid':
         msg_err = _(u"Unable to confirm your order, one (or more) product(s) in your cart exceed the available quantity")
+    elif action == 'uncheckedgcs':
+        msg_err = _(u"You have to read and accept the general terms and conditions of sales in order to validate your order")
     cart.save(request)
     return tmpl, {
         'cart': cart,
         'msg_err': msg_err, 'msg_ok': msg_ok,
+        'usegcs': settings.CART_SETTINGS['gcsuse'],
         'currency': settings.CURRENCY, 'currency_alt': settings.CURRENCY_ALT,
         }
 
@@ -79,6 +82,8 @@ def orders_list(request, tmpl, action=None):
     msg_ok = msg_err = None
     if action == 'validate':
         cart = Cart(request)
+        if not cart.has_gcs_ckecked():
+            return HttpResponseRedirect('/resa/cart/uncheckedgcs/')
         if not cart.is_valid():
             return HttpResponseRedirect('/resa/cart/invalid/')
         elif not cart.empty():
@@ -234,6 +239,13 @@ def orders_notpaid(request, tmpl):
                 selected_users = []
 
     return tmpl, locals()
+
+@login_required
+@reception_required
+@auto_render
+def orders_gcs(request, tmpl):
+    params = {}
+    return tmpl, params
 
 @login_required
 @reception_required
