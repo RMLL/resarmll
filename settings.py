@@ -312,9 +312,9 @@ OGONE_SETTINGS = {
 
 ### MISC ###
 FULL_ADDRESS = """
-Association RMLL Strasbourg - 2011 - contact@2011.rmll.info
-S/C Maison des Associations - 1a place des Orphelins - 67000 Strasbourg
-SIRET 520 081 431 00014 – Code APE 9499Z
+Free IT Foundation - 2012 - info@free-it-foundation.org
+Ch. de Champ-Claude 10 - 1214 Vernier, Genève - Suisse
+CH-660.2.608.005-3
 """
 
 TVA = {
