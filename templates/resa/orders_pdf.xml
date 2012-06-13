@@ -117,7 +117,7 @@
             </tr>
         </blockTable>
 
-        {% if not tva %}
+        {% if tva_invoice_msg %}
             <spacer length="0.5cm" width="1mm"/>
             <para style="note">
                 {% trans "VAT not applicable in accordance with Art. 261-7-1° of the French Tax Code" %}

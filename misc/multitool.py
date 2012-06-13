@@ -155,7 +155,7 @@ class Resa:
                 try:
                     buffer = gen_pdf('resa/orders_pdf.xml', {'user': u, 'order': o,
                         'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
-                        'tva': settings.TVA})
+                        'tva': settings.TVA['value']})
                 except:
                     buffer = None
                 if buffer:

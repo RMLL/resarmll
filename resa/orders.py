@@ -114,7 +114,7 @@ class Order(models.Model):
         return ret
         
     def hors_taxes(self):
-        return Decimal("%.02f" % (float(self.totalamount()) / (1.0 + (float(settings.TVA) / 100.0))))
+        return Decimal("%.02f" % (float(self.totalamount()) / (1.0 + (float(settings.TVA['value']) / 100.0))))
 
 class OrderDetail(models.Model):
     order = models.ForeignKey('Order')

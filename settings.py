@@ -317,7 +317,10 @@ S/C Maison des Associations - 1a place des Orphelins - 67000 Strasbourg
 SIRET 520 081 431 00014 – Code APE 9499Z
 """
 
-TVA = 0
+TVA = {
+    'value': 0,
+    'invoice_msg': False,
+}
 
 ### DEVELOPMENT SETTINGS ###
 if os.environ.has_key('DJANGO_DEVEL'):
