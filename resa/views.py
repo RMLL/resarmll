@@ -179,7 +179,7 @@ def orders_pdf(request, tmpl, order_id=0):
         return HttpResponseRedirect('/resa/orders/details/%d' % order_id)
 
     response = HttpResponse(mimetype='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename=billing_order_%d.pdf' % order_id
+    response['Content-Disposition'] = 'attachment; filename=invoice_order_%d.pdf' % order_id
     response.write(gen_pdf(tmpl, {'user': request.user, 'order': order,
                         'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
                         'tva': settings.TVA['value'], 'tva_invoice_msg': settings.TVA['invoice_msg']}))
@@ -325,7 +325,7 @@ def manage_orders_pdf(request, tmpl, order_id=0):
         return HttpResponseRedirect('/')
 
     response = HttpResponse(mimetype='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename=billing_order_%d.pdf' % order_id
+    response['Content-Disposition'] = 'attachment; filename=invoice_order_%d.pdf' % order_id
     response.write(gen_pdf(tmpl, {'user': order.user, 'order': order,
                         'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
                         'tva': settings.TVA['value'], 'tva_invoice_msg': settings.TVA['invoice_msg']}))
@@ -493,12 +493,12 @@ def documents(request, tmpl):
     cpdf = '%s/allbadges.pdf' % (settings.DOCUMENTSDIR)
     if os.path.exists(cpdf):
         documents['allbadges'] = {'path': cpdf, 'size': 0, 'mtime': 0}
-    cpdf = '%s/allbills.pdf' % (settings.DOCUMENTSDIR)
+    cpdf = '%s/all_invoices.pdf' % (settings.DOCUMENTSDIR)
     if os.path.exists(cpdf):
-        documents['allbills'] = {'path': cpdf, 'size': 0, 'mtime': 0}
-    cpdf = '%s/allbillsnotpaid.pdf' % (settings.DOCUMENTSDIR)
+        documents['all_invoices'] = {'path': cpdf, 'size': 0, 'mtime': 0}
+    cpdf = '%s/all_invoices_not_paid.pdf' % (settings.DOCUMENTSDIR)
     if os.path.exists(cpdf):
-        documents['allbillsnotpaid'] = {'path': cpdf, 'size': 0, 'mtime': 0}
+        documents['all_invoices_not_paid'] = {'path': cpdf, 'size': 0, 'mtime': 0}
 
     if documents:
         for k in documents:

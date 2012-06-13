@@ -87,7 +87,7 @@
                         <h4>{% trans "Order no" %} #{{ order.id }}</h4>
                         {% include "resa/order_details_extended.html" %}
                         <div>
-                            <a href="/resa/manage_orders/pdf/{{ order.id }}">{% trans "Download billing (pdf)" %}</a>
+                            <a href="/resa/manage_orders/pdf/{{ order.id }}">{% trans "Download invoice (pdf)" %}</a>
                         </div>
                     {% endfor %}
                 </div>

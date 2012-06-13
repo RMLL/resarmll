@@ -3,11 +3,11 @@
 {% load math %}
 {% load unicode %}
 <!DOCTYPE document SYSTEM "rml_1_0.dtd">
-<document filename="=billing_order_{{ order.id }}.pdf">
+<document filename="invoice_order_{{ order.id }}.pdf">
     <template
         pageSize="(21cm, 29.7cm)" allowSplitting="20"
         leftMargin="2.0cm" rightMargin="2.0cm" topMargin="2.0cm" bottomMargin="2.0cm"
-        title="{% trans "Billing" %}" author="RMLL Team">
+        title="{% trans "Invoice" %}" author="RMLL Team">
         <pageTemplate id="first">
             <pageGraphics>
                 <drawCentredString x="105mm" y="3.4cm">{% trans "Libre Software Meeting" %}</drawCentredString>
@@ -54,7 +54,7 @@
         <nextFrame/>
 
         <para>
-            <b>{% trans "Document:" %}</b> <i>{% trans "Billing num" %} FC_{{ order.id }}-{{ user.id }}</i>
+            <b>{% trans "Document:" %}</b> <i>{% trans "Invoice num" %} FC_{{ order.id }}-{{ user.id }}</i>
         </para>
         <para>
             <b>{% trans "Date:" %}</b> <i>{{ order.payment_date|date:"Y-m-d" }}</i>
@@ -68,7 +68,7 @@
         <spacer length="5mm" width="1mm"/>
 
         <para>
-            {% trans "Here is the billing for your order:" %}
+            {% trans "Here is the invoice for your order:" %}
         </para>
 
         <spacer length="1cm" width="1mm"/>

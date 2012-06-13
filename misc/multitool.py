@@ -136,7 +136,7 @@ class Users:
 
 class Resa:
     @staticmethod
-    def bills(folder, paid=True):
+    def invoices(folder, paid=True):
         ret = True
         if paid:
             results = User.objects.filter(order__payment_date__isnull=False).order_by('id')
@@ -150,7 +150,7 @@ class Resa:
             else:
                 orders = u.order_set.filter(payment_date__isnull=True).order_by('id')
             for i, o in enumerate(orders):
-                bname = '%s/bill_%04d-%03d.pdf' % (folder, u.id, i+1)
+                bname = '%s/invoice_%04d-%03d.pdf' % (folder, u.id, i+1)
                 print 'Writing invoice of user #%d: %s ...' % (u.id, bname),
                 try:
                     buffer = gen_pdf('resa/orders_pdf.xml', {'user': u, 'order': o,
@@ -200,37 +200,37 @@ class Docs:
         # allbadges
         Users.allbadges2pdf(settings.DOCUMENTSDIR + '/allbadges.pdf')
 
-        # bills
-        tmpdir = tempfile.mkdtemp('bills', 'tmp', settings.TMPDIR)
-        Resa.bills(tmpdir)
-        billspdf = glob.glob('%s/*.pdf' % tmpdir)
-        if billspdf != []:
+        # invoices
+        tmpdir = tempfile.mkdtemp('invoices', 'tmp', settings.TMPDIR)
+        Resa.invoices(tmpdir)
+        invoicespdf = glob.glob('%s/*.pdf' % tmpdir)
+        if invoicespdf != []:
             cmdargs = ['pdftk']
-            cmdargs += billspdf
-            cmdargs += ['cat', 'output',  '%s/allbills.pdf' % settings.DOCUMENTSDIR]
+            cmdargs += invoicespdf
+            cmdargs += ['cat', 'output',  '%s/all_invoices.pdf' % settings.DOCUMENTSDIR]
             try:
                 subprocess.call(cmdargs)
             except:
-                print 'Unable to generate allbills.pdf'
+                print 'Unable to generate all_invoices.pdf'
         Docs.rm_recursive(tmpdir)
 
-        # bills not paid
-        tmpdir = tempfile.mkdtemp('billsnotpaid', 'tmp', settings.TMPDIR)
-        Resa.bills(tmpdir, False)
-        billspdf = glob.glob('%s/*.pdf' % tmpdir)
-        if billspdf != []:
+        # invoices not paid
+        tmpdir = tempfile.mkdtemp('invoicesnotpaid', 'tmp', settings.TMPDIR)
+        Resa.invoices(tmpdir, False)
+        invoicespdf = glob.glob('%s/*.pdf' % tmpdir)
+        if invoicespdf != []:
             cmdargs = ['pdftk']
-            cmdargs += billspdf
-            cmdargs += ['cat', 'output',  '%s/allbillsnotpaid.pdf' % settings.DOCUMENTSDIR]
+            cmdargs += invoicespdf
+            cmdargs += ['cat', 'output',  '%s/all_invoices_not_paid.pdf' % settings.DOCUMENTSDIR]
             try:
                 subprocess.call(cmdargs)
             except:
-                print 'Unable to generate allbillsnotpaid.pdf'
+                print 'Unable to generate all_invoices_not_paid.pdf'
         Docs.rm_recursive(tmpdir)
 
 if __name__ == "__main__":
     ok = False
-    args = ['all', 'badgegen', 'allbadges2pdf', 'importusers', 'bills', 'billsnotpaid']
+    args = ['all', 'badgegen', 'allbadges2pdf', 'importusers', 'invoices', 'invoices_not_paid']
     if len(sys.argv) > 1 and sys.argv[1] in args:
         ok = True
         if sys.argv[1] == 'all':
@@ -241,10 +241,10 @@ if __name__ == "__main__":
             Users.allbadges2pdf(sys.argv[2])
         elif sys.argv[1] == 'importusers' and len(sys.argv) > 3:
             Users.import_fromcsv(sys.argv[2], sys.argv[3])
-        elif sys.argv[1] == 'bills' and len(sys.argv) > 2:
-            Resa.bills(sys.argv[2])
-        elif sys.argv[1] == 'billsnotpaid' and len(sys.argv) > 2:
-            Resa.bills(sys.argv[2], False)
+        elif sys.argv[1] == 'invoices' and len(sys.argv) > 2:
+            Resa.invoices(sys.argv[2])
+        elif sys.argv[1] == 'invoices_not_paid' and len(sys.argv) > 2:
+            Resa.invoices(sys.argv[2], False)
         else:
             ok = False
 

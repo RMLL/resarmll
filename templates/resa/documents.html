@@ -30,23 +30,23 @@
                     </div>
                 {% endif %}
 
-                {% if documents.allbills %}
+                {% if documents.all_invoices %}
                     <h3>{% trans "All paid invoices into a single PDF file" %}</h3>
                     <div class="content">
-                        <a href="/resa/documents/allbills">
+                        <a href="/resa/documents/all_invoices">
                             {% trans "Download" %}
                         </a>
-                        &mdash; {{ documents.allbills.size }} {% trans "MB" %} &mdash; <em>{% trans "Last update:" %} {{ documents.allbills.mtime }}</em>
+                        &mdash; {{ documents.all_invoices.size }} {% trans "MB" %} &mdash; <em>{% trans "Last update:" %} {{ documents.all_invoices.mtime }}</em>
                     </div>
                 {% endif %}
 
-                {% if documents.allbillsnotpaid %}
+                {% if documents.all_invoices_not_paid %}
                     <h3>{% trans "All unpaid invoices into a single PDF file" %}</h3>
                     <div class="content">
-                        <a href="/resa/documents/allbillsnotpaid">
+                        <a href="/resa/documents/all_invoices_not_paid">
                             {% trans "Download" %}
                         </a>
-                        &mdash; {{ documents.allbillsnotpaid.size }} {% trans "MB" %} &mdash; <em>{% trans "Last update:" %} {{ documents.allbillsnotpaid.mtime }}</em>
+                        &mdash; {{ documents.all_invoices_not_paid.size }} {% trans "MB" %} &mdash; <em>{% trans "Last update:" %} {{ documents.all_invoices_not_paid.mtime }}</em>
                     </div>
                 {% endif %}
 
