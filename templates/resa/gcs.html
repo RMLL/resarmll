@@ -1,4 +1,4 @@
-{% extends "base2cols.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
@@ -9,6 +9,10 @@
 {% endblock %}
 
 {% block content %}
+    <p>
+        <a href="/" title="{% trans "Back to home page" %}">{% trans "Back to home page" %}</a>
+    </p>
+
     <h2>{% trans "General Conditions of sales" %}</h2>
 
     <div id="order_gts">
@@ -16,5 +20,9 @@
         {% include "resa/common_gcs.html" %}
 
     </div>
+
+    <p>
+        <a href="/" title="{% trans "Back to home page" %}">{% trans "Back to home page" %}</a>
+    </p>
 
 {% endblock %}

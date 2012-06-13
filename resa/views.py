@@ -26,6 +26,13 @@ from resarmll.utils.decorators import auto_render, staff_required, manager_requi
 from resarmll.utils.pdf import gen_pdf
 from resarmll.compta.models import Operation
 
+@auto_render
+def gcs(request, tmpl):
+    params = {}
+    if not settings.CART_SETTINGS['gcsuse']:
+        return HttpResponseRedirect('/')
+    return tmpl, params
+
 @login_required
 @auto_render
 def catalog_list(request, tmpl):
@@ -239,7 +246,6 @@ def orders_notpaid(request, tmpl):
     return tmpl, locals()
 
 @login_required
-@reception_required
 @auto_render
 def orders_gcs(request, tmpl):
     params = {}

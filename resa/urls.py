@@ -7,6 +7,8 @@ from resarmll.resa.views import *
 urlpatterns = patterns ('',
     (r'^$', redirect_to, {'url': 'catalog/'}),
 
+    url(r'^gcs/$', gcs, {'tmpl': 'resa/gcs.html'}),
+    
     (r'^catalog/$', redirect_to, {'url': 'list'}),
     url(r'^catalog/list/$', catalog_list, {'tmpl': 'resa/catalog_list.html'}),
 
