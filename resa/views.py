@@ -67,7 +67,7 @@ def cart_list(request, tmpl, action=None, product_id=None):
     elif action == 'invalid':
         msg_err = _(u"Unable to confirm your order, one (or more) product(s) in your cart exceed the available quantity")
     elif action == 'uncheckedgcs':
-        msg_err = _(u"You have to read and accept the general terms and conditions of sales in order to validate your order")
+        msg_err = _(u"You have to read and accept the general terms and conditions of sales in order to confirm your order")
     cart.save(request)
     return tmpl, {
         'cart': cart,
@@ -571,7 +571,7 @@ def orders_bank_return(request, tmpl, status=None, order_id=None):
         canceled, rejected, delayed, accepted, order_id = bp.getreturn(status)
 
     if delayed:
-        msg_warn = _(u"Confirmation of your payment by your bank has not been received yet. You should contact your bank before retrying.")
+        msg_warn = _(u"Confirmation of your payment by your bank has not been received yet. You should contact your bank before retrying to pay for this order.")
     elif canceled:
         msg_warn = _(u"Your payment has been canceled, you could resume it later.")
     elif rejected:
