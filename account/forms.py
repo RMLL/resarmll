@@ -38,11 +38,15 @@ class UserForm(forms.Form):
         widget=forms.Textarea(attrs=_attrs),
         help_text=_(u"Address is useful for speakers or people who'll get a refund."),
         )
-    language = forms.ChoiceField(label=_(u"Language:"),
-        choices=settings.LANGUAGES)
+    zipcode = forms.CharField(label=_(u"Zipcode:"),
+        required=False, max_length=16, widget=forms.TextInput(attrs=_attrs))
+    city = forms.CharField(label=_(u"City:"),
+        required=False, max_length=128, widget=forms.TextInput(attrs=_attrs))
     country = forms.ModelChoiceField(label=_(u"Country:"),
         queryset=Country.objects.all(), widget=forms.Select(), empty_label=None,
         initial=321) # FIXME (id hardcoded)
+    language = forms.ChoiceField(label=_(u"Language:"),
+        choices=settings.LANGUAGES)
     badge_type = forms.ModelChoiceField(label=_(u"Badge type:"),
         queryset=Badge.objects.filter(userchoice=True).order_by('-default'), widget=forms.Select(),
         empty_label=None)

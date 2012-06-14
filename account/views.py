@@ -62,8 +62,10 @@ def register(request, tmpl):
                     user=new_user,
                     gender=form.cleaned_data['gender'],
                     address=form.cleaned_data['address'],
-                    language=form.cleaned_data['language'],
+                    zipcode=form.cleaned_data['zipcode'],
+                    city=form.cleaned_data['city'],
                     country=form.cleaned_data['country'],
+                    language=form.cleaned_data['language'],
                     badge_type = badge,
                     badge_text=form.cleaned_data['badge_text'],
                     comments=form.cleaned_data['comments'],
@@ -109,11 +111,12 @@ def profile_modify(request, tmpl):
                 cur_profile = cur_user.get_profile()
                 cur_profile.gender = form.cleaned_data['gender']
                 cur_profile.address = form.cleaned_data['address']
-                cur_profile.language = form.cleaned_data['language']
+                cur_profile.zipcode = form.cleaned_data['zipcode']
+                cur_profile.city = form.cleaned_data['city']
                 cur_profile.country = form.cleaned_data['country']
+                cur_profile.language = form.cleaned_data['language']
                 cur_profile.badge_text = form.cleaned_data['badge_text']
                 cur_profile.comments = form.cleaned_data['comments']
-                cur_profile.fingerprint = form.cleaned_data['fingerprint']
                 badge = form.cleaned_data['badge_type']
                 if badge:
                     if not badge.userchoice:
@@ -199,8 +202,10 @@ def create(request, tmpl):
                         user=user_obj,
                         gender = form.cleaned_data['gender'],
                         address = form.cleaned_data['address'],
-                        language = form.cleaned_data['language'],
                         country = form.cleaned_data['country'],
+                        zipcode = form.cleaned_data['zipcode'],
+                        city = form.cleaned_data['city'],
+                        language = form.cleaned_data['language'],
                         badge_text = form.cleaned_data['badge_text'],
                         comments =  form.cleaned_data['comments'],
                         fingerprint = form.cleaned_data['fingerprint'],
@@ -307,8 +312,10 @@ def edit(request, tmpl, user_id=None):
                     p = user.get_profile()
                     p.gender = form.cleaned_data['gender']
                     p.address = form.cleaned_data['address']
-                    p.language = form.cleaned_data['language']
+                    p.zipcode = form.cleaned_data['zipcode']
+                    p.city = form.cleaned_data['city']
                     p.country = form.cleaned_data['country']
+                    p.language = form.cleaned_data['language']
                     p.badge_text = form.cleaned_data['badge_text']
                     p.comments =  form.cleaned_data['comments']
                     p.fingerprint = form.cleaned_data['fingerprint']

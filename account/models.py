@@ -25,9 +25,11 @@ class UserProfile(models.Model):
     gender = models.CharField(_(u"Gender"), max_length=1,
                                 choices=GENDER_CHOICES, blank=True)
     address = models.TextField(_(u"Address"), blank=True)
+    zipcode = models.CharField(_(u"Zipcode"), max_length=16, blank=True)
+    city = models.CharField(_(u"City"), max_length=128, blank=True)
+    country = models.ForeignKey(Country)
     language =  models.CharField(_(u"Language"), max_length=2,
                                  choices=settings.LANGUAGES)
-    country = models.ForeignKey(Country)
     badge_text = models.CharField(_(u"Badge text"), max_length=32, blank=True)
     comments = models.TextField(_(u"Comment(s)"), blank=True)
     fingerprint = models.CharField(_(u"PGP/GPG Fingerprint"), max_length=75, blank=True)

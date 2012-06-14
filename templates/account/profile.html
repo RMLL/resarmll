@@ -57,13 +57,31 @@
         </div>
 
         <div class="field">
-            <div class="label">{% trans "Language:" %}</div>
-            {{ user.get_profile.get_language_display }}
+            <div class="label">{% trans "Zipcode:" %}</div>
+            {% ifequal user.get_profile.zipcode '' %}
+                <em class="notset">{% trans "not set" %}</em>
+            {% else %}
+                {{ user.get_profile.zipcode }}
+            {% endifequal %}
+        </div>
+
+        <div class="field">
+            <div class="label">{% trans "City:" %}</div>
+            {% ifequal user.get_profile.city '' %}
+                <em class="notset">{% trans "not set" %}</em>
+            {% else %}
+                {{ user.get_profile.city }}
+            {% endifequal %}
         </div>
 
         <div class="field">
             <div class="label">{% trans "Country:" %}</div>
             {{ user.get_profile.country }}
+        </div>
+
+        <div class="field">
+            <div class="label">{% trans "Language:" %}</div>
+            {{ user.get_profile.get_language_display }}
         </div>
 
         <div class="field">
