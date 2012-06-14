@@ -218,8 +218,8 @@ PAYPAL_SETTINGS = {
 #
 # prod
 #
-    'inuse': True,
-    'id': 'treso2011@formidable-inc.net',
+    'inuse': False,
+    'id': 'info@free-it-foundation.org',
     'url' : 'https://www.paypal.com/cgi-bin/webscr',
     'currency': 'EUR',
     'return': '/resa/orders/paypal/return',
