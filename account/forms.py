@@ -34,14 +34,14 @@ class UserForm(forms.Form):
     gender = forms.ChoiceField(label=_(u"Gender:"), choices=GENDER_CHOICES, required=False,
         help_text=_(u"The Gender is not mandatory but could be useful for room distribution."),
         )
-    address = forms.CharField(label=_(u"Address:"), required=False,
+    address = forms.CharField(label=_(u"Address (street, number and details):"), required=True,
         widget=forms.Textarea(attrs=_attrs),
         help_text=_(u"Address is useful for speakers or people who'll get a refund."),
         )
     zipcode = forms.CharField(label=_(u"Zipcode:"),
-        required=False, max_length=16, widget=forms.TextInput(attrs=_attrs))
+        required=True, max_length=16, widget=forms.TextInput(attrs=_attrs))
     city = forms.CharField(label=_(u"City:"),
-        required=False, max_length=128, widget=forms.TextInput(attrs=_attrs))
+        required=True, max_length=128, widget=forms.TextInput(attrs=_attrs))
     country = forms.ModelChoiceField(label=_(u"Country:"),
         queryset=Country.objects.all(), widget=forms.Select(), empty_label=None,
         initial=321) # FIXME (id hardcoded)
@@ -120,6 +120,13 @@ class UserFormManagerCreate(UserForm):
         self.fields['badge_type'] = forms.ModelChoiceField(label=_(u"Badge type:"),
             queryset=Badge.objects.all().order_by('-default'), widget=forms.Select(),
             empty_label=None)
+        self.fields['address'] = forms.CharField(label=_(u"Address (street, number and details):"), required=False,
+            widget=forms.Textarea(attrs=_attrs),
+            help_text=_(u"Address is useful for speakers or people who'll get a refund."))
+        self.fields['zipcode'] = forms.CharField(label=_(u"Zipcode:"),
+            required=False, max_length=16, widget=forms.TextInput(attrs=_attrs))
+        self.fields['city'] = forms.CharField(label=_(u"City:"),
+            required=False, max_length=128, widget=forms.TextInput(attrs=_attrs))
 
 class UserFormManagerModify(UserFormManagerCreate, UserFormModify):
     def fill_from_user(self, user, priv=False):
