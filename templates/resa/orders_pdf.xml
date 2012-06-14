@@ -106,14 +106,14 @@
                     <td><para><b>{% trans "Total excl. VAT:" %}</b></para></td>
                     <td/>
                     <td/>
-                    <td>{{ order.hors_taxes }} euros</td>
+                    <td>{{ order.hors_taxes }} {{ currency }}</td>
                 </tr>
             {% endif %}
             <tr>
-                <td><para><b>{% trans "Total incl. VAT:" %}</b></para></td>
+                <td><para><b>{% if tva %}{% trans "Total incl. VAT:" %}{% else %}{% trans "Total:" %}{% endif %}</b></para></td>
                 <td/>
                 <td/>
-                <td>{{ order.totalamount }} euros</td>
+                <td>{{ order.totalamount }} {{ currency }}</td>
             </tr>
         </blockTable>
 

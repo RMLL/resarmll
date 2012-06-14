@@ -182,6 +182,7 @@ def orders_pdf(request, tmpl, order_id=0):
     response['Content-Disposition'] = 'attachment; filename=invoice_order_%d.pdf' % order_id
     response.write(gen_pdf(tmpl, {'user': request.user, 'order': order, 'lang': request.LANGUAGE_CODE,
                         'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
+                        'currency': settings.CURRENCY,
                         'tva': settings.TVA['value'], 'tva_invoice_msg': settings.TVA['invoice_msg']}))
     return response
 
@@ -328,6 +329,7 @@ def manage_orders_pdf(request, tmpl, order_id=0):
     response['Content-Disposition'] = 'attachment; filename=invoice_order_%d.pdf' % order_id
     response.write(gen_pdf(tmpl, {'user': order.user, 'order': order,
                         'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
+                        'currency': settings.CURRENCY,
                         'tva': settings.TVA['value'], 'tva_invoice_msg': settings.TVA['invoice_msg']}))
     return response
 
