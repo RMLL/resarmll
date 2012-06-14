@@ -180,7 +180,7 @@ def orders_pdf(request, tmpl, order_id=0):
 
     response = HttpResponse(mimetype='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=invoice_order_%d.pdf' % order_id
-    response.write(gen_pdf(tmpl, {'user': request.user, 'order': order,
+    response.write(gen_pdf(tmpl, {'user': request.user, 'order': order, 'lang': request.LANGUAGE_CODE,
                         'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
                         'tva': settings.TVA['value'], 'tva_invoice_msg': settings.TVA['invoice_msg']}))
     return response

@@ -15,7 +15,7 @@
                 {% for l in address_lines %}
                 <drawCentredString x="105mm" y="{{ forloop.counter0|dmult:"0.6"|dsub:"2.6"|dmult:"-1" }}cm"><![CDATA[{{ l }}]]></drawCentredString>
                 {% endfor %}
-                <image x="23mm" y="25cm" file="{{ img_path }}logo_facture.png" width="4cm"/>
+                <image x="23mm" y="25cm" file="{{ img_path }}invoice_logo_{{ lang }}.png" width="2.3cm"/>
             </pageGraphics>
             <frame id="address" x1="9cm" y1="24.0cm" width="10cm" height="4.5cm"/>
             <frame id="column" x1="2.0cm" y1="5.0cm" width="17cm" height="18cm"/>
