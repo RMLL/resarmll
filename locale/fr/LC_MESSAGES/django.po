@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-11 23:57+0200\n"
-"PO-Revision-Date: 2012-06-12 00:05+0200\n"
+"POT-Creation-Date: 2012-06-14 07:58+0200\n"
+"PO-Revision-Date: 2012-06-14 07:59+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "Language: en_US\n"
@@ -157,7 +157,7 @@ msgstr "A la réception"
 msgid "Gender"
 msgstr "Sexe"
 
-#: account/models.py:27 resa/views.py:467
+#: account/models.py:27 resa/views.py:475
 msgid "Address"
 msgstr "Adresse"
 
@@ -425,7 +425,6 @@ msgid "Distributed quantity"
 msgstr "Quantité distribuée"
 
 #: resa/orders.py:127 templates/resa/orders_details.html:5
-#: templates/resa/orders_gcs.html:5
 msgid "Order detail"
 msgstr "Détail de la commande"
 
@@ -450,31 +449,31 @@ msgstr "Quantité payée"
 msgid "Stock"
 msgstr "Stock"
 
-#: resa/views.py:44 resa/views.py:354
+#: resa/views.py:51 resa/views.py:362
 msgid "Product successfully removed from cart"
 msgstr "Produit supprimé du panier avec succès"
 
-#: resa/views.py:46 resa/views.py:356
+#: resa/views.py:53 resa/views.py:364
 msgid "Error while removing product from cart"
 msgstr "Erreur lors de la suppression du produit du panier"
 
-#: resa/views.py:64
+#: resa/views.py:71
 msgid "Product(s) successfully added"
 msgstr "Les produits ont été ajoutés avec succès"
 
-#: resa/views.py:64 resa/views.py:369
+#: resa/views.py:71 resa/views.py:377
 msgid "Product(s) successfully updated"
 msgstr "Les produits ont été mis à jour avec succès"
 
-#: resa/views.py:66
+#: resa/views.py:73
 msgid "Error while adding product(s)"
 msgstr "Erreur lors de l'ajout des produits"
 
-#: resa/views.py:66 resa/views.py:371
+#: resa/views.py:73 resa/views.py:379
 msgid "Error while updating product(s)"
 msgstr "Erreur lors de la mise à jour des produits"
 
-#: resa/views.py:68
+#: resa/views.py:75
 msgid ""
 "Unable to confirm your order, one (or more) product(s) in your cart exceed "
 "the available quantity"
@@ -482,7 +481,7 @@ msgstr ""
 "Impossible de confirmer votre commande, l'un des produits de votre panier "
 "dépasse la quantité disponible"
 
-#: resa/views.py:70
+#: resa/views.py:77
 msgid ""
 "You have to read and accept the general terms and conditions of sales in "
 "order to confirm your order"
@@ -490,51 +489,51 @@ msgstr ""
 "Vous devez lire et accepter les conditions générales de vente pour confirmer "
 "votre commande"
 
-#: resa/views.py:94 resa/views.py:382
+#: resa/views.py:101 resa/views.py:390
 msgid "Order successfully confirmed"
 msgstr "Commande confirmée avec succès"
 
-#: resa/views.py:220
+#: resa/views.py:228
 msgid "Email body should not be empty"
 msgstr "Le corps du mail ne devrait pas être vide"
 
-#: resa/views.py:222
+#: resa/views.py:230
 msgid "Email subject should not be empty"
 msgstr "Le sujet du mail ne devrait pas être vide"
 
-#: resa/views.py:224
+#: resa/views.py:232
 msgid "At least one user should be selected"
 msgstr "Au moins un utilisateur doit être sélectionné"
 
-#: resa/views.py:231
+#: resa/views.py:239
 msgid "One or more emails were not sent correctly"
 msgstr "Un ou plusieurs emails n'ont pas été envoyés correctement"
 
-#: resa/views.py:234
+#: resa/views.py:242
 msgid "All emails were sucessfully sent"
 msgstr "Tous les mails ont été envoyés avec succès"
 
-#: resa/views.py:278
+#: resa/views.py:285
 msgid "Order sucessfully marked as paid"
 msgstr "Commande marquée comme payée avec succès"
 
-#: resa/views.py:285
+#: resa/views.py:292
 msgid "Order sucessfully removed"
 msgstr "Commande supprimée avec succès"
 
-#: resa/views.py:296
+#: resa/views.py:303
 msgid "Order sucessfully updated"
 msgstr "Commande mise à jour avec succès"
 
-#: resa/views.py:349
+#: resa/views.py:357
 msgid "Product successfully added to cart"
 msgstr "Produit ajouté au panier avec succès"
 
-#: resa/views.py:351
+#: resa/views.py:359
 msgid "Error while adding product to cart"
 msgstr "Erreur lors de l'ajout du produit au panier"
 
-#: resa/views.py:377
+#: resa/views.py:385
 msgid ""
 "Unable to confirm this order, one (or more) product(s) in the cart exceed "
 "the available quantity"
@@ -542,39 +541,39 @@ msgstr ""
 "Impossible de confirmer votre commande, l'un des produits de votre panier "
 "dépasse la quantité disponible"
 
-#: resa/views.py:460 templates/account/search.html:42
+#: resa/views.py:468 templates/account/search.html:42
 #: templates/resa/orders_notpaid.html:37 templates/resa/orders_notpaid.html:98
 #: templates/resa/orders_notpaid.html:159 templates/resa/sales.html:49
 #: templates/resa/sales.html.py:87
 msgid "Last name"
 msgstr "Nom"
 
-#: resa/views.py:461 templates/account/search.html:43
+#: resa/views.py:469 templates/account/search.html:43
 #: templates/resa/orders_notpaid.html:38 templates/resa/orders_notpaid.html:99
 #: templates/resa/orders_notpaid.html:160 templates/resa/sales.html:50
 #: templates/resa/sales.html.py:88
 msgid "First name"
 msgstr "Prénom"
 
-#: resa/views.py:462 templates/resa/cart_list.html:38
+#: resa/views.py:470 templates/resa/cart_list.html:38
 #: templates/resa/manage_cart.html:53 templates/resa/order_details.html:17
 #: templates/resa/order_details_extended.html:25
 msgid "Product"
 msgstr "Produit"
 
-#: resa/views.py:463
+#: resa/views.py:471
 msgid "Number of products ordered"
 msgstr "Nombre de produits commandés"
 
-#: resa/views.py:464
+#: resa/views.py:472
 msgid "Number of products distributed"
 msgstr "Nombre de produits distribués"
 
-#: resa/views.py:465
+#: resa/views.py:473
 msgid "Number of products not yet distributed"
 msgstr "Nombre de produits à distribuer"
 
-#: resa/views.py:466 templates/account/search.html:44
+#: resa/views.py:474 templates/account/search.html:44
 #: templates/resa/orders_notpaid.html:39
 #: templates/resa/orders_notpaid.html:100
 #: templates/resa/orders_notpaid.html:161 templates/resa/sales.html:51
@@ -582,20 +581,20 @@ msgstr "Nombre de produits à distribuer"
 msgid "Email"
 msgstr "Email"
 
-#: resa/views.py:523 resa/views.py:576
+#: resa/views.py:531 resa/views.py:584
 msgid "Your payment has been canceled, you could resume it later."
 msgstr "Votre paiement a été annulé, vous pouvez le reprendre plus tard."
 
-#: resa/views.py:536 resa/views.py:586 templates/resa/orders_details.html:16
+#: resa/views.py:544 resa/views.py:594 templates/resa/orders_details.html:16
 msgid "This order is not yours."
 msgstr "Cette commande n'est pas la vôtre"
 
-#: resa/views.py:539
+#: resa/views.py:547
 #, python-format
 msgid "It seems that PayPal did not accept your payment (Code: %s)."
 msgstr "Il semblerait que PayPal n'ait pas accepté votre paiement (Code : %s)."
 
-#: resa/views.py:541
+#: resa/views.py:549
 msgid ""
 "Your payment has been confirmed by PayPal, you should receive a notification "
 "by email in a few minutes."
@@ -603,11 +602,11 @@ msgstr ""
 "Votre paiement a été confirmé par Paypal, vous devriez recevoir un mail de "
 "confirmation d'ici quelques minutes."
 
-#: resa/views.py:543 resa/views.py:590
+#: resa/views.py:551 resa/views.py:598
 msgid "Unable to find the order related to this payment."
 msgstr "Impossible de trouver la commande liée à ce paiement."
 
-#: resa/views.py:574
+#: resa/views.py:582
 msgid ""
 "Confirmation of your payment by your bank has not been received yet. You "
 "should contact your bank before retrying to pay for this order."
@@ -615,7 +614,7 @@ msgstr ""
 "La confirmation du paiement par votre banque n'as pas encore été reçue. Vous "
 "devriez contacter votre banque avant de réessayer de payer cette commande."
 
-#: resa/views.py:578
+#: resa/views.py:586
 msgid ""
 "Your payment has been rejected by the bank, you should retry in few days or "
 "try another payment method."
@@ -623,7 +622,7 @@ msgstr ""
 "Votre paiement a été rejeté par la banque, vous devriez réessayer d'ici "
 "quelques jours ou choisir un autre moyen de paiement."
 
-#: resa/views.py:588
+#: resa/views.py:596
 msgid ""
 "Your payment has been confirmed by the bank, you should receive a "
 "notification by email in a few minutes."
@@ -631,7 +630,7 @@ msgstr ""
 "Votre paiement a été confirmé par la banque, vous devriez recevoir un mail "
 "de confirmation d'ici quelques minutes."
 
-#: resa/views.py:592
+#: resa/views.py:600
 msgid ""
 "Your payment has failed, you should retry in few days or try another payment "
 "method."
@@ -1252,11 +1251,21 @@ msgstr "Cordialement,"
 msgid "The LSM Organization Team"
 msgstr "L'équipe d'organisation des RMLL"
 
-#: templates/layout/footer.html:8
+#: templates/layout/footer.html:8 templates/resa/cart_list.html:92
+msgid "Read the general terms and conditions of sales"
+msgstr "Lire les conditions générales de vente"
+
+#: templates/layout/footer.html:9 templates/resa/gcs.html:5
+#: templates/resa/gcs.html.py:16 templates/resa/orders_gcs.html:5
+#: templates/resa/orders_gcs.html.py:12
+msgid "General Conditions of sales"
+msgstr "Conditions Générales de Vente"
+
+#: templates/layout/footer.html:13
 msgid "All RMLL.info ssl certificates are gracefully offered by"
 msgstr "Tous les certificats SSL de RMLL.info sont gracieusement offerts par"
 
-#: templates/layout/footer.html:12
+#: templates/layout/footer.html:17
 msgid "Contact webmaster"
 msgstr "Contacter le webmaster"
 
@@ -1319,10 +1328,6 @@ msgstr "Mettre à jour le panier"
 msgid "Total"
 msgstr "Total"
 
-#: templates/resa/cart_list.html:92
-msgid "Read the general terms and conditions of sales"
-msgstr "Lire les conditions générales de vente"
-
 #: templates/resa/cart_list.html:93
 msgid "I have read and I accept the general terms and conditions of sales"
 msgstr "J'ai lu et j'accepte les conditions générales de vente"
@@ -1377,6 +1382,10 @@ msgstr "Toutes les factures payées dans un fichier PDF unique"
 #: templates/resa/documents.html:44
 msgid "All unpaid invoices into a single PDF file"
 msgstr "Toutes les factures non payées dans un fichier PDF unique"
+
+#: templates/resa/gcs.html:13 templates/resa/gcs.html.py:25
+msgid "Back to home page"
+msgstr "Retour à la page d'accueil"
 
 #: templates/resa/manage_cart.html:5
 msgid "User cart"
@@ -1478,7 +1487,7 @@ msgid "Paid order(s)"
 msgstr "Commande(s) payée(s)"
 
 #: templates/resa/manage_orders.html:90 templates/resa/orders_details.html:30
-msgid "Download billing (pdf)"
+msgid "Download invoice (pdf)"
 msgstr "Télécharger la facture (pdf)"
 
 #: templates/resa/order_details.html:5
@@ -1505,8 +1514,8 @@ msgid "Bank payment"
 msgstr "Paiement Bancaire"
 
 #: templates/resa/orders_details.html:28 templates/resa/orders_pdf.xml:10
-msgid "Billing"
-msgstr "Facturation"
+msgid "Invoice"
+msgstr "Facture"
 
 #: templates/resa/orders_details.html:37
 msgid "Delete this order"
@@ -1624,10 +1633,6 @@ msgstr "Aller au paiement"
 msgid "Payment by Bank"
 msgstr "Paiement bancaire"
 
-#: templates/resa/orders_gcs.html:12
-msgid "General Conditions of sales"
-msgstr "Conditions Générales de Vente"
-
 #: templates/resa/orders_list.html:35
 msgid "It has been agreed that your orders will be paid at your arrival."
 msgstr "Il a été convenu que vos commandes seront payées à votre arrivée."
@@ -1693,8 +1698,8 @@ msgid "Document:"
 msgstr "Document :"
 
 #: templates/resa/orders_pdf.xml:57
-msgid "Billing num"
-msgstr "Facture n°"
+msgid "Invoice num"
+msgstr "Facture no"
 
 #: templates/resa/orders_pdf.xml:60
 msgid "Date:"
@@ -1709,7 +1714,7 @@ msgid "Mister"
 msgstr "Monsieur"
 
 #: templates/resa/orders_pdf.xml:71
-msgid "Here is the billing for your order:"
+msgid "Here is the invoice for your order:"
 msgstr "Ci-dessous la facture pour votre commande :"
 
 #: templates/resa/orders_pdf.xml:77
@@ -1735,6 +1740,10 @@ msgstr "Total HT"
 #: templates/resa/orders_pdf.xml:113
 msgid "Total incl. VAT:"
 msgstr "Total TTC"
+
+#: templates/resa/orders_pdf.xml:113
+msgid "Total:"
+msgstr "Total :"
 
 #: templates/resa/orders_pdf.xml:123
 msgid ""
@@ -1855,6 +1864,12 @@ msgstr "Afficher"
 #, python-format
 msgid "Accomodation for “%(place)s (printing)”"
 msgstr "Hébergement pour “%(place)s (impression)”"
+
+#~ msgid "Billing"
+#~ msgstr "Facturation"
+
+#~ msgid "Billing num"
+#~ msgstr "Facture n°"
 
 #~ msgid "Wifi access"
 #~ msgstr "Accès Wifi"
