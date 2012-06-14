@@ -20,13 +20,13 @@
     {% if documents %}
         <div id="documents">
             <div class="section">
-                {% if documents.allbadges %}
+                {% if documents.all_badges %}
                     <h3>{% trans "All badges into a single PDF file" %}</h3>
                     <div class="content">
-                        <a href="/resa/documents/allbadges">
+                        <a href="/resa/documents/all_badges">
                             {% trans "Download" %}
                         </a>
-                        &mdash; {{ documents.allbadges.size }} {% trans "MB" %} &mdash; <em>{% trans "Last update:" %} {{ documents.allbadges.mtime }}</em>
+                        &mdash; {{ documents.all_badges.size }} {% trans "MB" %} &mdash; <em>{% trans "Last update:" %} {{ documents.all_badges.mtime }}</em>
                     </div>
                 {% endif %}
 

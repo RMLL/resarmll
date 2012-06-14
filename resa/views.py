@@ -490,9 +490,9 @@ def sales_export(request, product_id):
 @auto_render
 def documents(request, tmpl):
     documents = {}
-    cpdf = '%s/allbadges.pdf' % (settings.DOCUMENTSDIR)
+    cpdf = '%s/all_badges.pdf' % (settings.DOCUMENTSDIR)
     if os.path.exists(cpdf):
-        documents['allbadges'] = {'path': cpdf, 'size': 0, 'mtime': 0}
+        documents['all_badges'] = {'path': cpdf, 'size': 0, 'mtime': 0}
     cpdf = '%s/all_invoices.pdf' % (settings.DOCUMENTSDIR)
     if os.path.exists(cpdf):
         documents['all_invoices'] = {'path': cpdf, 'size': 0, 'mtime': 0}

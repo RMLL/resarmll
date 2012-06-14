@@ -198,7 +198,7 @@ class Docs:
     def generateall():
         ret = True
         # allbadges
-        Users.allbadges2pdf(settings.DOCUMENTSDIR + '/allbadges.pdf')
+        Users.allbadges2pdf(settings.DOCUMENTSDIR + '/all_badges.pdf')
 
         # invoices
         tmpdir = tempfile.mkdtemp('invoices', 'tmp', settings.TMPDIR)
