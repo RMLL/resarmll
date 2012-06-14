@@ -52,32 +52,34 @@
                     </div>
                 </div>
 
-                <div class="section">
-                    <h3>{% trans "Payment by PayPal" %}</h3>
-                    <div class="content">
-                        <p>{% trans "Proceed the payment using PayPal:" %}</p>
-                        <form action="{{ paypal_settings.url }}" method="post" class="payment">
-                            <input type="hidden" name="business" value="{{ paypal_settings.id }}" />
-                            <input type="hidden" name="currency_code" value="{{ paypal_settings.currency }}" />
-                            <input type="hidden" name="return" value="{{ url }}{{ paypal_settings.return }}" />
-                            <input type="hidden" name="rm" value="2" />
-                            <input type="hidden" name="notify_url" value="{{ url }}{{ paypal_settings.notify_url }}" />
-                            <input type="hidden" name="cancel_return" value="{{ url }}{{ paypal_settings.cancel_return}}" />
-                            <input type="hidden" name="item_name_1" value="{% trans "Order no" %} {{ order.id }}" />
-                            <input type="hidden" name="item_number_1" value="{{ order.id }}" />
-                            <input type="hidden" name="invoice" value="{{ order.id }}" />
-                            <input type="hidden" name="amount_1" value="{{ order.totalamount }}" />
-                            <input type="hidden" name="cmd" value="_cart" />
-                            <input type="hidden" name="no_note" value="1" />
-                            <input type="hidden" name="upload" value="1" />
-                            <input type="hidden" name="no_shipping" value="1" />
-                            <input class="img" type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but23.gif" value="{% trans "Payment by PayPal" %}" name="submit" />
-                        </form>
-                        <p>
-                            <em>{% trans "If it is possible for you to use another payment method than PayPal, please do it. PayPal payments involves expensive fees for us." %}</em>
-                        </p>
+                 {% if paypal.inuse %}
+                    <div class="section">
+                        <h3>{% trans "Payment by PayPal" %}</h3>
+                        <div class="content">
+                            <p>{% trans "Proceed the payment using PayPal:" %}</p>
+                            <form action="{{ paypal.url }}" method="post" class="payment">
+                                <input type="hidden" name="business" value="{{ paypal.id }}" />
+                                <input type="hidden" name="currency_code" value="{{ paypal.currency }}" />
+                                <input type="hidden" name="return" value="{{ url }}{{ paypal.return }}" />
+                                <input type="hidden" name="rm" value="2" />
+                                <input type="hidden" name="notify_url" value="{{ url }}{{ paypal.notify_url }}" />
+                                <input type="hidden" name="cancel_return" value="{{ url }}{{ paypal.cancel_return}}" />
+                                <input type="hidden" name="item_name_1" value="{% trans "Order no" %} {{ order.id }}" />
+                                <input type="hidden" name="item_number_1" value="{{ order.id }}" />
+                                <input type="hidden" name="invoice" value="{{ order.id }}" />
+                                <input type="hidden" name="amount_1" value="{{ order.totalamount }}" />
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="no_note" value="1" />
+                                <input type="hidden" name="upload" value="1" />
+                                <input type="hidden" name="no_shipping" value="1" />
+                                <input class="img" type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but23.gif" value="{% trans "Payment by PayPal" %}" name="submit" />
+                            </form>
+                            <p>
+                                <em>{% trans "If it is possible for you to use another payment method than PayPal, please do it. PayPal payments involves expensive fees for us." %}</em>
+                            </p>
+                        </div>
                     </div>
-                </div>
+                {% endif %}
 
                 {% if wiretransfer.inuse %}
                     <div class="section">

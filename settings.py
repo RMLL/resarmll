@@ -218,6 +218,7 @@ PAYPAL_SETTINGS = {
 #
 # prod
 #
+    'inuse': True,
     'id': 'treso2011@formidable-inc.net',
     'url' : 'https://www.paypal.com/cgi-bin/webscr',
     'currency': 'EUR',

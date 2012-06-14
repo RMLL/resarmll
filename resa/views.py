@@ -124,7 +124,7 @@ def orders_details(request, tmpl, order_id=0):
 
     protocol = request.is_secure() and 'https' or 'http'
     url = "%s://%s" % (protocol, request.get_host())
-    paypal_settings = settings.PAYPAL_SETTINGS
+    paypal = settings.PAYPAL_SETTINGS
     treasurer = settings.TREASURER_SETTINGS
     wiretransfer = settings.WIRETRANSFER_SETTINGS
     check = settings.CHECK_SETTINGS
