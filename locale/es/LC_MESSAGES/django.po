@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-14 07:58+0200\n"
+"POT-Creation-Date: 2012-06-14 21:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,69 +54,77 @@ msgstr ""
 msgid "The Gender is not mandatory but could be useful for room distribution."
 msgstr ""
 
-#: account/forms.py:37 templates/account/profile.html:49
-msgid "Address:"
+#: account/forms.py:37 account/forms.py:123
+msgid "Address (street, number and details):"
 msgstr ""
 
-#: account/forms.py:39
+#: account/forms.py:39 account/forms.py:125
 msgid "Address is useful for speakers or people who'll get a refund."
 msgstr ""
 
-#: account/forms.py:41 templates/account/profile.html:60
-msgid "Language:"
+#: account/forms.py:41 account/forms.py:126 templates/account/profile.html:60
+msgid "Zipcode:"
 msgstr ""
 
-#: account/forms.py:43 templates/account/profile.html:65
+#: account/forms.py:43 account/forms.py:128 templates/account/profile.html:69
+msgid "City:"
+msgstr ""
+
+#: account/forms.py:45 templates/account/profile.html:78
 msgid "Country:"
 msgstr ""
 
-#: account/forms.py:46 account/forms.py:116 templates/account/profile.html:70
+#: account/forms.py:48 templates/account/profile.html:83
+msgid "Language:"
+msgstr ""
+
+#: account/forms.py:50 account/forms.py:120 templates/account/profile.html:88
 msgid "Badge type:"
 msgstr ""
 
-#: account/forms.py:49 templates/account/profile.html:75
+#: account/forms.py:53 templates/account/profile.html:93
 msgid "Badge text:"
 msgstr ""
 
-#: account/forms.py:51
+#: account/forms.py:55
 msgid "Free text printed on your badge (should not be too long)."
 msgstr ""
 
-#: account/forms.py:53
+#: account/forms.py:57
 msgid "Comment(s):"
 msgstr ""
 
-#: account/forms.py:55
+#: account/forms.py:59
 msgid ""
 "Distinctiveness (moving with a wheelchair, glad to use an available magnetic-"
 "field loop, blind, deep geek, ...)"
 msgstr ""
 
-#: account/forms.py:57 templates/account/profile.html:84
+#: account/forms.py:61 templates/account/profile.html:102
 msgid "PGP/GPG Fingerprint:"
 msgstr ""
 
-#: account/forms.py:60
+#: account/forms.py:64
 msgid "PGP/GPG fingerprint prefixed by its size, sample:"
 msgstr ""
 
-#: account/forms.py:70
+#: account/forms.py:74
 msgid "This username is already used"
 msgstr ""
 
-#: account/forms.py:74
+#: account/forms.py:78
 msgid "The confirmation password does not match the original password"
 msgstr ""
 
-#: account/forms.py:108
+#: account/forms.py:112
 msgid "Notes:"
 msgstr ""
 
-#: account/forms.py:110
+#: account/forms.py:114
 msgid "Payment later:"
 msgstr ""
 
-#: account/forms.py:111
+#: account/forms.py:115
 msgid "Order staff:"
 msgstr ""
 
@@ -152,39 +160,47 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: account/models.py:28 resa/models.py:95 resa/widgets.py:12
+#: account/models.py:28
+msgid "Zipcode"
+msgstr ""
+
+#: account/models.py:29
+msgid "City"
+msgstr ""
+
+#: account/models.py:31 resa/models.py:95 resa/widgets.py:12
 msgid "Language"
 msgstr ""
 
-#: account/models.py:31
+#: account/models.py:33
 msgid "Badge text"
 msgstr ""
 
-#: account/models.py:32 compta/models.py:60 templates/account/comments.html:27
+#: account/models.py:34 compta/models.py:60 templates/account/comments.html:27
 msgid "Comment(s)"
 msgstr ""
 
-#: account/models.py:33
+#: account/models.py:35
 msgid "PGP/GPG Fingerprint"
 msgstr ""
 
-#: account/models.py:34
+#: account/models.py:36
 msgid "Note(s)"
 msgstr ""
 
-#: account/models.py:36
+#: account/models.py:38
 msgid "Payment later"
 msgstr ""
 
-#: account/models.py:37
+#: account/models.py:39
 msgid "Staff Order"
 msgstr ""
 
-#: account/models.py:84
+#: account/models.py:86
 msgid "User profile"
 msgstr ""
 
-#: account/models.py:85
+#: account/models.py:87
 msgid "Users Profiles"
 msgstr ""
 
@@ -1135,11 +1151,16 @@ msgid "Email address:"
 msgstr ""
 
 #: templates/account/profile.html:32 templates/account/profile.html.py:52
-#: templates/account/profile.html:77 templates/account/profile.html.py:86
+#: templates/account/profile.html:62 templates/account/profile.html.py:71
+#: templates/account/profile.html:95 templates/account/profile.html.py:104
 msgid "not set"
 msgstr ""
 
-#: templates/account/profile.html:93
+#: templates/account/profile.html:49
+msgid "Address:"
+msgstr ""
+
+#: templates/account/profile.html:111
 msgid "Modify"
 msgstr ""
 
@@ -1404,7 +1425,7 @@ msgid "Pending order(s)"
 msgstr ""
 
 #: templates/resa/manage_orders.html:48 templates/resa/manage_orders.html:87
-#: templates/resa/orders_details.html:12 templates/resa/orders_details.html:66
+#: templates/resa/orders_details.html:12 templates/resa/orders_details.html:67
 msgid "Order no"
 msgstr ""
 
@@ -1475,79 +1496,79 @@ msgstr ""
 msgid "Proceed the payment using your bank card:"
 msgstr ""
 
-#: templates/resa/orders_details.html:56 templates/resa/orders_details.html:74
+#: templates/resa/orders_details.html:57 templates/resa/orders_details.html:75
 msgid "Payment by PayPal"
 msgstr ""
 
-#: templates/resa/orders_details.html:58
+#: templates/resa/orders_details.html:59
 msgid "Proceed the payment using PayPal:"
 msgstr ""
 
-#: templates/resa/orders_details.html:77
+#: templates/resa/orders_details.html:78
 msgid ""
 "If it is possible for you to use another payment method than PayPal, please "
 "do it. PayPal payments involves expensive fees for us."
 msgstr ""
 
-#: templates/resa/orders_details.html:84
+#: templates/resa/orders_details.html:86
 msgid "Payment by bank transfer"
 msgstr ""
 
-#: templates/resa/orders_details.html:86
+#: templates/resa/orders_details.html:88
 msgid "Proceed the payment by making a bank transfer:"
 msgstr ""
 
-#: templates/resa/orders_details.html:89
+#: templates/resa/orders_details.html:91
 msgid "Bank name:"
 msgstr ""
 
-#: templates/resa/orders_details.html:94
+#: templates/resa/orders_details.html:96
 msgid "Account number:"
 msgstr ""
 
-#: templates/resa/orders_details.html:99
-#: templates/resa/orders_details.html:103
+#: templates/resa/orders_details.html:101
+#: templates/resa/orders_details.html:105
 msgid "IBAN (International Bank Account Number):"
 msgstr ""
 
-#: templates/resa/orders_details.html:106
+#: templates/resa/orders_details.html:108
 msgid "BIC (Bank Identifier Code):"
 msgstr ""
 
-#: templates/resa/orders_details.html:110
+#: templates/resa/orders_details.html:112
 msgid "Account owner:"
 msgstr ""
 
-#: templates/resa/orders_details.html:114
+#: templates/resa/orders_details.html:116
 msgid ""
 "Please add the order(s) id(s) in the bank transfer title and notify our "
 "accountant when the check has been sent."
 msgstr ""
 
-#: templates/resa/orders_details.html:121
+#: templates/resa/orders_details.html:123
 msgid "Payment by cashiers check"
 msgstr ""
 
-#: templates/resa/orders_details.html:123
+#: templates/resa/orders_details.html:125
 msgid "Send your check to the treasurer, here is the postal address:"
 msgstr ""
 
-#: templates/resa/orders_details.html:125
+#: templates/resa/orders_details.html:127
 msgid "payable to:"
 msgstr ""
 
-#: templates/resa/orders_details.html:128
+#: templates/resa/orders_details.html:130
 msgid ""
 "For payments with cashiers check, please notify our accountant when the "
 "check has been sent. Cashiers check payments might include fee if your bank "
 "is not located in France or in the EU."
 msgstr ""
 
-#: templates/resa/orders_details.html:135
+#: templates/resa/orders_details.html:137
 msgid "Other payment methods"
 msgstr ""
 
-#: templates/resa/orders_details.html:137
+#: templates/resa/orders_details.html:139
 msgid ""
 "If you wish to use other methods of payment, please contact our accountant:"
 msgstr ""

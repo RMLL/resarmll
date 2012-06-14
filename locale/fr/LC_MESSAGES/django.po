@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-14 07:58+0200\n"
-"PO-Revision-Date: 2012-06-14 07:59+0200\n"
+"POT-Creation-Date: 2012-06-14 21:09+0200\n"
+"PO-Revision-Date: 2012-06-14 21:10+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "Language: en_US\n"
@@ -57,41 +57,49 @@ msgstr ""
 "Le sexe n'est pas obligatoire mais il pourra être utile lors de la "
 "répartition des chambres."
 
-#: account/forms.py:37 templates/account/profile.html:49
-msgid "Address:"
-msgstr "Adresse :"
+#: account/forms.py:37 account/forms.py:123
+msgid "Address (street, number and details):"
+msgstr "Adresse (rue, numéro et complément) :"
 
-#: account/forms.py:39
+#: account/forms.py:39 account/forms.py:125
 msgid "Address is useful for speakers or people who'll get a refund."
 msgstr ""
 "L'adresse est utile pour les conférenciers ou les personnes qui "
 "bénéficieront de remboursements."
 
-#: account/forms.py:41 templates/account/profile.html:60
-msgid "Language:"
-msgstr "Langue :"
+#: account/forms.py:41 account/forms.py:126 templates/account/profile.html:60
+msgid "Zipcode:"
+msgstr "Code postal :"
 
-#: account/forms.py:43 templates/account/profile.html:65
+#: account/forms.py:43 account/forms.py:128 templates/account/profile.html:69
+msgid "City:"
+msgstr "Ville :"
+
+#: account/forms.py:45 templates/account/profile.html:78
 msgid "Country:"
 msgstr "Pays."
 
-#: account/forms.py:46 account/forms.py:116 templates/account/profile.html:70
+#: account/forms.py:48 templates/account/profile.html:83
+msgid "Language:"
+msgstr "Langue :"
+
+#: account/forms.py:50 account/forms.py:120 templates/account/profile.html:88
 msgid "Badge type:"
 msgstr "Type de badge :"
 
-#: account/forms.py:49 templates/account/profile.html:75
+#: account/forms.py:53 templates/account/profile.html:93
 msgid "Badge text:"
 msgstr "Texte du badge"
 
-#: account/forms.py:51
+#: account/forms.py:55
 msgid "Free text printed on your badge (should not be too long)."
 msgstr "Texte libre imprimé sur votre badge (de préférence pas trop long)."
 
-#: account/forms.py:53
+#: account/forms.py:57
 msgid "Comment(s):"
 msgstr "Commentaire(s)"
 
-#: account/forms.py:55
+#: account/forms.py:59
 msgid ""
 "Distinctiveness (moving with a wheelchair, glad to use an available magnetic-"
 "field loop, blind, deep geek, ...)"
@@ -99,33 +107,33 @@ msgstr ""
 "Particularités (déplacement en fauteuil roulant, utiliserait volontiers une "
 "boucle magnétique, aveugle, geek invétéré, ...)"
 
-#: account/forms.py:57 templates/account/profile.html:84
+#: account/forms.py:61 templates/account/profile.html:102
 msgid "PGP/GPG Fingerprint:"
 msgstr "Empreinte PGP/GPG :"
 
-#: account/forms.py:60
+#: account/forms.py:64
 msgid "PGP/GPG fingerprint prefixed by its size, sample:"
 msgstr "Empreinte PGP/GPG préfixé par sa taille, exemple :"
 
-#: account/forms.py:70
+#: account/forms.py:74
 msgid "This username is already used"
 msgstr "Ce nom d'utilisateur est déjà utilisé"
 
-#: account/forms.py:74
+#: account/forms.py:78
 msgid "The confirmation password does not match the original password"
 msgstr ""
 "Le mot de passe de confirmation ne concorde pas avec le mot de passe "
 "d'origine"
 
-#: account/forms.py:108
+#: account/forms.py:112
 msgid "Notes:"
 msgstr "Notes :"
 
-#: account/forms.py:110
+#: account/forms.py:114
 msgid "Payment later:"
 msgstr "Paiement décalé :"
 
-#: account/forms.py:111
+#: account/forms.py:115
 msgid "Order staff:"
 msgstr "Commande orga."
 
@@ -161,39 +169,47 @@ msgstr "Sexe"
 msgid "Address"
 msgstr "Adresse"
 
-#: account/models.py:28 resa/models.py:95 resa/widgets.py:12
+#: account/models.py:28
+msgid "Zipcode"
+msgstr "Code postal"
+
+#: account/models.py:29
+msgid "City"
+msgstr "Ville"
+
+#: account/models.py:31 resa/models.py:95 resa/widgets.py:12
 msgid "Language"
 msgstr "Langue"
 
-#: account/models.py:31
+#: account/models.py:33
 msgid "Badge text"
 msgstr "Texte du badge"
 
-#: account/models.py:32 compta/models.py:60 templates/account/comments.html:27
+#: account/models.py:34 compta/models.py:60 templates/account/comments.html:27
 msgid "Comment(s)"
 msgstr "Commentaire(s)"
 
-#: account/models.py:33
+#: account/models.py:35
 msgid "PGP/GPG Fingerprint"
 msgstr "Empreinte PGP/GPG"
 
-#: account/models.py:34
+#: account/models.py:36
 msgid "Note(s)"
 msgstr "Note(s)"
 
-#: account/models.py:36
+#: account/models.py:38
 msgid "Payment later"
 msgstr "Paiement décalé"
 
-#: account/models.py:37
+#: account/models.py:39
 msgid "Staff Order"
 msgstr "Commande Orga."
 
-#: account/models.py:84
+#: account/models.py:86
 msgid "User profile"
 msgstr "Profile utilisateur"
 
-#: account/models.py:85
+#: account/models.py:87
 msgid "Users Profiles"
 msgstr "Profils des utilisateurs"
 
@@ -1191,11 +1207,16 @@ msgid "Email address:"
 msgstr "Adresse email :"
 
 #: templates/account/profile.html:32 templates/account/profile.html.py:52
-#: templates/account/profile.html:77 templates/account/profile.html.py:86
+#: templates/account/profile.html:62 templates/account/profile.html.py:71
+#: templates/account/profile.html:95 templates/account/profile.html.py:104
 msgid "not set"
 msgstr "Non défini"
 
-#: templates/account/profile.html:93
+#: templates/account/profile.html:49
+msgid "Address:"
+msgstr "Adresse :"
+
+#: templates/account/profile.html:111
 msgid "Modify"
 msgstr "Modifier"
 
@@ -1466,7 +1487,7 @@ msgid "Pending order(s)"
 msgstr "Commande(s) en attente"
 
 #: templates/resa/manage_orders.html:48 templates/resa/manage_orders.html:87
-#: templates/resa/orders_details.html:12 templates/resa/orders_details.html:66
+#: templates/resa/orders_details.html:12 templates/resa/orders_details.html:67
 msgid "Order no"
 msgstr "Commande no"
 
@@ -1537,15 +1558,15 @@ msgstr "Paiement par carte bancaire"
 msgid "Proceed the payment using your bank card:"
 msgstr "Procéder au paiement en utilisant votre carte bancaire"
 
-#: templates/resa/orders_details.html:56 templates/resa/orders_details.html:74
+#: templates/resa/orders_details.html:57 templates/resa/orders_details.html:75
 msgid "Payment by PayPal"
 msgstr "Paiement par PayPal"
 
-#: templates/resa/orders_details.html:58
+#: templates/resa/orders_details.html:59
 msgid "Proceed the payment using PayPal:"
 msgstr "Procéder au paiement par PayPal"
 
-#: templates/resa/orders_details.html:77
+#: templates/resa/orders_details.html:78
 msgid ""
 "If it is possible for you to use another payment method than PayPal, please "
 "do it. PayPal payments involves expensive fees for us."
@@ -1554,36 +1575,36 @@ msgstr ""
 "n'hésitez pas à le faire. PayPal prend une commission importante sur chaque "
 "transaction. "
 
-#: templates/resa/orders_details.html:84
+#: templates/resa/orders_details.html:86
 msgid "Payment by bank transfer"
 msgstr "Paiement par virement bancaire "
 
-#: templates/resa/orders_details.html:86
+#: templates/resa/orders_details.html:88
 msgid "Proceed the payment by making a bank transfer:"
 msgstr "Procéder au paiement par virement bancaire"
 
-#: templates/resa/orders_details.html:89
+#: templates/resa/orders_details.html:91
 msgid "Bank name:"
 msgstr "Nom de la banque :"
 
-#: templates/resa/orders_details.html:94
+#: templates/resa/orders_details.html:96
 msgid "Account number:"
 msgstr "Numéro de compte :"
 
-#: templates/resa/orders_details.html:99
-#: templates/resa/orders_details.html:103
+#: templates/resa/orders_details.html:101
+#: templates/resa/orders_details.html:105
 msgid "IBAN (International Bank Account Number):"
 msgstr "IBAN (numéro de compte bancaire internationnal) :"
 
-#: templates/resa/orders_details.html:106
+#: templates/resa/orders_details.html:108
 msgid "BIC (Bank Identifier Code):"
 msgstr "BIC (code d'identification de la banque) :"
 
-#: templates/resa/orders_details.html:110
+#: templates/resa/orders_details.html:112
 msgid "Account owner:"
 msgstr "Détenteur du compte :"
 
-#: templates/resa/orders_details.html:114
+#: templates/resa/orders_details.html:116
 msgid ""
 "Please add the order(s) id(s) in the bank transfer title and notify our "
 "accountant when the check has been sent."
@@ -1591,19 +1612,19 @@ msgstr ""
 "Veuillez ajouter le(s) numéro(s) de commande dans l'intitulé du virement et "
 "informer notre trésorier du virement."
 
-#: templates/resa/orders_details.html:121
+#: templates/resa/orders_details.html:123
 msgid "Payment by cashiers check"
 msgstr "Paiement par chèque"
 
-#: templates/resa/orders_details.html:123
+#: templates/resa/orders_details.html:125
 msgid "Send your check to the treasurer, here is the postal address:"
 msgstr "Envoyer votre chèque au trésorier, voici son adresse :"
 
-#: templates/resa/orders_details.html:125
+#: templates/resa/orders_details.html:127
 msgid "payable to:"
 msgstr "à l'ordre de :"
 
-#: templates/resa/orders_details.html:128
+#: templates/resa/orders_details.html:130
 msgid ""
 "For payments with cashiers check, please notify our accountant when the "
 "check has been sent. Cashiers check payments might include fee if your bank "
@@ -1613,11 +1634,11 @@ msgstr ""
 "du chèque. Le paiement par chèque peut entrainer des frais si votre banque "
 "n'est pas située en France ou en Europe."
 
-#: templates/resa/orders_details.html:135
+#: templates/resa/orders_details.html:137
 msgid "Other payment methods"
 msgstr "Autres modes de paiement"
 
-#: templates/resa/orders_details.html:137
+#: templates/resa/orders_details.html:139
 msgid ""
 "If you wish to use other methods of payment, please contact our accountant:"
 msgstr ""
