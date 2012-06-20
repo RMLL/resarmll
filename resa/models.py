@@ -206,6 +206,9 @@ class Badge(models.Model):
     def __unicode__(self):
         return "%s / %s" % (self.name, self.alt_name)
 
+    def alt_name_cleaned(self):
+        return self.alt_name.replace(u'♂', u'').replace(u'♀', u'')
+
     class Meta:
         verbose_name = _(u"Badge")
         verbose_name_plural = _(u"Badges")

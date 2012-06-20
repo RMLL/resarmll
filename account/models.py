@@ -45,7 +45,7 @@ class UserProfile(models.Model):
 
     def update_badge(self):
         b = BadgeGenerator(self.user.id, self.user.first_name+' '+self.user.last_name,
-            self.badge_type.name, self.badge_type.alt_name,
+            self.badge_type.name, self.badge_type.alt_name_cleaned(),
             self.badge_type.color, self.badge_text, self.render_fingerprint(),
             self.user.email)
         b.create_all()
