@@ -128,20 +128,21 @@ def orders_details(request, tmpl, order_id=0):
     treasurer = settings.TREASURER_SETTINGS
     wiretransfer = settings.WIRETRANSFER_SETTINGS
     check = settings.CHECK_SETTINGS
+    bank = settings.BANK_DRIVER
 
     ip_addr = request.META['REMOTE_ADDR']
-    if order:
-        if settings.BANK_DRIVER.upper() == 'CYBERPLUS':
+    if order and bank:
+        if bank.upper() == 'CYBERPLUS':
             bp_tmpl = 'resa/orders_details_cyberplus.html'
             bp = CyberPlus(request)
             bp_err, bp_code, bp_form = bp.form(order, request.user, request.LANGUAGE_CODE, ip_addr, url)
-        elif settings.BANK_DRIVER.upper() == 'ETRANSACTIONS':
+        elif bank.upper() == 'ETRANSACTIONS':
             bp_tmpl = 'resa/orders_details_etransactions.html'
-        elif settings.BANK_DRIVER.upper() == 'CMCIC':
+        elif bank.upper() == 'CMCIC':
             bp_tmpl = 'resa/orders_details_cmcic.html'
             bp = cmcic(request)
             bp_form = bp.form(order, request.user, request.LANGUAGE_CODE, url)
-        elif settings.BANK_DRIVER.upper() == 'OGONE':
+        elif bank.upper() == 'OGONE':
             bp_tmpl = 'resa/orders_details_ogone.html'
             bp = ogone(request)
             bp_form = bp.form(order, request.user, request.LANGUAGE_CODE, url)

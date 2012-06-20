@@ -47,8 +47,14 @@
                 <div class="section">
                     <h3>{% trans "Payment by credit card" %}</h3>
                     <div class="content">
-                        <p>{% trans "Proceed the payment using your bank card:" %}</p>
-                        {% include bp_tmpl %}
+                        {% if bank %}
+                            <p>{% trans "Proceed the payment using your bank card:" %}</p>
+                            {% include bp_tmpl %}
+                        {% else %}
+                            <div class="main-warn">
+                                {% trans "Bank card payment will be available within the next few hours." %}
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
 
