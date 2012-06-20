@@ -213,7 +213,7 @@ def orders_notpaid(request, tmpl):
     results_others = [u for u in results if u.get_profile().badge_type.section != 'orga' and u.get_profile().badge_type.section != 'speakers']
 
     mail_sender_name = request.user.get_full_name()
-    mail_sender_email = settings.TREASURER_EMAIL
+    mail_sender_email = settings.TREASURER_SETTINGS['email']
     mail_subject = request.POST['subject'] if request.POST.has_key('subject') else ''
     mail_body = request.POST['body'] if request.POST.has_key('body') else ''
     selected_users = []
