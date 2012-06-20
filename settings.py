@@ -146,7 +146,9 @@ COMPTA_METHOD_CODE_INTERNAL = 'VI'
 COMPTA_PLAN_CLIENT_CODE = 411
 
 ### BADGES ###
-BADGE_CITY = "Strasbourg 2011"
+BADGE_COLORS = False
+BADGE_OPACITY = 0.0
+BADGE_CITY = ""
 BADGE_BG_IMAGE = PROJECT_DIR + '/templates/images/badge-bg.png'
 BADGE_BIG_BG_IMAGE = PROJECT_DIR + '/templates/images/badge-bg-big.png'
 BADGE_PNG_DEST_DIR = PROJECT_DIR + '/badges/png/'

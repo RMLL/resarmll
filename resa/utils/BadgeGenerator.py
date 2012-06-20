@@ -102,9 +102,12 @@ PROFILES = {
 COLORS = tuple((x, PROFILES[x]['name']) for x in PROFILES)
 TEXT_COLORS = {
     'default': (1, 1, 1),
-    'name': (0.27, 0.27, 0.27),
-    'desc': (0.27, 0.27, 0.27),
+    'name': (0.10, 0.10, 0.10),
+    'desc': (0.10, 0.10, 0.10),
 }
+
+if not settings.BADGE_COLORS:
+    TEXT_COLORS['default'] = (0.10, 0.10, 0.10)
 
 def get_path_png(id):
     return settings.BADGE_PNG_DEST_DIR+str(id)+'.png'
@@ -239,12 +242,12 @@ class BadgeGenerator:
         self.footer_height = 45
 
         # various fonts
-        self.organisation_font = "Sans 50"
-        self.user_badge_font = "Sans bold 56"
-        self.user_badge_alt_font = "Sans italic 46"
+        self.organisation_font = "Sans 52"
+        self.user_badge_font = "Sans bold 66"
+        self.user_badge_alt_font = "Sans italic 52"
         self.fingerprint_font = "Sans 30"
-        self.user_name_font = "Sans bold 70"
-        self.user_desc_font = "Sans bold 80"
+        self.user_name_font = "Sans bold 100"
+        self.user_desc_font = "Sans bold 128"
         self.email_font = "Sans 40"
 
         # positions
@@ -259,7 +262,7 @@ class BadgeGenerator:
         self.user_name_padding_x, self.user_name_padding_y = 20, 0
         self.user_desc_x, self.user_desc_y = self.dimx/2, self.dimy-70
         self.user_desc_padding_x, self.user_desc_padding_y = 20, 0
-        self.email_x, self.email_y = self.dimx-10, 100
+        self.email_x, self.email_y = self.dimx-10, 140
         self.email_padding_x, self.email_padding_y = 8, 10
 
         self.create()
@@ -295,7 +298,7 @@ class BadgeGenerator:
         self.user_name_padding_x, self.user_name_padding_y = 10, 0
         self.user_desc_x, self.user_desc_y = self.dimx/2, self.dimy-25
         self.user_desc_padding_x, self.user_desc_padding_y = 10, 0
-        self.email_x, self.email_y = self.dimx, 40
+        self.email_x, self.email_y = self.dimx, 45
         self.email_padding_x, self.email_padding_y = 5, 5
 
         self.create()
@@ -311,7 +314,7 @@ class BadgeGenerator:
         # setting default color
         _r, _g, _b = TEXT_COLORS['default']
         cr.set_source_rgba(_r, _g, _b)
-        cr.paint_with_alpha(0.8)
+        cr.paint_with_alpha(settings.BADGE_OPACITY)
 
         # badge type
         if PROFILES.has_key(self.user_badge_color):
@@ -320,22 +323,23 @@ class BadgeGenerator:
             profile = PROFILES[PROFILES.keys().pop()]
 
         # coloring badge
-        _r, _g, _b, _a = profile['source_rgba']
-        cr.set_source_rgba(_r, _g, _b, _a)
-        linear = cairo.LinearGradient(0, 0, 0, self.dimy)
-        for g in profile['gradients']:
-            _s, _r, _g, _b, _a = g
-            linear.add_color_stop_rgba(_s, _r, _g, _b, _a)
-        cr.set_source(linear)
+        if settings.BADGE_COLORS:
+            _r, _g, _b, _a = profile['source_rgba']
+            cr.set_source_rgba(_r, _g, _b, _a)
+            linear = cairo.LinearGradient(0, 0, 0, self.dimy)
+            for g in profile['gradients']:
+                _s, _r, _g, _b, _a = g
+                linear.add_color_stop_rgba(_s, _r, _g, _b, _a)
+            cr.set_source(linear)
 
-        # header layer
-        cr.rectangle(0, 0, self.dimx, self.dimy)
-        cr.fill()
+            # header layer
+            cr.rectangle(0, 0, self.dimx, self.dimy)
+            cr.fill()
 
-        # footer layer
-        cr.rectangle(0, self.dimy-self.footer_height, self.dimx, self.dimy)
-        cr.fill()
-        cr.set_source_rgb(1, 1, 1)
+            # footer layer
+            cr.rectangle(0, self.dimy-self.footer_height, self.dimx, self.dimy)
+            cr.fill()
+            cr.set_source_rgb(1, 1, 1)
 
         # organisation title
         cr.write_text_middle_right(self.organisation_text, self.organisation_x,
@@ -368,7 +372,7 @@ class BadgeGenerator:
                 self.fingerprint_y, self.fingerprint_font)
         # email (if fingerprint)
         font = cr.adjust_font_to_fit(self.email, self.email_font,
-                self.dimx*0.7-self.email_padding_x, self.dimy)
+                self.dimx-self.email_padding_x, self.dimy)
         cr.write_text_middle_right(self.email, self.email_x,
                 self.email_y, font,
                 self.email_padding_x, self.email_padding_y)
