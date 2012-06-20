@@ -7,7 +7,7 @@
 {% block content %}
 
     <div class="annonce">
-        <p>{% trans "It is recommended (but not mandatory) to register to get a badge and net connection parameters. You'll also be able to book a room in academic accommodations, tickets for lunches and the Free Software Banquet and the t-shirt dedicated to the event" %}</p>
+        <p>{% trans "It is recommended (but not mandatory) to register to get a badge and net connection parameters. You'll also be able to book accomodations (overnight stays in a barack “Les Vernets” and campsites), tickets for lunches and the Free Software Banquet, t-shirts and Free Beer dedicated to the event." %}</p>
     </div>
 
     <h2>{% trans 'Log in' %}</h2>
@@ -18,10 +18,11 @@
         </div>
     {% endif %}
 
-    <!--
-    <div class="main-warn">
-        {% trans "Booking will open in a few hours." %}
-    </div>!-->
+    {% comment %} 
+        <div class="main-warn">
+            {% trans "Booking will open in a few hours." %}
+        </div>
+    {% endcomment %}
 
     <div id="login">
         <form method="post" action="">{% csrf_token %}
@@ -55,4 +56,5 @@
     <script type="text/javascript">
         document.getElementById('id_username').focus()
     </script>
+
 {% endblock %}
