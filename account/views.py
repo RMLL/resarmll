@@ -117,6 +117,7 @@ def profile_modify(request, tmpl):
                 cur_profile.language = form.cleaned_data['language']
                 cur_profile.badge_text = form.cleaned_data['badge_text']
                 cur_profile.comments = form.cleaned_data['comments']
+                cur_profile.fingerprint = form.cleaned_data['fingerprint']
                 badge = form.cleaned_data['badge_type']
                 if badge:
                     if not badge.userchoice:
