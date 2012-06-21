@@ -198,6 +198,7 @@ WIRETRANSFER_SETTINGS = {
     'inuse': True,
     'iban': 'CH97 0076 7000 E52850875',
     'bic': 'BCVLCH2LXXX',
+    'bic_alt': 'BCVLCH2L',
     'bank_name': 'BCV',
     'account_no': 'E 5285.08.75 CHF RMLL',
     'clearing': '767',

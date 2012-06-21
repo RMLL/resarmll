@@ -113,6 +113,11 @@
                             <div>
                                 <strong>{% trans "BIC (Bank Identifier Code):" %}</strong> {{ wiretransfer.bic }}
                             </div>
+                            {% if wiretransfer.bic_alt %}
+                                <div>
+                                    <strong>{% trans "Alternative BIC (if the first one was not accepted by your bank):" %}</strong> {{ wiretransfer.bic_alt }}
+                                </div>
+                            {% endif %}
                             {% if wiretransfer.owner %}
                                 <div>
                                     <strong>{% trans "Account owner:" %}</strong>
