@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-20 07:56+0200\n"
-"PO-Revision-Date: 2012-06-20 07:57+0200\n"
+"POT-Creation-Date: 2012-06-21 20:20+0200\n"
+"PO-Revision-Date: 2012-06-21 20:24+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "Language: en_US\n"
@@ -1603,10 +1603,14 @@ msgid "BIC (Bank Identifier Code):"
 msgstr "BIC (code d'identification de la banque) :"
 
 #: templates/resa/orders_details.html:118
+msgid "Alternative BIC (if the first one was not accepted by your bank):"
+msgstr "BIC alternatif (si le premier n'est pas accepté par votre banque) :"
+
+#: templates/resa/orders_details.html:123
 msgid "Account owner:"
 msgstr "Détenteur du compte :"
 
-#: templates/resa/orders_details.html:122
+#: templates/resa/orders_details.html:127
 msgid ""
 "Please add the order(s) id(s) in the bank transfer title and notify our "
 "accountant when the check has been sent."
@@ -1614,19 +1618,19 @@ msgstr ""
 "Veuillez ajouter le(s) numéro(s) de commande dans l'intitulé du virement et "
 "informer notre trésorier du virement."
 
-#: templates/resa/orders_details.html:129
+#: templates/resa/orders_details.html:134
 msgid "Payment by cashiers check"
 msgstr "Paiement par chèque"
 
-#: templates/resa/orders_details.html:131
+#: templates/resa/orders_details.html:136
 msgid "Send your check to the treasurer, here is the postal address:"
 msgstr "Envoyer votre chèque au trésorier, voici son adresse :"
 
-#: templates/resa/orders_details.html:133
+#: templates/resa/orders_details.html:138
 msgid "payable to:"
 msgstr "à l'ordre de :"
 
-#: templates/resa/orders_details.html:136
+#: templates/resa/orders_details.html:141
 msgid ""
 "For payments with cashiers check, please notify our accountant when the "
 "check has been sent. Cashiers check payments might include fee if your bank "
@@ -1636,11 +1640,11 @@ msgstr ""
 "du chèque. Le paiement par chèque peut entrainer des frais si votre banque "
 "n'est pas située en France ou en Europe."
 
-#: templates/resa/orders_details.html:143
+#: templates/resa/orders_details.html:148
 msgid "Other payment methods"
 msgstr "Autres modes de paiement"
 
-#: templates/resa/orders_details.html:145
+#: templates/resa/orders_details.html:150
 msgid ""
 "If you wish to use other methods of payment, please contact our accountant:"
 msgstr ""
