@@ -147,6 +147,9 @@ def orders_details(request, tmpl, order_id=0):
             bp = ogone(request)
             bp_form = bp.form(order, request.user, request.LANGUAGE_CODE, url)
 
+    currency = settings.CURRENCY
+    currency_alt = settings.CURRENCY_ALT
+
     return tmpl, locals()
 
 @login_required
