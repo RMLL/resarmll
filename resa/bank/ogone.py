@@ -137,9 +137,9 @@ class ogone(Bank):
             elif order.payment_date != None:
                 self.add_error(_(u"Order with id: #%d has already been paid") % (order.id))
             else:
-                if params['STATUS'] not in ['5']:
+                if params['STATUS'] not in ['5', '51', '9', '91']:
                     self.add_error(_(u"Wrong parameter '%(arg1)s': [%(arg2)s] instead of [%(arg3)s]") %
-                        {'arg1': 'STATUS', 'arg2': params['STATUS'], 'arg3': '5'})
+                        {'arg1': 'STATUS', 'arg2': params['STATUS'], 'arg3': '5,51,9,91'})
                 if params['ACCEPTANCE'].find('test') >= 0 and not settings.OGONE_SETTINGS['testmode']:
                     self.add_error(_(u"Wrong parameter '%(arg1)s': [%(arg2)s] instead of [%(arg3)s]") %
                         {'arg1': 'ACCEPTANCE', 'arg2': params['ACCEPTANCE'], 'arg3': '/\d+/'})
