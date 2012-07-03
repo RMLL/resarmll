@@ -5,8 +5,4 @@ register = template.Library()
 
 @register.filter('unicode_filter')
 def unicode_filter(value):
-    ret = ""
-    for i, c in enumerate(value):
-        if unicodedata.category(c) in ['Ll', 'Lu', 'Po', 'Zs']:
-            ret += c
-    return ret
+    return unicodedata.normalize('NFKD', value).encode('utf-8', 'ignore')
