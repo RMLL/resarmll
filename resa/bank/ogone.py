@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import os, os.path, re, unicodedata, hashlib
+import os, os.path, re, unicodedata, hashlib, urllib
 from decimal import Decimal
 
 from django.utils.translation import ugettext_lazy as _
@@ -42,7 +42,19 @@ class ogone(Bank):
     def fix_encoding(self, data):
         return unicodedata.normalize('NFKD', data).encode('ascii', 'ignore')
         return s
-        
+
+    def ugly_fix_data_as_iso(self):
+        data = {}
+        for kv in self.env['QUERY_STRING'].split('&'):
+            k,v = kv.split('=')
+            try:
+                data[k] = unicode(urllib.unquote_plus(v), "ISO-8859-1").encode('utf-8')
+            except:
+                data[k] = v
+        if data.has_key('SHASIGN'):
+            del(data['SHASIGN'])
+        return data
+
     def compute_hash_sha(self, fields, key, hashtype):
         result = []
         data = {}
@@ -104,7 +116,11 @@ class ogone(Bank):
         if data.has_key('SHASIGN'):
             key = data['SHASIGN'].lower()
             del(data['SHASIGN'])
-            keycompute = self.compute_hash_sha(data, settings.OGONE_SETTINGS['secretkey-out'], settings.OGONE_SETTINGS['hashtype']).lower()
+            try:
+                keycompute = self.compute_hash_sha(data, settings.OGONE_SETTINGS['secretkey-out'], settings.OGONE_SETTINGS['hashtype']).lower()
+            except UnicodeEncodeError:
+                keycompute = self.compute_hash_sha(self.ugly_fix_data_as_iso(), settings.OGONE_SETTINGS['secretkey-out'], settings.OGONE_SETTINGS['hashtype']).lower()
+            
             if key != keycompute:
                 code = 'SHA1SIGN-INVALID'
             else:
