@@ -41,7 +41,6 @@ class ogone(Bank):
 
     def fix_encoding(self, data):
         return unicodedata.normalize('NFKD', data).encode('ascii', 'ignore')
-        return s
 
     def ugly_fix_data_as_iso(self):
         data = {}
