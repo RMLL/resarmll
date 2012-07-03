@@ -323,7 +323,8 @@ CH-660.2.608.005-3
 
 TVA = {
     'value': 0,
-    'invoice_msg': False,
+    'invoice_msg_frenchtaxcode': False,
+    'invoice_msg_notaxes': True,
 }
 
 ### DEVELOPMENT SETTINGS ###

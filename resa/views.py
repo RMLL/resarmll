@@ -187,7 +187,9 @@ def orders_pdf(request, tmpl, order_id=0):
     response.write(gen_pdf(tmpl, {'user': request.user, 'order': order, 'lang': request.LANGUAGE_CODE,
                         'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
                         'currency': settings.CURRENCY,
-                        'tva': settings.TVA['value'], 'tva_invoice_msg': settings.TVA['invoice_msg']}))
+                        'tva': settings.TVA['value'],
+                        'invoice_msg_frenchtaxcode': settings.TVA['invoice_msg_frenchtaxcode'],
+                        'invoice_msg_notaxes': settings.TVA['invoice_msg_notaxes']}))
     return response
 
 @login_required
@@ -334,7 +336,9 @@ def manage_orders_pdf(request, tmpl, order_id=0):
     response.write(gen_pdf(tmpl, {'user': order.user, 'order': order,
                         'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
                         'currency': settings.CURRENCY,
-                        'tva': settings.TVA['value'], 'tva_invoice_msg': settings.TVA['invoice_msg']}))
+                        'tva': settings.TVA['value'],
+                        'invoice_msg_frenchtaxcode': settings.TVA['invoice_msg_frenchtaxcode'],
+                        'invoice_msg_notaxes': settings.TVA['invoice_msg_notaxes'],}))
     return response
 
 @login_required

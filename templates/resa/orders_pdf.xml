@@ -117,12 +117,18 @@
             </tr>
         </blockTable>
 
-        {% if tva_invoice_msg %}
+        {% if invoice_msg_frenchtaxcode %}
             <spacer length="0.5cm" width="1mm"/>
             <para style="note">
                 {% trans "VAT not applicable in accordance with Art. 261-7-1° of the French Tax Code" %}
             </para>
         {% endif %}
+        {% if invoice_msg_notaxes %}
+            <spacer length="0.5cm" width="1mm"/>
+            <para style="note">
+                {% trans "Billing without taxes." %}
+            </para>
+            {% endif %}
         <spacer length="1cm" width="1mm"/>
         <spacer length="0.5cm" width="1mm"/>
     </story>
