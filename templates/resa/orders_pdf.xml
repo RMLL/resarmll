@@ -45,10 +45,10 @@
     </stylesheet>
     <story>
         <para style="nom">
-        <b><![CDATA[{% autoescape off %}{{ user.get_full_name|unicode_filter }}{% endautoescape %}]]></b>
+        <b><![CDATA[{{ user.get_full_name }}]]></b>
         </para>
         <spacer length="6mm" width="1cm"/>
-        <xpre><![CDATA[{% autoescape off %}{{ user.address|unicode_filter }}{% endautoescape %}]]></xpre>
+        <xpre><![CDATA[{{ user.get_profile.get_full_address }}]]></xpre>
 
         <setNextTemplate name="main"/>
         <nextFrame/>

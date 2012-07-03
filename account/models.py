@@ -82,6 +82,19 @@ class UserProfile(models.Model):
                         break
         return ok
 
+    def get_full_address(self):
+        address = []
+        if self.address.strip() != '':
+            address.append(self.address)
+        zipcity = []
+        if self.zipcode.strip() != '':
+            zipcity.append(self.zipcode)
+        if self.city.strip() != '':
+            zipcity.append(self.city)
+        if zipcity != []:
+            address.append(" ".join(zipcity))
+        return "\n".join(address)
+        
     class Meta:
         verbose_name = _(u"User profile")
         verbose_name_plural = _(u"Users Profiles")
