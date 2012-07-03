@@ -153,10 +153,16 @@ class Resa:
                 bname = '%s/invoice_%04d-%03d.pdf' % (folder, u.id, i+1)
                 print 'Writing invoice of user #%d: %s ...' % (u.id, bname),
                 try:
-                    buffer = gen_pdf('resa/orders_pdf.xml', {'user': u, 'order': o,
+                    buffer = gen_pdf('resa/orders_pdf.xml', {
+                        'user': u, 'order': o, 'lang': u.get_profile().language,
                         'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
-                        'tva': settings.TVA['value']})
-                except:
+                        'currency': settings.CURRENCY,
+                        'tva': settings.TVA['value'],
+                        'invoice_msg_frenchtaxcode': settings.TVA['invoice_msg_frenchtaxcode'],
+                        'invoice_msg_notaxes': settings.TVA['invoice_msg_notaxes']
+                        })
+                except Exception, e:
+                    sys.stderr.write("FAILURE: %s" % (str(e)))
                     buffer = None
                 if buffer:
                     pdffile = open(bname, 'w')
