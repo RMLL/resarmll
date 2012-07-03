@@ -264,7 +264,8 @@ class cmcic(Bank):
                             "CMCIC OK - [order=%d] [amount=%.2f] [user=%s] [email=%s]" %
                                 (order.id, order.totalamount(), user.id, user.email),
                                 "resa/payment_ok_bank_admin_email.txt",
-                                {'order_id': order.id, 'amount': order.totalamount(),
+                                {'order': order,
+                                'currency': settings.CURRENCY, 'currency_alt': settings.CURRENCY_ALT,
                                 'env': self.env_datas(), 'dump': params})
 
                         # switch language before sending mail
@@ -272,7 +273,7 @@ class cmcic(Bank):
                         # mail info to user
                         send_email([user.email], _(u"Bank payment - order no #%d") % order.id,
                             "resa/payment_bank_email.txt",
-                            {'order_id': order.id, 'amount': order.totalamount()})
+                            {'order': order, 'currency': settings.CURRENCY, 'currency_alt': settings.CURRENCY_ALT})
 
         if self.has_errors():
             send_admins(

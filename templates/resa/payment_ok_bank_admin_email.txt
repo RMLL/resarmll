@@ -2,8 +2,8 @@
 
 PAYMENT DETAILS:
 ================
-Order Id: {{ order_id }}
-Amount: {{ amount }}
+Order Id: {{ order.id }}
+Amount: {{ order.totalamount }} {{ currency }}{% if currency_alt %} (~ {{ order.totalamount_alt }} {{ currency_alt }}){% endif %}
 
 {% include "resa/payment_dump_admin_email.txt" %}
 

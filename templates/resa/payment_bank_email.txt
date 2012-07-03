@@ -1,7 +1,9 @@
 {% load i18n %}{% autoescape off %}
 
-{% blocktrans %}Your payment concerning the order no {{ order_id }} for {{ amount }} euros
-has been confirmed by the bank.{% endblocktrans %}
+{% trans "Your payment has been confirmed by the bank." %}
+
+{% trans "Order id:" %} {{ order.id }}
+{% trans "Amount:" %} {{ order.totalamount }} {{ currency }}{% if currency_alt %} (~ {{ order.totalamount_alt }} {{ currency_alt }}){% endif %}
 
 {% trans "Your order is now complete." %}
 
