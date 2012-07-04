@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-04 00:04+0200\n"
+"POT-Creation-Date: 2012-07-04 09:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -839,9 +839,9 @@ msgstr ""
 
 #: templates/account/home.html:19
 msgid ""
-"Orders not payed after July 5th will be removed. There are some exceptions "
-"with people coming from abroad which should contact the treasurer if they "
-"want to pay on arrival."
+"Orders not paid by July 5th will be removed. There are some exceptions with "
+"people coming from abroad which should contact the treasurer if they want to "
+"pay on arrival."
 msgstr ""
 
 #: templates/account/home.html:20
