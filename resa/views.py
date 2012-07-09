@@ -184,7 +184,7 @@ def orders_pdf(request, tmpl, order_id=0):
 
     response = HttpResponse(mimetype='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=invoice_order_%d.pdf' % order_id
-    response.write(gen_pdf(tmpl, {'user': request.user, 'order': order, 'lang': request.LANGUAGE_CODE,
+    response.write(gen_pdf(tmpl, {'user': request.user, 'order': order, 'lang': request.LANGUAGE_CODE[0:2],
                         'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
                         'currency': settings.CURRENCY,
                         'tva': settings.TVA['value'],
@@ -333,7 +333,7 @@ def manage_orders_pdf(request, tmpl, order_id=0):
 
     response = HttpResponse(mimetype='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=invoice_order_%d.pdf' % order_id
-    response.write(gen_pdf(tmpl, {'user': order.user, 'order': order,
+    response.write(gen_pdf(tmpl, {'user': order.user, 'order': order, 'lang': request.LANGUAGE_CODE[0:2],
                         'address_lines': settings.FULL_ADDRESS.strip().split("\n"),
                         'currency': settings.CURRENCY,
                         'tva': settings.TVA['value'],
