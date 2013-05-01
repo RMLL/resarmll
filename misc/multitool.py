@@ -16,13 +16,13 @@ from django.utils import translation
 from django.contrib.auth.models import User
 from django.db.models import Q, Count
 
-from resarmll.resa.models import Country
-from resarmll.compta.models import PlanComptable
-from resarmll.account.models import UserProfile, NetworkAccess
-from resarmll.resa.models import Badge
-from utils.pdf import gen_pdf
-from resarmll.resa.orders import Order
-from resarmll.resa.utils.BadgeGenerator import BadgeGenerator
+from resa.models import Country
+from compta.models import PlanComptable
+from account.models import UserProfile, NetworkAccess
+from resa.models import Badge
+from resautils.pdf import gen_pdf
+from resa.orders import Order
+from resa.utils.BadgeGenerator import BadgeGenerator
 
 
 #####################

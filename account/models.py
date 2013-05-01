@@ -4,10 +4,10 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 
 from resarmll import settings
-from resarmll.resa.models import Country, Badge
-from resarmll.resa.widgets import TranslatedLabelField
-from resarmll.resa.utils.BadgeGenerator import BadgeGenerator
-from resarmll.resa.orders import Order
+from resa.models import Country, Badge
+from resa.widgets import TranslatedLabelField
+from resa.utils.BadgeGenerator import BadgeGenerator
+from resa.orders import Order
 
 GENDER_CHOICES = (('', '----------'), ('F', _('Female')), ('M', _('Male')),)
 

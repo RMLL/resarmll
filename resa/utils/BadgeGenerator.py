@@ -391,6 +391,7 @@ class BadgeGenerator:
         cr.write_text_bot_center(self.user_desc, self.user_desc_x,
                 self.user_desc_y, font)
         # writing file
+        print self.dest
         s.write_to_png(self.dest)
 
 

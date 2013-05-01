@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls.defaults import *
 
-from utils.views import *
+from resautils.views import *
 
 urlpatterns = patterns ('',
     url(r'^sync$', sync),

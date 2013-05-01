@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import sys, os.path
 
-from resarmll.resa.models import Country
-from resarmll.compta.models import PlanComptable
+from resa.models import Country
+from compta.models import PlanComptable
 
 class CountryImport:
     @staticmethod

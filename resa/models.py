@@ -12,7 +12,7 @@ from compta.models import ProductAccount
 from stock import Stock
 from widgets import TranslatedLabelField
 from utils.BadgeGenerator import COLORS as BadgeColors
-from utils.currency import currency_alt
+from resautils.currency import currency_alt
 
 from django.utils.translation import get_language
 

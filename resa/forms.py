@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from resarmll import settings
 from models import Article, ArticleLabel, ArticleLongLabel, Country, CountryLabel
-from resarmll.compta.models import PaymentMethod
+from compta.models import PaymentMethod
 
 # construction dynamique des classes de formulaires
 bases = (forms.ModelForm,)

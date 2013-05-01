@@ -104,9 +104,9 @@ INSTALLED_APPS = (
 #    'django.contrib.staticfiles',
     'django.contrib.humanize',
     'django.contrib.admin',
-    'resarmll.resa',
-    'resarmll.compta',
-    'resarmll.account',
+    'resa',
+    'compta',
+    'account',
     'utils',
 )
 
@@ -116,7 +116,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
-    'resarmll.resa.context_processors.user',
+    'resa.context_processors.user',
 )
 
 #############################################
@@ -153,17 +153,6 @@ COMPTA_METHOD_CODE_PAYPAL = 'VPP'
 COMPTA_METHOD_CODE_INTERNAL = 'VI'
 COMPTA_PLAN_CLIENT_CODE = 411
 
-### BADGES ###
-BADGE_COLORS = False
-BADGE_OPACITY = 0.0
-BADGE_CITY = ""
-BADGE_BG_IMAGE = PROJECT_DIR + '/templates/images/badge-bg.png'
-BADGE_BIG_BG_IMAGE = PROJECT_DIR + '/templates/images/badge-bg-big.png'
-BADGE_PNG_DEST_DIR = PROJECT_DIR + '/badges/png/'
-BADGE_BIG_PNG_DEST_DIR = PROJECT_DIR + '/badges/png/big/'
-BADGE_PDF_DEST_DIR = PROJECT_DIR + '/badges/pdf/'
-BADGE_WIDTH_MM = 85
-BADGE_HEIGHT_MM = 54
 
 ### USERS DB SYNC ###
 global_httpauth_username = 'rmll'

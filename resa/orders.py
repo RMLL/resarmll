@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 
 from stock import Stock
 from resarmll import settings
-from utils import currency
+from resautils.currency import currency_alt
 
 class Order(models.Model):
     user = user = models.ForeignKey(User)
@@ -24,14 +24,14 @@ class Order(models.Model):
         return '#'+str(self.id)+' - '+self.user.get_full_name()
 
     def remove(self):
-        from resarmll.compta.models import Operation
+        from compta.models import Operation
         for o in self.orderdetail_set.all():
             o.remove()
         Operation.objects.filter(order=self).delete()
         self.delete()
 
     def save_paid(self, method, comment=None):
-        from resarmll.compta.models import Operation, ClientAccount
+        from compta.models import Operation, ClientAccount
         curdate = date.now()
         self.payment_date = curdate
         self.save()
@@ -62,7 +62,7 @@ class Order(models.Model):
             op.save()
 
     def save_compta(self):
-        from resarmll.compta.models import Operation, PaymentMethod, ClientAccount, PlanComptable
+        from compta.models import Operation, PaymentMethod, ClientAccount, PlanComptable
         curdate = date.now()
         user_account = None
         try:
@@ -146,7 +146,7 @@ class OrderDetail(models.Model):
         return self.price * self.quantity
 
     def totalamount_alt(self):
-        return currency.currency_alt(self.totalamount())
+        return currency_alt(self.totalamount())
         
     def paid(self):
         Stock.objects.filter(id=self.product.stock.id).update(

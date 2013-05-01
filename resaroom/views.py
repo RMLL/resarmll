@@ -6,10 +6,10 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 
 from resarmll import settings
-from utils.decorators import auto_render, staff_required, manager_required
+from resautils.decorators import auto_render, staff_required, manager_required
 
-from resarmll.room.room import Room
-from resarmll.room.forms import AccomodationSearchForm
+from resaroom.room import Room
+from resaroom.forms import AccomodationSearchForm
 
 @login_required
 @manager_required

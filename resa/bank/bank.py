@@ -4,8 +4,8 @@ from datetime import datetime as date
 
 from django.utils.translation import ugettext_lazy as _
 
-from resarmll.compta.models import Operation
-from resarmll.resa.models import TransactionId
+from compta.models import Operation
+from resa.models import TransactionId
 
 class Bank(object):
     def __init__(self, req, usePost=False):

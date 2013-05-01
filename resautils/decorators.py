@@ -52,7 +52,7 @@ def auto_render(func):
     template filename by calling a decorated view with an "template_name" parameter
     or to get only the context dictionary via "only_context" parameter.
 
-    >>> from utils.utils import auto_render
+    >>> from resautils.utils import auto_render
     >>> @auto_render
     ... def test(request):
     ...     return 'base.html', {'oki':1}

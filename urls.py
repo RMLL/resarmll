@@ -14,9 +14,9 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
    (r'^admin/', include(admin.site.urls)),
     (r'^$', RedirectView.as_view(url='account/')),
-    (r'^account/', include('resarmll.account.urls')),
-    (r'^resa/', include('resarmll.resa.urls')),
-    (r'^room/', include('resarmll.room.urls')),
+    (r'^account/', include('account.urls')),
+    (r'^resa/', include('resa.urls')),
+    (r'^room/', include('room.urls')),
     (r'^utils/', include('utils.urls')),
     (r'^i18n/', include('django.conf.urls.i18n')),
 )

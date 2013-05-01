@@ -2,7 +2,7 @@
 from django.conf.urls.defaults import *
 from django.views.generic import RedirectView
 
-from resarmll.resa.views import *
+from resa.views import *
 
 urlpatterns = patterns ('',
     (r'^$', RedirectView.as_view(url='catalog/')),

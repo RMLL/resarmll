@@ -8,10 +8,10 @@ from django.contrib.auth.models import User
 
 from bank import Bank
 from resarmll import settings
-from resarmll.resa.orders import Order
-from utils.mail import send_email, send_admins
-from resarmll.compta.models import PaymentMethod
-from resarmll.compta.models import SupplierAccount
+from resa.orders import Order
+from resautils.mail import send_email, send_admins
+from compta.models import PaymentMethod
+from compta.models import SupplierAccount
 
 class CyberPlus(Bank):
     def __init__(self, req):

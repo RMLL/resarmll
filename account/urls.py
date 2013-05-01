@@ -3,7 +3,7 @@ from django.conf.urls.defaults import *
 from django.views.generic import RedirectView, TemplateView
 from django.contrib.auth import views as auth_views
 
-from resarmll.account.views import *
+from account.views import *
 
 urlpatterns = patterns ('',
     (r'^$', RedirectView.as_view(url='home/')),

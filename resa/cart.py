@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from resarmll import settings
-from resarmll.resa.models import Article
-from utils.currency import currency_alt
+from resa.models import Article
+from resautils.currency import currency_alt
 
 CART_KEY = 'CART_KEY'
 

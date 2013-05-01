@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from resarmll.compta.models import PaymentMethod, PlanComptable, BankAccount, \
+from compta.models import PaymentMethod, PlanComptable, BankAccount, \
 SupplierAccount, ClientAccount, ProductAccount, ChargeAccount
 from django.contrib import admin
 

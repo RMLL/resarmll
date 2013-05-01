@@ -12,11 +12,11 @@ from django import forms
 from django.conf import settings as django_settings
 
 from resarmll import settings
-from resarmll.account.forms import UserForm, UserFormModify, UserFormManagerCreate, UserFormManagerModify
-from resarmll.account.models import UserProfile, NetworkAccess
-from resarmll.resa.models import Badge
-from resarmll.resa.utils import BadgeGenerator
-from utils.decorators import auto_render, staff_required, manager_required, reception_required
+from account.forms import UserForm, UserFormModify, UserFormManagerCreate, UserFormManagerModify
+from account.models import UserProfile, NetworkAccess
+from resa.models import Badge
+from resa.utils import BadgeGenerator
+from resautils.decorators import auto_render, staff_required, manager_required, reception_required
 
 @login_required
 def langcheck(request, redirect):

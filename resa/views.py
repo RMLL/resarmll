@@ -22,9 +22,9 @@ from bank.cmcic import cmcic
 from bank.ogone import ogone
 from bank.paypal import Paypal
 from resarmll import settings
-from utils.decorators import auto_render, staff_required, manager_required, reception_required
-from utils.pdf import gen_pdf
-from resarmll.compta.models import Operation
+from resautils.decorators import auto_render, staff_required, manager_required, reception_required
+from resautils.pdf import gen_pdf
+from compta.models import Operation
 
 @auto_render
 def gcs(request, tmpl):

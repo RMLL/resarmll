@@ -8,7 +8,7 @@ from django.utils.datastructures import SortedDict
 from django.utils.dateformat import DateFormat
 
 from resarmll import settings
-from resarmll.resa.orders import Order
+from resa.orders import Order
 
 class Room:
     def __init__(self, place):

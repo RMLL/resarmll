@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 
 from resarmll import settings
-from resarmll.resa.models import Country, Badge
+from resa.models import Country, Badge
 from models import GENDER_CHOICES
 
 _attrs = { 'class': 'text', 'size': 30}

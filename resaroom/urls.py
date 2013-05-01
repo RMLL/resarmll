@@ -2,7 +2,7 @@
 from django.conf.urls.defaults import *
 from django.contrib.auth import views as auth_views
 
-from resarmll.room.views import *
+from resaroom.views import *
 
 urlpatterns = patterns ('',
     (r'^$', room_list, {'tmpl': 'room/list.html'}),
