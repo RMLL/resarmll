@@ -1,25 +1,25 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls.defaults import *
-from django.views.generic.simple import redirect_to
+from django.views.generic import RedirectView
 
 from resarmll.resa.views import *
 
 urlpatterns = patterns ('',
-    (r'^$', redirect_to, {'url': 'catalog/'}),
+    (r'^$', RedirectView.as_view(url='catalog/')),
 
     url(r'^gcs/$', gcs, {'tmpl': 'resa/gcs.html'}),
-    
-    (r'^catalog/$', redirect_to, {'url': 'list'}),
+
+    (r'^catalog/$', RedirectView.as_view(url='list')),
     url(r'^catalog/list/$', catalog_list, {'tmpl': 'resa/catalog_list.html'}),
 
-    (r'^cart/$', redirect_to, {'url': 'list'}),
+    (r'^cart/$', RedirectView.as_view(url='list')),
     url(r'^cart/list/$', cart_list, {'tmpl': 'resa/cart_list.html'}),
     url(r'^cart/(?P<action>update|add|invalid|uncheckedgcs)/$', cart_list,
         {'tmpl': 'resa/cart_list.html'}),
     url(r'^cart/(?P<action>del)/(?P<product_id>\d+)$', cart_list,
         {'tmpl': 'resa/cart_list.html'}),
 
-    (r'^orders/$', redirect_to, {'url': 'list'}),
+    (r'^orders/$', RedirectView.as_view(url='list')),
     url(r'^orders/list/$', orders_list,
         {'tmpl': 'resa/orders_list.html'}),
     url(r'^orders/validate/$', orders_list,

@@ -17,8 +17,8 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'resarmll2012',          # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': '/tmp/resarmll2012',          # Or path to database file if using sqlite3.
         'USER': 'resarmll',              # Not used with sqlite3.
         'PASSWORD': 'resarmll',          # Not used with sqlite3.
         'HOST': 'localhost',             # Set to empty string for localhost. Not used with sqlite3.
@@ -35,7 +35,7 @@ TIME_ZONE = 'Europe/Paris'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'fr-FR'
+LANGUAGE_CODE = 'fr'
 
 LANGUAGES = (
     (u'fr', u'Français'),
@@ -50,17 +50,24 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
+MEDIA_ROOT='/home/roidelapluie/dev/resa/resarmll/site_media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/site_media/'
+MEDIA_URL = '/media/'
+
+
+STATICFILES_FINDERS = (
+        'django.contrib.staticfiles.finders.FileSystemFinder',
+        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+        #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+        )
+
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'NEx}l{s>a!A)q|wgoNCgU?=i8gnl"{cB?yU"OL}qy:TTq$8=FW8rSybKG1#q}(\H'
@@ -68,15 +75,15 @@ SECRET_KEY = 'NEx}l{s>a!A)q|wgoNCgU?=i8gnl"{cB?yU"OL}qy:TTq$8=FW8rSybKG1#q}(\H'
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.load_template_source',
-#    'django.template.loaders.eggs.load_template_source',
+    'django.template.loaders.app_directories.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
 )
 
 ROOT_URLCONF = 'resarmll.urls'
@@ -89,17 +96,18 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.markup',
-#    'django_evolution',
-#    'django.contrib.sites',
+    'django.contrib.sites',
+#    'django.contrib.staticfiles',
+    'django.contrib.humanize',
+    'django.contrib.admin',
     'resarmll.resa',
     'resarmll.compta',
     'resarmll.account',
-    'resarmll.utils',
+    'utils',
 )
 
 # template processors
@@ -116,7 +124,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 #############################################
 
 ### COMMON ###
-DOCUMENT_ROOT = PROJECT_DIR + MEDIA_URL
+DOCUMENT_ROOT = PROJECT_DIR + '/doc/'
 TMPDIR = PROJECT_DIR + '/tmp/'
 
 ### DOCUMENTS (all badges or invoices into one PDF) ###
@@ -210,86 +218,9 @@ Suisse
 CH-660.2.608.005-3
 """,
 }
-
-### PAYPAL ###
-PAYPAL_SETTINGS = {
-#
-# tests
-#
-#    'id': 'paypal_1209199069_biz@openics.org',
-#    'url': 'https://www.sandbox.paypal.com/cgi-bin/webscr',
-#
-# prod
-#
-    'inuse': False,
-    'id': 'info@free-it-foundation.org',
-    'url' : 'https://www.paypal.com/cgi-bin/webscr',
-    'currency': 'EUR',
-    'return': '/resa/orders/paypal/return',
-    'cancel_return': '/resa/orders/paypal/cancel',
-    'notify_url': '/resa/orders/paypal/notify',
-}
-
 ### Bank Driver ( CyberPlus, eTransactions, Cmcic, Ogone) ###
 BANK_DRIVER = 'ogone'
-
-### CYBERPLUS ###
-CYBERPLUS_SETTINGS = {
-    'merchant_id': '',
-    #'merchant_id': '038862749811111', #tests
-    'merchant_country': 'fr',
-    'currency_code': '978', # EURO = 978
-    'payment_means': 'CB,1,VISA,1,MASTERCARD,1',
-    'normal_return_url': '/resa/orders/cyberplus/return',
-    'cancel_return_url': '/resa/orders/cyberplus/return',
-    'automatic_response_url': '/resa/orders/cyberplus/notify',
-}
-
-### ETRANSACTIONS ###
-ETRANSACTIONS_SETTINGS = {
-#
-# tests
-#
-#    'site': '1999888',
-#    'rang': '98', # tests
-#    'identifiant': '3', #tests
-#    'testmode': True,
-
-#
-# prod
-#
-    'testmode': False,
-    'site': '',
-    'rang': '',
-    'identifiant': '',
-    'mode': '4',
-    'devise': '978', # EURO = 978
-    'return_url_prefix': '/resa/orders/etransactions/return',
-}
-
 ### CMCIC ###
-CMCIC_SETTINGS = {
-#
-# tests
-#
-#    'testmode': True,
-#    'serveur': 'https://paiement.creditmutuel.fr/test/paiement.cgi',
-#
-# prod
-#
-    'testmode': False,
-    'serveur': 'https://paiement.creditmutuel.fr/paiement.cgi',
-
-    'cle': 'AB013CDF9422832933ABC494DE389319EAABC99D',
-    'tpe': '0123456',
-    'version': '3.0',
-    'codesociete': 'rmllstrasb',
-    'devise': 'EUR',
-    'url_ret': '/resa/orders/cmcic/return',
-    'url_ok': '/resa/orders/cmcic/return/ok',
-    'url_err': '/resa/orders/cmcic/return/err',
-}
-
 ### OGONE ###
 OGONE_SETTINGS = {
     #
@@ -316,9 +247,6 @@ OGONE_SETTINGS = {
 
 ### MISC ###
 FULL_ADDRESS = """
-Free IT Foundation - 2012 - info@free-it-foundation.org
-Ch. de Champ-Claude 10 - 1214 Vernier, Genève - Suisse
-CH-660.2.608.005-3
 """
 
 TVA = {
@@ -328,22 +256,16 @@ TVA = {
 }
 
 ### DEVELOPMENT SETTINGS ###
-if os.environ.has_key('DJANGO_DEVEL'):
-    DEVEL_MODE = True
-    SESSION_COOKIE_NAME += '-dev'
-    DEBUG = True
-    TEMPLATE_DEBUG = DEBUG
-else:
-    DEVEL_MODE = False
-    DEBUG = False
-    TEMPLATE_DEBUG = False
+DEVEL_MODE = True
+SESSION_COOKIE_NAME += '-dev'
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ### ROOMS ###
 ROOMS = {
-    'Caserne': {
-        '2011-07-08': 23, '2011-07-09': 25, '2011-07-10': 27, '2011-07-11': 29, '2011-07-12': 31,
-    },
-    'Camping': {
-        '2011-07-08': 65, '2011-07-09': 66, '2011-07-10': 67, '2011-07-11': 68, '2011-07-12': 69,
-    },
 }
+
+try:
+    from settings_local import *
+except ImportError:
+    pass

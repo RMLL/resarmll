@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 
 from stock import Stock
 from resarmll import settings
-from resarmll.utils.currency import currency_alt
+from utils import currency
 
 class Order(models.Model):
     user = user = models.ForeignKey(User)
@@ -146,7 +146,7 @@ class OrderDetail(models.Model):
         return self.price * self.quantity
 
     def totalamount_alt(self):
-        return currency_alt(self.totalamount())
+        return currency.currency_alt(self.totalamount())
         
     def paid(self):
         Stock.objects.filter(id=self.product.stock.id).update(

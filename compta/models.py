@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 
-from resarmll.resa.orders import Order
+from resa.orders import Order
 from resarmll import settings
 
 class PlanComptable(models.Model):

@@ -8,11 +8,11 @@ from django.utils.translation import ugettext_lazy as _
 from django.core.exceptions import ObjectDoesNotExist
 
 from resarmll import settings
-from resarmll.compta.models import ProductAccount
+from compta.models import ProductAccount
 from stock import Stock
 from widgets import TranslatedLabelField
 from utils.BadgeGenerator import COLORS as BadgeColors
-from resarmll.utils.currency import currency_alt
+from utils.currency import currency_alt
 
 from django.utils.translation import get_language
 

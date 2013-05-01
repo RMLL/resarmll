@@ -20,7 +20,7 @@ from resarmll.resa.models import Country
 from resarmll.compta.models import PlanComptable
 from resarmll.account.models import UserProfile, NetworkAccess
 from resarmll.resa.models import Badge
-from resarmll.utils.pdf import gen_pdf
+from utils.pdf import gen_pdf
 from resarmll.resa.orders import Order
 from resarmll.resa.utils.BadgeGenerator import BadgeGenerator
 

@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 
 from resarmll import settings
-from resarmll.utils.decorators import http_basicauth
+from utils.decorators import http_basicauth
 
 @http_basicauth(settings.global_httpauth_username, settings.global_httpauth_password)
 def sync(request):

@@ -2,7 +2,7 @@
 
 from resarmll import settings
 from resarmll.resa.models import Article
-from resarmll.utils.currency import currency_alt
+from utils.currency import currency_alt
 
 CART_KEY = 'CART_KEY'
 

@@ -16,7 +16,7 @@ from resarmll.account.forms import UserForm, UserFormModify, UserFormManagerCrea
 from resarmll.account.models import UserProfile, NetworkAccess
 from resarmll.resa.models import Badge
 from resarmll.resa.utils import BadgeGenerator
-from resarmll.utils.decorators import auto_render, staff_required, manager_required, reception_required
+from utils.decorators import auto_render, staff_required, manager_required, reception_required
 
 @login_required
 def langcheck(request, redirect):

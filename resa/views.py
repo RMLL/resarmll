@@ -22,8 +22,8 @@ from bank.cmcic import cmcic
 from bank.ogone import ogone
 from bank.paypal import Paypal
 from resarmll import settings
-from resarmll.utils.decorators import auto_render, staff_required, manager_required, reception_required
-from resarmll.utils.pdf import gen_pdf
+from utils.decorators import auto_render, staff_required, manager_required, reception_required
+from utils.pdf import gen_pdf
 from resarmll.compta.models import Operation
 
 @auto_render

@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls.defaults import *
-from django.views.generic.simple import redirect_to
-from django.views.generic.simple import direct_to_template
 from django.contrib.auth import views as auth_views
 
 from resarmll.room.views import *

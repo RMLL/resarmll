@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls.defaults import *
-from django.views.generic.simple import redirect_to
-from django.views.generic.simple import direct_to_template
+from django.views.generic import RedirectView, TemplateView
 from django.contrib.auth import views as auth_views
 
 from resarmll.account.views import *
 
 urlpatterns = patterns ('',
-    (r'^$', redirect_to, {'url': 'home/'}),
+    (r'^$', RedirectView.as_view(url='home/')),
 
     url(r'^langswitch/$', langcheck, {'redirect': '/account/home/'}),
     url(r'^langchange/$', langcheck, {'redirect': '/account/profile/'}),
@@ -17,8 +16,7 @@ urlpatterns = patterns ('',
 
     url(r'^register/$', register, {'tmpl': 'account/register.html'}),
     url(r'^register/set/(?P<code>\w+)$', register_set, {'redirect': '/account/register/'}),
-    url(r'^register/complete/$', direct_to_template,
-        {'template': 'account/register_complete.html'}),
+    url(r'^register/complete/$', TemplateView.as_view(template_name='account/register_complete.html')),
 
     url(r'^password_reset/$', auth_views.password_reset,
         {'template_name': 'account/password_reset.html'}),

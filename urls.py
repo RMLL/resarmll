@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls.defaults import *
-from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
-from django.views.generic.simple import redirect_to
+from django.views.generic import RedirectView
 urlpatterns = patterns('',
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs'
     # to INSTALLED_APPS to enable admin documentation:
@@ -14,16 +13,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
    (r'^admin/', include(admin.site.urls)),
-    (r'^$', redirect_to, {'url': 'account/'}),
+    (r'^$', RedirectView.as_view(url='account/')),
     (r'^account/', include('resarmll.account.urls')),
     (r'^resa/', include('resarmll.resa.urls')),
     (r'^room/', include('resarmll.room.urls')),
-    (r'^utils/', include('resarmll.utils.urls')),
+    (r'^utils/', include('utils.urls')),
     (r'^i18n/', include('django.conf.urls.i18n')),
 )
 
-if settings.DEVEL_MODE:
-    import os.path
-    urlpatterns += patterns('',
-        (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.DOCUMENT_ROOT}),
-    )
