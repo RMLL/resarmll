@@ -1,0 +1,1574 @@
+[
+    {
+        "pk": 1,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 48,
+            "quantity_ordered": 0,
+            "label": "Generation Europe 6-7 juillet"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 48,
+            "quantity_ordered": 0,
+            "label": "Generation Europe 7-8 juillet"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 48,
+            "quantity_ordered": 0,
+            "label": "Generation Europe 8-9 juillet"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 48,
+            "quantity_ordered": 0,
+            "label": "Generation Europe 9-10 juillet"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 48,
+            "quantity_ordered": 0,
+            "label": "Generation Europe 10-11 juillet"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 48,
+            "quantity_ordered": 0,
+            "label": "Generation Europe 11-12 juillet"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 54,
+            "quantity_ordered": 0,
+            "label": "Auberge des 3 fontaines 6-7 juillet"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 54,
+            "quantity_ordered": 0,
+            "label": "Auberge des 3 fontaines 7-8 juillet"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 54,
+            "quantity_ordered": 0,
+            "label": "Auberge des 3 fontaines 8-9 juillet"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 54,
+            "quantity_ordered": 0,
+            "label": "Auberge des 3 fontaines 9-10 juillet"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 54,
+            "quantity_ordered": 0,
+            "label": "Auberge des 3 fontaines 10-11 juillet"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 54,
+            "quantity_ordered": 0,
+            "label": "Auberge des 3 fontaines 11-12 juillet"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 30,
+            "quantity_ordered": 0,
+            "label": "Camping Tente 6-7 juillet"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 30,
+            "quantity_ordered": 0,
+            "label": "Camping Tente 7-8 juillet"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 30,
+            "quantity_ordered": 0,
+            "label": "Camping Tente 8-9 juillet"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 30,
+            "quantity_ordered": 0,
+            "label": "Camping Tente 9-10 juillet"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 30,
+            "quantity_ordered": 0,
+            "label": "Camping Tente 10-11 juillet"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 30,
+            "quantity_ordered": 0,
+            "label": "Camping Tente 11-12 juillet"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 20,
+            "quantity_ordered": 0,
+            "label": "Camping Personne 6-7 juillet"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 20,
+            "quantity_ordered": 0,
+            "label": "Camping Personne 7-8 juillet"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 20,
+            "quantity_ordered": 0,
+            "label": "Camping Personne 8-9 juillet"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 20,
+            "quantity_ordered": 0,
+            "label": "Camping Personne 9-10 juillet"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 20,
+            "quantity_ordered": 0,
+            "label": "Camping Personne 10-11 juillet"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "resa.stock",
+        "fields": {
+            "order": 0,
+            "quantity_paid": 0,
+            "quantity": 20,
+            "quantity_ordered": 0,
+            "label": "Camping Personne 11-12 juillet"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "resa.order",
+        "fields": {
+            "payment_date": null,
+            "donation": 10,
+            "user": 1,
+            "creation_date": "2013-05-01T19:37:41.713Z"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "resa.order",
+        "fields": {
+            "payment_date": null,
+            "donation": 0,
+            "user": 1,
+            "creation_date": "2013-05-01T20:07:29.418Z"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "resa.orderdetail",
+        "fields": {
+            "price": "30",
+            "product": 1,
+            "distributed": 0,
+            "order": 2,
+            "quantity": 2
+        }
+    },
+    {
+        "pk": 1,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 1,
+            "label_number": 0,
+            "value": "Nuit du 06 au 07 - sam. soir - Auberge des 3 fontaines",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 1,
+            "label_number": 0,
+            "value": "Night from 06th to 07th - Sat. evening - Auberge des 3 fontaines",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 2,
+            "label_number": 0,
+            "value": "Nuit du 11 au 12 - jeu. soir - Auberge des 3 fontaines",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 2,
+            "label_number": 0,
+            "value": "Night from 11th to 12th - Thu. evening - Auberge des 3 fontaines",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 3,
+            "label_number": 0,
+            "value": "Nuit du 07 au 08 - dim. soir - Auberge des 3 fontaines",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 3,
+            "label_number": 0,
+            "value": "Night from 07th to 08th - Sun. evening - Auberge des 3 fontaines",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 4,
+            "label_number": 0,
+            "value": "Nuit du 08 au 09 - lun. soir - Auberge des 3 fontaines",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 4,
+            "label_number": 0,
+            "value": "Night from 07th to 08th - Mon. evening - Auberge des 3 fontaines",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 5,
+            "label_number": 0,
+            "value": "Nuit du 09 au 10 - mar. soir - Auberge des 3 fontaines",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 5,
+            "label_number": 0,
+            "value": "Night from 09th to 10th - Tue. evening - Auberge des 3 fontaines",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 6,
+            "label_number": 0,
+            "value": "Nuit du 10 au 11 - mer. soir - Auberge des 3 fontaines",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 6,
+            "label_number": 0,
+            "value": "Night from 10th to 11th - Wed. evening - Auberge des 3 fontaines",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 7,
+            "label_number": 0,
+            "value": "Nuit du 06 au 07 - sam. soir - Generation Europe",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 7,
+            "label_number": 0,
+            "value": "Night from 06th to 07th - Sat. evening - Generation Europe",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 8,
+            "label_number": 0,
+            "value": "Nuit du 07 au 08 - dim. soir - Generation Europe",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 8,
+            "label_number": 0,
+            "value": "Night from 07th to 08th - Sun. evening - Generation Europe",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 9,
+            "label_number": 0,
+            "value": "Nuit du 08 au 09 - lun. soir - Generation Europe",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 9,
+            "label_number": 0,
+            "value": "Night from 08th to 09th - Mon. evening - Generation Europe",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 10,
+            "label_number": 0,
+            "value": "Nuit du 09 au 10 - mar. soir - Generation Europe",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 10,
+            "label_number": 0,
+            "value": "Night from 09th to 10th - Tue. evening - Generation Europe",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 11,
+            "label_number": 0,
+            "value": "Nuit du 10 au 11 - mer. soir - Generation Europe",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 11,
+            "label_number": 0,
+            "value": "Night from 10th to 11th - Wed. evening - Generation Europe",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 12,
+            "label_number": 0,
+            "value": "Nuit du 11 au 12 - jeu. soir - Generation Europe",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 12,
+            "label_number": 0,
+            "value": "Night from 11th to 12th - Thu. evening - Generation Europe",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 14,
+            "label_number": 0,
+            "value": "Nuit du 07 au 08 - dim. soir - Camping - Tente + 1 personne",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 14,
+            "label_number": 0,
+            "value": "Night from 07th to 08th - Sun. evening - Camping - Tent + 1 person",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 15,
+            "label_number": 0,
+            "value": "Nuit du 08 au 09 - lun. soir - Camping - Tente + 1 personne",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 15,
+            "label_number": 0,
+            "value": "Night from 08th to 09th - Mon. evening - Camping - Tent + 1 person",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 16,
+            "label_number": 0,
+            "value": "Nuit du 09 au 10 - mar. soir - Camping - Tente + 1 personne",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 16,
+            "label_number": 0,
+            "value": "Night from 09th to 10th - Tue. evening - Camping - Tent + 1 person",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 17,
+            "label_number": 0,
+            "value": "Nuit du 10 au 11 - mer. soir - Camping - Tente + 1 personne",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 17,
+            "label_number": 0,
+            "value": "Night from 10th to 11th - Wed. evening - Camping - Tent + 1 person",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 18,
+            "label_number": 0,
+            "value": "Nuit du 11 au 12 - jeu. soir - Camping - Tente + 1 personne",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 18,
+            "label_number": 0,
+            "value": "Night from 11th to 12th - Thu. evening - Camping - Tent + 1 person",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 19,
+            "label_number": 0,
+            "value": "Nuit du 06 au 07 - sam. soir - Camping - Tente + 1 personne",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 19,
+            "label_number": 0,
+            "value": "Night from 06th to 07th - Sat. evening - Camping - Tent + 1 person",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 20,
+            "label_number": 0,
+            "value": "Nuit du 06 au 07 - sam. soir - Camping - 1 personne en plus",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 20,
+            "label_number": 0,
+            "value": "Night from 06th to 07th - Sat. evening - Camping - 1 additional person",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 41,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 21,
+            "label_number": 0,
+            "value": "Nuit du 07 au 08 - dim. soir - Camping - 1 personne en plus",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 42,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 21,
+            "label_number": 0,
+            "value": "Night from 07th to 08th - Sun. evening - Camping - 1 additional person",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 43,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 22,
+            "label_number": 0,
+            "value": "Nuit du 08 au 09 - lun. soir - Camping - 1 personne en plus",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 44,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 22,
+            "label_number": 0,
+            "value": "Night from 08th to 09th - Mon. evening - Camping - 1 additional person",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 45,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 23,
+            "label_number": 0,
+            "value": "Nuit du 09 au 10 - mar. soir - Camping - 1 personne en plus",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 46,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 23,
+            "label_number": 0,
+            "value": "Night from 09th to 10th - Tue. evening - Camping - 1 additional person",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 47,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 24,
+            "label_number": 0,
+            "value": "Nuit du 10 au 11 - mer. soir - Camping - 1 personne en plus",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 48,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 24,
+            "label_number": 0,
+            "value": "Night from 10th to 11th - Wed. evening - Camping - 1 additional person",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 49,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 25,
+            "label_number": 0,
+            "value": "Nuit du 11 au 12 - jeu. soir - Camping - 1 personne en plus",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 50,
+        "model": "resa.articlelabel",
+        "fields": {
+            "parent": 25,
+            "label_number": 0,
+            "value": "Night from 11th to 12th - Thu. evening - Camping - 1 additional person",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 1,
+            "label_number": 0,
+            "value": "<a href=\"http://www.auberge3fontaines.be/fr/index.htm\">Auberge des 3 fontaines</a><br />\r\nUne personne - Chambre à 2 ou 5 lits<br />\r\n<em>Petit déjeuner inclus</em>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 1,
+            "label_number": 0,
+            "value": "<a href=\"http://www.auberge3fontaines.be/fr/index.htm\">Auberge des 3 fontaines</a><br />\r\nOne person - Room with 2 or 5 beds<br />\r\n<em>Breakfast included</em>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 2,
+            "label_number": 0,
+            "value": "<a href=\"http://www.auberge3fontaines.be/fr/index.htm\">Auberge des 3 fontaines</a><br />\r\nUne personne - Chambre à 2 ou 5 lits<br />\r\n<em>Petit déjeuner inclus</em>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 2,
+            "label_number": 0,
+            "value": "<a href=\"http://www.auberge3fontaines.be/fr/index.htm\">Auberge des 3 fontaines</a><br />\r\nOne person - Room with 2 or 5 beds<br />\r\n<em>Breakfast included</em>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 3,
+            "label_number": 0,
+            "value": "<a href=\"http://www.auberge3fontaines.be/fr/index.htm\">Auberge des 3 fontaines</a><br />\r\nUne personne - Chambre à 2 ou 5 lits<br />\r\n<em>Petit déjeuner inclus</em>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 3,
+            "label_number": 0,
+            "value": "<a href=\"http://www.auberge3fontaines.be/fr/index.htm\">Auberge des 3 fontaines</a><br />\r\nOne person - Room with 2 or 5 beds<br />\r\n<em>Breakfast included</em>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 4,
+            "label_number": 0,
+            "value": "<a href=\"http://www.auberge3fontaines.be/fr/index.htm\">Auberge des 3 fontaines</a><br />\r\nUne personne - Chambre à 2 ou 5 lits<br />\r\n<em>Petit déjeuner inclus</em>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 4,
+            "label_number": 0,
+            "value": "<a href=\"http://www.auberge3fontaines.be/fr/index.htm\">Auberge des 3 fontaines</a><br />\r\nOne person - Room with 2 or 5 beds<br />\r\n<em>Breakfast included</em>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 5,
+            "label_number": 0,
+            "value": "<a href=\"http://www.auberge3fontaines.be/fr/index.htm\">Auberge des 3 fontaines</a><br />\r\nUne personne - Chambre à 2 ou 5 lits<br />\r\n<em>Petit déjeuner inclus</em>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 5,
+            "label_number": 0,
+            "value": "<a href=\"http://www.auberge3fontaines.be/fr/index.htm\">Auberge des 3 fontaines</a><br />\r\nOne person - Room with 2 or 5 beds<br />\r\n<em>Breakfast included</em>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 6,
+            "label_number": 0,
+            "value": "<a href=\"http://www.auberge3fontaines.be/fr/index.htm\">Auberge des 3 fontaines</a><br />\r\nUne personne - Chambre à 2 ou 5 lits<br />\r\n<em>Petit déjeuner inclus</em>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 6,
+            "label_number": 0,
+            "value": "<a href=\"http://www.auberge3fontaines.be/fr/index.htm\">Auberge des 3 fontaines</a><br />\r\nOne person - Room with 2 or 5 beds<br />\r\n<em>Breakfast included</em>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 7,
+            "label_number": 0,
+            "value": "<a href=\"http://www.hostelsinbrussels.be/-Generation-Europe-\">Generation Europe</a><br />\r\nUne personne - Chambre à 2, 4 ou 8 lits<br />\r\n<em>Petit déjeuner inclus</em>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 7,
+            "label_number": 0,
+            "value": "<a href=\"http://www.hostelsinbrussels.be/-Generation-Europe-\">Generation Europe</a><br />\r\nOne person - Room with 2, 4 or 8 beds<br />\r\n<em>Breakfast included</em>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 8,
+            "label_number": 0,
+            "value": "<a href=\"http://www.hostelsinbrussels.be/-Generation-Europe-\">Generation Europe</a><br />\r\nUne personne - Chambre à 2, 4 ou 8 lits<br />\r\n<em>Petit déjeuner inclus</em>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 8,
+            "label_number": 0,
+            "value": "<a href=\"http://www.hostelsinbrussels.be/-Generation-Europe-\">Generation Europe</a><br />\r\nOne person - Room with 2, 4 or 8 beds<br />\r\n<em>Breakfast included</em>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 9,
+            "label_number": 0,
+            "value": "<a href=\"http://www.hostelsinbrussels.be/-Generation-Europe-\">Generation Europe</a><br />\r\nUne personne - Chambre à 2, 4 ou 8 lits<br />\r\n<em>Petit déjeuner inclus</em>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 9,
+            "label_number": 0,
+            "value": "<a href=\"http://www.hostelsinbrussels.be/-Generation-Europe-\">Generation Europe</a><br />\r\nOne person - Room with 2, 4 or 8 beds<br />\r\n<em>Breakfast included</em>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 10,
+            "label_number": 0,
+            "value": "<a href=\"http://www.hostelsinbrussels.be/-Generation-Europe-\">Generation Europe</a><br />\r\nUne personne - Chambre à 2, 4 ou 8 lits<br />\r\n<em>Petit déjeuner inclus</em>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 10,
+            "label_number": 0,
+            "value": "<a href=\"http://www.hostelsinbrussels.be/-Generation-Europe-\">Generation Europe</a><br />\r\nOne person - Room with 2, 4 or 8 beds<br />\r\n<em>Breakfast included</em>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 11,
+            "label_number": 0,
+            "value": "<a href=\"http://www.hostelsinbrussels.be/-Generation-Europe-\">Generation Europe</a><br />\r\nUne personne - Chambre à 2, 4 ou 8 lits<br />\r\n<em>Petit déjeuner inclus</em>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 11,
+            "label_number": 0,
+            "value": "<a href=\"http://www.hostelsinbrussels.be/-Generation-Europe-\">Generation Europe</a><br />\r\nOne person - Room with 2, 4 or 8 beds<br />\r\n<em>Breakfast included</em>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 12,
+            "label_number": 0,
+            "value": "<a href=\"http://www.hostelsinbrussels.be/-Generation-Europe-\">Generation Europe</a><br />\r\nUne personne - Chambre à 2, 4 ou 8 lits<br />\r\n<em>Petit déjeuner inclus</em>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 12,
+            "label_number": 0,
+            "value": "<a href=\"http://www.hostelsinbrussels.be/-Generation-Europe-\">Generation Europe</a><br />\r\nOne person - Room with 2, 4 or 8 beds<br />\r\n<em>Breakfast included</em>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 14,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />\r\n<strong>Ceci est uniquement l'emplacement de la tente. Merci de selectionner également le nombre de personnes.</strong>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 14,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />\r\n<strong>This is only for the location of the tent. Please pick the number of people below.</strong>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 15,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 15,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 16,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />\r\n<strong>Ceci est uniquement l'emplacement de la tente. Merci de selectionner également le nombre de personnes.</strong>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 16,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />\r\n<strong>This is only for the location of the tent. Please pick the number of people below.</strong>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 17,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 17,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 18,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 18,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 19,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a>",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 19,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a>",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 20,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />Personne supplémentaire qui partage votre tente.",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 20,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />Additional person you share your tent with.",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 41,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 21,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />Personne supplémentaire qui partage votre tente.",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 42,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 21,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />Additional person you share your tent with.",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 43,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 22,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />Personne supplémentaire qui partage votre tente.",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 44,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 22,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />Additional person you share your tent with.",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 45,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 23,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />Personne supplémentaire qui partage votre tente.",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 46,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 23,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />Additional person you share your tent with.",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 47,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 24,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />Personne supplémentaire qui partage votre tente.",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 48,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 24,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />Additional person you share your tent with.",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 49,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 25,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />Personne supplémentaire qui partage votre tente.",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 50,
+        "model": "resa.articlelonglabel",
+        "fields": {
+            "parent": 25,
+            "label_number": 0,
+            "value": "<a href=\"http://cielouvertcamping.wordpress.com/\">Camping \"Ciel Ouvert\"</a><br />Additional person you share your tent with.",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "30",
+            "enabled": true,
+            "order": 11,
+            "stock": 7
+        }
+    },
+    {
+        "pk": 2,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "30",
+            "enabled": true,
+            "order": 61,
+            "stock": 12
+        }
+    },
+    {
+        "pk": 3,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "30",
+            "enabled": true,
+            "order": 21,
+            "stock": 8
+        }
+    },
+    {
+        "pk": 4,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "30",
+            "enabled": true,
+            "order": 31,
+            "stock": 9
+        }
+    },
+    {
+        "pk": 5,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "30",
+            "enabled": true,
+            "order": 41,
+            "stock": 10
+        }
+    },
+    {
+        "pk": 6,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "30",
+            "enabled": true,
+            "order": 51,
+            "stock": 11
+        }
+    },
+    {
+        "pk": 7,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "22",
+            "enabled": true,
+            "order": 12,
+            "stock": 1
+        }
+    },
+    {
+        "pk": 8,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "22",
+            "enabled": true,
+            "order": 22,
+            "stock": 2
+        }
+    },
+    {
+        "pk": 9,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "22",
+            "enabled": true,
+            "order": 32,
+            "stock": 3
+        }
+    },
+    {
+        "pk": 10,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "22",
+            "enabled": true,
+            "order": 42,
+            "stock": 4
+        }
+    },
+    {
+        "pk": 11,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "22",
+            "enabled": true,
+            "order": 52,
+            "stock": 5
+        }
+    },
+    {
+        "pk": 12,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "22",
+            "enabled": true,
+            "order": 62,
+            "stock": 6
+        }
+    },
+    {
+        "pk": 14,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "14",
+            "enabled": true,
+            "order": 23,
+            "stock": 14
+        }
+    },
+    {
+        "pk": 15,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "14",
+            "enabled": true,
+            "order": 33,
+            "stock": 15
+        }
+    },
+    {
+        "pk": 16,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "14",
+            "enabled": true,
+            "order": 43,
+            "stock": 16
+        }
+    },
+    {
+        "pk": 17,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "14",
+            "enabled": true,
+            "order": 53,
+            "stock": 17
+        }
+    },
+    {
+        "pk": 18,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "14",
+            "enabled": true,
+            "order": 63,
+            "stock": 18
+        }
+    },
+    {
+        "pk": 19,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "14",
+            "enabled": true,
+            "order": 13,
+            "stock": 13
+        }
+    },
+    {
+        "pk": 20,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "7",
+            "enabled": true,
+            "order": 14,
+            "stock": 19
+        }
+    },
+    {
+        "pk": 21,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "7",
+            "enabled": true,
+            "order": 24,
+            "stock": 20
+        }
+    },
+    {
+        "pk": 22,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "7",
+            "enabled": true,
+            "order": 34,
+            "stock": 21
+        }
+    },
+    {
+        "pk": 23,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "7",
+            "enabled": true,
+            "order": 44,
+            "stock": 22
+        }
+    },
+    {
+        "pk": 24,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "7",
+            "enabled": true,
+            "order": 54,
+            "stock": 23
+        }
+    },
+    {
+        "pk": 25,
+        "model": "resa.article",
+        "fields": {
+            "product_account": 1,
+            "price": "7",
+            "enabled": true,
+            "order": 64,
+            "stock": 24
+        }
+    },
+    {
+        "pk": 1,
+        "model": "resa.countrylabel",
+        "fields": {
+            "parent": 1,
+            "label_number": 0,
+            "value": "Belgique",
+            "language": "fr"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "resa.countrylabel",
+        "fields": {
+            "parent": 1,
+            "label_number": 0,
+            "value": "Belgium",
+            "language": "en"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "resa.country",
+        "fields": {
+            "code": "BE"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "resa.badge",
+        "fields": {
+            "name": "Organisation",
+            "color": "blue",
+            "section": "orga",
+            "default": false,
+            "alt_name": "Crew",
+            "userchoice": false
+        }
+    },
+    {
+        "pk": 1,
+        "model": "resa.transactionid",
+        "fields": {
+            "label": "Generated: 2013-05-01 21:45:47"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "resa.transactionid",
+        "fields": {
+            "label": "Generated: 2013-05-01 22:07:16"
+        }
+    }
+]
