@@ -19,6 +19,9 @@
             {% blocktrans %}Orders not paid by July 5th will be removed. There are some exceptions with people coming from abroad which should contact the treasurer if they want to pay on arrival.{% endblocktrans %}
             <p><strong>{% trans "Treasurer:" %}</strong> {{ treasurer.name }} &lt;<a href="mailto:{{ treasurer.email }}">{{ treasurer.email }}</a>&gt;</p>
         </div>
+        <div class="main-warn">
+            {% blocktrans %}If you want to stay in an traditional hotel instead of a youth hotel or a camping, you can use the independant <a href="https://www.resotel.be/rmll2013">RESOTEL</a> form.{% endblocktrans %}
+        </div>
     </div>
 
 {% endblock %}
