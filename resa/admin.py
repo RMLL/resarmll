@@ -16,16 +16,19 @@ class ArticleAdmin(admin.ModelAdmin):
     form = ArticleAdminForm
     ordering = ('order',)
     list_display = ('label', 'price', 'quantity', 'stock', 'order', 'count_confirmed', 'count_paid', 'count_distributed', 'enabled')
+    save_as = True
 admin.site.register(Article, ArticleAdmin)
 
 class BadgeAdmin(admin.ModelAdmin):
     ordering = ('name',)
     list_display = ('name','alt_name', 'color', 'section', 'userchoice', 'default')
+    save_as = True
 admin.site.register(Badge, BadgeAdmin)
 
 class StockAdmin(admin.ModelAdmin):
     ordering = ('order',)
     list_display = ('label','quantity', 'quantity_ordered', 'quantity_paid')
+    save_as = True
 admin.site.register(Stock, StockAdmin)
 
 admin.site.register(Order, admin.ModelAdmin)
