@@ -27,6 +27,15 @@
             </td>
         </tr>
     {% endfor %}
+    {% if order.donation > 0 %}
+        <tr>
+            <td>Donation</td>
+            <td class="act">N/A</td>
+            <td class="num">
+                {{ order.donation }} {{ currency }}
+            </td>
+        </tr>
+    {% endif %}
     <tfoot>
         <tr>
             <th colspan="2">

@@ -67,6 +67,10 @@ def cart_list(request, tmpl, action=None, product_id=None):
                         statusok = statusok and cart.add(product_id, quantity)
                     else:
                         statusok = statusok and cart.update(product_id, quantity)
+                if k == 'donation':
+                    statusok = statusok and quantity >= 0
+                    if quantity >= 0:
+                        cart.donation = quantity
         if statusok:
             msg_ok = _(u"Product(s) successfully added") if action == 'add' else _(u"Product(s) successfully updated")
         else:
@@ -94,7 +98,7 @@ def orders_list(request, tmpl, action=None):
         if not cart.is_valid():
             return HttpResponseRedirect('/resa/cart/invalid/')
         elif not cart.empty():
-            order = Order(user=request.user, creation_date=date.now())
+            order = Order(user=request.user, creation_date=date.now(), donation = cart.donation)
             order.save_confirm(cart)
             cart.clear()
             cart.save(request)

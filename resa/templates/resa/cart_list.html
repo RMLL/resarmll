@@ -62,6 +62,20 @@
                             </td>
                         </tr>
                     {% endfor %}
+                        <tr>
+                            <td>{% trans "Donation" %}</td>
+                            <td class="num">
+                            </td>
+                            <td class="num"></td>
+                            <td class="act">
+                                <input type="text" size="5" name="donation" value="{{ cart.donation }}" />
+                            </td>
+                            <td class="num">
+                                {{ cart.donation }} {{ currency }}
+                            </td>
+                            <td class="act">
+                            </td>
+                        </tr>
                     <tfoot>
                         <tr>
                             <td colspan="3" class="num">

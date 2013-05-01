@@ -35,8 +35,6 @@ class LabelClass:
             labels = self.long_labels
         idx = 0
         for label_name, lbl in labels:
-            if label_name == name:
-                label_number = idx
             idx += 1
         return idx
 

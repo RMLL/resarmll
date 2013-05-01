@@ -15,6 +15,7 @@ class Order(models.Model):
     user = user = models.ForeignKey(User)
     creation_date = models.DateTimeField(_(u"Creation date"))
     payment_date = models.DateTimeField(_(u"Payment date"), null=True)
+    donation = models.PositiveSmallIntegerField(_(u"Donation"), default=0)
 
     class Meta:
         verbose_name = _(u"Order")
@@ -102,13 +103,13 @@ class Order(models.Model):
         self.save_compta()
 
     def totalamount(self):
-        ret = 0
+        ret = self.donation
         for o in self.orderdetail_set.all():
             ret += o.totalamount()
         return ret
 
     def totalamount_alt(self):
-        ret = 0
+        ret = currency_alt(self.donation)
         for o in self.orderdetail_set.all():
             ret += o.totalamount_alt()
         return ret

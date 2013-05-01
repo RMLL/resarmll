@@ -37,15 +37,18 @@ class CartItem:
 class Cart:
     def __init__(self, request, salt=None):
         self.items = []
+        self.donation = 0
         self.request = request
         self.salt = str(salt)
-        data = request.session.get(self.get_salt())
-        if data is not None:
+        savedcart = request.session.get(self.get_salt())
+        if savedcart is not None:
+            donation, data = savedcart
             products = {}
             for t in data:
                 i,d = t
                 products[i] = d
             self.add_group(products)
+            self.donation = donation
 
     def __iter__(self):
         for item in self.items:
@@ -104,10 +107,10 @@ class Cart:
         return ret
 
     def empty(self):
-        return len(self.items) == 0
+        return len(self.items) == 0 and self.donation == 0
 
     def total(self):
-        ret = 0
+        ret = self.donation
         for item in self.items:
             ret += item.total()
         return ret
@@ -119,13 +122,13 @@ class Cart:
         session_data = []
         for i,item in enumerate(self.items):
             session_data.append((item.id, item.quantity))
-        request.session[self.get_salt()] = session_data
+        request.session[self.get_salt()] = (self.donation, session_data)
 
     def clear(self):
         self.items = []
 
     def is_valid(self):
-        ret = True
+        ret = self.donation >= 0
         for i,item in enumerate(self.items):
             product = Article.objects.get(id=item.id)
             ret = ret and product.quantity() >= item.quantity
