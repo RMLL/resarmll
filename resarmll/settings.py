@@ -158,13 +158,17 @@ LOGGING = {
         },
     }
 }
-try:
-    from settings_local import *
-except ImportError:
-    pass
 AUTH_PROFILE_MODULE = 'account.UserProfile'
 PAYPAL_SETTINGS = None
 WIRETRANSFER_SETTINGS = None
 CHECK_SETTINGS = None
 BANK_DRIVER = None
 OGONE_SETTINGS = None
+LOGIN_REDIRECT_URL = '/account/langswitch/'
+LOGIN_URL = '/account/login/'
+LOGOUT_URL = '/account/logout/'
+
+try:
+    from settings_local import *
+except ImportError:
+    pass
