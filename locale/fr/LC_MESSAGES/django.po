@@ -356,7 +356,7 @@ msgid ""
 msgstr ""
 "Si vous préférez séjourner dans un hotel traditionnel et non dans une auberge"
 "de jeunesse, vous pouvez utiliser l'interface de réservation de <a href=\"https://www.resotel.be/"
-"rmll2013fr\">RESOTEL</a>."
+"rmll2013/fr\">RESOTEL</a>."
 
 
 #: account/templates/account/login.html:5
