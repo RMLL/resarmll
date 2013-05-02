@@ -54,10 +54,10 @@
         <nextFrame/>
 
         <para>
-            <b>{% trans "Document:" %}</b> <i>{% trans "Invoice num" %} FC_{{ order.id }}-{{ user.id }}</i>
+            <b>{% trans "Document :" %}</b> <i>{% trans "Invoice num" %} FC_{{ order.id }}-{{ user.id }}</i>
         </para>
         <para>
-            <b>{% trans "Date:" %}</b> <i>{{ order.payment_date|date:"Y-m-d" }}</i>
+            <b>{% trans "Date :" %}</b> <i>{{ order.payment_date|date:"Y-m-d" }}</i>
         </para>
         <spacer length="0.5cm" width="1mm"/>
 
