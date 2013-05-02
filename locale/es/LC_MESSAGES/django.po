@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-04 09:08+0200\n"
+"POT-Creation-Date: 2013-05-02 22:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,24 +17,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: account/forms.py:16 templates/account/profile.html:39
+#: account/forms.py:16 account/templates/account/profile.html:39
 msgid "Last name:"
 msgstr ""
 
-#: account/forms.py:18 templates/account/profile.html:44
+#: account/forms.py:18 account/templates/account/profile.html:44
 msgid "First name:"
 msgstr ""
 
-#: account/forms.py:20 templates/account/password_reset.html:21
+#: account/forms.py:20 account/templates/account/password_reset.html:21
 msgid "E-mail address:"
 msgstr ""
 
-#: account/forms.py:22 templates/account/login.html:32
-#: templates/account/profile.html:20
+#: account/forms.py:22 account/templates/account/login.html:32
+#: account/templates/account/profile.html:20
 msgid "Username:"
 msgstr ""
 
-#: account/forms.py:26 templates/account/login.html:38
+#: account/forms.py:26 account/templates/account/login.html:38
 msgid "Password:"
 msgstr ""
 
@@ -42,11 +42,12 @@ msgstr ""
 msgid "The password must contain at least 5 characters."
 msgstr ""
 
-#: account/forms.py:31 templates/account/password_reset_confirm.html:28
+#: account/forms.py:31
+#: account/templates/account/password_reset_confirm.html:28
 msgid "Confirm password:"
 msgstr ""
 
-#: account/forms.py:34 templates/account/profile.html:30
+#: account/forms.py:34 account/templates/account/profile.html:30
 msgid "Gender:"
 msgstr ""
 
@@ -62,27 +63,30 @@ msgstr ""
 msgid "Address is useful for speakers or people who'll get a refund."
 msgstr ""
 
-#: account/forms.py:41 account/forms.py:126 templates/account/profile.html:60
+#: account/forms.py:41 account/forms.py:126
+#: account/templates/account/profile.html:60
 msgid "Zipcode:"
 msgstr ""
 
-#: account/forms.py:43 account/forms.py:128 templates/account/profile.html:69
+#: account/forms.py:43 account/forms.py:128
+#: account/templates/account/profile.html:69
 msgid "City:"
 msgstr ""
 
-#: account/forms.py:45 templates/account/profile.html:78
+#: account/forms.py:45 account/templates/account/profile.html:78
 msgid "Country:"
 msgstr ""
 
-#: account/forms.py:48 templates/account/profile.html:83
+#: account/forms.py:48 account/templates/account/profile.html:83
 msgid "Language:"
 msgstr ""
 
-#: account/forms.py:50 account/forms.py:120 templates/account/profile.html:88
+#: account/forms.py:50 account/forms.py:120
+#: account/templates/account/profile.html:88
 msgid "Badge type:"
 msgstr ""
 
-#: account/forms.py:53 templates/account/profile.html:93
+#: account/forms.py:53 account/templates/account/profile.html:93
 msgid "Badge text:"
 msgstr ""
 
@@ -100,7 +104,7 @@ msgid ""
 "field loop, blind, deep geek, ...)"
 msgstr ""
 
-#: account/forms.py:61 templates/account/profile.html:102
+#: account/forms.py:61 account/templates/account/profile.html:102
 msgid "PGP/GPG Fingerprint:"
 msgstr ""
 
@@ -136,7 +140,7 @@ msgstr ""
 msgid "Male"
 msgstr ""
 
-#: account/models.py:15 templates/account/search.html:45
+#: account/models.py:15 account/templates/account/search.html:45
 msgid "Username"
 msgstr ""
 
@@ -156,7 +160,7 @@ msgstr ""
 msgid "Gender"
 msgstr ""
 
-#: account/models.py:27 resa/views.py:483
+#: account/models.py:27 resa/views.py:487
 msgid "Address"
 msgstr ""
 
@@ -168,7 +172,7 @@ msgstr ""
 msgid "City"
 msgstr ""
 
-#: account/models.py:31 resa/models.py:95 resa/widgets.py:12
+#: account/models.py:31 resa/models.py:93 resa/widgets.py:12
 msgid "Language"
 msgstr ""
 
@@ -176,7 +180,8 @@ msgstr ""
 msgid "Badge text"
 msgstr ""
 
-#: account/models.py:34 compta/models.py:60 templates/account/comments.html:27
+#: account/models.py:34 account/templates/account/comments.html:27
+#: compta/models.py:60
 msgid "Comment(s)"
 msgstr ""
 
@@ -204,12 +209,566 @@ msgstr ""
 msgid "Users Profiles"
 msgstr ""
 
-#: compta/models.py:10 compta/models.py:25 resa/models.py:189
+#: account/templates/account/comments.html:5
+#: account/templates/account/comments.html:12
+#: account/templates/account/menu.html:30
+msgid "User's comments"
+msgstr ""
+
+#: account/templates/account/comments.html:16
+#: account/templates/account/search.html:16
+#: resa/templates/resa/orders_notpaid.html:21
+#: resa/templates/resa/orders_search.html:16 resa/templates/resa/sales.html:16
+msgid "No results"
+msgstr ""
+
+#: account/templates/account/comments.html:25
+#: account/templates/account/search.html:41
+#: resa/templates/resa/orders_notpaid.html:36
+#: resa/templates/resa/orders_notpaid.html:97
+#: resa/templates/resa/orders_notpaid.html:158
+#: resa/templates/resa/sales.html:48 resa/templates/resa/sales.html.py:86
+msgid "Id"
+msgstr ""
+
+#: account/templates/account/comments.html:26 resa/models.py:186
+#: resa/models.py:196 resaroom/templates/room/detail.html:46
+#: resaroom/templates/room/print.html:25
+msgid "Name"
+msgstr ""
+
+#: account/templates/account/comments.html:38
+#: account/templates/account/search.html:60
+#: resa/templates/resa/orders_notpaid.html:79
+#: resa/templates/resa/orders_notpaid.html:140
+#: resa/templates/resa/orders_notpaid.html:201
+#: resa/templates/resa/sales.html:69 resa/templates/resa/sales.html.py:107
+msgid "View"
+msgstr ""
+
+#: account/templates/account/create.html:11
+#: account/templates/account/create.html:18
+msgid "Create an account"
+msgstr ""
+
+#: account/templates/account/create.html:22
+#: account/templates/account/edit.html:22
+#: account/templates/account/profile_modify.html:17
+msgid "Operation failed (internal error)"
+msgstr ""
+
+#: account/templates/account/create.html:24
+#: account/templates/account/edit.html:24
+#: account/templates/account/profile_modify.html:19
+msgid "Operation failed (field(s) missing or incomplete)"
+msgstr ""
+
+#: account/templates/account/create.html:31
+msgid "User successfully created"
+msgstr ""
+
+#: account/templates/account/create.html:33
+#: account/templates/account/edit.html:17
+#: account/templates/account/menu_manager.html:9
+#: resa/templates/resa/manage_compta.html:31
+msgid "Account"
+msgstr ""
+
+#: account/templates/account/create.html:34
+#: account/templates/account/manage_badge.html:14
+#: account/templates/account/menu_manager.html:10
+#: account/templates/account/search.html:46 resa/models.py:211
+#: resa/templates/resa/orders_notpaid.html:43
+#: resa/templates/resa/orders_notpaid.html:104
+#: resa/templates/resa/orders_notpaid.html:165
+msgid "Badge"
+msgstr ""
+
+#: account/templates/account/create.html:45
+#: account/templates/account/edit.html:37
+#: account/templates/account/profile_modify.html:26
+#: account/templates/account/register.html:23
+#, python-format
+msgid "Fields prefixed with a %(mark)s are mandatory."
+msgstr ""
+
+#: account/templates/account/create.html:60
+#: account/templates/account/create.html:64
+#: account/templates/account/create.html:68
+msgid "Auto"
+msgstr ""
+
+#: account/templates/account/create.html:80
+#: account/templates/account/edit.html:60
+#: account/templates/account/profile_modify.html:49
+#: resa/templates/resa/manage_orders.html:65
+#: resa/templates/resa/manage_orders.html:74
+#: resa/templates/resa/order_details_extended.html:53
+msgid "Save"
+msgstr ""
+
+#: account/templates/account/edit.html:6
+msgid "User account"
+msgstr ""
+
+#: account/templates/account/edit.html:31
+msgid "User successfully modified"
+msgstr ""
+
+#: account/templates/account/home.html:5
+#: account/templates/account/home.html:12
+#: account/templates/account/menu.html:6
+msgid "Home"
+msgstr ""
+
+#: account/templates/account/home.html:16
+msgid "Welcome to the booking program"
+msgstr ""
+
+#: account/templates/account/home.html:19
+msgid ""
+"Orders not paid by July 5th will be removed. There are some exceptions with "
+"people coming from abroad which should contact the treasurer if they want to "
+"pay on arrival."
+msgstr ""
+
+#: account/templates/account/home.html:20
+msgid "Treasurer:"
+msgstr ""
+
+#: account/templates/account/home.html:23
+msgid ""
+"If you want to stay in an traditional hotel instead of a youth hotel or a "
+"camping, you can use the independant <a href=\"https://www.resotel.be/"
+"rmll2013\">RESOTEL</a> form."
+msgstr ""
+
+#: account/templates/account/login.html:5
+#: account/templates/account/login.html:13
+#: account/templates/account/login.html:43
+#: account/templates/account/logout.html:15
+#: account/templates/account/password_reset_complete.html:18
+#: account/templates/account/register_complete.html:15
+msgid "Log in"
+msgstr ""
+
+#: account/templates/account/login.html:10
+msgid ""
+"It is recommended (but not mandatory) to register to get a badge and net "
+"connection parameters. You'll also be able to book accomodations (overnight "
+"stays in a barack “Les Vernets” and campsites), tickets for lunches and the "
+"Free Software Banquet, t-shirts and Free Beer dedicated to the event."
+msgstr ""
+
+#: account/templates/account/login.html:17
+#: account/templates/account/password_reset.html:10
+#: account/templates/account/password_reset_complete.html:10
+#: account/templates/account/password_reset_confirm.html:10
+msgid "Operation failed"
+msgstr ""
+
+#: account/templates/account/login.html:49
+msgid "Don't have an account?"
+msgstr ""
+
+#: account/templates/account/login.html:49
+#: account/templates/account/register.html:6
+#: account/templates/account/register.html:9
+msgid "Sign up"
+msgstr ""
+
+#: account/templates/account/login.html:52
+msgid "Forgot your password?"
+msgstr ""
+
+#: account/templates/account/login.html:52
+msgid "Recover my password"
+msgstr ""
+
+#: account/templates/account/logout.html:5
+#: account/templates/account/logout.html:10
+#: account/templates/account/menu.html:16
+msgid "Log out"
+msgstr ""
+
+#: account/templates/account/logout.html:12
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr ""
+
+#: account/templates/account/manage_badge.html:5
+msgid "User badge"
+msgstr ""
+
+#: account/templates/account/manage_badge.html:19
+msgid "The badge"
+msgstr ""
+
+#: account/templates/account/manage_badge.html:23
+#: account/templates/account/profile_badge.html:21
+msgid "Download the badge with the right size and ready to print (PDF)"
+msgstr ""
+
+#: account/templates/account/manage_netparams.html:5
+msgid "User Network parameters"
+msgstr ""
+
+#: account/templates/account/manage_netparams.html:14
+#: account/templates/account/netparams.html:5
+#: account/templates/account/netparams.html:12
+msgid "Network parameters"
+msgstr ""
+
+#: account/templates/account/manage_netparams.html:40
+msgid "User IP address:"
+msgstr ""
+
+#: account/templates/account/manage_netparams.html:41
+#: account/templates/account/netparams.html:50
+msgid "Netmask:"
+msgstr ""
+
+#: account/templates/account/manage_netparams.html:42
+#: account/templates/account/netparams.html:51
+msgid "Gateway:"
+msgstr ""
+
+#: account/templates/account/manage_netparams.html:43
+#: account/templates/account/netparams.html:52
+msgid "Mac address gateway:"
+msgstr ""
+
+#: account/templates/account/manage_netparams.html:44
+#: account/templates/account/netparams.html:53
+msgid "DNS server:"
+msgstr ""
+
+#: account/templates/account/manage_netparams.html:45
+#: account/templates/account/netparams.html:54
+msgid "Domain:"
+msgstr ""
+
+#: account/templates/account/manage_netparams.html:46
+#: account/templates/account/netparams.html:55
+msgid "Outgoing SMTP server:"
+msgstr ""
+
+#: account/templates/account/menu.html:7
+#: account/templates/account/profile.html:5
+#: account/templates/account/profile.html:12
+msgid "Your account"
+msgstr ""
+
+#: account/templates/account/menu.html:8
+#: account/templates/account/profile_badge.html:5
+#: account/templates/account/profile_badge.html:12
+#: account/templates/account/profile_badge.html:17
+msgid "Your badge"
+msgstr ""
+
+#: account/templates/account/menu.html:9
+#: resa/templates/resa/catalog_list.html:11
+#: resa/templates/resa/catalog_list.html:18
+msgid "Catalog"
+msgstr ""
+
+#: account/templates/account/menu.html:10 resa/templates/resa/cart_list.html:5
+#: resa/templates/resa/cart_list.html:12
+msgid "Your cart"
+msgstr ""
+
+#: account/templates/account/menu.html:11
+#: resa/templates/resa/orders_list.html:6
+#: resa/templates/resa/orders_list.html:13
+msgid "Your orders"
+msgstr ""
+
+#: account/templates/account/menu.html:25
+msgid "Admin"
+msgstr ""
+
+#: account/templates/account/menu.html:27
+msgid "Create user"
+msgstr ""
+
+#: account/templates/account/menu.html:28
+msgid "Search user"
+msgstr ""
+
+#: account/templates/account/menu.html:32
+#: resa/templates/resa/orders_search.html:5
+#: resa/templates/resa/orders_search.html:12
+msgid "Search order"
+msgstr ""
+
+#: account/templates/account/menu.html:34
+#: resa/templates/resa/orders_notpaid.html:10
+#: resa/templates/resa/orders_notpaid.html:17
+msgid "Orders not paid"
+msgstr ""
+
+#: account/templates/account/menu.html:35 resa/templates/resa/sales.html:5
+#: resa/templates/resa/sales.html.py:12
+msgid "Sales"
+msgstr ""
+
+#: account/templates/account/menu.html:36 resa/templates/resa/stocks.html:5
+#: resa/templates/resa/stocks.html.py:12
+msgid "Stocks"
+msgstr ""
+
+#: account/templates/account/menu.html:37 resa/templates/resa/stats.html:5
+#: resa/templates/resa/stats.html.py:12
+msgid "Statistics"
+msgstr ""
+
+#: account/templates/account/menu.html:38 resa/templates/resa/documents.html:5
+#: resa/templates/resa/documents.html:12
+msgid "Documents"
+msgstr ""
+
+#: account/templates/account/menu.html:39 resaroom/templates/room/list.html:6
+#: resaroom/templates/room/list.html:13
+msgid "Accomodation"
+msgstr ""
+
+#: account/templates/account/menu_manager.html:5
+msgid "User:"
+msgstr ""
+
+#: account/templates/account/menu_manager.html:7 resa/orders.py:22
+msgid "Orders"
+msgstr ""
+
+#: account/templates/account/menu_manager.html:8
+#: resa/templates/resa/manage_cart.html:16
+msgid "Cart"
+msgstr ""
+
+#: account/templates/account/menu_manager.html:16
+msgid "Accounting"
+msgstr ""
+
+#: account/templates/account/menu_manager.html:21
+msgid "Cannot find the user to edit (check permissions)"
+msgstr ""
+
+#: account/templates/account/netparams.html:38
+msgid "There are two ways to gain Internet access (through 2 networks)"
+msgstr ""
+
+#: account/templates/account/netparams.html:39
+msgid "Detailed informations on the website"
+msgstr ""
+
+#: account/templates/account/netparams.html:42
+msgid ""
+"These networks will provide you a public IP address for the event, without "
+"filtering, without QoS, without any security, a real connection to the "
+"Internet in real pure net neutrality. As such you must manage your own "
+"security."
+msgstr ""
+
+#: account/templates/account/netparams.html:44
+#: account/templates/account/netparams.html:47
+msgid "Network:"
+msgstr ""
+
+#: account/templates/account/netparams.html:45
+msgid ""
+"Just select this wireless network (automatic connection), open your browser, "
+"go to your homepage,  and you will have to log into a captive portal."
+msgstr ""
+
+#: account/templates/account/netparams.html:48
+msgid ""
+"This one (more robust than RMLLPUBLIC) will be available by Ethernet and "
+"WiFi. To use it you will need to configure your network connection by hand "
+"with the following parameters."
+msgstr ""
+
+#: account/templates/account/netparams.html:49
+msgid "Your IP address:"
+msgstr ""
+
+#: account/templates/account/password_reset.html:5
+#: account/templates/account/password_reset.html:15
+#: account/templates/account/password_reset_confirm.html:5
+#: account/templates/account/password_reset_confirm.html:16
+msgid "Password reset"
+msgstr ""
+
+#: account/templates/account/password_reset.html:16
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions for setting a new one."
+msgstr ""
+
+#: account/templates/account/password_reset.html:26
+msgid "Reset my password"
+msgstr ""
+
+#: account/templates/account/password_reset_complete.html:5
+#: account/templates/account/password_reset_complete.html:15
+msgid "Password reset complete"
+msgstr ""
+
+#: account/templates/account/password_reset_complete.html:16
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr ""
+
+#: account/templates/account/password_reset_confirm.html:17
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+
+#: account/templates/account/password_reset_confirm.html:22
+msgid "New password:"
+msgstr ""
+
+#: account/templates/account/password_reset_confirm.html:33
+msgid "Change my password"
+msgstr ""
+
+#: account/templates/account/password_reset_confirm.html:37
+msgid "Password reset unsuccessful"
+msgstr ""
+
+#: account/templates/account/password_reset_confirm.html:38
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+
+#: account/templates/account/password_reset_done.html:5
+#: account/templates/account/password_reset_done.html:9
+msgid "Password reset successful"
+msgstr ""
+
+#: account/templates/account/password_reset_done.html:12
+msgid ""
+"We've e-mailed you instructions for setting your password to the e-mail "
+"address you submitted. You should be receiving it shortly."
+msgstr ""
+
+#: account/templates/account/profile.html:16
+msgid "Id:"
+msgstr ""
+
+#: account/templates/account/profile.html:25
+msgid "Email address:"
+msgstr ""
+
+#: account/templates/account/profile.html:32
+#: account/templates/account/profile.html:52
+#: account/templates/account/profile.html:62
+#: account/templates/account/profile.html:71
+#: account/templates/account/profile.html:95
+#: account/templates/account/profile.html:104
+msgid "not set"
+msgstr ""
+
+#: account/templates/account/profile.html:49
+msgid "Address:"
+msgstr ""
+
+#: account/templates/account/profile.html:111
+msgid "Modify"
+msgstr ""
+
+#: account/templates/account/profile_modify.html:6
+#: account/templates/account/profile_modify.html:13
+msgid "Modify your account"
+msgstr ""
+
+#: account/templates/account/register.html:14
+msgid "Registration failed (internal errors)"
+msgstr ""
+
+#: account/templates/account/register.html:16
+msgid "Registration failed (field(s) missing or incomplete)"
+msgstr ""
+
+#: account/templates/account/register.html:46
+msgid "Register"
+msgstr ""
+
+#: account/templates/account/register_complete.html:5
+#: account/templates/account/register_complete.html:9
+msgid "Registration complete"
+msgstr ""
+
+#: account/templates/account/register_complete.html:12
+msgid "Registration successfully completed. You may now log in."
+msgstr ""
+
+#: account/templates/account/search.html:5
+#: account/templates/account/search.html:12
+msgid "Search a user"
+msgstr ""
+
+#: account/templates/account/search.html:23
+msgid "Search pattern:"
+msgstr ""
+
+#: account/templates/account/search.html:33
+#: account/templates/account/user_header.html:12
+#: resa/templates/resa/orders_search.html:25 resa/templates/resa/sales.html:31
+msgid "ok"
+msgstr ""
+
+#: account/templates/account/search.html:42 resa/views.py:480
+#: resa/templates/resa/orders_notpaid.html:37
+#: resa/templates/resa/orders_notpaid.html:98
+#: resa/templates/resa/orders_notpaid.html:159
+#: resa/templates/resa/sales.html:49 resa/templates/resa/sales.html.py:87
+msgid "Last name"
+msgstr ""
+
+#: account/templates/account/search.html:43 resa/views.py:481
+#: resa/templates/resa/orders_notpaid.html:38
+#: resa/templates/resa/orders_notpaid.html:99
+#: resa/templates/resa/orders_notpaid.html:160
+#: resa/templates/resa/sales.html:50 resa/templates/resa/sales.html.py:88
+msgid "First name"
+msgstr ""
+
+#: account/templates/account/search.html:44 resa/views.py:486
+#: resa/templates/resa/orders_notpaid.html:39
+#: resa/templates/resa/orders_notpaid.html:100
+#: resa/templates/resa/orders_notpaid.html:161
+#: resa/templates/resa/sales.html:51 resa/templates/resa/sales.html.py:89
+msgid "Email"
+msgstr ""
+
+#: account/templates/account/user_header.html:10
+msgid "Quick search:"
+msgstr ""
+
+#: account/templates/registration/password_reset_email.html:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr ""
+
+#: account/templates/registration/password_reset_email.html:3
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr ""
+
+#: account/templates/registration/password_reset_email.html:5
+msgid "Please go to the following page and choose a new password:"
+msgstr ""
+
+#: account/templates/registration/password_reset_email.html:9
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: compta/models.py:10 compta/models.py:25 resa/models.py:187
 msgid "Code"
 msgstr ""
 
 #: compta/models.py:11 compta/models.py:26 compta/models.py:42
-#: compta/models.py:59 resa/stock.py:7 templates/resa/manage_compta.html:32
+#: compta/models.py:59 resa/stock.py:7
+#: resa/templates/resa/manage_compta.html:32
 msgid "Label"
 msgstr ""
 
@@ -245,7 +804,7 @@ msgstr ""
 msgid "Amount"
 msgstr ""
 
-#: compta/models.py:63 templates/resa/manage_compta.html:29
+#: compta/models.py:63 resa/templates/resa/manage_compta.html:29
 msgid "Date"
 msgstr ""
 
@@ -305,19 +864,19 @@ msgstr ""
 msgid "Payment Method:"
 msgstr ""
 
-#: resa/forms.py:113 templates/resa/manage_orders.html:63
+#: resa/forms.py:113 resa/templates/resa/manage_orders.html:63
 msgid "Note:"
 msgstr ""
 
-#: resa/forms.py:116 templates/resa/manage_orders.html:72
+#: resa/forms.py:116 resa/templates/resa/manage_orders.html:72
 msgid "Remove:"
 msgstr ""
 
-#: resa/models.py:19 templates/resa/orders_notpaid.html:30
+#: resa/models.py:19 resa/templates/resa/orders_notpaid.html:30
 msgid "Organization"
 msgstr ""
 
-#: resa/models.py:19 templates/resa/orders_notpaid.html:91
+#: resa/models.py:19 resa/templates/resa/orders_notpaid.html:91
 msgid "Speakers"
 msgstr ""
 
@@ -329,82 +888,68 @@ msgstr ""
 msgid "Visitors"
 msgstr ""
 
-#: resa/models.py:106 resa/models.py:111
+#: resa/models.py:104 resa/models.py:109
 msgid "Value"
 msgstr ""
 
-#: resa/models.py:129
+#: resa/models.py:127
 msgid "Simple label"
 msgstr ""
 
-#: resa/models.py:130
+#: resa/models.py:128
 msgid "Extended label"
 msgstr ""
 
-#: resa/models.py:131 resa/orders.py:122 templates/resa/cart_list.html:39
-#: templates/resa/manage_cart.html:54
+#: resa/models.py:129 resa/orders.py:123 resa/templates/resa/cart_list.html:39
+#: resa/templates/resa/manage_cart.html:54
 msgid "Price"
 msgstr ""
 
-#: resa/models.py:133 resa/stock.py:11
+#: resa/models.py:131 resa/stock.py:11
 msgid "Sorting"
 msgstr ""
 
-#: resa/models.py:134
+#: resa/models.py:132
 msgid "Enabled"
 msgstr ""
 
-#: resa/models.py:138
+#: resa/models.py:136
 msgid "Article"
 msgstr ""
 
-#: resa/models.py:188 resa/models.py:198 templates/account/comments.html:26
-#: templates/room/detail.html:46 templates/room/print.html:25
-msgid "Name"
-msgstr ""
-
-#: resa/models.py:194 templates/resa/stats.html:22
+#: resa/models.py:192 resa/templates/resa/stats.html:22
 msgid "Country"
 msgstr ""
 
-#: resa/models.py:195
+#: resa/models.py:193
 msgid "Countries"
 msgstr ""
 
-#: resa/models.py:199
+#: resa/models.py:197
 msgid "Alternate name"
 msgstr ""
 
-#: resa/models.py:200
+#: resa/models.py:198
 msgid "Color"
 msgstr ""
 
-#: resa/models.py:201
+#: resa/models.py:199
 msgid "Default"
 msgstr ""
 
-#: resa/models.py:202
+#: resa/models.py:200
 msgid "Section"
 msgstr ""
 
-#: resa/models.py:204
+#: resa/models.py:202
 msgid "User can choose it"
 msgstr ""
 
-#: resa/models.py:213 templates/account/create.html:34
-#: templates/account/manage_badge.html:14
-#: templates/account/menu_manager.html:10 templates/account/search.html:46
-#: templates/resa/orders_notpaid.html:43
-#: templates/resa/orders_notpaid.html:104
-#: templates/resa/orders_notpaid.html:165
-msgid "Badge"
-msgstr ""
-
-#: resa/models.py:214
+#: resa/models.py:212
 msgid "Badges"
 msgstr ""
 
-#: resa/models.py:217
+#: resa/models.py:215
 msgid "Transaction"
 msgstr ""
 
@@ -412,30 +957,31 @@ msgstr ""
 msgid "Creation date"
 msgstr ""
 
-#: resa/orders.py:20
+#: resa/orders.py:18 resa/templates/resa/cart_list.html:66
+msgid "Donation"
+msgstr ""
+
+#: resa/orders.py:21
 msgid "Order"
 msgstr ""
 
-#: resa/orders.py:21 templates/account/menu_manager.html:7
-msgid "Orders"
-msgstr ""
-
-#: resa/orders.py:123 templates/resa/cart_list.html:41
-#: templates/resa/manage_cart.html:56 templates/resa/order_details.html:18
-#: templates/resa/order_details_extended.html:26
-#: templates/resa/orders_pdf.xml:79
+#: resa/orders.py:124 resa/templates/resa/cart_list.html:41
+#: resa/templates/resa/manage_cart.html:56
+#: resa/templates/resa/order_details.html:18
+#: resa/templates/resa/order_details_extended.html:26
+#: resa/templates/resa/orders_pdf.xml:79
 msgid "Quantity"
 msgstr ""
 
-#: resa/orders.py:124 templates/resa/order_details_extended.html:27
+#: resa/orders.py:125 resa/templates/resa/order_details_extended.html:27
 msgid "Distributed quantity"
 msgstr ""
 
-#: resa/orders.py:127 templates/resa/orders_details.html:5
+#: resa/orders.py:128 resa/templates/resa/orders_details.html:5
 msgid "Order detail"
 msgstr ""
 
-#: resa/orders.py:128
+#: resa/orders.py:129
 msgid "Orders details"
 msgstr ""
 
@@ -451,179 +997,159 @@ msgstr ""
 msgid "Quantity paid"
 msgstr ""
 
-#: resa/stock.py:14 templates/resa/cart_list.html:40
-#: templates/resa/manage_cart.html:55
+#: resa/stock.py:14 resa/templates/resa/cart_list.html:40
+#: resa/templates/resa/manage_cart.html:55
 msgid "Stock"
 msgstr ""
 
-#: resa/views.py:51 resa/views.py:370
+#: resa/views.py:51 resa/views.py:374
 msgid "Product successfully removed from cart"
 msgstr ""
 
-#: resa/views.py:53 resa/views.py:372
+#: resa/views.py:53 resa/views.py:376
 msgid "Error while removing product from cart"
 msgstr ""
 
-#: resa/views.py:71
+#: resa/views.py:75
 msgid "Product(s) successfully added"
 msgstr ""
 
-#: resa/views.py:71 resa/views.py:385
+#: resa/views.py:75 resa/views.py:389
 msgid "Product(s) successfully updated"
 msgstr ""
 
-#: resa/views.py:73
+#: resa/views.py:77
 msgid "Error while adding product(s)"
 msgstr ""
 
-#: resa/views.py:73 resa/views.py:387
+#: resa/views.py:77 resa/views.py:391
 msgid "Error while updating product(s)"
 msgstr ""
 
-#: resa/views.py:75
+#: resa/views.py:79
 msgid ""
 "Unable to confirm your order, one (or more) product(s) in your cart exceed "
 "the available quantity"
 msgstr ""
 
-#: resa/views.py:77
+#: resa/views.py:81
 msgid ""
 "You have to read and accept the general terms and conditions of sales in "
 "order to confirm your order"
 msgstr ""
 
-#: resa/views.py:101 resa/views.py:398
+#: resa/views.py:105 resa/views.py:402
 msgid "Order successfully confirmed"
 msgstr ""
 
-#: resa/views.py:234
+#: resa/views.py:238
 msgid "Email body should not be empty"
 msgstr ""
 
-#: resa/views.py:236
+#: resa/views.py:240
 msgid "Email subject should not be empty"
 msgstr ""
 
-#: resa/views.py:238
+#: resa/views.py:242
 msgid "At least one user should be selected"
 msgstr ""
 
-#: resa/views.py:245
+#: resa/views.py:249
 msgid "One or more emails were not sent correctly"
 msgstr ""
 
-#: resa/views.py:248
+#: resa/views.py:252
 msgid "All emails were sucessfully sent"
 msgstr ""
 
-#: resa/views.py:291
+#: resa/views.py:295
 msgid "Order sucessfully marked as paid"
 msgstr ""
 
-#: resa/views.py:298
+#: resa/views.py:302
 msgid "Order sucessfully removed"
 msgstr ""
 
-#: resa/views.py:309
+#: resa/views.py:313
 msgid "Order sucessfully updated"
 msgstr ""
 
-#: resa/views.py:365
+#: resa/views.py:369
 msgid "Product successfully added to cart"
 msgstr ""
 
-#: resa/views.py:367
+#: resa/views.py:371
 msgid "Error while adding product to cart"
 msgstr ""
 
-#: resa/views.py:393
+#: resa/views.py:397
 msgid ""
 "Unable to confirm this order, one (or more) product(s) in the cart exceed "
 "the available quantity"
 msgstr ""
 
-#: resa/views.py:476 templates/account/search.html:42
-#: templates/resa/orders_notpaid.html:37 templates/resa/orders_notpaid.html:98
-#: templates/resa/orders_notpaid.html:159 templates/resa/sales.html:49
-#: templates/resa/sales.html.py:87
-msgid "Last name"
-msgstr ""
-
-#: resa/views.py:477 templates/account/search.html:43
-#: templates/resa/orders_notpaid.html:38 templates/resa/orders_notpaid.html:99
-#: templates/resa/orders_notpaid.html:160 templates/resa/sales.html:50
-#: templates/resa/sales.html.py:88
-msgid "First name"
-msgstr ""
-
-#: resa/views.py:478 templates/resa/cart_list.html:38
-#: templates/resa/manage_cart.html:53 templates/resa/order_details.html:17
-#: templates/resa/order_details_extended.html:25
+#: resa/views.py:482 resa/templates/resa/cart_list.html:38
+#: resa/templates/resa/manage_cart.html:53
+#: resa/templates/resa/order_details.html:17
+#: resa/templates/resa/order_details_extended.html:25
 msgid "Product"
 msgstr ""
 
-#: resa/views.py:479
+#: resa/views.py:483
 msgid "Number of products ordered"
 msgstr ""
 
-#: resa/views.py:480
+#: resa/views.py:484
 msgid "Number of products distributed"
 msgstr ""
 
-#: resa/views.py:481
+#: resa/views.py:485
 msgid "Number of products not yet distributed"
 msgstr ""
 
-#: resa/views.py:482 templates/account/search.html:44
-#: templates/resa/orders_notpaid.html:39
-#: templates/resa/orders_notpaid.html:100
-#: templates/resa/orders_notpaid.html:161 templates/resa/sales.html:51
-#: templates/resa/sales.html.py:89
-msgid "Email"
-msgstr ""
-
-#: resa/views.py:539 resa/views.py:592
+#: resa/views.py:543 resa/views.py:596
 msgid "Your payment has been canceled, you could resume it later."
 msgstr ""
 
-#: resa/views.py:552 resa/views.py:602 templates/resa/orders_details.html:16
+#: resa/views.py:556 resa/views.py:606
+#: resa/templates/resa/orders_details.html:16
 msgid "This order is not yours."
 msgstr ""
 
-#: resa/views.py:555
+#: resa/views.py:559
 #, python-format
 msgid "It seems that PayPal did not accept your payment (Code: %s)."
 msgstr ""
 
-#: resa/views.py:557
+#: resa/views.py:561
 msgid ""
 "Your payment has been confirmed by PayPal, you should receive a notification "
 "by email in a few minutes."
 msgstr ""
 
-#: resa/views.py:559 resa/views.py:606
+#: resa/views.py:563 resa/views.py:610
 msgid "Unable to find the order related to this payment."
 msgstr ""
 
-#: resa/views.py:590
+#: resa/views.py:594
 msgid ""
 "Confirmation of your payment by your bank has not been received yet. You "
 "should contact your bank before retrying to pay for this order."
 msgstr ""
 
-#: resa/views.py:594
+#: resa/views.py:598
 msgid ""
 "Your payment has been rejected by the bank, you should retry in few days or "
 "try another payment method."
 msgstr ""
 
-#: resa/views.py:604
+#: resa/views.py:608
 msgid ""
 "Your payment has been confirmed by the bank, you should receive a "
 "notification by email in a few minutes."
 msgstr ""
 
-#: resa/views.py:608
+#: resa/views.py:612
 msgid ""
 "Your payment has failed, you should retry in few days or try another payment "
 "method."
@@ -719,1101 +1245,662 @@ msgstr ""
 msgid "PayPal payment - order no #%d"
 msgstr ""
 
-#: room/forms.py:11
-msgid "From the date:"
-msgstr ""
-
-#: room/forms.py:13
-msgid ""
-"If not empty, only orders created since this date (DD/MM/YYYY) will be "
-"displayed"
-msgstr ""
-
-#: room/forms.py:14
-msgid "Place:"
-msgstr ""
-
-#: templates/404.html:5 templates/404.html.py:9
-msgid "Error 404"
-msgstr ""
-
-#: templates/404.html:12
-msgid "Page not found"
-msgstr ""
-
-#: templates/500.html:5 templates/500.html.py:9
-msgid "Error 500"
-msgstr ""
-
-#: templates/500.html:12
-msgid "Internal Error"
-msgstr ""
-
-#: templates/base.html:6 templates/base2cols.html:6
-msgid "LSM Booking"
-msgstr ""
-
-#: templates/account/comments.html:5 templates/account/comments.html.py:12
-#: templates/account/menu.html:30
-msgid "User's comments"
-msgstr ""
-
-#: templates/account/comments.html:16 templates/account/search.html:16
-#: templates/resa/orders_notpaid.html:21 templates/resa/orders_search.html:16
-#: templates/resa/sales.html:16
-msgid "No results"
-msgstr ""
-
-#: templates/account/comments.html:25 templates/account/search.html:41
-#: templates/resa/orders_notpaid.html:36 templates/resa/orders_notpaid.html:97
-#: templates/resa/orders_notpaid.html:158 templates/resa/sales.html:48
-#: templates/resa/sales.html.py:86
-msgid "Id"
-msgstr ""
-
-#: templates/account/comments.html:38 templates/account/search.html:60
-#: templates/resa/orders_notpaid.html:79
-#: templates/resa/orders_notpaid.html:140
-#: templates/resa/orders_notpaid.html:201 templates/resa/sales.html:69
-#: templates/resa/sales.html.py:107
-msgid "View"
-msgstr ""
-
-#: templates/account/create.html:11 templates/account/create.html.py:18
-msgid "Create an account"
-msgstr ""
-
-#: templates/account/create.html:22 templates/account/edit.html:22
-#: templates/account/profile_modify.html:17
-msgid "Operation failed (internal error)"
-msgstr ""
-
-#: templates/account/create.html:24 templates/account/edit.html:24
-#: templates/account/profile_modify.html:19
-msgid "Operation failed (field(s) missing or incomplete)"
-msgstr ""
-
-#: templates/account/create.html:31
-msgid "User successfully created"
-msgstr ""
-
-#: templates/account/create.html:33 templates/account/edit.html:17
-#: templates/account/menu_manager.html:9 templates/resa/manage_compta.html:31
-msgid "Account"
-msgstr ""
-
-#: templates/account/create.html:45 templates/account/edit.html:37
-#: templates/account/profile_modify.html:26 templates/account/register.html:23
-#, python-format
-msgid "Fields prefixed with a %(mark)s are mandatory."
-msgstr ""
-
-#: templates/account/create.html:60 templates/account/create.html.py:64
-#: templates/account/create.html:68
-msgid "Auto"
-msgstr ""
-
-#: templates/account/create.html:80 templates/account/edit.html:60
-#: templates/account/profile_modify.html:49
-#: templates/resa/manage_orders.html:65 templates/resa/manage_orders.html:74
-#: templates/resa/order_details_extended.html:53
-msgid "Save"
-msgstr ""
-
-#: templates/account/edit.html:6
-msgid "User account"
-msgstr ""
-
-#: templates/account/edit.html:31
-msgid "User successfully modified"
-msgstr ""
-
-#: templates/account/home.html:5 templates/account/home.html.py:12
-#: templates/account/menu.html:6
-msgid "Home"
-msgstr ""
-
-#: templates/account/home.html:16
-msgid "Welcome to the booking program"
-msgstr ""
-
-#: templates/account/home.html:19
-msgid ""
-"Orders not paid by July 5th will be removed. There are some exceptions with "
-"people coming from abroad which should contact the treasurer if they want to "
-"pay on arrival."
-msgstr ""
-
-#: templates/account/home.html:20
-msgid "Treasurer:"
-msgstr ""
-
-#: templates/account/login.html:5 templates/account/login.html.py:13
-#: templates/account/login.html:43 templates/account/logout.html:15
-#: templates/account/password_reset_complete.html:18
-#: templates/account/register_complete.html:15
-msgid "Log in"
-msgstr ""
-
-#: templates/account/login.html:10
-msgid ""
-"It is recommended (but not mandatory) to register to get a badge and net "
-"connection parameters. You'll also be able to book accomodations (overnight "
-"stays in a barack “Les Vernets” and campsites), tickets for lunches and the "
-"Free Software Banquet, t-shirts and Free Beer dedicated to the event."
-msgstr ""
-
-#: templates/account/login.html:17 templates/account/password_reset.html:10
-#: templates/account/password_reset_complete.html:10
-#: templates/account/password_reset_confirm.html:10
-msgid "Operation failed"
-msgstr ""
-
-#: templates/account/login.html:49
-msgid "Don't have an account?"
-msgstr ""
-
-#: templates/account/login.html:49 templates/account/register.html:6
-#: templates/account/register.html.py:9
-msgid "Sign up"
-msgstr ""
-
-#: templates/account/login.html:52
-msgid "Forgot your password?"
-msgstr ""
-
-#: templates/account/login.html:52
-msgid "Recover my password"
-msgstr ""
-
-#: templates/account/logout.html:5 templates/account/logout.html.py:10
-#: templates/account/menu.html:16
-msgid "Log out"
-msgstr ""
-
-#: templates/account/logout.html:12
-msgid "Thanks for spending some quality time with the Web site today."
-msgstr ""
-
-#: templates/account/manage_badge.html:5
-msgid "User badge"
-msgstr ""
-
-#: templates/account/manage_badge.html:19
-msgid "The badge"
-msgstr ""
-
-#: templates/account/manage_badge.html:23
-#: templates/account/profile_badge.html:21
-msgid "Download the badge with the right size and ready to print (PDF)"
-msgstr ""
-
-#: templates/account/manage_netparams.html:5
-msgid "User Network parameters"
-msgstr ""
-
-#: templates/account/manage_netparams.html:14
-#: templates/account/netparams.html:5 templates/account/netparams.html:12
-msgid "Network parameters"
-msgstr ""
-
-#: templates/account/manage_netparams.html:40
-msgid "User IP address:"
-msgstr ""
-
-#: templates/account/manage_netparams.html:41
-#: templates/account/netparams.html:50
-msgid "Netmask:"
-msgstr ""
-
-#: templates/account/manage_netparams.html:42
-#: templates/account/netparams.html:51
-msgid "Gateway:"
-msgstr ""
-
-#: templates/account/manage_netparams.html:43
-#: templates/account/netparams.html:52
-msgid "Mac address gateway:"
-msgstr ""
-
-#: templates/account/manage_netparams.html:44
-#: templates/account/netparams.html:53
-msgid "DNS server:"
-msgstr ""
-
-#: templates/account/manage_netparams.html:45
-#: templates/account/netparams.html:54
-msgid "Domain:"
-msgstr ""
-
-#: templates/account/manage_netparams.html:46
-#: templates/account/netparams.html:55
-msgid "Outgoing SMTP server:"
-msgstr ""
-
-#: templates/account/menu.html:7 templates/account/profile.html:5
-#: templates/account/profile.html.py:12
-msgid "Your account"
-msgstr ""
-
-#: templates/account/menu.html:8 templates/account/profile_badge.html:5
-#: templates/account/profile_badge.html:12
-#: templates/account/profile_badge.html:17
-msgid "Your badge"
-msgstr ""
-
-#: templates/account/menu.html:9 templates/resa/catalog_list.html:11
-#: templates/resa/catalog_list.html:18
-msgid "Catalog"
-msgstr ""
-
-#: templates/account/menu.html:10 templates/resa/cart_list.html:5
-#: templates/resa/cart_list.html.py:12
-msgid "Your cart"
-msgstr ""
-
-#: templates/account/menu.html:11 templates/resa/orders_list.html:6
-#: templates/resa/orders_list.html.py:13
-msgid "Your orders"
-msgstr ""
-
-#: templates/account/menu.html:25
-msgid "Admin"
-msgstr ""
-
-#: templates/account/menu.html:27
-msgid "Create user"
-msgstr ""
-
-#: templates/account/menu.html:28
-msgid "Search user"
-msgstr ""
-
-#: templates/account/menu.html:32 templates/resa/orders_search.html:5
-#: templates/resa/orders_search.html:12
-msgid "Search order"
-msgstr ""
-
-#: templates/account/menu.html:34 templates/resa/orders_notpaid.html:10
-#: templates/resa/orders_notpaid.html:17
-msgid "Orders not paid"
-msgstr ""
-
-#: templates/account/menu.html:35 templates/resa/sales.html:5
-#: templates/resa/sales.html.py:12
-msgid "Sales"
-msgstr ""
-
-#: templates/account/menu.html:36 templates/resa/stocks.html:5
-#: templates/resa/stocks.html.py:12
-msgid "Stocks"
-msgstr ""
-
-#: templates/account/menu.html:37 templates/resa/stats.html:5
-#: templates/resa/stats.html.py:12
-msgid "Statistics"
-msgstr ""
-
-#: templates/account/menu.html:38 templates/resa/documents.html:5
-#: templates/resa/documents.html.py:12
-msgid "Documents"
-msgstr ""
-
-#: templates/account/menu.html:39 templates/room/list.html:6
-#: templates/room/list.html.py:13
-msgid "Accomodation"
-msgstr ""
-
-#: templates/account/menu_manager.html:5
-msgid "User:"
-msgstr ""
-
-#: templates/account/menu_manager.html:8 templates/resa/manage_cart.html:16
-msgid "Cart"
-msgstr ""
-
-#: templates/account/menu_manager.html:16
-msgid "Accounting"
-msgstr ""
-
-#: templates/account/menu_manager.html:21
-msgid "Cannot find the user to edit (check permissions)"
-msgstr ""
-
-#: templates/account/netparams.html:38
-msgid "There are two ways to gain Internet access (through 2 networks)"
-msgstr ""
-
-#: templates/account/netparams.html:39
-msgid "Detailed informations on the website"
-msgstr ""
-
-#: templates/account/netparams.html:42
-msgid ""
-"These networks will provide you a public IP address for the event, without "
-"filtering, without QoS, without any security, a real connection to the "
-"Internet in real pure net neutrality. As such you must manage your own "
-"security."
-msgstr ""
-
-#: templates/account/netparams.html:44 templates/account/netparams.html:47
-msgid "Network:"
-msgstr ""
-
-#: templates/account/netparams.html:45
-msgid ""
-"Just select this wireless network (automatic connection), open your browser, "
-"go to your homepage,  and you will have to log into a captive portal."
-msgstr ""
-
-#: templates/account/netparams.html:48
-msgid ""
-"This one (more robust than RMLLPUBLIC) will be available by Ethernet and "
-"WiFi. To use it you will need to configure your network connection by hand "
-"with the following parameters."
-msgstr ""
-
-#: templates/account/netparams.html:49
-msgid "Your IP address:"
-msgstr ""
-
-#: templates/account/password_reset.html:5
-#: templates/account/password_reset.html:15
-#: templates/account/password_reset_confirm.html:5
-#: templates/account/password_reset_confirm.html:16
-msgid "Password reset"
-msgstr ""
-
-#: templates/account/password_reset.html:16
-msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
-"instructions for setting a new one."
-msgstr ""
-
-#: templates/account/password_reset.html:26
-msgid "Reset my password"
-msgstr ""
-
-#: templates/account/password_reset_complete.html:5
-#: templates/account/password_reset_complete.html:15
-msgid "Password reset complete"
-msgstr ""
-
-#: templates/account/password_reset_complete.html:16
-msgid "Your password has been set.  You may go ahead and log in now."
-msgstr ""
-
-#: templates/account/password_reset_confirm.html:17
-msgid ""
-"Please enter your new password twice so we can verify you typed it in "
-"correctly."
-msgstr ""
-
-#: templates/account/password_reset_confirm.html:22
-msgid "New password:"
-msgstr ""
-
-#: templates/account/password_reset_confirm.html:33
-msgid "Change my password"
-msgstr ""
-
-#: templates/account/password_reset_confirm.html:37
-msgid "Password reset unsuccessful"
-msgstr ""
-
-#: templates/account/password_reset_confirm.html:38
-msgid ""
-"The password reset link was invalid, possibly because it has already been "
-"used.  Please request a new password reset."
-msgstr ""
-
-#: templates/account/password_reset_done.html:5
-#: templates/account/password_reset_done.html:9
-msgid "Password reset successful"
-msgstr ""
-
-#: templates/account/password_reset_done.html:12
-msgid ""
-"We've e-mailed you instructions for setting your password to the e-mail "
-"address you submitted. You should be receiving it shortly."
-msgstr ""
-
-#: templates/account/profile.html:16
-msgid "Id:"
-msgstr ""
-
-#: templates/account/profile.html:25
-msgid "Email address:"
-msgstr ""
-
-#: templates/account/profile.html:32 templates/account/profile.html.py:52
-#: templates/account/profile.html:62 templates/account/profile.html.py:71
-#: templates/account/profile.html:95 templates/account/profile.html.py:104
-msgid "not set"
-msgstr ""
-
-#: templates/account/profile.html:49
-msgid "Address:"
-msgstr ""
-
-#: templates/account/profile.html:111
-msgid "Modify"
-msgstr ""
-
-#: templates/account/profile_modify.html:6
-#: templates/account/profile_modify.html:13
-msgid "Modify your account"
-msgstr ""
-
-#: templates/account/register.html:14
-msgid "Registration failed (internal errors)"
-msgstr ""
-
-#: templates/account/register.html:16
-msgid "Registration failed (field(s) missing or incomplete)"
-msgstr ""
-
-#: templates/account/register.html:46
-msgid "Register"
-msgstr ""
-
-#: templates/account/register_complete.html:5
-#: templates/account/register_complete.html:9
-msgid "Registration complete"
-msgstr ""
-
-#: templates/account/register_complete.html:12
-msgid "Registration successfully completed. You may now log in."
-msgstr ""
-
-#: templates/account/search.html:5 templates/account/search.html.py:12
-msgid "Search a user"
-msgstr ""
-
-#: templates/account/search.html:23
-msgid "Search pattern:"
-msgstr ""
-
-#: templates/account/search.html:33 templates/account/user_header.html:12
-#: templates/resa/orders_search.html:25 templates/resa/sales.html:31
-msgid "ok"
-msgstr ""
-
-#: templates/account/user_header.html:10
-msgid "Quick search:"
-msgstr ""
-
-#: templates/common/signature_email.txt:2
-msgid "Regards,"
-msgstr ""
-
-#: templates/common/signature_email.txt:5
-msgid "The LSM Organization Team"
-msgstr ""
-
-#: templates/layout/footer.html:8 templates/resa/cart_list.html:92
-msgid "Read the general terms and conditions of sales"
-msgstr ""
-
-#: templates/layout/footer.html:9 templates/resa/gcs.html:5
-#: templates/resa/gcs.html.py:16 templates/resa/orders_gcs.html:5
-#: templates/resa/orders_gcs.html.py:12
-msgid "General Conditions of sales"
-msgstr ""
-
-#: templates/layout/footer.html:13
-msgid "All RMLL.info ssl certificates are gracefully offered by"
-msgstr ""
-
-#: templates/layout/footer.html:17
-msgid "Contact webmaster"
-msgstr ""
-
-#: templates/layout/header.html:7
-msgid "You will need to enable JavaScript to use some advanced features."
-msgstr ""
-
-#: templates/layout/header.html:14
-msgid "Go to main content"
-msgstr ""
-
-#: templates/layout/header.html:22 templates/layout/header.html.py:27
-msgid "LSM website"
-msgstr ""
-
-#: templates/registration/password_reset_email.html:2
-msgid "You're receiving this e-mail because you requested a password reset"
-msgstr ""
-
-#: templates/registration/password_reset_email.html:3
-#, python-format
-msgid "for your user account at %(site_name)s"
-msgstr ""
-
-#: templates/registration/password_reset_email.html:5
-msgid "Please go to the following page and choose a new password:"
-msgstr ""
-
-#: templates/registration/password_reset_email.html:9
-msgid "Your username, in case you've forgotten:"
-msgstr ""
-
-#: templates/resa/cart_list.html:28
+#: resa/templates/resa/cart_list.html:28
 msgid "Your cart is empty"
 msgstr ""
 
-#: templates/resa/cart_list.html:42 templates/resa/manage_cart.html:57
-#: templates/resa/order_details.html:19
-#: templates/resa/order_details_extended.html:28
+#: resa/templates/resa/cart_list.html:42
+#: resa/templates/resa/manage_cart.html:57
+#: resa/templates/resa/order_details.html:19
+#: resa/templates/resa/order_details_extended.html:28
 msgid "Subtotal"
 msgstr ""
 
-#: templates/resa/cart_list.html:59 templates/resa/cart_list.html.py:60
-#: templates/resa/manage_cart.html:74 templates/resa/manage_cart.html.py:75
+#: resa/templates/resa/cart_list.html:59 resa/templates/resa/cart_list.html:60
+#: resa/templates/resa/manage_cart.html:74
+#: resa/templates/resa/manage_cart.html:75
 msgid "Remove from cart"
 msgstr ""
 
-#: templates/resa/cart_list.html:68 templates/resa/manage_cart.html:83
+#: resa/templates/resa/cart_list.html:82
+#: resa/templates/resa/manage_cart.html:83
 msgid "Update Cart"
 msgstr ""
 
-#: templates/resa/cart_list.html:74 templates/resa/manage_cart.html:89
-#: templates/resa/order_details.html:33
-#: templates/resa/order_details_extended.html:59 templates/resa/stocks.html:30
+#: resa/templates/resa/cart_list.html:88
+#: resa/templates/resa/manage_cart.html:89
+#: resa/templates/resa/order_details.html:42
+#: resa/templates/resa/order_details_extended.html:59
+#: resa/templates/resa/stocks.html:30
 msgid "Total"
 msgstr ""
 
-#: templates/resa/cart_list.html:93
+#: resa/templates/resa/cart_list.html:106
+#: resautils/templates/layout/footer.html:8
+msgid "Read the general terms and conditions of sales"
+msgstr ""
+
+#: resa/templates/resa/cart_list.html:107
 msgid "I have read and I accept the general terms and conditions of sales"
 msgstr ""
 
-#: templates/resa/cart_list.html:98
+#: resa/templates/resa/cart_list.html:112
 msgid "Confirm your order"
 msgstr ""
 
-#: templates/resa/catalog_list.html:22 templates/resa/stocks.html:16
+#: resa/templates/resa/catalog_list.html:22 resa/templates/resa/stocks.html:16
 msgid "No products."
 msgstr ""
 
-#: templates/resa/catalog_list.html:31 templates/resa/catalog_list.html:55
+#: resa/templates/resa/catalog_list.html:31
+#: resa/templates/resa/catalog_list.html:55
 msgid "Add the selected items to cart"
 msgstr ""
 
-#: templates/resa/catalog_list.html:45
+#: resa/templates/resa/catalog_list.html:45
 msgid "Price:"
 msgstr ""
 
-#: templates/resa/catalog_list.html:50
+#: resa/templates/resa/catalog_list.html:50
 msgid "Remaining stock:"
 msgstr ""
 
-#: templates/resa/documents.html:16
+#: resa/templates/resa/documents.html:16
 msgid "No documents available."
 msgstr ""
 
-#: templates/resa/documents.html:24
+#: resa/templates/resa/documents.html:24
 msgid "All badges into a single PDF file"
 msgstr ""
 
-#: templates/resa/documents.html:27 templates/resa/documents.html.py:37
-#: templates/resa/documents.html:47
+#: resa/templates/resa/documents.html:27 resa/templates/resa/documents.html:37
+#: resa/templates/resa/documents.html:47
 msgid "Download"
 msgstr ""
 
-#: templates/resa/documents.html:29 templates/resa/documents.html.py:39
-#: templates/resa/documents.html:49
+#: resa/templates/resa/documents.html:29 resa/templates/resa/documents.html:39
+#: resa/templates/resa/documents.html:49
 msgid "MB"
 msgstr ""
 
-#: templates/resa/documents.html:29 templates/resa/documents.html.py:39
-#: templates/resa/documents.html:49
+#: resa/templates/resa/documents.html:29 resa/templates/resa/documents.html:39
+#: resa/templates/resa/documents.html:49
 msgid "Last update:"
 msgstr ""
 
-#: templates/resa/documents.html:34
+#: resa/templates/resa/documents.html:34
 msgid "All paid invoices into a single PDF file"
 msgstr ""
 
-#: templates/resa/documents.html:44
+#: resa/templates/resa/documents.html:44
 msgid "All unpaid invoices into a single PDF file"
 msgstr ""
 
-#: templates/resa/gcs.html:13 templates/resa/gcs.html.py:25
+#: resa/templates/resa/gcs.html:5 resa/templates/resa/gcs.html.py:16
+#: resa/templates/resa/orders_gcs.html:5
+#: resa/templates/resa/orders_gcs.html:12
+#: resautils/templates/layout/footer.html:9
+msgid "General Conditions of sales"
+msgstr ""
+
+#: resa/templates/resa/gcs.html:13 resa/templates/resa/gcs.html.py:25
 msgid "Back to home page"
 msgstr ""
 
-#: templates/resa/manage_cart.html:5
+#: resa/templates/resa/manage_cart.html:5
 msgid "User cart"
 msgstr ""
 
-#: templates/resa/manage_cart.html:32
+#: resa/templates/resa/manage_cart.html:32
 msgid "The cart is empty"
 msgstr ""
 
-#: templates/resa/manage_cart.html:39 templates/resa/sales.html:23
+#: resa/templates/resa/manage_cart.html:39 resa/templates/resa/sales.html:23
 msgid "Products:"
 msgstr ""
 
-#: templates/resa/manage_cart.html:45
+#: resa/templates/resa/manage_cart.html:45
 msgid "Add"
 msgstr ""
 
-#: templates/resa/manage_cart.html:106
+#: resa/templates/resa/manage_cart.html:106
 msgid "Force"
 msgstr ""
 
-#: templates/resa/manage_cart.html:108 templates/resa/manage_orders.html:58
+#: resa/templates/resa/manage_cart.html:108
+#: resa/templates/resa/manage_orders.html:58
 msgid "Confirm order"
 msgstr ""
 
-#: templates/resa/manage_compta.html:5
+#: resa/templates/resa/manage_compta.html:5
 msgid "User operation(s)"
 msgstr ""
 
-#: templates/resa/manage_compta.html:16
+#: resa/templates/resa/manage_compta.html:16
 msgid "Operation(s)"
 msgstr ""
 
-#: templates/resa/manage_compta.html:21
+#: resa/templates/resa/manage_compta.html:21
 msgid "No operation(s)"
 msgstr ""
 
-#: templates/resa/manage_compta.html:30 templates/resa/orders_notpaid.html:42
-#: templates/resa/orders_notpaid.html:103
-#: templates/resa/orders_notpaid.html:164
+#: resa/templates/resa/manage_compta.html:30
+#: resa/templates/resa/orders_notpaid.html:42
+#: resa/templates/resa/orders_notpaid.html:103
+#: resa/templates/resa/orders_notpaid.html:164
 msgid "Ord."
 msgstr ""
 
-#: templates/resa/manage_compta.html:33
+#: resa/templates/resa/manage_compta.html:33
 msgid "Credit"
 msgstr ""
 
-#: templates/resa/manage_compta.html:34
+#: resa/templates/resa/manage_compta.html:34
 msgid "Debit"
 msgstr ""
 
-#: templates/resa/manage_compta.html:35
+#: resa/templates/resa/manage_compta.html:35
 msgid "Pay."
 msgstr ""
 
-#: templates/resa/manage_compta.html:36
+#: resa/templates/resa/manage_compta.html:36
 msgid "Balance"
 msgstr ""
 
-#: templates/resa/manage_orders.html:6
+#: resa/templates/resa/manage_orders.html:6
 msgid "User order(s)"
 msgstr ""
 
-#: templates/resa/manage_orders.html:17
+#: resa/templates/resa/manage_orders.html:17
 msgid "Order(s)"
 msgstr ""
 
-#: templates/resa/manage_orders.html:21
+#: resa/templates/resa/manage_orders.html:21
 msgid "It has been agreed that these orders will be paid at his arrival."
 msgstr ""
 
-#: templates/resa/manage_orders.html:28 templates/resa/orders_list.html:29
+#: resa/templates/resa/manage_orders.html:28
+#: resa/templates/resa/orders_list.html:29
 msgid "No orders"
 msgstr ""
 
-#: templates/resa/manage_orders.html:46 templates/resa/orders_list.html:43
+#: resa/templates/resa/manage_orders.html:46
+#: resa/templates/resa/orders_list.html:43
 msgid "Pending order(s)"
 msgstr ""
 
-#: templates/resa/manage_orders.html:48 templates/resa/manage_orders.html:87
-#: templates/resa/orders_details.html:12 templates/resa/orders_details.html:73
+#: resa/templates/resa/manage_orders.html:48
+#: resa/templates/resa/manage_orders.html:87
+#: resa/templates/resa/orders_details.html:12
+#: resa/templates/resa/orders_details.html:73
 msgid "Order no"
 msgstr ""
 
-#: templates/resa/manage_orders.html:51 templates/resa/orders_list.html:55
+#: resa/templates/resa/manage_orders.html:51
+#: resa/templates/resa/orders_list.html:55
 msgid "This order is supported by the LSM organization."
 msgstr ""
 
-#: templates/resa/manage_orders.html:61
+#: resa/templates/resa/manage_orders.html:61
 msgid "Payment method:"
 msgstr ""
 
-#: templates/resa/manage_orders.html:69
+#: resa/templates/resa/manage_orders.html:69
 msgid "Remove order"
 msgstr ""
 
-#: templates/resa/manage_orders.html:85 templates/resa/orders_list.html:74
+#: resa/templates/resa/manage_orders.html:85
+#: resa/templates/resa/orders_list.html:74
 msgid "Paid order(s)"
 msgstr ""
 
-#: templates/resa/manage_orders.html:90 templates/resa/orders_details.html:30
+#: resa/templates/resa/manage_orders.html:90
+#: resa/templates/resa/orders_details.html:30
 msgid "Download invoice (pdf)"
 msgstr ""
 
-#: templates/resa/order_details.html:5
-#: templates/resa/order_details_extended.html:10
+#: resa/templates/resa/order_details.html:5
+#: resa/templates/resa/order_details_extended.html:10
 msgid "Creation date:"
 msgstr ""
 
-#: templates/resa/order_details.html:11
-#: templates/resa/order_details_extended.html:16
+#: resa/templates/resa/order_details.html:11
+#: resa/templates/resa/order_details_extended.html:16
 msgid "Payment date:"
 msgstr ""
 
-#: templates/resa/order_details_extended.html:49
+#: resa/templates/resa/order_details_extended.html:49
 msgid "Reset"
 msgstr ""
 
-#: templates/resa/order_details_extended.html:50
+#: resa/templates/resa/order_details_extended.html:50
 msgid "Maximise"
 msgstr ""
 
-#: templates/resa/orders_bank_return.html:5
-#: templates/resa/orders_bank_return.html:12
+#: resa/templates/resa/orders_bank_return.html:5
+#: resa/templates/resa/orders_bank_return.html:12
 msgid "Bank payment"
 msgstr ""
 
-#: templates/resa/orders_details.html:28 templates/resa/orders_pdf.xml:10
+#: resa/templates/resa/orders_details.html:28
+#: resa/templates/resa/orders_pdf.xml:10
 msgid "Invoice"
 msgstr ""
 
-#: templates/resa/orders_details.html:37
+#: resa/templates/resa/orders_details.html:37
 msgid "Delete this order"
 msgstr ""
 
-#: templates/resa/orders_details.html:41
+#: resa/templates/resa/orders_details.html:41
 msgid "Delete this order definitely"
 msgstr ""
 
-#: templates/resa/orders_details.html:41
+#: resa/templates/resa/orders_details.html:41
 msgid "Are you sure?"
 msgstr ""
 
-#: templates/resa/orders_details.html:48
+#: resa/templates/resa/orders_details.html:48
 msgid "Payment by credit card"
 msgstr ""
 
-#: templates/resa/orders_details.html:51
+#: resa/templates/resa/orders_details.html:51
 msgid "Proceed the payment using your bank card:"
 msgstr ""
 
-#: templates/resa/orders_details.html:55
+#: resa/templates/resa/orders_details.html:55
 msgid "Bank card payment will be available within the next few hours."
 msgstr ""
 
-#: templates/resa/orders_details.html:63 templates/resa/orders_details.html:81
+#: resa/templates/resa/orders_details.html:63
+#: resa/templates/resa/orders_details.html:81
 msgid "Payment by PayPal"
 msgstr ""
 
-#: templates/resa/orders_details.html:65
+#: resa/templates/resa/orders_details.html:65
 msgid "Proceed the payment using PayPal:"
 msgstr ""
 
-#: templates/resa/orders_details.html:84
+#: resa/templates/resa/orders_details.html:84
 msgid ""
 "If it is possible for you to use another payment method than PayPal, please "
 "do it. PayPal payments involves expensive fees for us."
 msgstr ""
 
-#: templates/resa/orders_details.html:92
+#: resa/templates/resa/orders_details.html:92
 msgid "Payment by bank transfer"
 msgstr ""
 
-#: templates/resa/orders_details.html:94
+#: resa/templates/resa/orders_details.html:94
 msgid "Proceed the payment by making a bank transfer:"
 msgstr ""
 
-#: templates/resa/orders_details.html:97
+#: resa/templates/resa/orders_details.html:97
 msgid "Bank name:"
 msgstr ""
 
-#: templates/resa/orders_details.html:102
+#: resa/templates/resa/orders_details.html:102
 msgid "Account number:"
 msgstr ""
 
-#: templates/resa/orders_details.html:107
-#: templates/resa/orders_details.html:111
+#: resa/templates/resa/orders_details.html:107
+#: resa/templates/resa/orders_details.html:111
 msgid "IBAN (International Bank Account Number):"
 msgstr ""
 
-#: templates/resa/orders_details.html:114
+#: resa/templates/resa/orders_details.html:114
 msgid "BIC (Bank Identifier Code):"
 msgstr ""
 
-#: templates/resa/orders_details.html:118
+#: resa/templates/resa/orders_details.html:118
 msgid "Alternative BIC (if the first one was not accepted by your bank):"
 msgstr ""
 
-#: templates/resa/orders_details.html:123
+#: resa/templates/resa/orders_details.html:123
 msgid "Account owner:"
 msgstr ""
 
-#: templates/resa/orders_details.html:127
+#: resa/templates/resa/orders_details.html:127
 msgid ""
 "Please add the order(s) id(s) in the bank transfer title and notify our "
 "accountant when the check has been sent."
 msgstr ""
 
-#: templates/resa/orders_details.html:134
+#: resa/templates/resa/orders_details.html:134
 msgid "Payment by cashiers check"
 msgstr ""
 
-#: templates/resa/orders_details.html:136
+#: resa/templates/resa/orders_details.html:136
 msgid "Send your check to the treasurer, here is the postal address:"
 msgstr ""
 
-#: templates/resa/orders_details.html:138
+#: resa/templates/resa/orders_details.html:138
 msgid "payable to:"
 msgstr ""
 
-#: templates/resa/orders_details.html:141
+#: resa/templates/resa/orders_details.html:141
 msgid ""
 "For payments with cashiers check, please notify our accountant when the "
 "check has been sent. Cashiers check payments might include fee if your bank "
 "is not located in France or in the EU."
 msgstr ""
 
-#: templates/resa/orders_details.html:148
+#: resa/templates/resa/orders_details.html:148
 msgid "Other payment methods"
 msgstr ""
 
-#: templates/resa/orders_details.html:150
+#: resa/templates/resa/orders_details.html:150
 msgid ""
 "If you wish to use other methods of payment, please contact our accountant:"
 msgstr ""
 
-#: templates/resa/orders_details_cmcic.html:20
-#: templates/resa/orders_details_ogone.html:9
+#: resa/templates/resa/orders_details_cmcic.html:20
+#: resa/templates/resa/orders_details_ogone.html:9
 msgid "Go to Payment"
 msgstr ""
 
-#: templates/resa/orders_details_etransactions.html:4
+#: resa/templates/resa/orders_details_etransactions.html:4
 msgid "Payment by Bank"
 msgstr ""
 
-#: templates/resa/orders_list.html:35
+#: resa/templates/resa/orders_list.html:35
 msgid "It has been agreed that your orders will be paid at your arrival."
 msgstr ""
 
-#: templates/resa/orders_list.html:49 templates/resa/orders_list.html.py:59
-#: templates/resa/orders_list.html:80
+#: resa/templates/resa/orders_list.html:49
+#: resa/templates/resa/orders_list.html:59
+#: resa/templates/resa/orders_list.html:80
 #, python-format
 msgid "Order of %(date_t)s for amount of %(amount_t)s"
 msgstr ""
 
-#: templates/resa/orders_notpaid.html:40
-#: templates/resa/orders_notpaid.html:101
-#: templates/resa/orders_notpaid.html:162 templates/resa/sales.html:52
-#: templates/resa/sales.html.py:90
+#: resa/templates/resa/orders_notpaid.html:40
+#: resa/templates/resa/orders_notpaid.html:101
+#: resa/templates/resa/orders_notpaid.html:162
+#: resa/templates/resa/sales.html:52 resa/templates/resa/sales.html.py:90
 msgid "Count"
 msgstr ""
 
-#: templates/resa/orders_notpaid.html:41
-#: templates/resa/orders_notpaid.html:102
-#: templates/resa/orders_notpaid.html:163
+#: resa/templates/resa/orders_notpaid.html:41
+#: resa/templates/resa/orders_notpaid.html:102
+#: resa/templates/resa/orders_notpaid.html:163
 msgid "Res."
 msgstr ""
 
-#: templates/resa/orders_notpaid.html:152
+#: resa/templates/resa/orders_notpaid.html:152
 msgid "Others"
 msgstr ""
 
-#: templates/resa/orders_notpaid.html:211
+#: resa/templates/resa/orders_notpaid.html:211
 msgid "Mass mailing"
 msgstr ""
 
-#: templates/resa/orders_notpaid.html:224
+#: resa/templates/resa/orders_notpaid.html:224
 msgid "Email settings"
 msgstr ""
 
-#: templates/resa/orders_notpaid.html:226
+#: resa/templates/resa/orders_notpaid.html:226
 msgid "Sender:"
 msgstr ""
 
-#: templates/resa/orders_notpaid.html:232
+#: resa/templates/resa/orders_notpaid.html:232
 msgid "Email subject:"
 msgstr ""
 
-#: templates/resa/orders_notpaid.html:238
+#: resa/templates/resa/orders_notpaid.html:238
 msgid "Email body:"
 msgstr ""
 
-#: templates/resa/orders_notpaid.html:244
+#: resa/templates/resa/orders_notpaid.html:244
 msgid "Send"
 msgstr ""
 
-#: templates/resa/orders_paypal_return.html:5
-#: templates/resa/orders_paypal_return.html:12
+#: resa/templates/resa/orders_paypal_return.html:5
+#: resa/templates/resa/orders_paypal_return.html:12
 msgid "PayPal payment"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:13 templates/resa/orders_pdf.xml.py:26
+#: resa/templates/resa/orders_pdf.xml:13 resa/templates/resa/orders_pdf.xml:26
 msgid "Libre Software Meeting"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:57
+#: resa/templates/resa/orders_pdf.xml:57
 msgid "Document:"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:57
+#: resa/templates/resa/orders_pdf.xml:57
 msgid "Invoice num"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:60
+#: resa/templates/resa/orders_pdf.xml:60
 msgid "Date:"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:65
+#: resa/templates/resa/orders_pdf.xml:65
 msgid "Madam"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:65
+#: resa/templates/resa/orders_pdf.xml:65
 msgid "Mister"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:71
+#: resa/templates/resa/orders_pdf.xml:71
 msgid "Here is the invoice for your order:"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:77
+#: resa/templates/resa/orders_pdf.xml:77
 msgid "Description"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:78
+#: resa/templates/resa/orders_pdf.xml:78
 msgid "Unit price"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:80
+#: resa/templates/resa/orders_pdf.xml:80
 msgid "Total price"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:100
+#: resa/templates/resa/orders_pdf.xml:95
+msgid "Entrance fee:"
+msgstr ""
+
+#: resa/templates/resa/orders_pdf.xml:110
 msgid "VAT:"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:106
+#: resa/templates/resa/orders_pdf.xml:116
 msgid "Total excl. VAT:"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:113
+#: resa/templates/resa/orders_pdf.xml:123
 msgid "Total incl. VAT:"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:113
+#: resa/templates/resa/orders_pdf.xml:123
 msgid "Total:"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:123
+#: resa/templates/resa/orders_pdf.xml:133
 msgid ""
 "VAT not applicable in accordance with Art. 261-7-1° of the French Tax Code"
 msgstr ""
 
-#: templates/resa/orders_pdf.xml:129
+#: resa/templates/resa/orders_pdf.xml:139
 msgid "Billing without taxes."
 msgstr ""
 
-#: templates/resa/orders_search.html:23
+#: resa/templates/resa/orders_search.html:23
 msgid "Order number"
 msgstr ""
 
-#: templates/resa/payment_bank_email.txt:3
+#: resa/templates/resa/payment_bank_email.txt:3
 msgid "Your payment has been confirmed by the bank."
 msgstr ""
 
-#: templates/resa/payment_bank_email.txt:5
-#: templates/resa/payment_paypal_email.txt:5
+#: resa/templates/resa/payment_bank_email.txt:5
+#: resa/templates/resa/payment_paypal_email.txt:5
 msgid "Order id:"
 msgstr ""
 
-#: templates/resa/payment_bank_email.txt:6
-#: templates/resa/payment_paypal_email.txt:6
+#: resa/templates/resa/payment_bank_email.txt:6
+#: resa/templates/resa/payment_paypal_email.txt:6
 msgid "Amount:"
 msgstr ""
 
-#: templates/resa/payment_bank_email.txt:8
-#: templates/resa/payment_paypal_email.txt:8
+#: resa/templates/resa/payment_bank_email.txt:8
+#: resa/templates/resa/payment_paypal_email.txt:8
 msgid "Your order is now complete."
 msgstr ""
 
-#: templates/resa/payment_paypal_email.txt:3
+#: resa/templates/resa/payment_paypal_email.txt:3
 msgid "Your payment has been confirmed by PayPal."
 msgstr ""
 
-#: templates/resa/sales.html:38 templates/resa/stocks.html:33
-#: templates/resa/stocks.html.py:45
+#: resa/templates/resa/sales.html:38 resa/templates/resa/stocks.html:33
+#: resa/templates/resa/stocks.html.py:45
 msgid "Paid"
 msgstr ""
 
-#: templates/resa/sales.html:41
+#: resa/templates/resa/sales.html:41
 msgid "Export detailed list (CSV)"
 msgstr ""
 
-#: templates/resa/sales.html:81
+#: resa/templates/resa/sales.html:81
 msgid "Not paid"
 msgstr ""
 
-#: templates/resa/stats.html:18
+#: resa/templates/resa/stats.html:18
 msgid "Participants per country"
 msgstr ""
 
-#: templates/resa/stats.html:23
+#: resa/templates/resa/stats.html:23
 msgid "Users count"
 msgstr ""
 
-#: templates/resa/stocks.html:29
+#: resa/templates/resa/stocks.html:29
 msgid "Quantities"
 msgstr ""
 
-#: templates/resa/stocks.html:31
+#: resa/templates/resa/stocks.html:31
 msgid "Avail."
 msgstr ""
 
-#: templates/resa/stocks.html:32 templates/resa/stocks.html.py:44
+#: resa/templates/resa/stocks.html:32 resa/templates/resa/stocks.html.py:44
 msgid "Confirmed"
 msgstr ""
 
-#: templates/resa/stocks.html:43
+#: resa/templates/resa/stocks.html:43
 msgid "Dispatched"
 msgstr ""
 
-#: templates/room/detail.html:5 templates/room/detail.html.py:12
-#: templates/room/print.html:12
+#: resaroom/forms.py:11
+msgid "From the date:"
+msgstr ""
+
+#: resaroom/forms.py:13
+msgid ""
+"If not empty, only orders created since this date (DD/MM/YYYY) will be "
+"displayed"
+msgstr ""
+
+#: resaroom/forms.py:14
+msgid "Place:"
+msgstr ""
+
+#: resaroom/templates/room/detail.html:5
+#: resaroom/templates/room/detail.html:12
+#: resaroom/templates/room/print.html:12
 #, python-format
 msgid "Accomodation for “%(place)s”"
 msgstr ""
 
-#: templates/room/detail.html:16 templates/room/print.html:16
+#: resaroom/templates/room/detail.html:16
+#: resaroom/templates/room/print.html:16
 msgid "No data for this accomodation place."
 msgstr ""
 
-#: templates/room/detail.html:25
+#: resaroom/templates/room/detail.html:25
 msgid "Print preview"
 msgstr ""
 
-#: templates/room/detail.html:29
+#: resaroom/templates/room/detail.html:29
 msgid "New window"
 msgstr ""
 
-#: templates/room/detail.html:36
+#: resaroom/templates/room/detail.html:36
 #, python-format
 msgid "Listing established with orders created after: %(date)s"
 msgstr ""
 
-#: templates/room/detail.html:41
+#: resaroom/templates/room/detail.html:41
 msgid ""
 "This listing take into account people with paid orders, people with unpaid "
 "orders who are marked as paying at their arrival, and people with unpaid "
 "orders which have at least one order supported by the organization."
 msgstr ""
 
-#: templates/room/detail.html:47 templates/room/print.html:26
+#: resaroom/templates/room/detail.html:47
+#: resaroom/templates/room/print.html:26
 msgid "Days"
 msgstr ""
 
-#: templates/room/list.html:17
+#: resaroom/templates/room/list.html:17
 msgid "No accomodation places available."
 msgstr ""
 
-#: templates/room/list.html:38
+#: resaroom/templates/room/list.html:38
 msgid "Show"
 msgstr ""
 
-#: templates/room/print.html:5
+#: resaroom/templates/room/print.html:5
 #, python-format
 msgid "Accomodation for “%(place)s (printing)”"
+msgstr ""
+
+#: resautils/templates/404.html:5 resautils/templates/404.html.py:9
+msgid "Error 404"
+msgstr ""
+
+#: resautils/templates/404.html:12
+msgid "Page not found"
+msgstr ""
+
+#: resautils/templates/500.html:5 resautils/templates/500.html.py:9
+msgid "Error 500"
+msgstr ""
+
+#: resautils/templates/500.html:12
+msgid "Internal Error"
+msgstr ""
+
+#: resautils/templates/base.html:6 resautils/templates/base2cols.html:6
+msgid "LSM Booking"
+msgstr ""
+
+#: resautils/templates/common/signature_email.txt:2
+msgid "Regards,"
+msgstr ""
+
+#: resautils/templates/common/signature_email.txt:5
+msgid "The LSM Organization Team"
+msgstr ""
+
+#: resautils/templates/layout/footer.html:13
+msgid "All RMLL.info ssl certificates are gracefully offered by"
+msgstr ""
+
+#: resautils/templates/layout/footer.html:17
+msgid "Contact webmaster"
+msgstr ""
+
+#: resautils/templates/layout/header.html:7
+msgid "You will need to enable JavaScript to use some advanced features."
+msgstr ""
+
+#: resautils/templates/layout/header.html:14
+msgid "Go to main content"
+msgstr ""
+
+#: resautils/templates/layout/header.html:22
+#: resautils/templates/layout/header.html:27
+msgid "LSM website"
 msgstr ""

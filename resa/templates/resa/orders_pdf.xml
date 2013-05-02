@@ -89,6 +89,16 @@
                 </tr>
             {% endfor %}
 
+
+            {% if order.donation > 0 %}
+                <tr>
+                    <td>{% trans "Entrance fee:" %}</td>
+                    <td>{{ order.donation }}</td>
+                    <td>N/A</td>
+                    <td>{{ order.donation }}</td>
+                </tr>
+            {% endfor %}
+
             <tr>
                 <td/>
                 <td/>
