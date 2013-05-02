@@ -97,7 +97,7 @@
                     <td>N/A</td>
                     <td>{{ order.donation }}</td>
                 </tr>
-            {% endfor %}
+            {% endif %}
 
             <tr>
                 <td/>
