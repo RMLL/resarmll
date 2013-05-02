@@ -1743,7 +1743,7 @@ msgstr "Facture no"
 
 #: resa/templates/resa/orders_pdf.xml:60
 msgid "Date:"
-msgstr "Date :"
+msgstr "Date:"
 
 #: resa/templates/resa/orders_pdf.xml:65
 msgid "Madam"
