@@ -354,6 +354,10 @@ msgid ""
 "camping, you can use the independant <a href=\"https://www.resotel.be/"
 "rmll2013\">RESOTEL</a> form."
 msgstr ""
+"Si vous préférez séjourner dans un hotel traditionnel et non dans une auberge"
+"de jeunesse, vous pouvez utiliser l'interface de réservation de <a href=\"https://www.resotel.be/"
+"rmll2013fr\">RESOTEL</a>."
+
 
 #: account/templates/account/login.html:5
 #: account/templates/account/login.html:13
