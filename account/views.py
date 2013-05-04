@@ -2,13 +2,12 @@
 import os.path
 
 from django.db.models import Q
-from django.utils.translation import check_for_language, ugettext_lazy as _
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseForbidden
+from django.utils.translation import check_for_language
 from django.utils.http import urlquote
 from django.core.servers.basehttp import FileWrapper
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from django import forms
 from django.conf import settings as django_settings
 
 from resarmll import settings
@@ -16,7 +15,7 @@ from account.forms import UserForm, UserFormModify, UserFormManagerCreate, UserF
 from account.models import UserProfile, NetworkAccess
 from resa.models import Badge
 from resa.utils import BadgeGenerator
-from resautils.decorators import auto_render, staff_required, manager_required, reception_required
+from resautils.decorators import auto_render, manager_required, reception_required
 
 @login_required
 def langcheck(request, redirect):
@@ -131,7 +130,8 @@ def profile_modify(request, tmpl):
                 return HttpResponseRedirect('/account/langchange/')
     else:
         form = UserFormModify()
-        form.fill_from_user(cur_user)
+        user = User.objects.get(id=cur_user.id)
+        form.fill_from_user(user)
     return tmpl, {'form': form, 'syserr': syserr}
 
 @login_required
