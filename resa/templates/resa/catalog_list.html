@@ -17,6 +17,8 @@
 {% block content %}
     <h2>{% trans "Catalog" %}</h2>
 
+    <p><strong>{%blocktrans%}Pick-up the items you want to add to your cart. Afterwards you will be able to chose the number of items of each kind you want to book.{%endblocktrans%}</strong></p>
+
     {% if not products %}
         <div class="main-error">
             {% trans "No products." %}
