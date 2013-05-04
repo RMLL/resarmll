@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-04 11:59+0200\n"
+"POT-Creation-Date: 2013-05-04 12:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -344,7 +344,7 @@ msgstr ""
 msgid ""
 "If you want to stay in an traditional hotel instead of a youth hotel or a "
 "camping, you can use the independant <a href=\"https://www.resotel.be/"
-"rmll2013\">RESOTEL</a> form."
+"rmll2013\">RESOTEL</a> form, with special prices for the RMLL."
 msgstr ""
 
 #: account/templates/account/home.html:22
@@ -362,10 +362,10 @@ msgstr ""
 
 #: account/templates/account/login.html:10
 msgid ""
-"It is recommended (but not mandatory) to register to get a badge and net "
-"connection parameters. You'll also be able to book accomodations (overnight "
-"stays in a barack “Les Vernets” and campsites), tickets for lunches and the "
-"Free Software Banquet, t-shirts and Free Beer dedicated to the event."
+"It is recommended (but not mandatory) to register to get a badge. You'll "
+"also be able to book accomodations (overnight stays in youth hostels and "
+"campsites), tickets for lunches and the Free Software Banquet, and goodies "
+"dedicated to the event."
 msgstr ""
 
 #: account/templates/account/login.html:17
