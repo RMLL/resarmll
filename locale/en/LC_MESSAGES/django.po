@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-02 22:55+0200\n"
+"POT-Creation-Date: 2013-05-04 11:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -325,22 +325,30 @@ msgstr ""
 msgid "Welcome to the booking program"
 msgstr ""
 
-#: account/templates/account/home.html:19
+#: account/templates/account/home.html:18
+msgid ""
+"You will find the items to book under the \"Catalog\" category. You will be "
+"able to update your cart with the items you would like to book. Once your "
+"cart is right, you can transform it into an order. You can make several "
+"orders."
+msgstr ""
+
+#: account/templates/account/home.html:20
 msgid ""
 "Orders not paid by July 5th will be removed. There are some exceptions with "
 "people coming from abroad which should contact the treasurer if they want to "
 "pay on arrival."
 msgstr ""
 
-#: account/templates/account/home.html:20
-msgid "Treasurer:"
-msgstr ""
-
-#: account/templates/account/home.html:23
+#: account/templates/account/home.html:21
 msgid ""
 "If you want to stay in an traditional hotel instead of a youth hotel or a "
 "camping, you can use the independant <a href=\"https://www.resotel.be/"
 "rmll2013\">RESOTEL</a> form."
+msgstr ""
+
+#: account/templates/account/home.html:22
+msgid "Treasurer:"
 msgstr ""
 
 #: account/templates/account/login.html:5
@@ -1288,20 +1296,26 @@ msgstr ""
 msgid "Confirm your order"
 msgstr ""
 
-#: resa/templates/resa/catalog_list.html:22 resa/templates/resa/stocks.html:16
+#: resa/templates/resa/catalog_list.html:20
+msgid ""
+"Pick-up the items you want to add to your cart. Afterwards you will be able "
+"to chose the number of items of each kind you want to book."
+msgstr ""
+
+#: resa/templates/resa/catalog_list.html:24 resa/templates/resa/stocks.html:16
 msgid "No products."
 msgstr ""
 
-#: resa/templates/resa/catalog_list.html:31
-#: resa/templates/resa/catalog_list.html:55
+#: resa/templates/resa/catalog_list.html:33
+#: resa/templates/resa/catalog_list.html:57
 msgid "Add the selected items to cart"
 msgstr ""
 
-#: resa/templates/resa/catalog_list.html:45
+#: resa/templates/resa/catalog_list.html:47
 msgid "Price:"
 msgstr ""
 
-#: resa/templates/resa/catalog_list.html:50
+#: resa/templates/resa/catalog_list.html:52
 msgid "Remaining stock:"
 msgstr ""
 
@@ -1664,7 +1678,7 @@ msgid "Libre Software Meeting"
 msgstr ""
 
 #: resa/templates/resa/orders_pdf.xml:57
-msgid "Document:"
+msgid "Document :"
 msgstr ""
 
 #: resa/templates/resa/orders_pdf.xml:57
@@ -1672,7 +1686,7 @@ msgid "Invoice num"
 msgstr ""
 
 #: resa/templates/resa/orders_pdf.xml:60
-msgid "Date:"
+msgid "Date :"
 msgstr ""
 
 #: resa/templates/resa/orders_pdf.xml:65

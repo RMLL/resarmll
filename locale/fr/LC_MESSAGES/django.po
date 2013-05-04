@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-02 22:55+0200\n"
+"POT-Creation-Date: 2013-05-04 11:59+0200\n"
 "PO-Revision-Date: 2012-07-04 09:09+0200\n"
 "Last-Translator: Emmanuel Bouthenot <kolter@openics.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -334,7 +334,19 @@ msgstr "Accueil"
 msgid "Welcome to the booking program"
 msgstr "Bienvenue dans l'interface de réservation"
 
-#: account/templates/account/home.html:19
+#: account/templates/account/home.html:18
+msgid ""
+"You will find the items to book under the \"Catalog\" category. You will be "
+"able to update your cart with the items you would like to book. Once your "
+"cart is right, you can transform it into an order. You can make several "
+"orders."
+msgstr ""
+"Vous trouverez les éléments réservables dans la catégorie \"Catalogue\". "
+"Vous pourrez ajouter les éléments voulus dans votre panier. Quand votre "
+"panier est prêt, vous pouvez le transformer en commande. Vous pouvez faire "
+"plusieurs commandes."
+
+#: account/templates/account/home.html:20
 msgid ""
 "Orders not paid by July 5th will be removed. There are some exceptions with "
 "people coming from abroad which should contact the treasurer if they want to "
@@ -344,20 +356,19 @@ msgstr ""
 "exceptions pour les personnes venant de l'étranger qui devront contacter le "
 "trésorier si elles veulent payer à leur arrivée."
 
-#: account/templates/account/home.html:20
-msgid "Treasurer:"
-msgstr "Trésorier :"
-
-#: account/templates/account/home.html:23
+#: account/templates/account/home.html:21
 msgid ""
 "If you want to stay in an traditional hotel instead of a youth hotel or a "
 "camping, you can use the independant <a href=\"https://www.resotel.be/"
 "rmll2013\">RESOTEL</a> form."
 msgstr ""
-"Si vous préférez séjourner dans un hotel traditionnel et non dans une auberge"
-"de jeunesse, vous pouvez utiliser l'interface de réservation de <a href=\"https://www.resotel.be/"
-"rmll2013/FR\">RESOTEL</a>."
+"Si vous préférez séjourner dans un hotel traditionnel et non dans une "
+"aubergede jeunesse, vous pouvez utiliser l'interface de réservation de <a "
+"href=\"https://www.resotel.be/rmll2013/FR\">RESOTEL</a>."
 
+#: account/templates/account/home.html:22
+msgid "Treasurer:"
+msgstr "Trésorier :"
 
 #: account/templates/account/login.html:5
 #: account/templates/account/login.html:13
@@ -1352,20 +1363,28 @@ msgstr "J'ai lu et j'accepte les conditions générales de vente"
 msgid "Confirm your order"
 msgstr "Confirmer votre commande"
 
-#: resa/templates/resa/catalog_list.html:22 resa/templates/resa/stocks.html:16
+#: resa/templates/resa/catalog_list.html:20
+msgid ""
+"Pick-up the items you want to add to your cart. Afterwards you will be able "
+"to chose the number of items of each kind you want to book."
+msgstr ""
+"Choissisez les éléments à ajouter à votre panier. Après cela, vous pourrez "
+"modifier le nombre d'éléments que vous souhaitez commander."
+
+#: resa/templates/resa/catalog_list.html:24 resa/templates/resa/stocks.html:16
 msgid "No products."
 msgstr "Pas de produits"
 
-#: resa/templates/resa/catalog_list.html:31
-#: resa/templates/resa/catalog_list.html:55
+#: resa/templates/resa/catalog_list.html:33
+#: resa/templates/resa/catalog_list.html:57
 msgid "Add the selected items to cart"
 msgstr "Ajouter les éléments sélectionnés au panier"
 
-#: resa/templates/resa/catalog_list.html:45
+#: resa/templates/resa/catalog_list.html:47
 msgid "Price:"
 msgstr "Prix :"
 
-#: resa/templates/resa/catalog_list.html:50
+#: resa/templates/resa/catalog_list.html:52
 msgid "Remaining stock:"
 msgstr "Stock restant :"
 
@@ -1738,7 +1757,7 @@ msgid "Libre Software Meeting"
 msgstr "Rencontres Mondiales du Logiciel Libre"
 
 #: resa/templates/resa/orders_pdf.xml:57
-msgid "Document:"
+msgid "Document :"
 msgstr "Document :"
 
 #: resa/templates/resa/orders_pdf.xml:57
@@ -1746,7 +1765,7 @@ msgid "Invoice num"
 msgstr "Facture no"
 
 #: resa/templates/resa/orders_pdf.xml:60
-msgid "Date:"
+msgid "Date :"
 msgstr "Date:"
 
 #: resa/templates/resa/orders_pdf.xml:65
