@@ -35,7 +35,7 @@
                 <ul class="language-switcher-locale-url">
                     {% for lang in LANGUAGES%}
                         <form action="/i18n/setlang/" method="post">{% csrf_token %}
-                            <li class="{{ lang.0 }}{% cycle ' first' ' last' %}{% if LANGUAGE_CODE == lang.0 %} active{% endif %}">
+                            <li class="{{ lang.0 }}{% if forloop.first %} first{%elif forloop.last%} last{% else %} middle{%endif%}{% if LANGUAGE_CODE == lang.0 %} active{% endif %}">
                                 <input type="hidden" name="language" value="{{ lang.0 }}" />
                                 <input type="submit" value="{{ lang.1}}"/>
                             </li>

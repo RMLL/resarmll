@@ -1,0 +1,1978 @@
+# LSM reservation
+# Copyright (C) 2013 LSM organisation
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: resarmll\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-30 20:17+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: account/forms.py:16 account/templates/account/profile.html:39
+msgid "Last name:"
+msgstr "Achternaam:"
+
+#: account/forms.py:18 account/templates/account/profile.html:44
+msgid "First name:"
+msgstr "Voornaam:"
+
+#: account/forms.py:20 account/templates/account/password_reset.html:21
+msgid "E-mail address:"
+msgstr "E-mailadres:"
+
+#: account/forms.py:22 account/templates/account/login.html:32
+#: account/templates/account/profile.html:20
+msgid "Username:"
+msgstr "Gebruikersnaam:"
+
+#: account/forms.py:26 account/templates/account/login.html:38
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+#: account/forms.py:29
+msgid "The password must contain at least 5 characters."
+msgstr "Het wachtwoord moet tenminste 5 tekens bevatten."
+
+#: account/forms.py:31
+#: account/templates/account/password_reset_confirm.html:28
+msgid "Confirm password:"
+msgstr "Bevestig het wachtwoord:"
+
+#: account/forms.py:34 account/templates/account/profile.html:30
+msgid "Gender:"
+msgstr "Geslacht:"
+
+#: account/forms.py:35
+msgid "The Gender is not mandatory but could be useful for room distribution."
+msgstr ""
+"Geslacht vermelden is niet verplicht, maar kan nuttig zijn bij het indelen "
+"van de kamers."
+
+#: account/forms.py:37 account/forms.py:123
+msgid "Address (street, number and details):"
+msgstr "Adres (straat, nummer en toevoegingen):"
+
+#: account/forms.py:39 account/forms.py:125
+msgid "Address is useful for speakers or people who'll get a refund."
+msgstr "Het adres is nuttig voor sprekers of mensen die terugbetaald worden."
+
+#: account/forms.py:41 account/forms.py:126
+#: account/templates/account/profile.html:60
+msgid "Zipcode:"
+msgstr "Postcode:"
+
+#: account/forms.py:43 account/forms.py:128
+#: account/templates/account/profile.html:69
+msgid "City:"
+msgstr "Plaats:"
+
+#: account/forms.py:45 account/templates/account/profile.html:78
+msgid "Country:"
+msgstr "Land:"
+
+#: account/forms.py:48 account/templates/account/profile.html:83
+msgid "Language:"
+msgstr "Taal:"
+
+#: account/forms.py:50 account/forms.py:120
+#: account/templates/account/profile.html:88
+msgid "Badge type:"
+msgstr "Badge type:"
+
+#: account/forms.py:53 account/templates/account/profile.html:93
+msgid "Badge text:"
+msgstr "Badge tekst:"
+
+#: account/forms.py:55
+msgid "Free text printed on your badge (should not be too long)."
+msgstr "Gratis tekst voor op de badge (niet te lang)."
+
+#: account/forms.py:57
+msgid "Comment(s):"
+msgstr "Commentaar:"
+
+#: account/forms.py:59
+msgid ""
+"Distinctiveness (moving with a wheelchair, glad to use an available magnetic-"
+"field loop, blind, deep geek, ...)"
+msgstr ""
+"Bijzonderheden (gebruikt een rolstoel, zou graag een beschikbare ring-"
+"leiding gebruiken, blind, volkomen geek, ....)"
+
+#: account/forms.py:61 account/templates/account/profile.html:102
+msgid "PGP/GPG Fingerprint:"
+msgstr "PGP/GPG Fingerprint:"
+
+#: account/forms.py:64
+msgid "PGP/GPG fingerprint prefixed by its size, sample:"
+msgstr "PGP/GPG fingerprint met zijn grootte als voorvoegsel, voorbeeld:"
+
+#: account/forms.py:74
+msgid "This username is already used"
+msgstr "Deze gebruikersnaam is al in gebruik"
+
+#: account/forms.py:78
+msgid "The confirmation password does not match the original password"
+msgstr "Het bevestigingswachtwoord is niet hetzelfde als het originele"
+
+#: account/forms.py:112
+msgid "Notes:"
+msgstr "Notities:"
+
+#: account/forms.py:114
+msgid "Payment later:"
+msgstr "Later betalen:"
+
+#: account/forms.py:115
+msgid "Order staff:"
+msgstr ""
+
+#: account/models.py:12
+msgid "Female"
+msgstr "Vrouw"
+
+#: account/models.py:12
+msgid "Male"
+msgstr "Man"
+
+#: account/models.py:15 account/templates/account/search.html:45
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+#: account/models.py:16
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: account/models.py:23
+msgid "Is manager"
+msgstr "Is manager"
+
+#: account/models.py:24
+msgid "Is reception"
+msgstr "Is receptie"
+
+#: account/models.py:25
+msgid "Gender"
+msgstr "Geslacht"
+
+#: account/models.py:27 resa/views.py:487
+msgid "Address"
+msgstr "Adres"
+
+#: account/models.py:28
+msgid "Zipcode"
+msgstr "Postcode"
+
+#: account/models.py:29
+msgid "City"
+msgstr "Plaats"
+
+#: account/models.py:31 resa/models.py:93 resa/widgets.py:12
+msgid "Language"
+msgstr "Taal"
+
+#: account/models.py:33
+msgid "Badge text"
+msgstr "Badge tekst"
+
+#: account/models.py:34 account/templates/account/comments.html:27
+#: compta/models.py:60
+msgid "Comment(s)"
+msgstr "Commentaar"
+
+#: account/models.py:35
+msgid "PGP/GPG Fingerprint"
+msgstr "PGP/GPG Fingerprint"
+
+#: account/models.py:36
+msgid "Note(s)"
+msgstr "Notitie(s)"
+
+#: account/models.py:38
+msgid "Payment later"
+msgstr "Later betalen"
+
+#: account/models.py:39
+msgid "Staff Order"
+msgstr ""
+
+#: account/models.py:99
+msgid "User profile"
+msgstr "Gebruikersprofiel"
+
+#: account/models.py:100
+msgid "Users Profiles"
+msgstr "Gebruikersprofielen"
+
+#: account/templates/account/comments.html:5
+#: account/templates/account/comments.html:12
+#: account/templates/account/menu.html:30
+msgid "User's comments"
+msgstr "Gebruikerscommentaar"
+
+#: account/templates/account/comments.html:16
+#: account/templates/account/search.html:16
+#: resa/templates/resa/orders_notpaid.html:21
+#: resa/templates/resa/orders_search.html:16 resa/templates/resa/sales.html:16
+msgid "No results"
+msgstr "Geen resultaat"
+
+#: account/templates/account/comments.html:25
+#: account/templates/account/search.html:41
+#: resa/templates/resa/orders_notpaid.html:36
+#: resa/templates/resa/orders_notpaid.html:97
+#: resa/templates/resa/orders_notpaid.html:158
+#: resa/templates/resa/sales.html:48 resa/templates/resa/sales.html.py:86
+msgid "Id"
+msgstr "Id"
+
+#: account/templates/account/comments.html:26 resa/models.py:186
+#: resa/models.py:196 resaroom/templates/room/detail.html:46
+#: resaroom/templates/room/print.html:25
+msgid "Name"
+msgstr "Naam"
+
+#: account/templates/account/comments.html:38
+#: account/templates/account/search.html:60
+#: resa/templates/resa/orders_notpaid.html:79
+#: resa/templates/resa/orders_notpaid.html:140
+#: resa/templates/resa/orders_notpaid.html:201
+#: resa/templates/resa/sales.html:69 resa/templates/resa/sales.html.py:107
+msgid "View"
+msgstr "Bekijken"
+
+#: account/templates/account/create.html:11
+#: account/templates/account/create.html:18
+msgid "Create an account"
+msgstr "Maak een account aan"
+
+#: account/templates/account/create.html:22
+#: account/templates/account/edit.html:22
+#: account/templates/account/profile_modify.html:17
+msgid "Operation failed (internal error)"
+msgstr "De bewerking is mislukt (interne fout)"
+
+#: account/templates/account/create.html:24
+#: account/templates/account/edit.html:24
+#: account/templates/account/profile_modify.html:19
+msgid "Operation failed (field(s) missing or incomplete)"
+msgstr "De bewerking is mislukt (veld(en) niet of onvolledig ingevuld)"
+
+#: account/templates/account/create.html:31
+msgid "User successfully created"
+msgstr "Het aanmaken van de gebruiker is geslaagd"
+
+#: account/templates/account/create.html:33
+#: account/templates/account/edit.html:17
+#: account/templates/account/menu_manager.html:9
+#: resa/templates/resa/manage_compta.html:31
+msgid "Account"
+msgstr "Account"
+
+#: account/templates/account/create.html:34
+#: account/templates/account/manage_badge.html:14
+#: account/templates/account/menu_manager.html:10
+#: account/templates/account/search.html:46 resa/models.py:211
+#: resa/templates/resa/orders_notpaid.html:43
+#: resa/templates/resa/orders_notpaid.html:104
+#: resa/templates/resa/orders_notpaid.html:165
+msgid "Badge"
+msgstr "Badge"
+
+#: account/templates/account/create.html:45
+#: account/templates/account/edit.html:37
+#: account/templates/account/profile_modify.html:26
+#: account/templates/account/register.html:23
+#, python-format
+msgid "Fields prefixed with a %(mark)s are mandatory."
+msgstr "Velden die beginnen met een %(mark)s zijn verplicht."
+
+#: account/templates/account/create.html:60
+#: account/templates/account/create.html:64
+#: account/templates/account/create.html:68
+msgid "Auto"
+msgstr "Automatisch"
+
+#: account/templates/account/create.html:80
+#: account/templates/account/edit.html:60
+#: account/templates/account/profile_modify.html:49
+#: resa/templates/resa/manage_orders.html:65
+#: resa/templates/resa/manage_orders.html:74
+#: resa/templates/resa/order_details_extended.html:53
+msgid "Save"
+msgstr "Opslaan"
+
+#: account/templates/account/edit.html:6
+msgid "User account"
+msgstr "Gebruikersaccount"
+
+#: account/templates/account/edit.html:31
+msgid "User successfully modified"
+msgstr "Gebruiker aanpassen geslaagd"
+
+#: account/templates/account/home.html:5
+#: account/templates/account/home.html:12
+#: account/templates/account/menu.html:6
+msgid "Home"
+msgstr "Home"
+
+#: account/templates/account/home.html:16
+msgid "Welcome to the booking program"
+msgstr "Welkom bij het reserveringsprogramma"
+
+#: account/templates/account/home.html:18
+msgid ""
+"You will find the items to book under the \"Catalog\" category. You will be "
+"able to update your cart with the items you would like to book. Once your "
+"cart is right, you can transform it into an order. You can make several "
+"orders."
+msgstr ""
+"U vindt de zaken die u kunt bestellen in de  \"Catalog\" categorie. U kunt "
+"uw winkelwagen vullen met de items die u wilt bestellen. Zodra uw "
+"winkelwagen naar uw zin is, kunt u deze omzetten naar een bestelling. U kunt "
+"meerdere bestellingen plaatsen"
+
+#: account/templates/account/home.html:20
+msgid ""
+"Orders not paid by July 5th will be removed. There are some exceptions with "
+"people coming from abroad which should contact the treasurer if they want to "
+"pay on arrival."
+msgstr ""
+"Bestellingen die op 5 juli nog niet betaald zijn, zullen worden verwijderd. "
+"Er kan een uitzondering worden gemaakt voor mensen die uit het buitenland "
+"komen, zij moeten contact opnemen met de penningmeester als zij bij aankomst "
+"willen betalen."
+
+#: account/templates/account/home.html:21
+msgid ""
+"If you want to stay in an traditional hotel instead of a youth hotel or a "
+"camping, you can use the independant <a href=\"https://www.resotel.be/"
+"rmll2013\">RESOTEL</a> form, with special prices for the RMLL."
+msgstr ""
+"Als u in een traditioneel hotel wilt verblijven, i.p.v. in een jeugdherberg "
+"of op een camping, dan kunt u het onafhankelijke <a href=\"https://www."
+"resotel.be/rmll2013\">RESOTEL</a> formulier gebruiken, met speciale prijzen "
+"voor LSM."
+
+#: account/templates/account/home.html:22
+msgid "Treasurer:"
+msgstr "Penningmeester:"
+
+#: account/templates/account/login.html:5
+#: account/templates/account/login.html:13
+#: account/templates/account/login.html:43
+#: account/templates/account/logout.html:15
+#: account/templates/account/password_reset_complete.html:18
+#: account/templates/account/register_complete.html:15
+msgid "Log in"
+msgstr "Aanmelden"
+
+#: account/templates/account/login.html:10
+msgid ""
+"It is recommended (but not mandatory) to register to get a badge. You'll "
+"also be able to book accomodations (overnight stays in youth hostels and "
+"campsites), tickets for lunches and the Free Software Banquet, and goodies "
+"dedicated to the event."
+msgstr ""
+"Het wordt aanbevolen (maar is niet verplicht) zich in te schrijven om een "
+"badge te verkrijgen. U heeft dan ook de mogelijkheid uw overnachtingen (in "
+"een jeugdherberg of op een camping), maaltijden (lunch en de Vrije Software "
+"maaltijd), souvenirs (t-shirt en hebbedingetjes van dit evenement) en nog "
+"veel meer te bestellen!"
+
+#: account/templates/account/login.html:17
+#: account/templates/account/password_reset.html:10
+#: account/templates/account/password_reset_complete.html:10
+#: account/templates/account/password_reset_confirm.html:10
+msgid "Operation failed"
+msgstr "De bewerking is mislukt"
+
+#: account/templates/account/login.html:49
+msgid "Don't have an account?"
+msgstr "Heeft u geen account?"
+
+#: account/templates/account/login.html:49
+#: account/templates/account/register.html:6
+#: account/templates/account/register.html:9
+msgid "Sign up"
+msgstr "Inschrijven"
+
+#: account/templates/account/login.html:52
+msgid "Forgot your password?"
+msgstr "Wachwoord vergeten?"
+
+#: account/templates/account/login.html:52
+msgid "Recover my password"
+msgstr "Reset mijn wachtwoord"
+
+#: account/templates/account/logout.html:5
+#: account/templates/account/logout.html:10
+#: account/templates/account/menu.html:16
+msgid "Log out"
+msgstr "Uitloggen"
+
+#: account/templates/account/logout.html:12
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr ""
+"Bedankt voor het doorbrengen van wat quality time met de Website vandaag."
+
+#: account/templates/account/manage_badge.html:5
+msgid "User badge"
+msgstr "Gebruikersbadge"
+
+#: account/templates/account/manage_badge.html:19
+msgid "The badge"
+msgstr "De badge"
+
+#: account/templates/account/manage_badge.html:23
+#: account/templates/account/profile_badge.html:21
+msgid "Download the badge with the right size and ready to print (PDF)"
+msgstr "Download de printklare (PDF) badge in de juiste maat"
+
+#: account/templates/account/manage_netparams.html:5
+msgid "User Network parameters"
+msgstr "Gebruikers Netwerkinstellingen"
+
+#: account/templates/account/manage_netparams.html:14
+#: account/templates/account/netparams.html:5
+#: account/templates/account/netparams.html:12
+msgid "Network parameters"
+msgstr "Netwerkinstellingen"
+
+#: account/templates/account/manage_netparams.html:40
+msgid "User IP address:"
+msgstr "Gebruikers-IP-adres:"
+
+#: account/templates/account/manage_netparams.html:41
+#: account/templates/account/netparams.html:50
+msgid "Netmask:"
+msgstr "Netmask:"
+
+#: account/templates/account/manage_netparams.html:42
+#: account/templates/account/netparams.html:51
+msgid "Gateway:"
+msgstr "Gateway:"
+
+#: account/templates/account/manage_netparams.html:43
+#: account/templates/account/netparams.html:52
+msgid "Mac address gateway:"
+msgstr "Mac-adres-gateway:"
+
+#: account/templates/account/manage_netparams.html:44
+#: account/templates/account/netparams.html:53
+msgid "DNS server:"
+msgstr "DNS-server:"
+
+#: account/templates/account/manage_netparams.html:45
+#: account/templates/account/netparams.html:54
+msgid "Domain:"
+msgstr "Domein"
+
+#: account/templates/account/manage_netparams.html:46
+#: account/templates/account/netparams.html:55
+msgid "Outgoing SMTP server:"
+msgstr "Uitgaande SMTP-server:"
+
+#: account/templates/account/menu.html:7
+#: account/templates/account/profile.html:5
+#: account/templates/account/profile.html:12
+msgid "Your account"
+msgstr "Uw account"
+
+#: account/templates/account/menu.html:8
+#: account/templates/account/profile_badge.html:5
+#: account/templates/account/profile_badge.html:12
+#: account/templates/account/profile_badge.html:17
+msgid "Your badge"
+msgstr "Uw badge"
+
+#: account/templates/account/menu.html:9
+#: resa/templates/resa/catalog_list.html:11
+#: resa/templates/resa/catalog_list.html:18
+msgid "Catalog"
+msgstr "Catalogus"
+
+#: account/templates/account/menu.html:10 resa/templates/resa/cart_list.html:5
+#: resa/templates/resa/cart_list.html:12
+msgid "Your cart"
+msgstr "Uw winkelwagen"
+
+#: account/templates/account/menu.html:11
+#: resa/templates/resa/orders_list.html:6
+#: resa/templates/resa/orders_list.html:13
+msgid "Your orders"
+msgstr "Uw bestellingen"
+
+#: account/templates/account/menu.html:25
+msgid "Admin"
+msgstr "Admin"
+
+#: account/templates/account/menu.html:27
+msgid "Create user"
+msgstr "Maak een gebruiker aan"
+
+#: account/templates/account/menu.html:28
+msgid "Search user"
+msgstr "Zoek een gebruiker"
+
+#: account/templates/account/menu.html:32
+#: resa/templates/resa/orders_search.html:5
+#: resa/templates/resa/orders_search.html:12
+msgid "Search order"
+msgstr "Zoek een bestelling"
+
+#: account/templates/account/menu.html:34
+#: resa/templates/resa/orders_notpaid.html:10
+#: resa/templates/resa/orders_notpaid.html:17
+msgid "Orders not paid"
+msgstr "Onbetaalde bestellingen"
+
+#: account/templates/account/menu.html:35 resa/templates/resa/sales.html:5
+#: resa/templates/resa/sales.html.py:12
+msgid "Sales"
+msgstr "Verkoop"
+
+#: account/templates/account/menu.html:36 resa/templates/resa/stocks.html:5
+#: resa/templates/resa/stocks.html.py:12
+msgid "Stocks"
+msgstr "Voorraden"
+
+#: account/templates/account/menu.html:37 resa/templates/resa/stats.html:5
+#: resa/templates/resa/stats.html.py:12
+msgid "Statistics"
+msgstr "Statistieken"
+
+#: account/templates/account/menu.html:38 resa/templates/resa/documents.html:5
+#: resa/templates/resa/documents.html:12
+msgid "Documents"
+msgstr "Documenten"
+
+#: account/templates/account/menu.html:39 resaroom/templates/room/list.html:6
+#: resaroom/templates/room/list.html:13
+msgid "Accomodation"
+msgstr "Accomodatie"
+
+#: account/templates/account/menu_manager.html:5
+msgid "User:"
+msgstr "Gebruiker"
+
+#: account/templates/account/menu_manager.html:7 resa/orders.py:22
+msgid "Orders"
+msgstr "Bestellingen"
+
+#: account/templates/account/menu_manager.html:8
+#: resa/templates/resa/manage_cart.html:16
+msgid "Cart"
+msgstr "Winkelwagen"
+
+#: account/templates/account/menu_manager.html:16
+msgid "Accounting"
+msgstr "Boekhouden"
+
+#: account/templates/account/menu_manager.html:21
+msgid "Cannot find the user to edit (check permissions)"
+msgstr "Kan de aan te passen gebruiker niet vinden (controleer permissies)"
+
+#: account/templates/account/netparams.html:38
+msgid "There are two ways to gain Internet access (through 2 networks)"
+msgstr "Er zijn twee manieren om internettoegang te krijgen (via 2 netwerken)"
+
+#: account/templates/account/netparams.html:39
+msgid "Detailed informations on the website"
+msgstr "Gedetailleerde informatie op de website"
+
+#: account/templates/account/netparams.html:42
+msgid ""
+"These networks will provide you a public IP address for the event, without "
+"filtering, without QoS, without any security, a real connection to the "
+"Internet in real pure net neutrality. As such you must manage your own "
+"security."
+msgstr ""
+"Deze netwerken geven u een publiek IP-adres tijdens het event, zonder "
+"filters, zonder QoS, zonder enige beveiliging, een echte verbinding met "
+"internet in echte, pure netneutraliteit. Dus u moet uw eigen "
+"beveiligingregelen"
+
+#: account/templates/account/netparams.html:44
+#: account/templates/account/netparams.html:47
+msgid "Network:"
+msgstr "Netwerk"
+
+#: account/templates/account/netparams.html:45
+msgid ""
+"Just select this wireless network (automatic connection), open your browser, "
+"go to your homepage,  and you will have to log into a captive portal."
+msgstr ""
+"Selecteer dit draadloze netwerk (autmatische verbinding), open je browser, "
+"ga naar je homepage, en je zult moeten inloggen op een captive portal."
+
+#: account/templates/account/netparams.html:48
+msgid ""
+"This one (more robust than RMLLPUBLIC) will be available by Ethernet and "
+"WiFi. To use it you will need to configure your network connection by hand "
+"with the following parameters."
+msgstr ""
+"Dit netwerk (robuuster dan RMLLPUBLIC) zal beschikbaar zijn als LAN en WLAN. "
+"Om het te gebruiken, moet u uw netwerkverbinding handmatig configureren met "
+"de volgende instellingen."
+
+#: account/templates/account/netparams.html:49
+msgid "Your IP address:"
+msgstr "Uw IP-adres"
+
+#: account/templates/account/password_reset.html:5
+#: account/templates/account/password_reset.html:15
+#: account/templates/account/password_reset_confirm.html:5
+#: account/templates/account/password_reset_confirm.html:16
+msgid "Password reset"
+msgstr "Wachtwoord opnieuw instellen"
+
+#: account/templates/account/password_reset.html:16
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions for setting a new one."
+msgstr ""
+"Uw wachtwoord vergeten? Vul uw e-mailadres hieronder in en we zullen "
+"instructies e-mailen voor het instellen van een nieuw wachtwoord."
+
+#: account/templates/account/password_reset.html:26
+msgid "Reset my password"
+msgstr "Stel mijn wachtwoord opnieuw in"
+
+#: account/templates/account/password_reset_complete.html:5
+#: account/templates/account/password_reset_complete.html:15
+msgid "Password reset complete"
+msgstr "Opnieuw instellen van het wachtwoord geslaagd"
+
+#: account/templates/account/password_reset_complete.html:16
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "Uw wachtwoord is ingesteld. U kunt nu aanmelden."
+
+#: account/templates/account/password_reset_confirm.html:17
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+"Voer uw wachtwoord a.u.b. tweemaal in, zo dat we kunnen verifiëren of u het "
+"correct ingevoerd heeft."
+
+#: account/templates/account/password_reset_confirm.html:22
+msgid "New password:"
+msgstr "Nieuw wachtwoord:"
+
+#: account/templates/account/password_reset_confirm.html:33
+msgid "Change my password"
+msgstr "Wijzig mijn wachtwoord"
+
+#: account/templates/account/password_reset_confirm.html:37
+msgid "Password reset unsuccessful"
+msgstr "Het opnieuw instellen van het wachtwoord is mislukt"
+
+#: account/templates/account/password_reset_confirm.html:38
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+"De wachtwoord-reset-link was ongeldig, misschien omdat deze al eens gebruikt "
+"werd. Vraag a.u.b. opnieuw een wachtwoord-reset aan."
+
+#: account/templates/account/password_reset_done.html:5
+#: account/templates/account/password_reset_done.html:9
+msgid "Password reset successful"
+msgstr "Het wachtwoord is succesvol opnieuw ingesteld"
+
+#: account/templates/account/password_reset_done.html:12
+msgid ""
+"We've e-mailed you instructions for setting your password to the e-mail "
+"address you submitted. You should be receiving it shortly."
+msgstr ""
+"We hebben instructies voor het instellen van uw wachtwoord verstuurd naar "
+"het e-mailadres dat u opgegeven heeft. U zou deze gauw moeten ontvangen."
+
+#: account/templates/account/profile.html:16
+msgid "Id:"
+msgstr "Id"
+
+#: account/templates/account/profile.html:25
+msgid "Email address:"
+msgstr "E-mailadres"
+
+#: account/templates/account/profile.html:32
+#: account/templates/account/profile.html:52
+#: account/templates/account/profile.html:62
+#: account/templates/account/profile.html:71
+#: account/templates/account/profile.html:95
+#: account/templates/account/profile.html:104
+msgid "not set"
+msgstr "niet ingesteld"
+
+#: account/templates/account/profile.html:49
+msgid "Address:"
+msgstr "Adres"
+
+#: account/templates/account/profile.html:111
+msgid "Modify"
+msgstr "Aanpassen"
+
+#: account/templates/account/profile_modify.html:6
+#: account/templates/account/profile_modify.html:13
+msgid "Modify your account"
+msgstr "Pas uw account aan"
+
+#: account/templates/account/register.html:14
+msgid "Registration failed (internal errors)"
+msgstr "De registratie is mislukt (interne fouten)"
+
+#: account/templates/account/register.html:16
+msgid "Registration failed (field(s) missing or incomplete)"
+msgstr "De registratie is mislukt (veld(en) niet of onvolledig ingevuld)"
+
+#: account/templates/account/register.html:46
+msgid "Register"
+msgstr "Registreren"
+
+#: account/templates/account/register_complete.html:5
+#: account/templates/account/register_complete.html:9
+msgid "Registration complete"
+msgstr "De registratie is afgerond"
+
+#: account/templates/account/register_complete.html:12
+msgid "Registration successfully completed. You may now log in."
+msgstr "De registratie is geslaagd. U kunt nu inloggen."
+
+#: account/templates/account/search.html:5
+#: account/templates/account/search.html:12
+msgid "Search a user"
+msgstr "Gebruiker opzoeken"
+
+#: account/templates/account/search.html:23
+msgid "Search pattern:"
+msgstr "Zoek op patroon:"
+
+#: account/templates/account/search.html:33
+#: account/templates/account/user_header.html:12
+#: resa/templates/resa/orders_search.html:25 resa/templates/resa/sales.html:31
+msgid "ok"
+msgstr "OK"
+
+#: account/templates/account/search.html:42 resa/views.py:480
+#: resa/templates/resa/orders_notpaid.html:37
+#: resa/templates/resa/orders_notpaid.html:98
+#: resa/templates/resa/orders_notpaid.html:159
+#: resa/templates/resa/sales.html:49 resa/templates/resa/sales.html.py:87
+msgid "Last name"
+msgstr "Achternaam"
+
+#: account/templates/account/search.html:43 resa/views.py:481
+#: resa/templates/resa/orders_notpaid.html:38
+#: resa/templates/resa/orders_notpaid.html:99
+#: resa/templates/resa/orders_notpaid.html:160
+#: resa/templates/resa/sales.html:50 resa/templates/resa/sales.html.py:88
+msgid "First name"
+msgstr "Voornaam"
+
+#: account/templates/account/search.html:44 resa/views.py:486
+#: resa/templates/resa/orders_notpaid.html:39
+#: resa/templates/resa/orders_notpaid.html:100
+#: resa/templates/resa/orders_notpaid.html:161
+#: resa/templates/resa/sales.html:51 resa/templates/resa/sales.html.py:89
+msgid "Email"
+msgstr "E-mail"
+
+#: account/templates/account/user_header.html:10
+msgid "Quick search:"
+msgstr "Snel zoeken"
+
+#: account/templates/registration/password_reset_email.html:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr ""
+"U ontvangt deze e-mail, omdat u vroeg uw wachtwoord opnieuw in te stellen"
+
+#: account/templates/registration/password_reset_email.html:3
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr "voor uw gebruikersaccount bij %(site_name)s"
+
+#: account/templates/registration/password_reset_email.html:5
+msgid "Please go to the following page and choose a new password:"
+msgstr "Ga a.u.b. naar de volgende pagina en kies een nieuw wachtwoord:"
+
+#: account/templates/registration/password_reset_email.html:9
+msgid "Your username, in case you've forgotten:"
+msgstr "Uw gebruikersnaam, voor het geval u die vergeten bent:"
+
+#: compta/models.py:10 compta/models.py:25 resa/models.py:187
+msgid "Code"
+msgstr "Code"
+
+#: compta/models.py:11 compta/models.py:26 compta/models.py:42
+#: compta/models.py:59 resa/stock.py:7
+#: resa/templates/resa/manage_compta.html:32
+msgid "Label"
+msgstr "Label"
+
+#: compta/models.py:17
+msgid "Accounting plan"
+msgstr ""
+
+#: compta/models.py:18
+msgid "Accounting plans"
+msgstr ""
+
+#: compta/models.py:28
+msgid "Internal"
+msgstr "Intern"
+
+#: compta/models.py:34
+msgid "Payment method"
+msgstr "Betaalwijze"
+
+#: compta/models.py:35
+msgid "Payment methods"
+msgstr "Betaalwijzen"
+
+#: compta/models.py:53
+msgid "Finance account"
+msgstr ""
+
+#: compta/models.py:54
+msgid "Finance accounts"
+msgstr ""
+
+#: compta/models.py:61
+msgid "Amount"
+msgstr "Totaal bedrag"
+
+#: compta/models.py:63 resa/templates/resa/manage_compta.html:29
+msgid "Date"
+msgstr "Datum"
+
+#: compta/models.py:64 resa/orders.py:17
+msgid "Payment date"
+msgstr "Betaaldatum"
+
+#: compta/models.py:76
+msgid "Operation"
+msgstr "Bewerking"
+
+#: compta/models.py:77
+msgid "Operations"
+msgstr "Bewerkingen"
+
+#: compta/models.py:83
+msgid "Bank account"
+msgstr "Bankrekening"
+
+#: compta/models.py:84
+msgid "Bank accounts"
+msgstr "Bankrekeningen"
+
+#: compta/models.py:89
+msgid "Supplier account"
+msgstr "Leveranciersaccount"
+
+#: compta/models.py:90
+msgid "Suppliers accounts"
+msgstr "Leveranciersaccounts"
+
+#: compta/models.py:95
+msgid "Client account"
+msgstr "Clientaccount"
+
+#: compta/models.py:96
+msgid "Clients accounts"
+msgstr "Clientaccounts"
+
+#: compta/models.py:102
+msgid "Product account"
+msgstr ""
+
+#: compta/models.py:103
+msgid "Products accounts"
+msgstr ""
+
+#: compta/models.py:108
+msgid "Charge account"
+msgstr ""
+
+#: compta/models.py:109
+msgid "Charges accounts"
+msgstr ""
+
+#: resa/forms.py:110
+msgid "Payment Method:"
+msgstr "Betaalwijze"
+
+#: resa/forms.py:113 resa/templates/resa/manage_orders.html:63
+msgid "Note:"
+msgstr "Opmerking:"
+
+#: resa/forms.py:116 resa/templates/resa/manage_orders.html:72
+msgid "Remove:"
+msgstr "Verwijder:"
+
+#: resa/models.py:19 resa/templates/resa/orders_notpaid.html:30
+msgid "Organization"
+msgstr "Organisatie"
+
+#: resa/models.py:19 resa/templates/resa/orders_notpaid.html:91
+msgid "Speakers"
+msgstr "Sprekers"
+
+#: resa/models.py:19
+msgid "Village"
+msgstr "Dorp"
+
+#: resa/models.py:19
+msgid "Visitors"
+msgstr "Bezoekers"
+
+#: resa/models.py:104 resa/models.py:109
+msgid "Value"
+msgstr "Waarde"
+
+#: resa/models.py:127
+msgid "Simple label"
+msgstr "Eenvoudig label"
+
+#: resa/models.py:128
+msgid "Extended label"
+msgstr "Uitgebreid label"
+
+#: resa/models.py:129 resa/orders.py:123 resa/templates/resa/cart_list.html:39
+#: resa/templates/resa/manage_cart.html:54
+msgid "Price"
+msgstr "Prijs"
+
+#: resa/models.py:131 resa/stock.py:11
+msgid "Sorting"
+msgstr "Sorteren"
+
+#: resa/models.py:132
+msgid "Enabled"
+msgstr "Mogelijk gemaakt"
+
+#: resa/models.py:136
+msgid "Article"
+msgstr "Artikel"
+
+#: resa/models.py:192 resa/templates/resa/stats.html:22
+msgid "Country"
+msgstr "Land"
+
+#: resa/models.py:193
+msgid "Countries"
+msgstr "Landen"
+
+#: resa/models.py:197
+msgid "Alternate name"
+msgstr "Vervangende naam"
+
+#: resa/models.py:198
+msgid "Color"
+msgstr "Kleur"
+
+#: resa/models.py:199
+msgid "Default"
+msgstr "Default"
+
+#: resa/models.py:200
+msgid "Section"
+msgstr "Sectie"
+
+#: resa/models.py:202
+msgid "User can choose it"
+msgstr "Gebruiker kan het kiezen"
+
+#: resa/models.py:212
+msgid "Badges"
+msgstr "Badges"
+
+#: resa/models.py:215
+msgid "Transaction"
+msgstr "Transactie"
+
+#: resa/orders.py:16
+msgid "Creation date"
+msgstr "Aanmaakdatum"
+
+#: resa/orders.py:18 resa/templates/resa/cart_list.html:66
+msgid "Donation"
+msgstr "Donatie"
+
+#: resa/orders.py:21
+msgid "Order"
+msgstr "Bestelling"
+
+#: resa/orders.py:124 resa/templates/resa/cart_list.html:41
+#: resa/templates/resa/manage_cart.html:56
+#: resa/templates/resa/order_details.html:18
+#: resa/templates/resa/order_details_extended.html:26
+msgid "Quantity"
+msgstr "Aantal"
+
+#: resa/orders.py:125 resa/templates/resa/order_details_extended.html:27
+msgid "Distributed quantity"
+msgstr "Aantal gedistribueerd"
+
+#: resa/orders.py:128 resa/templates/resa/orders_details.html:5
+msgid "Order detail"
+msgstr "Bestellingsonderdeel"
+
+#: resa/orders.py:129
+msgid "Orders details"
+msgstr "Bestellingsonderdelen"
+
+#: resa/stock.py:8
+msgid "Quantity total"
+msgstr "Totale aantal"
+
+#: resa/stock.py:9
+msgid "Quantity ordered"
+msgstr "Aantal besteld"
+
+#: resa/stock.py:10
+msgid "Quantity paid"
+msgstr "Aantal betaald"
+
+#: resa/stock.py:14 resa/templates/resa/cart_list.html:40
+#: resa/templates/resa/manage_cart.html:55
+msgid "Stock"
+msgstr "Voorraad"
+
+#: resa/views.py:51 resa/views.py:374
+msgid "Product successfully removed from cart"
+msgstr "Het uit de winkelwagen verwijderen van het produkt is gelukt"
+
+#: resa/views.py:53 resa/views.py:376
+msgid "Error while removing product from cart"
+msgstr "Fout bij het uit de winkelwagen verwideren van het produkt"
+
+#: resa/views.py:75
+msgid "Product(s) successfully added"
+msgstr "Produkt(en) toevoegen is geslaagd"
+
+#: resa/views.py:75 resa/views.py:389
+msgid "Product(s) successfully updated"
+msgstr "Produkt(en) bijwerken is geslaagd"
+
+#: resa/views.py:77
+msgid "Error while adding product(s)"
+msgstr "Fout bij het toevoegen van produkt(en)"
+
+#: resa/views.py:77 resa/views.py:391
+msgid "Error while updating product(s)"
+msgstr "Fout bij het bijwerken van produkt(en)"
+
+#: resa/views.py:79
+msgid ""
+"Unable to confirm your order, one (or more) product(s) in your cart exceed "
+"the available quantity"
+msgstr ""
+"Het is niet mogelijk uw bestelling te bevestigen, één (of meer) produkten in "
+"uw winkelwagen overschrijden de beschikbare hoeveelheid"
+
+#: resa/views.py:81
+msgid ""
+"You have to read and accept the general terms and conditions of sales in "
+"order to confirm your order"
+msgstr ""
+"U moet de algemene verkoopvoorwaarden lezen en accepteren om uw bestelling "
+"te bevestigen"
+
+#: resa/views.py:105 resa/views.py:402
+msgid "Order successfully confirmed"
+msgstr "Het bevestigen van de bestelling is gelukt"
+
+#: resa/views.py:238
+msgid "Email body should not be empty"
+msgstr "Het e-mail-tekstblok mag niet leeg zijn"
+
+#: resa/views.py:240
+msgid "Email subject should not be empty"
+msgstr "Het e-mail-onderwerp mag niet leeg zijn"
+
+#: resa/views.py:242
+msgid "At least one user should be selected"
+msgstr "Minstens één gebruiker moet worden geselecteerd"
+
+#: resa/views.py:249
+msgid "One or more emails were not sent correctly"
+msgstr "Één of meer e-mails werden niet goed verzonden"
+
+#: resa/views.py:252
+msgid "All emails were sucessfully sent"
+msgstr "Het verzenden van alle e-mails is geslaagd"
+
+#: resa/views.py:295
+msgid "Order sucessfully marked as paid"
+msgstr "Bestelling als betaald markeren is gelukt"
+
+#: resa/views.py:302
+msgid "Order sucessfully removed"
+msgstr "Bestelling verwijderen is gelukt"
+
+#: resa/views.py:313
+msgid "Order sucessfully updated"
+msgstr "Bestelling bijwerken is gelukt"
+
+#: resa/views.py:369
+msgid "Product successfully added to cart"
+msgstr "Produkt aan de winkelwagen toevoegen is gelukt"
+
+#: resa/views.py:371
+msgid "Error while adding product to cart"
+msgstr "Fout tijdens het toevoegen van een produkt aan de winkelwagen"
+
+#: resa/views.py:397
+msgid ""
+"Unable to confirm this order, one (or more) product(s) in the cart exceed "
+"the available quantity"
+msgstr ""
+"Het is niet mogelijk deze bestelling te bevestigen, één (of meer) produkten "
+"in de winkelwagen overschrijden de beschikbare hoeveelheid"
+
+#: resa/views.py:482 resa/templates/resa/cart_list.html:38
+#: resa/templates/resa/manage_cart.html:53
+#: resa/templates/resa/order_details.html:17
+#: resa/templates/resa/order_details_extended.html:25
+msgid "Product"
+msgstr "Produkt"
+
+#: resa/views.py:483
+msgid "Number of products ordered"
+msgstr "Aantal bestelde produkten"
+
+#: resa/views.py:484
+msgid "Number of products distributed"
+msgstr "Aantal gedistribueerde produkten"
+
+#: resa/views.py:485
+msgid "Number of products not yet distributed"
+msgstr "Aantal nog niet gedistribueerde produkten"
+
+#: resa/views.py:543 resa/views.py:596
+msgid "Your payment has been canceled, you could resume it later."
+msgstr "Uw betaling werd geannuleerd, begin later opnieuw."
+
+#: resa/views.py:556 resa/views.py:606
+#: resa/templates/resa/orders_details.html:16
+msgid "This order is not yours."
+msgstr "Deze bestelling is niet van u."
+
+#: resa/views.py:559
+#, python-format
+msgid "It seems that PayPal did not accept your payment (Code: %s)."
+msgstr "PayPal lijkt uw betaling niet te accepteren (Code: %s)"
+
+#: resa/views.py:561
+msgid ""
+"Your payment has been confirmed by PayPal, you should receive a notification "
+"by email in a few minutes."
+msgstr ""
+"Uw betaling werd bevestigd door PayPal, u zou binnen een paar minuten een e-"
+"mailbericht moeten ontvangen"
+
+#: resa/views.py:563 resa/views.py:610
+msgid "Unable to find the order related to this payment."
+msgstr "De bestelling die bij deze betaling hoort, kan niet gevonden worden."
+
+#: resa/views.py:594
+msgid ""
+"Confirmation of your payment by your bank has not been received yet. You "
+"should contact your bank before retrying to pay for this order."
+msgstr ""
+"De betalingsbevestiging van uw bank werd nog niet ontvangen. Neem contact op "
+"met uw bank, alvorens weer te proberen voor deze bestelling te betalen."
+
+#: resa/views.py:598
+msgid ""
+"Your payment has been rejected by the bank, you should retry in few days or "
+"try another payment method."
+msgstr ""
+"Uw betaling werd geweigerd door de bank, probeer het opnieuw over een paar "
+"dagen of probeer een andere betaalwijze."
+
+#: resa/views.py:608
+msgid ""
+"Your payment has been confirmed by the bank, you should receive a "
+"notification by email in a few minutes."
+msgstr ""
+"Uw betaling werd bevestigd door de bank, u zou binnen een paar minuten een e-"
+"mailbericht moeten ontvangen"
+
+#: resa/views.py:612
+msgid ""
+"Your payment has failed, you should retry in few days or try another payment "
+"method."
+msgstr ""
+"Uw betaling mislukte, probeer het over een paar dagen nogmaals of probeer "
+"een andere betalingswijze."
+
+#: resa/bank/bank.py:51
+#, python-format
+msgid "Commission (fee) order #%d"
+msgstr ""
+
+#: resa/bank/cmcic.py:72
+#, python-format
+msgid "Order no %d"
+msgstr "Bestellingnummer %d"
+
+#: resa/bank/cmcic.py:220 resa/bank/cyberplus.py:144 resa/bank/ogone.py:144
+#, python-format
+msgid "Error while receiving data from the bank: [%s]"
+msgstr "Fout bij het ontvangen van data van de bank: [%s]"
+
+#: resa/bank/cmcic.py:227 resa/bank/cyberplus.py:151
+#: resa/bank/etransactions.py:227 resa/bank/ogone.py:151
+#: resa/bank/paypal.py:61
+#, python-format
+msgid "Unable to find order with id: #%d"
+msgstr "De bestelling met id: #%d kan niet gevonden worden"
+
+#: resa/bank/cmcic.py:229 resa/bank/cyberplus.py:153
+#: resa/bank/etransactions.py:229 resa/bank/ogone.py:153
+#: resa/bank/paypal.py:63
+#, python-format
+msgid "Order with id: #%d has already been paid"
+msgstr "De bestelling met id: #%d werd al betaald"
+
+#: resa/bank/cmcic.py:232 resa/bank/cmcic.py:235 resa/bank/cmcic.py:238
+#: resa/bank/cmcic.py:241 resa/bank/cmcic.py:244 resa/bank/cmcic.py:248
+#: resa/bank/cyberplus.py:156 resa/bank/cyberplus.py:159
+#: resa/bank/cyberplus.py:162 resa/bank/cyberplus.py:166
+#: resa/bank/etransactions.py:243 resa/bank/ogone.py:156
+#: resa/bank/ogone.py:159 resa/bank/ogone.py:162 resa/bank/ogone.py:165
+#: resa/bank/ogone.py:170 resa/bank/paypal.py:70 resa/bank/paypal.py:73
+#: resa/bank/paypal.py:76 resa/bank/paypal.py:79
+#, python-format
+msgid "Wrong parameter '%(arg1)s': [%(arg2)s] instead of [%(arg3)s]"
+msgstr "Foute instelling '%(arg1)s': [%(arg2)s] in plaats van [%(arg3)s]"
+
+#: resa/bank/cmcic.py:256 resa/bank/cyberplus.py:175
+#: resa/bank/etransactions.py:252 resa/bank/ogone.py:178
+#: resa/bank/paypal.py:88
+#, python-format
+msgid "Cannot find user associated to order no: #%d"
+msgstr "De gebruiker die bij ordernummer #%d hoort, is onvindbaar "
+
+#: resa/bank/cmcic.py:274 resa/bank/cyberplus.py:193
+#: resa/bank/etransactions.py:270 resa/bank/ogone.py:196
+#, python-format
+msgid "Bank payment - order no #%d"
+msgstr "Betalen per bank - bestellingnummer #%d"
+
+#: resa/bank/etransactions.py:175
+msgid "This page will automatically redirect in a few seconds..."
+msgstr "Deze pagina zal u binnen een paar seconden doorsturen..."
+
+#: resa/bank/etransactions.py:175
+msgid "Click the button if the redirect fail."
+msgstr "Klik op de knop als het doorsturen niet lukt."
+
+#: resa/bank/etransactions.py:177
+msgid "Go to payment"
+msgstr "Ga naar betalen"
+
+#: resa/bank/etransactions.py:219
+msgid "Error while receiving data from the bank."
+msgstr "Fout bij het ontvangen van data van de bank."
+
+#: resa/bank/etransactions.py:232
+#, python-format
+msgid "Fictive payment received (AUTOR=%s)"
+msgstr "Fictieve betaling ontvangen (AUTOR=%s)"
+
+#: resa/bank/etransactions.py:234
+#, python-format
+msgid "Payment error: %s"
+msgstr "Betalingsfout: %s"
+
+#: resa/bank/etransactions.py:239
+#, python-format
+msgid "Payment received with invalid error code: [%s]"
+msgstr "Betaling ontvangen met ongeldige foutcode [%s]"
+
+#: resa/bank/paypal.py:106
+#, python-format
+msgid "PayPal payment - order no #%d"
+msgstr "PayPal betaling - bestellingnummer #%d"
+
+#: resa/templates/resa/cart_list.html:28
+msgid "Your cart is empty"
+msgstr "Uw winkelwagen is leeg"
+
+#: resa/templates/resa/cart_list.html:42
+#: resa/templates/resa/manage_cart.html:57
+#: resa/templates/resa/order_details.html:19
+#: resa/templates/resa/order_details_extended.html:28
+msgid "Subtotal"
+msgstr "Subtotaal"
+
+#: resa/templates/resa/cart_list.html:59 resa/templates/resa/cart_list.html:60
+#: resa/templates/resa/manage_cart.html:74
+#: resa/templates/resa/manage_cart.html:75
+msgid "Remove from cart"
+msgstr "Verwijder uit de winkelwagen"
+
+#: resa/templates/resa/cart_list.html:82
+#: resa/templates/resa/manage_cart.html:83
+msgid "Update Cart"
+msgstr "Werk de winkelwagen bij"
+
+#: resa/templates/resa/cart_list.html:88
+#: resa/templates/resa/manage_cart.html:89
+#: resa/templates/resa/order_details.html:42
+#: resa/templates/resa/order_details_extended.html:59
+#: resa/templates/resa/stocks.html:30
+msgid "Total"
+msgstr "Totaal"
+
+#: resa/templates/resa/cart_list.html:106
+#: resautils/templates/layout/footer.html:8
+msgid "Read the general terms and conditions of sales"
+msgstr "Lees onze algemene betalingsvoorwaarden"
+
+#: resa/templates/resa/cart_list.html:107
+msgid "I have read and I accept the general terms and conditions of sales"
+msgstr "Ik heb de algemene betalingsvoorwaarden gelezen en aanvaard ze"
+
+#: resa/templates/resa/cart_list.html:112
+msgid "Confirm your order"
+msgstr "Bevestig uw bestelling"
+
+#: resa/templates/resa/catalog_list.html:20
+msgid ""
+"Pick-up the items you want to add to your cart. Afterwards you will be able "
+"to chose the number of items of each kind you want to book."
+msgstr ""
+"Pak de items die u aan uw winkelwagen wilt toevoegen. Later zult u kunnen "
+"kiezen hoeveel exemplaren van elk item u wilt bestellen."
+
+#: resa/templates/resa/catalog_list.html:24 resa/templates/resa/stocks.html:16
+msgid "No products."
+msgstr "Geen produkten."
+
+#: resa/templates/resa/catalog_list.html:33
+#: resa/templates/resa/catalog_list.html:57
+msgid "Add the selected items to cart"
+msgstr "Stop de geselecteerde items in de winkelwagen"
+
+#: resa/templates/resa/catalog_list.html:47
+msgid "Price:"
+msgstr "Prijs:"
+
+#: resa/templates/resa/catalog_list.html:52
+msgid "Remaining stock:"
+msgstr "Resterende voorraad:"
+
+#: resa/templates/resa/documents.html:16
+msgid "No documents available."
+msgstr "Geen documenten beschikbaar"
+
+#: resa/templates/resa/documents.html:24
+msgid "All badges into a single PDF file"
+msgstr "Alle badges in één enkel PDF-bestand"
+
+#: resa/templates/resa/documents.html:27 resa/templates/resa/documents.html:37
+#: resa/templates/resa/documents.html:47
+msgid "Download"
+msgstr "Download"
+
+#: resa/templates/resa/documents.html:29 resa/templates/resa/documents.html:39
+#: resa/templates/resa/documents.html:49
+msgid "MB"
+msgstr "MB"
+
+#: resa/templates/resa/documents.html:29 resa/templates/resa/documents.html:39
+#: resa/templates/resa/documents.html:49
+msgid "Last update:"
+msgstr "Laatste update:"
+
+#: resa/templates/resa/documents.html:34
+msgid "All paid invoices into a single PDF file"
+msgstr "Alle betaalde facturen in één enkel PDF-bestand"
+
+#: resa/templates/resa/documents.html:44
+msgid "All unpaid invoices into a single PDF file"
+msgstr "Alle niet-betaalde facturen in één enkel PDF-bestand"
+
+#: resa/templates/resa/gcs.html:5 resa/templates/resa/gcs.html.py:16
+#: resa/templates/resa/orders_gcs.html:5
+#: resa/templates/resa/orders_gcs.html:12
+#: resautils/templates/layout/footer.html:9
+msgid "General Conditions of sales"
+msgstr "Algemene verkoopvoorwaarden"
+
+#: resa/templates/resa/gcs.html:13 resa/templates/resa/gcs.html.py:25
+msgid "Back to home page"
+msgstr "Terug naar de homepage"
+
+#: resa/templates/resa/manage_cart.html:5
+msgid "User cart"
+msgstr "Gebruikerswinkelwagen"
+
+#: resa/templates/resa/manage_cart.html:32
+msgid "The cart is empty"
+msgstr "De winkelwagen is leeg"
+
+#: resa/templates/resa/manage_cart.html:39 resa/templates/resa/sales.html:23
+msgid "Products:"
+msgstr "Produkten"
+
+#: resa/templates/resa/manage_cart.html:45
+msgid "Add"
+msgstr "Toevoegen"
+
+#: resa/templates/resa/manage_cart.html:106
+msgid "Force"
+msgstr "Forceren"
+
+#: resa/templates/resa/manage_cart.html:108
+#: resa/templates/resa/manage_orders.html:58
+msgid "Confirm order"
+msgstr "Bestelling bevestigen"
+
+#: resa/templates/resa/manage_compta.html:5
+msgid "User operation(s)"
+msgstr "Gebruikershandeling(en)"
+
+#: resa/templates/resa/manage_compta.html:16
+msgid "Operation(s)"
+msgstr "Handeling(en)"
+
+#: resa/templates/resa/manage_compta.html:21
+msgid "No operation(s)"
+msgstr "Geen handeling(en)"
+
+#: resa/templates/resa/manage_compta.html:30
+#: resa/templates/resa/orders_notpaid.html:42
+#: resa/templates/resa/orders_notpaid.html:103
+#: resa/templates/resa/orders_notpaid.html:164
+msgid "Ord."
+msgstr "Ord."
+
+#: resa/templates/resa/manage_compta.html:33
+msgid "Credit"
+msgstr "Credit"
+
+#: resa/templates/resa/manage_compta.html:34
+msgid "Debit"
+msgstr "Debet"
+
+#: resa/templates/resa/manage_compta.html:35
+msgid "Pay."
+msgstr "Betalen"
+
+#: resa/templates/resa/manage_compta.html:36
+msgid "Balance"
+msgstr "Saldo"
+
+#: resa/templates/resa/manage_orders.html:6
+msgid "User order(s)"
+msgstr "Gebruikersbestelling(en)"
+
+#: resa/templates/resa/manage_orders.html:17
+msgid "Order(s)"
+msgstr "Bestellingen"
+
+#: resa/templates/resa/manage_orders.html:21
+msgid "It has been agreed that these orders will be paid at his arrival."
+msgstr "Er is overeengekomen dat deze bestellingen bij aankomst betaald worden"
+
+#: resa/templates/resa/manage_orders.html:28
+#: resa/templates/resa/orders_list.html:29
+msgid "No orders"
+msgstr "Geen bestellingen"
+
+#: resa/templates/resa/manage_orders.html:46
+#: resa/templates/resa/orders_list.html:43
+msgid "Pending order(s)"
+msgstr "In behandeling zijnde bestelling(en)"
+
+#: resa/templates/resa/manage_orders.html:48
+#: resa/templates/resa/manage_orders.html:87
+#: resa/templates/resa/orders_details.html:12
+#: resa/templates/resa/orders_details.html:73
+msgid "Order no"
+msgstr "Bestellingnummer"
+
+#: resa/templates/resa/manage_orders.html:51
+#: resa/templates/resa/orders_list.html:55
+msgid "This order is supported by the LSM organization."
+msgstr "Deze bestelling wordt ondersteund door de LSM-organisatie."
+
+#: resa/templates/resa/manage_orders.html:61
+msgid "Payment method:"
+msgstr "Betaalwijze"
+
+#: resa/templates/resa/manage_orders.html:69
+msgid "Remove order"
+msgstr "Verwijder bestelling"
+
+#: resa/templates/resa/manage_orders.html:85
+#: resa/templates/resa/orders_list.html:74
+msgid "Paid order(s)"
+msgstr "Betaalde bestelling(en)"
+
+#: resa/templates/resa/manage_orders.html:90
+#: resa/templates/resa/orders_details.html:30
+msgid "Download invoice (pdf)"
+msgstr "Download factuur (pdf)"
+
+#: resa/templates/resa/order_details.html:5
+#: resa/templates/resa/order_details_extended.html:10
+msgid "Creation date:"
+msgstr "Aanmaakdatum"
+
+#: resa/templates/resa/order_details.html:11
+#: resa/templates/resa/order_details_extended.html:16
+msgid "Payment date:"
+msgstr "Betalingsdatum"
+
+#: resa/templates/resa/order_details_extended.html:49
+msgid "Reset"
+msgstr "Resetten"
+
+#: resa/templates/resa/order_details_extended.html:50
+msgid "Maximise"
+msgstr "Maximaliseren"
+
+#: resa/templates/resa/orders_bank_return.html:5
+#: resa/templates/resa/orders_bank_return.html:12
+msgid "Bank payment"
+msgstr "Bankbetaling"
+
+#: resa/templates/resa/orders_details.html:28
+msgid "Invoice"
+msgstr "Factuur"
+
+#: resa/templates/resa/orders_details.html:37
+msgid "Delete this order"
+msgstr "Verwijder deze bestelling"
+
+#: resa/templates/resa/orders_details.html:41
+msgid "Delete this order definitely"
+msgstr "Verwijder deze bestelling blijvend"
+
+#: resa/templates/resa/orders_details.html:41
+msgid "Are you sure?"
+msgstr "Weet u het zeker?"
+
+#: resa/templates/resa/orders_details.html:48
+msgid "Payment by credit card"
+msgstr "Betalen met credit card"
+
+#: resa/templates/resa/orders_details.html:51
+msgid "Proceed the payment using your bank card:"
+msgstr "Ga verder met betalen met uw betaalkaart:"
+
+#: resa/templates/resa/orders_details.html:55
+msgid "Bank card payment will be available within the next few hours."
+msgstr "Betaalkaart betalingen zullen binnen een paar uur beschikbaar zijn."
+
+#: resa/templates/resa/orders_details.html:63
+#: resa/templates/resa/orders_details.html:81
+msgid "Payment by PayPal"
+msgstr "Betalen via PayPal"
+
+#: resa/templates/resa/orders_details.html:65
+msgid "Proceed the payment using PayPal:"
+msgstr "Ga verder met betalen via PayPal:"
+
+#: resa/templates/resa/orders_details.html:84
+msgid ""
+"If it is possible for you to use another payment method than PayPal, please "
+"do it. PayPal payments involves expensive fees for us."
+msgstr ""
+"Als u een andere betaalwijze kunt kiezen dan PayPal, kies die dan a.u.b. "
+"PayPal betalingen kosten ons hoge vergoedingen."
+
+#: resa/templates/resa/orders_details.html:92
+msgid "Payment by bank transfer"
+msgstr "Betalen via een bankoverboeking"
+
+#: resa/templates/resa/orders_details.html:94
+msgid "Proceed the payment by making a bank transfer:"
+msgstr "Ga verder met betalen door een bankoverboeking te maken:"
+
+#: resa/templates/resa/orders_details.html:97
+msgid "Bank name:"
+msgstr "Banknaam:"
+
+#: resa/templates/resa/orders_details.html:102
+msgid "Account number:"
+msgstr "Rekeningnummer:"
+
+#: resa/templates/resa/orders_details.html:107
+#: resa/templates/resa/orders_details.html:111
+msgid "IBAN (International Bank Account Number):"
+msgstr "IBAN (Internationaal Bank Account Nummer):"
+
+#: resa/templates/resa/orders_details.html:114
+msgid "BIC (Bank Identifier Code):"
+msgstr "BIC (Bank Identificatie Code):"
+
+#: resa/templates/resa/orders_details.html:118
+msgid "Alternative BIC (if the first one was not accepted by your bank):"
+msgstr "Alternatieve BIC (als de eerste niet geaccepteerd werd door uw bank):"
+
+#: resa/templates/resa/orders_details.html:123
+msgid "Account owner:"
+msgstr "Rekeninghouder:"
+
+#: resa/templates/resa/orders_details.html:127
+msgid ""
+"Please add the order(s) id(s) in the bank transfer title and notify our "
+"accountant when the check has been sent."
+msgstr ""
+"Voeg a.u.b. de id(s) van de bestelling(en) toe aan de mededeling van de "
+"overboeking en stel onze accountant op de hoogte als hij verzonden is."
+
+#: resa/templates/resa/orders_details.html:134
+msgid "Payment by cashiers check"
+msgstr "Betaling met een bankcheque"
+
+#: resa/templates/resa/orders_details.html:136
+msgid "Send your check to the treasurer, here is the postal address:"
+msgstr "Stuur uw cheque naar de penningmeester, hier is zijn postadres:"
+
+#: resa/templates/resa/orders_details.html:138
+msgid "payable to:"
+msgstr "Te betalen aan"
+
+#: resa/templates/resa/orders_details.html:141
+msgid ""
+"For payments with cashiers check, please notify our accountant when the "
+"check has been sent. Cashiers check payments might include fee if your bank "
+"is not located in France or in the EU."
+msgstr ""
+"Als u met een bankcheque betaalt, breng dan a.u.b. onze accountant op de "
+"hoogte zodra hij verzonden is. Betalingen met een bankcheque kunnen extra "
+"kosten inhouden als uw bank niet in Frankrijk of de EU gevestigd is."
+
+#: resa/templates/resa/orders_details.html:148
+msgid "Other payment methods"
+msgstr "Andere betaalwijzen"
+
+#: resa/templates/resa/orders_details.html:150
+msgid ""
+"If you wish to use other methods of payment, please contact our accountant:"
+msgstr ""
+"Neem contact op met onze accountant als u een andere betaalwijze wilt "
+"gebruiken"
+
+#: resa/templates/resa/orders_details_cmcic.html:20
+#: resa/templates/resa/orders_details_ogone.html:9
+msgid "Go to Payment"
+msgstr "Ga naar Betalen"
+
+#: resa/templates/resa/orders_details_etransactions.html:4
+msgid "Payment by Bank"
+msgstr "Betalen per bank"
+
+#: resa/templates/resa/orders_list.html:35
+msgid "It has been agreed that your orders will be paid at your arrival."
+msgstr ""
+"Er is overeengekomen dat uw bestellingen bij uw aankomst worden betaald."
+
+#: resa/templates/resa/orders_list.html:49
+#: resa/templates/resa/orders_list.html:59
+#: resa/templates/resa/orders_list.html:80
+#, python-format
+msgid "Order of %(date_t)s for amount of %(amount_t)s"
+msgstr "Bestelling van %(date_t)s voor een totaal van %(amount_t)s"
+
+#: resa/templates/resa/orders_notpaid.html:40
+#: resa/templates/resa/orders_notpaid.html:101
+#: resa/templates/resa/orders_notpaid.html:162
+#: resa/templates/resa/sales.html:52 resa/templates/resa/sales.html.py:90
+msgid "Count"
+msgstr ""
+
+#: resa/templates/resa/orders_notpaid.html:41
+#: resa/templates/resa/orders_notpaid.html:102
+#: resa/templates/resa/orders_notpaid.html:163
+msgid "Res."
+msgstr ""
+
+#: resa/templates/resa/orders_notpaid.html:152
+msgid "Others"
+msgstr "Anderen"
+
+#: resa/templates/resa/orders_notpaid.html:211
+msgid "Mass mailing"
+msgstr "Bulkmailing"
+
+#: resa/templates/resa/orders_notpaid.html:224
+msgid "Email settings"
+msgstr "E-mail instellingen"
+
+#: resa/templates/resa/orders_notpaid.html:226
+msgid "Sender:"
+msgstr "Afzender:"
+
+#: resa/templates/resa/orders_notpaid.html:232
+msgid "Email subject:"
+msgstr "E-mail onderwerp:"
+
+#: resa/templates/resa/orders_notpaid.html:238
+msgid "Email body:"
+msgstr "Tekstblok"
+
+#: resa/templates/resa/orders_notpaid.html:244
+msgid "Send"
+msgstr "Versturen"
+
+#: resa/templates/resa/orders_paypal_return.html:5
+#: resa/templates/resa/orders_paypal_return.html:12
+msgid "PayPal payment"
+msgstr "PayPal betaling"
+
+#: resa/templates/resa/orders_search.html:23
+msgid "Order number"
+msgstr "Bestellingnummer"
+
+#: resa/templates/resa/payment_bank_email.txt:3
+msgid "Your payment has been confirmed by the bank."
+msgstr "Uw betaling werd bevestigd door de bank."
+
+#: resa/templates/resa/payment_bank_email.txt:5
+#: resa/templates/resa/payment_paypal_email.txt:5
+msgid "Order id:"
+msgstr "Bestelling id:"
+
+#: resa/templates/resa/payment_bank_email.txt:6
+#: resa/templates/resa/payment_paypal_email.txt:6
+msgid "Amount:"
+msgstr "Totaal"
+
+#: resa/templates/resa/payment_bank_email.txt:8
+#: resa/templates/resa/payment_paypal_email.txt:8
+msgid "Your order is now complete."
+msgstr "Uw bestelling is nu compleet."
+
+#: resa/templates/resa/payment_paypal_email.txt:3
+msgid "Your payment has been confirmed by PayPal."
+msgstr "Uw betaling werd bevestigd door PayPal."
+
+#: resa/templates/resa/sales.html:38 resa/templates/resa/stocks.html:33
+#: resa/templates/resa/stocks.html.py:45
+msgid "Paid"
+msgstr "Betaald"
+
+#: resa/templates/resa/sales.html:41
+msgid "Export detailed list (CSV)"
+msgstr "Exporteer gedetailleerde lijst (CSV)"
+
+#: resa/templates/resa/sales.html:81
+msgid "Not paid"
+msgstr "NIet betaald"
+
+#: resa/templates/resa/stats.html:18
+msgid "Participants per country"
+msgstr "Deelnemers per land"
+
+#: resa/templates/resa/stats.html:23
+msgid "Users count"
+msgstr "Gebruikers aantal"
+
+#: resa/templates/resa/stocks.html:29
+msgid "Quantities"
+msgstr "Hoeveelheden"
+
+#: resa/templates/resa/stocks.html:31
+msgid "Avail."
+msgstr "Beschikbaar"
+
+#: resa/templates/resa/stocks.html:32 resa/templates/resa/stocks.html.py:44
+msgid "Confirmed"
+msgstr "Bevestigd"
+
+#: resa/templates/resa/stocks.html:43
+msgid "Dispatched"
+msgstr "Verzonden"
+
+#: resaroom/forms.py:11
+msgid "From the date:"
+msgstr "Van de datum:"
+
+#: resaroom/forms.py:13
+msgid ""
+"If not empty, only orders created since this date (DD/MM/YYYY) will be "
+"displayed"
+msgstr ""
+"Indien niet leeg, zullen enkel bestellingen die sinds deze datum (DD/MM/"
+"YYYY)geplaatst zijn, worden weergegeven"
+
+#: resaroom/forms.py:14
+msgid "Place:"
+msgstr "Plaats:"
+
+#: resaroom/templates/room/detail.html:5
+#: resaroom/templates/room/detail.html:12
+#: resaroom/templates/room/print.html:12
+#, python-format
+msgid "Accomodation for “%(place)s”"
+msgstr "Logies voor “%(place)s”"
+
+#: resaroom/templates/room/detail.html:16
+#: resaroom/templates/room/print.html:16
+msgid "No data for this accomodation place."
+msgstr "Geen gegevens voor deze onderdakplaats"
+
+#: resaroom/templates/room/detail.html:25
+msgid "Print preview"
+msgstr "Afdrukvoorbeeld"
+
+#: resaroom/templates/room/detail.html:29
+msgid "New window"
+msgstr "Nieuw venster"
+
+#: resaroom/templates/room/detail.html:36
+#, python-format
+msgid "Listing established with orders created after: %(date)s"
+msgstr "Lijst van bestellingen die na:  %(date)s geplaatst werden"
+
+#: resaroom/templates/room/detail.html:41
+msgid ""
+"This listing take into account people with paid orders, people with unpaid "
+"orders who are marked as paying at their arrival, and people with unpaid "
+"orders which have at least one order supported by the organization."
+msgstr ""
+"Deze lijst is inclusief mensen met betaalde bestellingen, mensen met "
+"onbetaalde bestellingen die gemarkeerd zijn als betalen bij aankomst, en "
+"mensen met onbetaalde bestellingen van wie op zijn minst één bestelling door "
+"de organisatie ondersteund wordt."
+
+#: resaroom/templates/room/detail.html:47
+#: resaroom/templates/room/print.html:26
+msgid "Days"
+msgstr "Dagen"
+
+#: resaroom/templates/room/list.html:17
+msgid "No accomodation places available."
+msgstr "Geen overnachtingsplaatsen beschikbaar."
+
+#: resaroom/templates/room/list.html:38
+msgid "Show"
+msgstr "Laten zien"
+
+#: resaroom/templates/room/print.html:5
+#, python-format
+msgid "Accomodation for “%(place)s (printing)”"
+msgstr "Onderdak voor “%(place)s (printing)”"
+
+#: resautils/templates/404.html:5 resautils/templates/404.html.py:9
+msgid "Error 404"
+msgstr "Fout 404"
+
+#: resautils/templates/404.html:12
+msgid "Page not found"
+msgstr "Pagina niet gevonden"
+
+#: resautils/templates/500.html:5 resautils/templates/500.html.py:9
+msgid "Error 500"
+msgstr "Fout 500"
+
+#: resautils/templates/500.html:12
+msgid "Internal Error"
+msgstr "Interne fout"
+
+#: resautils/templates/base.html:6 resautils/templates/base2cols.html:6
+msgid "LSM Booking"
+msgstr "LSM Reservering"
+
+#: resautils/templates/common/signature_email.txt:2
+msgid "Regards,"
+msgstr "Groeten,"
+
+#: resautils/templates/common/signature_email.txt:5
+msgid "The LSM Organization Team"
+msgstr "Het LSM Organisatie Team"
+
+#: resautils/templates/layout/footer.html:13
+msgid "All RMLL.info ssl certificates are gracefully offered by"
+msgstr "Alle RMLL.info ssl certificaten werden vriendelijk geschonken door"
+
+#: resautils/templates/layout/footer.html:17
+msgid "Contact webmaster"
+msgstr "Neem contact op met de webmaster"
+
+#: resautils/templates/layout/header.html:7
+msgid "You will need to enable JavaScript to use some advanced features."
+msgstr ""
+"U moet JavaScript toestaan om sommige uitgebreide functies te gebruiken."
+
+#: resautils/templates/layout/header.html:14
+msgid "Go to main content"
+msgstr "Ga naar algemene inhoud"
+
+#: resautils/templates/layout/header.html:22
+#: resautils/templates/layout/header.html:27
+msgid "LSM website"
+msgstr "LSM website"
+
+#~ msgid "Libre Software Meeting"
+#~ msgstr "Libre Software Meeting"
+
+#~ msgid "Document :"
+#~ msgstr "Document"
+
+#~ msgid "Invoice num"
+#~ msgstr "Factuurnum"
+
+#~ msgid "Date :"
+#~ msgstr "Datum:"
+
+#~ msgid "Madam"
+#~ msgstr "Mevrouw"
+
+#~ msgid "Mister"
+#~ msgstr "Mijnheer"
+
+#~ msgid "Here is the invoice for your order:"
+#~ msgstr "HIer is de factuur voor uw bestelling:"
+
+#~ msgid "Description"
+#~ msgstr "Beschrijving"
+
+#~ msgid "Unit price"
+#~ msgstr "Eenheidsprijs"
+
+#~ msgid "Total price"
+#~ msgstr "Totale prijs"
+
+#~ msgid "Entrance fee:"
+#~ msgstr "Toegangsgeld"
+
+#~ msgid "VAT:"
+#~ msgstr "BTW"
+
+#~ msgid "Total excl. VAT:"
+#~ msgstr "Totaal excl. BTW"
+
+#~ msgid "Total incl. VAT:"
+#~ msgstr "Totaal incl. BTW"
+
+#~ msgid "Total:"
+#~ msgstr "Totaal"
+
+#~ msgid ""
+#~ "VAT not applicable in accordance with Art. 261-7-1° of the French Tax Code"
+#~ msgstr ""
+#~ "BTW niet van toepassing overeenkomstig Art. 261-7-1° van de Franse "
+#~ "Belastinwet"
+
+#~ msgid "Billing without taxes."
+#~ msgstr "Facturering zonder belastingen."
