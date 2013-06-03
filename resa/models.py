@@ -186,7 +186,7 @@ class Country(models.Model, LabelClass):
     labels = (('lbl_name', _(u"Name")),)
     code = models.CharField(_(u"Code"), max_length=2)
     def __unicode__(self):
-        return self.label(lang=get_language())
+        return unicode(self.code) + u' - ' + unicode(self.label(lang=get_language()))
 
     class Meta:
         verbose_name = _(u"Country")
