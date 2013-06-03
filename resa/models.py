@@ -189,6 +189,7 @@ class Country(models.Model, LabelClass):
         return unicode(self.code) + u' - ' + unicode(self.label(lang=get_language()))
 
     class Meta:
+        ordering = ['code']
         verbose_name = _(u"Country")
         verbose_name_plural = _(u"Countries")
 
