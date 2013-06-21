@@ -11,6 +11,7 @@ def gen_pdf(tmpl, ctx):
     t = loader.get_template(tmpl)
     buffer = t.render(Context(ctx)).encode('utf-8')
     # no comment
+    buffer = buffer.replace('é', 'e')
     buffer = buffer.replace('è', 'e')
     buffer = buffer.replace('ô', 'o')
     buffer = buffer.replace('ä', 'a')
