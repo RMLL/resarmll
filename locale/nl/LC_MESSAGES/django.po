@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: resarmll\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-30 20:17+0200\n"
+"POT-Creation-Date: 2013-06-21 09:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -236,7 +236,7 @@ msgid "Id"
 msgstr "Id"
 
 #: account/templates/account/comments.html:26 resa/models.py:186
-#: resa/models.py:196 resaroom/templates/room/detail.html:46
+#: resa/models.py:197 resaroom/templates/room/detail.html:46
 #: resaroom/templates/room/print.html:25
 msgid "Name"
 msgstr "Naam"
@@ -281,7 +281,7 @@ msgstr "Account"
 #: account/templates/account/create.html:34
 #: account/templates/account/manage_badge.html:14
 #: account/templates/account/menu_manager.html:10
-#: account/templates/account/search.html:46 resa/models.py:211
+#: account/templates/account/search.html:46 resa/models.py:212
 #: resa/templates/resa/orders_notpaid.html:43
 #: resa/templates/resa/orders_notpaid.html:104
 #: resa/templates/resa/orders_notpaid.html:165
@@ -331,6 +331,15 @@ msgstr "Welkom bij het reserveringsprogramma"
 
 #: account/templates/account/home.html:18
 msgid ""
+"Besides this booking program, a <a href=\"https://2013.rmll.info/en/juri.html"
+"\">reservation form</a> is available for the people who wish to attend the "
+"<a href=\"https://2013.rmll.info/en/juri.html\">JURI Workshop</a> on "
+"Tuesday, 9th July au the <a href=\"https://2013.rmll.info/en/juri.html"
+"\">European Parliament</a>."
+msgstr ""
+
+#: account/templates/account/home.html:19
+msgid ""
 "You will find the items to book under the \"Catalog\" category. You will be "
 "able to update your cart with the items you would like to book. Once your "
 "cart is right, you can transform it into an order. You can make several "
@@ -341,7 +350,7 @@ msgstr ""
 "winkelwagen naar uw zin is, kunt u deze omzetten naar een bestelling. U kunt "
 "meerdere bestellingen plaatsen"
 
-#: account/templates/account/home.html:20
+#: account/templates/account/home.html:21
 msgid ""
 "Orders not paid by July 5th will be removed. There are some exceptions with "
 "people coming from abroad which should contact the treasurer if they want to "
@@ -352,7 +361,7 @@ msgstr ""
 "komen, zij moeten contact opnemen met de penningmeester als zij bij aankomst "
 "willen betalen."
 
-#: account/templates/account/home.html:21
+#: account/templates/account/home.html:22
 msgid ""
 "If you want to stay in an traditional hotel instead of a youth hotel or a "
 "camping, you can use the independant <a href=\"https://www.resotel.be/"
@@ -363,7 +372,7 @@ msgstr ""
 "resotel.be/rmll2013\">RESOTEL</a> formulier gebruiken, met speciale prijzen "
 "voor LSM."
 
-#: account/templates/account/home.html:22
+#: account/templates/account/home.html:23
 msgid "Treasurer:"
 msgstr "Penningmeester:"
 
@@ -965,39 +974,39 @@ msgstr "Mogelijk gemaakt"
 msgid "Article"
 msgstr "Artikel"
 
-#: resa/models.py:192 resa/templates/resa/stats.html:22
+#: resa/models.py:193 resa/templates/resa/stats.html:22
 msgid "Country"
 msgstr "Land"
 
-#: resa/models.py:193
+#: resa/models.py:194
 msgid "Countries"
 msgstr "Landen"
 
-#: resa/models.py:197
+#: resa/models.py:198
 msgid "Alternate name"
 msgstr "Vervangende naam"
 
-#: resa/models.py:198
+#: resa/models.py:199
 msgid "Color"
 msgstr "Kleur"
 
-#: resa/models.py:199
+#: resa/models.py:200
 msgid "Default"
 msgstr "Default"
 
-#: resa/models.py:200
+#: resa/models.py:201
 msgid "Section"
 msgstr "Sectie"
 
-#: resa/models.py:202
+#: resa/models.py:203
 msgid "User can choose it"
 msgstr "Gebruiker kan het kiezen"
 
-#: resa/models.py:212
+#: resa/models.py:213
 msgid "Badges"
 msgstr "Badges"
 
-#: resa/models.py:215
+#: resa/models.py:216
 msgid "Transaction"
 msgstr "Transactie"
 

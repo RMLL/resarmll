@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-04 12:29+0200\n"
+"POT-Creation-Date: 2013-06-21 09:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -232,7 +232,7 @@ msgid "Id"
 msgstr ""
 
 #: account/templates/account/comments.html:26 resa/models.py:186
-#: resa/models.py:196 resaroom/templates/room/detail.html:46
+#: resa/models.py:197 resaroom/templates/room/detail.html:46
 #: resaroom/templates/room/print.html:25
 msgid "Name"
 msgstr ""
@@ -277,7 +277,7 @@ msgstr ""
 #: account/templates/account/create.html:34
 #: account/templates/account/manage_badge.html:14
 #: account/templates/account/menu_manager.html:10
-#: account/templates/account/search.html:46 resa/models.py:211
+#: account/templates/account/search.html:46 resa/models.py:212
 #: resa/templates/resa/orders_notpaid.html:43
 #: resa/templates/resa/orders_notpaid.html:104
 #: resa/templates/resa/orders_notpaid.html:165
@@ -327,27 +327,36 @@ msgstr ""
 
 #: account/templates/account/home.html:18
 msgid ""
+"Besides this booking program, a <a href=\"https://2013.rmll.info/en/juri.html"
+"\">reservation form</a> is available for the people who wish to attend the "
+"<a href=\"https://2013.rmll.info/en/juri.html\">JURI Workshop</a> on "
+"Tuesday, 9th July au the <a href=\"https://2013.rmll.info/en/juri.html"
+"\">European Parliament</a>."
+msgstr ""
+
+#: account/templates/account/home.html:19
+msgid ""
 "You will find the items to book under the \"Catalog\" category. You will be "
 "able to update your cart with the items you would like to book. Once your "
 "cart is right, you can transform it into an order. You can make several "
 "orders."
 msgstr ""
 
-#: account/templates/account/home.html:20
+#: account/templates/account/home.html:21
 msgid ""
 "Orders not paid by July 5th will be removed. There are some exceptions with "
 "people coming from abroad which should contact the treasurer if they want to "
 "pay on arrival."
 msgstr ""
 
-#: account/templates/account/home.html:21
+#: account/templates/account/home.html:22
 msgid ""
 "If you want to stay in an traditional hotel instead of a youth hotel or a "
 "camping, you can use the independant <a href=\"https://www.resotel.be/"
 "rmll2013\">RESOTEL</a> form, with special prices for the RMLL."
 msgstr ""
 
-#: account/templates/account/home.html:22
+#: account/templates/account/home.html:23
 msgid "Treasurer:"
 msgstr ""
 
@@ -925,39 +934,39 @@ msgstr ""
 msgid "Article"
 msgstr ""
 
-#: resa/models.py:192 resa/templates/resa/stats.html:22
+#: resa/models.py:193 resa/templates/resa/stats.html:22
 msgid "Country"
 msgstr ""
 
-#: resa/models.py:193
+#: resa/models.py:194
 msgid "Countries"
 msgstr ""
 
-#: resa/models.py:197
+#: resa/models.py:198
 msgid "Alternate name"
 msgstr ""
 
-#: resa/models.py:198
+#: resa/models.py:199
 msgid "Color"
 msgstr ""
 
-#: resa/models.py:199
+#: resa/models.py:200
 msgid "Default"
 msgstr ""
 
-#: resa/models.py:200
+#: resa/models.py:201
 msgid "Section"
 msgstr ""
 
-#: resa/models.py:202
+#: resa/models.py:203
 msgid "User can choose it"
 msgstr ""
 
-#: resa/models.py:212
+#: resa/models.py:213
 msgid "Badges"
 msgstr ""
 
-#: resa/models.py:215
+#: resa/models.py:216
 msgid "Transaction"
 msgstr ""
 
@@ -977,7 +986,6 @@ msgstr ""
 #: resa/templates/resa/manage_cart.html:56
 #: resa/templates/resa/order_details.html:18
 #: resa/templates/resa/order_details_extended.html:26
-#: resa/templates/resa/orders_pdf.xml:79
 msgid "Quantity"
 msgstr ""
 
@@ -1497,7 +1505,6 @@ msgid "Bank payment"
 msgstr ""
 
 #: resa/templates/resa/orders_details.html:28
-#: resa/templates/resa/orders_pdf.xml:10
 msgid "Invoice"
 msgstr ""
 
@@ -1671,75 +1678,6 @@ msgstr ""
 #: resa/templates/resa/orders_paypal_return.html:5
 #: resa/templates/resa/orders_paypal_return.html:12
 msgid "PayPal payment"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:13 resa/templates/resa/orders_pdf.xml:26
-msgid "Libre Software Meeting"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:57
-msgid "Document :"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:57
-msgid "Invoice num"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:60
-msgid "Date :"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:65
-msgid "Madam"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:65
-msgid "Mister"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:71
-msgid "Here is the invoice for your order:"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:77
-msgid "Description"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:78
-msgid "Unit price"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:80
-msgid "Total price"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:95
-msgid "Entrance fee:"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:110
-msgid "VAT:"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:116
-msgid "Total excl. VAT:"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:123
-msgid "Total incl. VAT:"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:123
-msgid "Total:"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:133
-msgid ""
-"VAT not applicable in accordance with Art. 261-7-1° of the French Tax Code"
-msgstr ""
-
-#: resa/templates/resa/orders_pdf.xml:139
-msgid "Billing without taxes."
 msgstr ""
 
 #: resa/templates/resa/orders_search.html:23
