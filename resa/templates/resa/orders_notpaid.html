@@ -25,7 +25,7 @@
     <div id="orders_notpaid">
 
         {% if results_orga %}
-            <form action="/resa/orders/notpaid/#emailcompose" method="post">
+            <form action="/resa/orders/notpaid/#emailcompose" method="post">{% csrf_token %}
                 <div class="section">
                     <h3>{% trans "Organization" %}</h3>
                     <div class="content">
